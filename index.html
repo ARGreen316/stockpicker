@@ -42,15 +42,27 @@
             
             <!-- Title Row & Mode Switcher -->
             <div class="flex flex-wrap items-center justify-between gap-2">
-                <div>
+                <div class="flex items-center gap-2.5">
                     <h1 class="text-lg sm:text-xl font-extrabold tracking-tight text-white flex items-center gap-2">
                         <span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 border border-amber-500/30">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
                             </svg>
                         </span>
-                        Stock Picker <span class="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-300 border border-amber-500/30">Beta</span>
+                        Stock Picker
                     </h1>
+
+                    <!-- Department Switcher: Hard Lines vs Clothing -->
+                    <div class="inline-flex p-0.5 rounded-xl bg-slate-900 border border-slate-800">
+                        <button id="dept-hardlines-btn" type="button" class="px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all bg-sky-500 text-slate-950 shadow-sm flex items-center gap-1">
+                            <span>Hard Lines</span>
+                            <span id="dept-hardlines-badge" class="hidden px-1.5 py-0.2 rounded bg-slate-950/20 text-[10px] font-black tabular-nums">0</span>
+                        </button>
+                        <button id="dept-clothing-btn" type="button" class="px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all text-slate-400 hover:text-white flex items-center gap-1">
+                            <span>Clothing</span>
+                            <span id="dept-clothing-badge" class="hidden px-1.5 py-0.2 rounded bg-purple-500/20 text-purple-300 text-[10px] font-black tabular-nums">0</span>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 2-Step Mode Toggle + Add Item -->
@@ -152,7 +164,7 @@
     <div id="add-item-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl">
             <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between">
-                <h2 class="text-base font-extrabold text-white">Add Products to Catalog</h2>
+                <h2 id="add-modal-title" class="text-base font-extrabold text-white">Add Products to Catalog</h2>
                 <button id="close-add-modal-btn" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
@@ -160,6 +172,13 @@
                 </button>
             </div>
             <form id="add-item-form" class="p-5 space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Department</label>
+                    <select id="add-dept-select" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-amber-500">
+                        <option value="hardlines">Hard Lines (Standard Units / Boxes)</option>
+                        <option value="clothing">Clothing (Sized: XS, S, M, L, XL, XXL)</option>
+                    </select>
+                </div>
                 <div>
                     <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Store Zone</label>
                     <select id="add-section-select" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-amber-500">
@@ -174,7 +193,7 @@
                     <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Product Name(s) — One per line</label>
                     <textarea id="add-names-input" rows="4" required placeholder="e.g.&#10;Galleon Coin Pouch&#10;Niffler Plush&#10;Dragon Keyring" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></textarea>
                 </div>
-                <div class="grid grid-cols-2 gap-3">
+                <div id="add-packaging-fields" class="grid grid-cols-2 gap-3">
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Inner / Pack Qty</label>
                         <input type="number" id="add-inner-input" min="0" placeholder="e.g. 6" class="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
@@ -304,8 +323,10 @@
 
     <script>
         // Application State & Storage Key
-        const STORAGE_KEY = 'stock_picker_beta_catalog_v1';
+        const STORAGE_KEY = 'stock_picker_beta_catalog_v2';
+        const CLOTHING_SIZES = ['xs', 's', 'm', 'l', 'xl', 'xxl'];
         let catalog = [];
+        let activeDepartment = 'hardlines'; // 'hardlines' | 'clothing'
         let appMode = 'setup'; // 'setup' | 'picklist'
         let activeSection = 'all';
         let searchQuery = '';
@@ -327,7 +348,7 @@
             { id: 'scrib', label: 'Scrib' }
         ];
 
-        // 2. Default Catalog Items (Quidditch 4 Houses + sample starter Gringotts group)
+        // 2. Default Catalog Items (Quidditch 4 Houses Hard Lines + Clothing)
         const QUIDDITCH_HOUSES = ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin'];
         const QUIDDITCH_ITEMS = [
             { name: 'Glass Mug', innerQty: 0, boxQty: 0 },
@@ -348,13 +369,31 @@
             { name: 'Mirror', innerQty: 0, boxQty: 0 }
         ];
 
+        const QUIDDITCH_CLOTHING_ITEMS = [
+            'Sherpa',
+            'Quidditch Jumper',
+            'MM25 T-Shirt',
+            'MM25 Spirit Jersey',
+            'Pyjamas'
+        ];
+
+        function createEmptySizesMap() {
+            return { xs: 0, s: 0, m: 0, l: 0, xl: 0, xxl: 0 };
+        }
+
+        function createEmptyPickedSizesMap() {
+            return { xs: false, s: false, m: false, l: false, xl: false, xxl: false };
+        }
+
         function buildDefaultCatalog() {
             const list = [];
             let idx = 1;
+            // Hard Lines
             QUIDDITCH_HOUSES.forEach(house => {
                 QUIDDITCH_ITEMS.forEach(item => {
                     list.push({
                         id: `item-${idx++}`,
+                        department: 'hardlines',
                         sectionId: 'quidditch',
                         group: house,
                         name: item.name,
@@ -365,7 +404,52 @@
                     });
                 });
             });
+            // Clothing
+            QUIDDITCH_HOUSES.forEach(house => {
+                QUIDDITCH_CLOTHING_ITEMS.forEach(name => {
+                    list.push({
+                        id: `cloth-${idx++}`,
+                        department: 'clothing',
+                        sectionId: 'quidditch',
+                        group: house,
+                        name,
+                        sizes: createEmptySizesMap(),
+                        pickedSizes: createEmptyPickedSizesMap()
+                    });
+                });
+            });
             return list;
+        }
+
+        // Helpers to read total units & picked lines for either Hard Lines or Clothing items
+        function getItemTotalQty(item) {
+            if (item.department === 'clothing') {
+                const s = item.sizes || {};
+                return CLOTHING_SIZES.reduce((sum, sz) => sum + (Number(s[sz]) || 0), 0);
+            }
+            return Number(item.qty) || 0;
+        }
+
+        function getItemActiveLinesCount(item) {
+            if (item.department === 'clothing') {
+                const s = item.sizes || {};
+                return CLOTHING_SIZES.filter(sz => (Number(s[sz]) || 0) > 0).length;
+            }
+            return (Number(item.qty) || 0) > 0 ? 1 : 0;
+        }
+
+        function getItemPickedLinesCount(item) {
+            if (item.department === 'clothing') {
+                const s = item.sizes || {};
+                const p = item.pickedSizes || {};
+                return CLOTHING_SIZES.filter(sz => (Number(s[sz]) || 0) > 0 && !!p[sz]).length;
+            }
+            return ((Number(item.qty) || 0) > 0 && item.picked) ? 1 : 0;
+        }
+
+        function isItemFullyPicked(item) {
+            const active = getItemActiveLinesCount(item);
+            return active > 0 && getItemPickedLinesCount(item) === active;
         }
 
         // Save state to localStorage safely
@@ -377,73 +461,105 @@
             }
         }
 
-        // Load saved state safely
+        // Load saved state or initialize default catalog
         function loadState() {
             try {
                 const raw = localStorage.getItem(STORAGE_KEY);
                 if (raw) {
                     const parsed = JSON.parse(raw);
-                    if (Array.isArray(parsed.catalog) && parsed.catalog.length > 0) {
-                        catalog = parsed.catalog;
-                        return true;
+                    if (parsed && Array.isArray(parsed.catalog) && parsed.catalog.length > 0) {
+                        catalog = parsed.catalog.map(item => ({
+                            ...item,
+                            department: item.department === 'clothing' ? 'clothing' : 'hardlines',
+                            sizes: item.department === 'clothing'
+                                ? { ...createEmptySizesMap(), ...(item.sizes || {}) }
+                                : undefined,
+                            pickedSizes: item.department === 'clothing'
+                                ? { ...createEmptyPickedSizesMap(), ...(item.pickedSizes || {}) }
+                                : undefined,
+                            qty: item.department === 'clothing' ? 0 : (Number(item.qty) || 0),
+                            picked: item.department === 'clothing' ? false : !!item.picked,
+                            innerQty: Number(item.innerQty) || 0,
+                            boxQty: Number(item.boxQty) || 0
+                        }));
+                        return;
                     }
                 }
             } catch (e) {
-                console.error('Failed to load saved catalog:', e);
+                console.error('Failed to load catalog:', e);
             }
             catalog = buildDefaultCatalog();
-            return false;
+            saveState();
         }
 
-        // Build clean catalog payload (stripping active pick quantities for Git storage)
+        // Prepare clean catalog JSON for Git export (zeroing out active daily quantities)
         function getCleanCatalogExportData() {
             return {
-                version: 1,
+                version: 2,
                 updatedAt: new Date().toISOString(),
-                items: catalog.map(item => ({
-                    id: item.id,
-                    sectionId: item.sectionId,
-                    group: item.group || 'General',
-                    name: item.name,
-                    innerQty: Number(item.innerQty) || 0,
-                    boxQty: Number(item.boxQty) || 0
-                }))
+                catalog: catalog.map(item => {
+                    if (item.department === 'clothing') {
+                        return {
+                            id: item.id,
+                            department: 'clothing',
+                            sectionId: item.sectionId,
+                            group: item.group || 'General',
+                            name: item.name
+                        };
+                    }
+                    return {
+                        id: item.id,
+                        department: 'hardlines',
+                        sectionId: item.sectionId,
+                        group: item.group || 'General',
+                        name: item.name,
+                        innerQty: Number(item.innerQty) || 0,
+                        boxQty: Number(item.boxQty) || 0
+                    };
+                })
             };
         }
 
-        // Apply imported catalog items while preserving any active quantities on matching items
-        function applyImportedCatalog(rawPayload) {
-            const itemsArray = Array.isArray(rawPayload) ? rawPayload : (rawPayload && Array.isArray(rawPayload.items) ? rawPayload.items : null);
-            if (!itemsArray || itemsArray.length === 0) {
-                throw new Error('Invalid catalog format');
-            }
+        // Merge imported catalog JSON while preserving any active quantities already entered on device
+        function applyImportedCatalog(data) {
+            const incomingList = Array.isArray(data) ? data : (data && Array.isArray(data.catalog) ? data.catalog : null);
+            if (!incomingList || incomingList.length === 0) return;
 
-            const existingQtyMap = new Map();
+            const existingByKey = new Map();
             catalog.forEach(item => {
-                const key = `${item.sectionId}::${(item.group || 'General').toLowerCase()}::${item.name.trim().toLowerCase()}`;
-                if (item.qty > 0) {
-                    existingQtyMap.set(key, { qty: item.qty, picked: item.picked });
-                }
+                const key = `${item.department || 'hardlines'}::${item.sectionId}::${(item.group || 'General').toLowerCase()}::${item.name.trim().toLowerCase()}`;
+                existingByKey.set(key, item);
             });
 
-            catalog = itemsArray.map((entry, index) => {
-                const sectionId = STORE_SECTIONS.some(s => s.id === entry.sectionId) ? entry.sectionId : 'quidditch';
-                const group = (entry.group || 'General').trim();
-                const name = String(entry.name || '').trim();
-                const key = `${sectionId}::${group.toLowerCase()}::${name.toLowerCase()}`;
-                const prev = existingQtyMap.get(key);
+            catalog = incomingList.map((raw, i) => {
+                const dept = raw.department === 'clothing' ? 'clothing' : 'hardlines';
+                const grp = raw.group || 'General';
+                const key = `${dept}::${raw.sectionId}::${grp.toLowerCase()}::${String(raw.name || '').trim().toLowerCase()}`;
+                const prev = existingByKey.get(key);
 
+                if (dept === 'clothing') {
+                    return {
+                        id: raw.id || (prev && prev.id) || `cloth-${Date.now()}-${i}`,
+                        department: 'clothing',
+                        sectionId: raw.sectionId || 'quidditch',
+                        group: grp,
+                        name: String(raw.name || 'Unnamed Garment'),
+                        sizes: prev && prev.sizes ? { ...createEmptySizesMap(), ...prev.sizes } : createEmptySizesMap(),
+                        pickedSizes: prev && prev.pickedSizes ? { ...createEmptyPickedSizesMap(), ...prev.pickedSizes } : createEmptyPickedSizesMap()
+                    };
+                }
                 return {
-                    id: entry.id || `item-${index + 1}-${Math.random().toString(36).slice(2, 6)}`,
-                    sectionId,
-                    group,
-                    name,
-                    qty: prev ? prev.qty : 0,
-                    picked: prev ? prev.picked : false,
-                    innerQty: Number(entry.innerQty) || 0,
-                    boxQty: Number(entry.boxQty) || 0
+                    id: raw.id || (prev && prev.id) || `item-${Date.now()}-${i}`,
+                    department: 'hardlines',
+                    sectionId: raw.sectionId || 'quidditch',
+                    group: grp,
+                    name: String(raw.name || 'Unnamed Item'),
+                    qty: prev ? (Number(prev.qty) || 0) : 0,
+                    picked: prev ? !!prev.picked : false,
+                    innerQty: Number(raw.innerQty) || 0,
+                    boxQty: Number(raw.boxQty) || 0
                 };
-            }).filter(i => i.name.length > 0);
+            });
 
             saveState();
             renderTabs();
@@ -451,151 +567,48 @@
             renderMain();
         }
 
-        // Automatically fetch ./catalog.json from GitHub Pages if present
-        async function fetchGitCatalogIfAvailable(forceShowFeedback = false) {
-            try {
-                const res = await fetch(`./catalog.json?t=${Date.now()}`);
-                if (!res.ok) {
-                    if (forceShowFeedback) showToast('No catalog.json found on Git yet');
-                    return;
-                }
-                const data = await res.json();
-                applyImportedCatalog(data);
-                if (forceShowFeedback) {
-                    showToast('Synced latest catalog.json from Git!');
-                }
-            } catch (err) {
-                if (forceShowFeedback) showToast('Could not fetch catalog.json');
-            }
-        }
-
-        // Helper: Determine whether an item uses "Inner" (mugs) or "Pack" (socks & everything else)
-        function isMugItem(name) {
-            return /\bmug\b/i.test(name);
-        }
-
-        function getSubUnitTerms(name) {
-            if (isMugItem(name)) {
-                return { singular: 'Inner', plural: 'Inners' };
-            }
-            return { singular: 'Pack', plural: 'Packs' };
-        }
-
-        // Helper: Automatically format total unit count into Boxes, Inners/Packs, and loose units
-        function formatAutomaticContainerQty(item) {
-            const total = item.qty;
-            const boxSize = Number(item.boxQty) || 0;
-            const subSize = Number(item.innerQty) || 0;
-            const { singular, plural } = getSubUnitTerms(item.name);
-
-            if (boxSize <= 1 && subSize <= 1) {
-                return {
-                    primary: `x${total}`,
-                    secondary: '',
-                    hasBreakdown: false
-                };
-            }
-
-            let remainder = total;
-            const parts = [];
-
-            if (boxSize > 1 && remainder >= boxSize) {
-                const boxes = Math.floor(remainder / boxSize);
-                remainder = remainder % boxSize;
-                parts.push(`${boxes} ${boxes === 1 ? 'Box' : 'Boxes'}`);
-            }
-
-            if (subSize > 1 && remainder >= subSize) {
-                const subs = Math.floor(remainder / subSize);
-                remainder = remainder % subSize;
-                parts.push(`${subs} ${subs === 1 ? singular : plural}`);
-            }
-
-            if (remainder > 0) {
-                parts.push(`x${remainder}`);
-            }
-
-            const primary = parts.join(' + ');
-            const hasBreakdown = primary !== `x${total}`;
-            return {
-                primary,
-                secondary: hasBreakdown ? `${total} items total` : '',
-                hasBreakdown
-            };
-        }
-
-        // Helper: Visual theme colors per house/subsection
-        function getGroupBadgeStyle(groupName) {
-            const g = (groupName || '').toLowerCase();
-            if (g.includes('gryffindor')) return 'bg-red-950/80 text-red-300 border-red-800/70';
-            if (g.includes('slytherin')) return 'bg-emerald-950/80 text-emerald-300 border-emerald-800/70';
-            if (g.includes('ravenclaw')) return 'bg-sky-950/80 text-sky-300 border-sky-800/70';
-            if (g.includes('hufflepuff')) return 'bg-amber-950/80 text-amber-300 border-amber-700/70';
-            return 'bg-slate-800/90 text-slate-200 border-slate-700/80';
-        }
-
-        function escapeHtml(str) {
-            return String(str)
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/"/g, '&quot;');
-        }
-
-        function showToast(msg) {
-            const toast = document.getElementById('toast');
-            toast.textContent = msg;
-            toast.classList.remove('opacity-0', '-translate-y-2');
-            toast.classList.add('opacity-100', 'translate-y-0');
-            clearTimeout(window._toastTimer);
-            window._toastTimer = setTimeout(() => {
-                toast.classList.add('opacity-0', '-translate-y-2');
-                toast.classList.remove('opacity-100', 'translate-y-0');
-            }, 2200);
-        }
-
-        // Render Store Zone Filter Tabs
+        // Render Store Zone Filter Pills
         function renderTabs() {
             const tabsEl = document.getElementById('category-tabs');
-            const selectedItems = catalog.filter(i => i.qty > 0);
+            if (!tabsEl) return;
+            const deptCatalog = catalog.filter(i => (i.department || 'hardlines') === activeDepartment);
 
-            let tabsHtml = `
-                <button type="button" data-sec="all" class="sec-tab shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all border ${
-                    activeSection === 'all'
+            const totalActiveLines = deptCatalog.reduce((sum, i) => sum + getItemActiveLinesCount(i), 0);
+            const allActive = activeSection === 'all';
+
+            let html = `
+                <button type="button" data-sec-tab="all" class="zone-tab-btn px-3 py-1.5 rounded-xl text-xs font-extrabold whitespace-nowrap transition-all border shrink-0 flex items-center gap-1.5 ${
+                    allActive
                         ? 'bg-amber-500 text-slate-950 border-amber-400 shadow-sm'
                         : 'bg-slate-900 text-slate-300 border-slate-800 hover:border-slate-700'
                 }">
-                    All Zones
+                    <span>All Zones</span>
+                    ${totalActiveLines > 0 ? `<span class="px-1.5 py-0.2 rounded-md text-[10px] font-black tabular-nums ${allActive ? 'bg-slate-950/20 text-slate-950' : 'bg-slate-800 text-amber-300'}">${totalActiveLines}</span>` : ''}
                 </button>
             `;
 
             STORE_SECTIONS.forEach(sec => {
-                const secItems = catalog.filter(i => i.sectionId === sec.id);
-                const secSelected = secItems.filter(i => i.qty > 0);
-                // In picklist mode, only show tabs that have selected items
-                if (appMode === 'picklist' && secSelected.length === 0) return;
+                const secItems = deptCatalog.filter(i => i.sectionId === sec.id);
+                const secActiveLines = secItems.reduce((sum, i) => sum + getItemActiveLinesCount(i), 0);
+                if (appMode === 'picklist' && secActiveLines === 0) return;
 
                 const isActive = activeSection === sec.id;
-                const countLabel = appMode === 'picklist'
-                    ? `${secSelected.filter(i => i.picked).length}/${secSelected.length}`
-                    : (secSelected.length > 0 ? `${secSelected.length}` : '');
-
-                tabsHtml += `
-                    <button type="button" data-sec="${sec.id}" class="sec-tab shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all border flex items-center gap-1.5 ${
+                html += `
+                    <button type="button" data-sec-tab="${sec.id}" class="zone-tab-btn px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all border shrink-0 flex items-center gap-1.5 ${
                         isActive
                             ? 'bg-amber-500 text-slate-950 border-amber-400 shadow-sm'
                             : 'bg-slate-900 text-slate-300 border-slate-800 hover:border-slate-700'
                     }">
                         <span>${escapeHtml(sec.label)}</span>
-                        ${countLabel ? `<span class="px-1.5 py-0.2 rounded-md text-[10px] font-extrabold tabular-nums ${isActive ? 'bg-slate-950/20 text-slate-950' : 'bg-slate-800 text-amber-400'}">${countLabel}</span>` : ''}
+                        ${secActiveLines > 0 ? `<span class="px-1.5 py-0.2 rounded-md text-[10px] font-black tabular-nums ${isActive ? 'bg-slate-950/20 text-slate-950' : 'bg-slate-800 text-amber-300'}">${secActiveLines}</span>` : ''}
                     </button>
                 `;
             });
 
-            tabsEl.innerHTML = tabsHtml;
-            tabsEl.querySelectorAll('.sec-tab').forEach(btn => {
+            tabsEl.innerHTML = html;
+            tabsEl.querySelectorAll('.zone-tab-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
-                    activeSection = btn.dataset.sec;
+                    activeSection = btn.dataset.secTab;
                     if (activeSection !== 'all') {
                         expandedSections[activeSection] = true;
                     }
@@ -605,61 +618,193 @@
             });
         }
 
-        // Update Top Progress Bar & Bottom Action Bar
+        // Sync Department Toggle, Mode Toggle, Progress Bar, and Sticky Bottom Bar
         function updateHeaderAndBars() {
-            const selectedItems = catalog.filter(i => i.qty > 0);
-            const totalUnits = selectedItems.reduce((sum, i) => sum + i.qty, 0);
-            const pickedLines = selectedItems.filter(i => i.picked).length;
-            const activeZonesCount = new Set(selectedItems.map(i => i.sectionId)).size;
+            const hlBtn = document.getElementById('dept-hardlines-btn');
+            const clBtn = document.getElementById('dept-clothing-btn');
+            const hlBadge = document.getElementById('dept-hardlines-badge');
+            const clBadge = document.getElementById('dept-clothing-badge');
 
-            document.getElementById('picklist-mode-badge').textContent = selectedItems.length;
+            const hlLines = catalog
+                .filter(i => (i.department || 'hardlines') === 'hardlines')
+                .reduce((s, i) => s + getItemActiveLinesCount(i), 0);
+            const clLines = catalog
+                .filter(i => i.department === 'clothing')
+                .reduce((s, i) => s + getItemActiveLinesCount(i), 0);
+
+            if (hlLines > 0) {
+                hlBadge.textContent = hlLines;
+                hlBadge.classList.remove('hidden');
+            } else {
+                hlBadge.classList.add('hidden');
+            }
+
+            if (clLines > 0) {
+                clBadge.textContent = clLines;
+                clBadge.classList.remove('hidden');
+            } else {
+                clBadge.classList.add('hidden');
+            }
+
+            if (activeDepartment === 'hardlines') {
+                hlBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all bg-sky-500 text-slate-950 shadow-sm flex items-center gap-1';
+                clBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all text-slate-400 hover:text-white flex items-center gap-1';
+            } else {
+                hlBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all text-slate-400 hover:text-white flex items-center gap-1';
+                clBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all bg-purple-500 text-white shadow-sm flex items-center gap-1';
+            }
+
+            const deptCatalog = catalog.filter(i => (i.department || 'hardlines') === activeDepartment);
+            const activeLines = deptCatalog.reduce((s, i) => s + getItemActiveLinesCount(i), 0);
+            const pickedLines = deptCatalog.reduce((s, i) => s + getItemPickedLinesCount(i), 0);
+            const totalUnits = deptCatalog.reduce((s, i) => s + getItemTotalQty(i), 0);
+            const activeZonesCount = new Set(deptCatalog.filter(i => getItemTotalQty(i) > 0).map(i => i.sectionId)).size;
 
             const setupBtn = document.getElementById('mode-setup-btn');
             const picklistBtn = document.getElementById('mode-picklist-btn');
-            const secondaryFilterLabel = document.getElementById('secondary-filter-label');
-            const secondaryFilterBtn = document.getElementById('toggle-secondary-filter');
-            const primaryActionText = document.getElementById('primary-action-text');
-            const bottomBarInfo = document.getElementById('bottom-bar-info');
+            const picklistBadge = document.getElementById('picklist-mode-badge');
+            const secFilterBtn = document.getElementById('toggle-secondary-filter');
+            const secFilterLabel = document.getElementById('secondary-filter-label');
+            const summaryText = document.getElementById('status-summary-text');
+            const percentText = document.getElementById('status-percent-text');
             const progressBar = document.getElementById('progress-bar');
+            const bottomInfo = document.getElementById('bottom-bar-info');
+            const primaryBtn = document.getElementById('primary-action-btn');
+            const primaryText = document.getElementById('primary-action-text');
+
+            picklistBadge.textContent = activeLines;
 
             if (appMode === 'setup') {
                 setupBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-amber-500 text-slate-950 shadow-sm';
                 picklistBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white flex items-center gap-1.5';
-                secondaryFilterLabel.textContent = 'Selected Only';
-                document.getElementById('status-summary-text').textContent = `${selectedItems.length} product line${selectedItems.length === 1 ? '' : 's'} across ${activeZonesCount} zone${activeZonesCount === 1 ? '' : 's'}`;
-                document.getElementById('status-percent-text').textContent = `${totalUnits} total units`;
-                const pct = catalog.length > 0 ? Math.min(100, Math.round((selectedItems.length / Math.max(1, catalog.length)) * 100)) : 0;
-                progressBar.style.width = `${selectedItems.length > 0 ? Math.max(8, pct) : 0}%`;
-
-                primaryActionText.textContent = selectedItems.length > 0 ? `Generate Picklist (${selectedItems.length})` : 'Generate Picklist';
-                bottomBarInfo.innerHTML = selectedItems.length > 0
-                    ? `<span class="text-amber-400 font-bold">${selectedItems.length} lines</span> (${totalUnits} units) ready for warehouse`
-                    : `Tap <span class="text-slate-200 font-bold">+</span> beside items to build your picklist`;
+                secFilterLabel.textContent = 'Selected Only';
+                summaryText.textContent = `${activeLines} line${activeLines === 1 ? '' : 's'} across ${activeZonesCount} zone${activeZonesCount === 1 ? '' : 's'}`;
+                percentText.textContent = `${totalUnits} total unit${totalUnits === 1 ? '' : 's'}`;
+                progressBar.className = 'h-full bg-amber-500 transition-all duration-300 rounded-full';
+                progressBar.style.width = activeLines > 0 ? '100%' : '0%';
+                bottomInfo.innerHTML = activeLines > 0
+                    ? `<span class="text-white font-bold">${activeLines}</span> line${activeLines === 1 ? '' : 's'} (${totalUnits} units) ready`
+                    : `Tap <span class="text-slate-200 font-bold">+</span> to add items to your warehouse run`;
+                primaryBtn.className = 'px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-[0.99] text-slate-950 font-extrabold text-xs sm:text-sm transition-all shadow-lg shadow-amber-500/20 flex items-center gap-2 shrink-0';
+                primaryText.textContent = 'Generate Picklist';
             } else {
-                picklistBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-emerald-500 text-slate-950 shadow-sm flex items-center gap-1.5';
                 setupBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white';
-                secondaryFilterLabel.textContent = 'Hide Picked';
-                const pct = selectedItems.length > 0 ? Math.round((pickedLines / selectedItems.length) * 100) : 0;
-                document.getElementById('status-summary-text').textContent = `${pickedLines} of ${selectedItems.length} lines picked`;
-                document.getElementById('status-percent-text').textContent = `${pct}%`;
+                picklistBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-emerald-500 text-slate-950 shadow-sm flex items-center gap-1.5';
+                secFilterLabel.textContent = 'Hide Picked';
+                const pct = activeLines > 0 ? Math.round((pickedLines / activeLines) * 100) : 0;
+                summaryText.textContent = `${pickedLines} of ${activeLines} line${activeLines === 1 ? '' : 's'} picked`;
+                percentText.textContent = `${pct}% complete`;
+                progressBar.className = 'h-full bg-emerald-500 transition-all duration-300 rounded-full';
                 progressBar.style.width = `${pct}%`;
-
-                primaryActionText.textContent = 'Copy Picklist for WhatsApp';
-                bottomBarInfo.innerHTML = `<span class="text-emerald-400 font-bold">${selectedItems.length - pickedLines}</span> lines remaining to pick`;
+                bottomInfo.innerHTML = `<span class="text-emerald-400 font-bold">${pickedLines}/${activeLines}</span> picked · <span class="text-slate-200 font-semibold">${totalUnits}</span> units`;
+                primaryBtn.className = 'px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 active:scale-[0.99] text-slate-950 font-extrabold text-xs sm:text-sm transition-all shadow-lg shadow-emerald-500/20 flex items-center gap-2 shrink-0';
+                primaryText.textContent = 'Copy for WhatsApp';
             }
 
             if (secondaryFilterActive) {
-                secondaryFilterBtn.classList.add('border-amber-500/70', 'bg-amber-500/10', 'text-amber-300');
+                secFilterBtn.className = 'px-3 py-1.5 rounded-xl bg-amber-500/20 border border-amber-500/50 text-xs font-bold text-amber-300 transition-colors shrink-0';
             } else {
-                secondaryFilterBtn.classList.remove('border-amber-500/70', 'bg-amber-500/10', 'text-amber-300');
+                secFilterBtn.className = 'px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs font-bold text-slate-300 hover:border-slate-700 transition-colors shrink-0';
             }
         }
 
-        // Render Main Collapsible Zones, Subsections & Items
+        // Escape HTML entities safely
+        function escapeHtml(str) {
+            return String(str ?? '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        // Return "Inner/Inners" for mugs and "Pack/Packs" for all other items
+        function getSubUnitTerms(itemName) {
+            const isMug = /\bmug\b/i.test(String(itemName || ''));
+            return isMug
+                ? { singular: 'Inner', plural: 'Inners' }
+                : { singular: 'Pack', plural: 'Packs' };
+        }
+
+        // Automatically convert total units into Boxes -> Inners/Packs -> Loose Items
+        function formatAutomaticContainerQty(item) {
+            const qty = Math.max(0, Number(item.qty) || 0);
+            const boxQty = Math.max(0, Number(item.boxQty) || 0);
+            const innerQty = Math.max(0, Number(item.innerQty) || 0);
+            const { singular, plural } = getSubUnitTerms(item.name);
+
+            let remaining = qty;
+            const parts = [];
+
+            if (boxQty > 0 && remaining >= boxQty) {
+                const boxes = Math.floor(remaining / boxQty);
+                remaining = remaining % boxQty;
+                parts.push(`${boxes} ${boxes === 1 ? 'Box' : 'Boxes'}`);
+            }
+
+            if (innerQty > 0 && remaining >= innerQty) {
+                const inners = Math.floor(remaining / innerQty);
+                remaining = remaining % innerQty;
+                parts.push(`${inners} ${inners === 1 ? singular : plural}`);
+            }
+
+            const hasBreakdown = parts.length > 0;
+            if (remaining > 0) {
+                parts.push(`x${remaining}`);
+            }
+
+            const primary = parts.length > 0 ? parts.join(' + ') : `x${qty}`;
+            const secondary = hasBreakdown ? `${qty} items total` : '';
+            return { primary, secondary, hasBreakdown };
+        }
+
+        // House / Subsection Badge Styling
+        function getGroupBadgeStyle(groupName) {
+            const g = String(groupName || '').toLowerCase();
+            if (g.includes('gryffindor')) return 'bg-red-950/70 text-red-300 border-red-800/70';
+            if (g.includes('slytherin')) return 'bg-emerald-950/70 text-emerald-300 border-emerald-800/70';
+            if (g.includes('ravenclaw')) return 'bg-sky-950/70 text-sky-300 border-sky-800/70';
+            if (g.includes('hufflepuff')) return 'bg-amber-950/70 text-amber-300 border-amber-800/70';
+            return 'bg-slate-800 text-slate-300 border-slate-700';
+        }
+
+        // Toast notification helper
+        let toastTimer = null;
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            if (!toast) return;
+            toast.textContent = message;
+            toast.classList.remove('opacity-0');
+            toast.classList.add('opacity-100');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0');
+            }, 2400);
+        }
+
+        // Auto-pull catalog.json when hosted on GitHub Pages
+        async function fetchGitCatalogIfAvailable(manualTrigger = false) {
+            try {
+                const response = await fetch(`./catalog.json?t=${Date.now()}`, { cache: 'no-store' });
+                if (!response.ok) {
+                    if (manualTrigger) showToast('No catalog.json found in repo');
+                    return;
+                }
+                const data = await response.json();
+                applyImportedCatalog(data);
+                if (manualTrigger) showToast(`Synced ${catalog.length} items from catalog.json!`);
+            } catch (err) {
+                if (manualTrigger) showToast('Could not fetch catalog.json');
+            }
+        }
+
+        // Render Main Collapsible Zones, Subsections & Items (Hard Lines or Clothing)
         function renderMain() {
             const container = document.getElementById('checklist-container');
             const emptyState = document.getElementById('empty-state');
             const query = searchQuery.trim().toLowerCase();
+            const deptCatalog = catalog.filter(i => (i.department || 'hardlines') === activeDepartment);
 
             let html = '';
             let visibleSectionsCount = 0;
@@ -667,20 +812,20 @@
             STORE_SECTIONS.forEach(sec => {
                 if (activeSection !== 'all' && activeSection !== sec.id) return;
 
-                let secItems = catalog.filter(item => item.sectionId === sec.id);
+                let secItems = deptCatalog.filter(item => item.sectionId === sec.id);
 
-                // In picklist mode, only include items with qty > 0
+                // In picklist mode, only include items with total qty > 0
                 if (appMode === 'picklist') {
-                    secItems = secItems.filter(item => item.qty > 0);
+                    secItems = secItems.filter(item => getItemTotalQty(item) > 0);
                     if (secItems.length === 0) return;
                 }
 
                 // Apply secondary filter
                 if (secondaryFilterActive) {
                     if (appMode === 'setup') {
-                        secItems = secItems.filter(item => item.qty > 0);
+                        secItems = secItems.filter(item => getItemTotalQty(item) > 0);
                     } else {
-                        secItems = secItems.filter(item => !item.picked);
+                        secItems = secItems.filter(item => !isItemFullyPicked(item));
                     }
                 }
 
@@ -710,113 +855,235 @@
 
                 let groupsHtml = '';
                 if (groupsMap.size === 0) {
+                    const deptLabel = activeDepartment === 'clothing' ? 'Clothing' : 'Hard Lines';
                     groupsHtml = `
                         <div class="text-center py-6 px-3 rounded-xl bg-slate-950/60 border border-dashed border-slate-800">
-                            <p class="text-xs text-slate-400">No items in ${escapeHtml(sec.label)} yet.</p>
+                            <p class="text-xs text-slate-400">No ${deptLabel} items in ${escapeHtml(sec.label)} yet.</p>
                             <button type="button" data-quick-add-sec="${sec.id}" class="quick-add-btn mt-2 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-bold text-amber-400">
-                                + Add ${escapeHtml(sec.label)} Items
+                                + Add ${escapeHtml(sec.label)} ${deptLabel}
                             </button>
                         </div>
                     `;
                 } else {
                     groupsMap.forEach((items, groupName) => {
-                        const groupKey = `${sec.id}::${groupName}`;
+                        const groupKey = `${activeDepartment}::${sec.id}::${groupName}`;
                         const isGroupCollapsed = !!collapsedGroups[groupKey] && query.length === 0;
-                        const groupSelectedCount = items.filter(i => i.qty > 0).length;
-                        const groupPickedCount = items.filter(i => i.qty > 0 && i.picked).length;
+                        const groupActiveLines = items.reduce((s, i) => s + getItemActiveLinesCount(i), 0);
+                        const groupPickedLines = items.reduce((s, i) => s + getItemPickedLinesCount(i), 0);
 
                         const groupCounterText = appMode === 'picklist'
-                            ? `${groupPickedCount}/${items.length}`
-                            : (groupSelectedCount > 0 ? `${groupSelectedCount} selected` : `${items.length} items`);
+                            ? `${groupPickedLines}/${groupActiveLines}`
+                            : (groupActiveLines > 0 ? `${groupActiveLines} selected` : `${items.length} items`);
 
                         let rowsHtml = '';
                         items.forEach(item => {
-                            const { singular } = getSubUnitTerms(item.name);
-                            const hasPackConfig = (item.innerQty > 0 || item.boxQty > 0);
-                            const packSummaryParts = [];
-                            if (item.innerQty > 0) packSummaryParts.push(`${singular}: ${item.innerQty}`);
-                            if (item.boxQty > 0) packSummaryParts.push(`Box: ${item.boxQty}`);
-                            const packLabel = hasPackConfig ? packSummaryParts.join(' · ') : `+ Set ${singular} / Box`;
+                            if (activeDepartment === 'clothing') {
+                                // CLOTHING RENDERING
+                                const totalQty = getItemTotalQty(item);
+                                const sizes = item.sizes || createEmptySizesMap();
+                                const pickedSizes = item.pickedSizes || createEmptyPickedSizesMap();
 
-                            if (appMode === 'setup') {
-                                const isSelected = item.qty > 0;
-                                rowsHtml += `
-                                    <div class="flex items-center justify-between gap-2.5 p-2.5 sm:p-3 rounded-xl border transition-all ${
-                                        isSelected
-                                            ? 'bg-slate-900 border-amber-500/50 shadow-sm'
-                                            : 'bg-slate-950/70 border-slate-800/80 hover:border-slate-700/80'
-                                    }">
-                                        <div class="min-w-0 flex-1">
-                                            <div class="text-sm font-semibold ${isSelected ? 'text-white' : 'text-slate-200'} truncate">
-                                                ${escapeHtml(item.name)}
-                                            </div>
-                                            <button type="button" data-pack-id="${item.id}" class="edit-pack-btn mt-1 inline-flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 rounded-md transition-colors ${
-                                                hasPackConfig
-                                                    ? 'bg-slate-800 text-amber-300/90 hover:bg-slate-700'
-                                                    : 'text-slate-500 hover:text-slate-300 hover:bg-slate-800/60'
+                                if (appMode === 'setup') {
+                                    const isSelected = totalQty > 0;
+                                    const sizeGridHtml = CLOTHING_SIZES.map(sz => {
+                                        const val = Number(sizes[sz]) || 0;
+                                        const activeSz = val > 0;
+                                        return `
+                                            <div class="flex flex-col items-center p-1.5 rounded-xl border transition-all ${
+                                                activeSz
+                                                    ? 'bg-purple-950/50 border-purple-500/60'
+                                                    : 'bg-slate-950 border-slate-800/90'
                                             }">
-                                                ${escapeHtml(packLabel)}
-                                            </button>
-                                        </div>
+                                                <span class="text-[10px] font-black uppercase tracking-wider mb-1 ${activeSz ? 'text-purple-300' : 'text-slate-400'}">${sz}</span>
+                                                <div class="flex items-center gap-0.5 w-full justify-center">
+                                                    <button type="button" data-cdec-id="${item.id}" data-size="${sz}" class="cloth-dec-btn w-6 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 active:scale-95 text-slate-200 font-bold text-xs flex items-center justify-center">
+                                                        −
+                                                    </button>
+                                                    <input
+                                                        type="number"
+                                                        min="0"
+                                                        value="${val}"
+                                                        data-cinput-id="${item.id}"
+                                                        data-size="${sz}"
+                                                        aria-label="${escapeHtml(item.name)} size ${sz.toUpperCase()}"
+                                                        class="cloth-num-input w-7 h-7 rounded-lg text-center text-xs font-extrabold tabular-nums border focus:outline-none focus:border-purple-400 ${
+                                                            activeSz
+                                                                ? 'bg-purple-500/20 text-purple-200 border-purple-500/50'
+                                                                : 'bg-slate-900 text-slate-400 border-slate-800'
+                                                        }"
+                                                    >
+                                                    <button type="button" data-cinc-id="${item.id}" data-size="${sz}" class="cloth-inc-btn w-6 h-7 rounded-lg bg-purple-600 hover:bg-purple-500 active:scale-95 text-white font-extrabold text-xs flex items-center justify-center">
+                                                        +
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        `;
+                                    }).join('');
 
-                                        <!-- Quantity Stepper -->
-                                        <div class="flex items-center gap-1.5 shrink-0">
-                                            <button type="button" data-dec-id="${item.id}" class="qty-dec-btn w-9 h-9 rounded-xl bg-slate-800 hover:bg-slate-700 active:scale-95 text-slate-200 font-bold text-base flex items-center justify-center border border-slate-700/70">
-                                                −
-                                            </button>
-                                            <input 
-                                                type="number" 
-                                                min="0" 
-                                                value="${item.qty}" 
-                                                data-qty-input-id="${item.id}"
-                                                aria-label="Quantity for ${escapeHtml(item.name)}"
-                                                class="qty-num-input w-12 h-9 rounded-xl text-center text-sm font-extrabold tabular-nums border focus:outline-none focus:border-amber-500 ${
-                                                    isSelected
-                                                        ? 'bg-amber-500/15 text-amber-300 border-amber-500/50'
-                                                        : 'bg-slate-950 text-slate-400 border-slate-800'
-                                                }"
-                                            >
-                                            <button type="button" data-inc-id="${item.id}" class="qty-inc-btn w-9 h-9 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 font-extrabold text-base flex items-center justify-center shadow-sm">
-                                                +
-                                            </button>
-                                        </div>
-                                    </div>
-                                `;
-                            } else {
-                                // Picklist Mode Row with Automatic Box / Inner / Pack Breakdown
-                                const formatted = formatAutomaticContainerQty(item);
-                                rowsHtml += `
-                                    <label class="flex items-center justify-between gap-3 p-3 rounded-xl border cursor-pointer select-none transition-all ${
-                                        item.picked
-                                            ? 'bg-slate-950/40 border-slate-800/50 opacity-55'
-                                            : 'bg-slate-900 border-slate-800 hover:border-slate-700'
-                                    }">
-                                        <div class="flex items-center gap-3 min-w-0 flex-1">
-                                            <input 
-                                                type="checkbox" 
-                                                data-pick-id="${item.id}" 
-                                                ${item.picked ? 'checked' : ''}
-                                                class="pick-checkbox w-5 h-5 rounded-lg border-slate-600 bg-slate-950 text-emerald-500 focus:ring-emerald-500 shrink-0 cursor-pointer"
-                                            >
-                                            <div class="min-w-0 flex-1">
-                                                <div class="text-sm font-bold ${item.picked ? 'line-through text-slate-500' : 'text-slate-100'}">
+                                    rowsHtml += `
+                                        <div class="p-3 rounded-xl border transition-all space-y-2.5 ${
+                                            isSelected
+                                                ? 'bg-slate-900 border-purple-500/50 shadow-sm'
+                                                : 'bg-slate-950/70 border-slate-800/80'
+                                        }">
+                                            <div class="flex items-center justify-between gap-2">
+                                                <div class="text-sm font-bold ${isSelected ? 'text-white' : 'text-slate-200'}">
                                                     ${escapeHtml(item.name)}
                                                 </div>
-                                                ${formatted.secondary ? `<div class="text-[11px] font-medium text-slate-400 mt-0.5">${escapeHtml(formatted.secondary)}</div>` : ''}
+                                                ${isSelected ? `<span class="px-2 py-0.5 rounded-md bg-purple-500/20 text-purple-300 border border-purple-500/40 text-[11px] font-extrabold tabular-nums">${totalQty} total</span>` : ''}
+                                            </div>
+                                            <div class="grid grid-cols-3 sm:grid-cols-6 gap-1.5">
+                                                ${sizeGridHtml}
                                             </div>
                                         </div>
+                                    `;
+                                } else {
+                                    // Clothing Picklist Mode: Individual Size Checkboxes per Garment
+                                    const activeSizesList = CLOTHING_SIZES.filter(sz => (Number(sizes[sz]) || 0) > 0);
+                                    const sizeRowsHtml = activeSizesList.map(sz => {
+                                        const qty = Number(sizes[sz]) || 0;
+                                        const isPicked = !!pickedSizes[sz];
+                                        if (secondaryFilterActive && isPicked) return '';
 
-                                        <span class="shrink-0 px-2.5 py-1 rounded-lg text-xs font-extrabold tabular-nums border ${
-                                            item.picked
-                                                ? 'bg-slate-900 text-slate-500 border-slate-800'
-                                                : formatted.hasBreakdown
-                                                    ? 'bg-emerald-500/15 text-emerald-300 border-emerald-500/40'
-                                                    : 'bg-amber-500/15 text-amber-300 border-amber-500/40'
+                                        return `
+                                            <label class="flex items-center justify-between gap-3 px-3 py-2 rounded-lg border cursor-pointer select-none transition-all ${
+                                                isPicked
+                                                    ? 'bg-slate-950/40 border-slate-800/50 opacity-50'
+                                                    : 'bg-slate-950/90 border-slate-800 hover:border-purple-500/40'
+                                            }">
+                                                <div class="flex items-center gap-2.5">
+                                                    <input
+                                                        type="checkbox"
+                                                        data-cpick-id="${item.id}"
+                                                        data-size="${sz}"
+                                                        ${isPicked ? 'checked' : ''}
+                                                        class="cloth-pick-checkbox w-4 h-4 rounded border-slate-600 bg-slate-950 text-emerald-500 focus:ring-emerald-500 cursor-pointer"
+                                                    >
+                                                    <span class="px-2 py-0.5 rounded text-xs font-black uppercase tracking-wider ${
+                                                        isPicked
+                                                            ? 'bg-slate-800 text-slate-500 line-through'
+                                                            : 'bg-purple-500/20 text-purple-300 border border-purple-500/40'
+                                                    }">
+                                                        ${sz}
+                                                    </span>
+                                                    <span class="text-xs font-semibold ${isPicked ? 'line-through text-slate-500' : 'text-slate-200'}">
+                                                        ${escapeHtml(item.name)}
+                                                    </span>
+                                                </div>
+                                                <span class="px-2.5 py-0.5 rounded-md text-xs font-extrabold tabular-nums border ${
+                                                    isPicked
+                                                        ? 'bg-slate-900 text-slate-500 border-slate-800'
+                                                        : 'bg-amber-500/15 text-amber-300 border-amber-500/40'
+                                                }">
+                                                    x${qty}
+                                                </span>
+                                            </label>
+                                        `;
+                                    }).join('');
+
+                                    if (sizeRowsHtml.trim().length > 0) {
+                                        rowsHtml += `
+                                            <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1.5">
+                                                <div class="flex items-center justify-between px-1">
+                                                    <span class="text-xs font-extrabold text-slate-200">${escapeHtml(item.name)}</span>
+                                                    <span class="text-[11px] font-bold text-slate-400 tabular-nums">${totalQty} pcs</span>
+                                                </div>
+                                                <div class="space-y-1.5">
+                                                    ${sizeRowsHtml}
+                                                </div>
+                                            </div>
+                                        `;
+                                    }
+                                }
+                            } else {
+                                // HARD LINES RENDERING
+                                const { singular } = getSubUnitTerms(item.name);
+                                const hasPackConfig = (item.innerQty > 0 || item.boxQty > 0);
+                                const packSummaryParts = [];
+                                if (item.innerQty > 0) packSummaryParts.push(`${singular}: ${item.innerQty}`);
+                                if (item.boxQty > 0) packSummaryParts.push(`Box: ${item.boxQty}`);
+                                const packLabel = hasPackConfig ? packSummaryParts.join(' · ') : `+ Set ${singular} / Box`;
+
+                                if (appMode === 'setup') {
+                                    const isSelected = item.qty > 0;
+                                    rowsHtml += `
+                                        <div class="flex items-center justify-between gap-2.5 p-2.5 sm:p-3 rounded-xl border transition-all ${
+                                            isSelected
+                                                ? 'bg-slate-900 border-amber-500/50 shadow-sm'
+                                                : 'bg-slate-950/70 border-slate-800/80 hover:border-slate-700/80'
                                         }">
-                                            ${escapeHtml(formatted.primary)}
-                                        </span>
-                                    </label>
-                                `;
+                                            <div class="min-w-0 flex-1">
+                                                <div class="text-sm font-semibold ${isSelected ? 'text-white' : 'text-slate-200'} truncate">
+                                                    ${escapeHtml(item.name)}
+                                                </div>
+                                                <button type="button" data-pack-id="${item.id}" class="edit-pack-btn mt-1 inline-flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 rounded-md transition-colors ${
+                                                    hasPackConfig
+                                                        ? 'bg-slate-800 text-amber-300/90 hover:bg-slate-700'
+                                                        : 'text-slate-500 hover:text-slate-300 hover:bg-slate-800/60'
+                                                }">
+                                                    ${escapeHtml(packLabel)}
+                                                </button>
+                                            </div>
+
+                                            <!-- Quantity Stepper -->
+                                            <div class="flex items-center gap-1.5 shrink-0">
+                                                <button type="button" data-dec-id="${item.id}" class="qty-dec-btn w-9 h-9 rounded-xl bg-slate-800 hover:bg-slate-700 active:scale-95 text-slate-200 font-bold text-base flex items-center justify-center border border-slate-700/70">
+                                                    −
+                                                </button>
+                                                <input 
+                                                    type="number" 
+                                                    min="0" 
+                                                    value="${item.qty}" 
+                                                    data-qty-input-id="${item.id}"
+                                                    aria-label="Quantity for ${escapeHtml(item.name)}"
+                                                    class="qty-num-input w-12 h-9 rounded-xl text-center text-sm font-extrabold tabular-nums border focus:outline-none focus:border-amber-500 ${
+                                                        isSelected
+                                                            ? 'bg-amber-500/15 text-amber-300 border-amber-500/50'
+                                                            : 'bg-slate-950 text-slate-400 border-slate-800'
+                                                    }"
+                                                >
+                                                <button type="button" data-inc-id="${item.id}" class="qty-inc-btn w-9 h-9 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 font-extrabold text-base flex items-center justify-center shadow-sm">
+                                                    +
+                                                </button>
+                                            </div>
+                                        </div>
+                                    `;
+                                } else {
+                                    // Hard Lines Picklist Mode Row with Automatic Box / Inner / Pack Breakdown
+                                    const formatted = formatAutomaticContainerQty(item);
+                                    rowsHtml += `
+                                        <label class="flex items-center justify-between gap-3 p-3 rounded-xl border cursor-pointer select-none transition-all ${
+                                            item.picked
+                                                ? 'bg-slate-950/40 border-slate-800/50 opacity-55'
+                                                : 'bg-slate-900 border-slate-800 hover:border-slate-700'
+                                        }">
+                                            <div class="flex items-center gap-3 min-w-0 flex-1">
+                                                <input 
+                                                    type="checkbox" 
+                                                    data-pick-id="${item.id}" 
+                                                    ${item.picked ? 'checked' : ''}
+                                                    class="pick-checkbox w-5 h-5 rounded-lg border-slate-600 bg-slate-950 text-emerald-500 focus:ring-emerald-500 shrink-0 cursor-pointer"
+                                                >
+                                                <div class="min-w-0 flex-1">
+                                                    <div class="text-sm font-bold ${item.picked ? 'line-through text-slate-500' : 'text-slate-100'}">
+                                                        ${escapeHtml(item.name)}
+                                                    </div>
+                                                    ${formatted.secondary ? `<div class="text-[11px] font-medium text-slate-400 mt-0.5">${escapeHtml(formatted.secondary)}</div>` : ''}
+                                                </div>
+                                            </div>
+
+                                            <span class="shrink-0 px-2.5 py-1 rounded-lg text-xs font-extrabold tabular-nums border ${
+                                                item.picked
+                                                    ? 'bg-slate-900 text-slate-500 border-slate-800'
+                                                    : formatted.hasBreakdown
+                                                        ? 'bg-emerald-500/15 text-emerald-300 border-emerald-500/40'
+                                                        : 'bg-amber-500/15 text-amber-300 border-amber-500/40'
+                                            }">
+                                                ${escapeHtml(formatted.primary)}
+                                            </span>
+                                        </label>
+                                    `;
+                                }
                             }
                         });
 
@@ -844,16 +1111,16 @@
                 }
 
                 // Calculate Zone-Level Summary Badge
-                const allZoneItems = catalog.filter(i => i.sectionId === sec.id);
-                const zoneSelectedLines = allZoneItems.filter(i => i.qty > 0).length;
-                const zonePickedLines = allZoneItems.filter(i => i.qty > 0 && i.picked).length;
+                const allZoneItems = deptCatalog.filter(i => i.sectionId === sec.id);
+                const zoneActiveLines = allZoneItems.reduce((s, i) => s + getItemActiveLinesCount(i), 0);
+                const zonePickedLines = allZoneItems.reduce((s, i) => s + getItemPickedLinesCount(i), 0);
 
                 // Top-level store zones stay collapsed on initial load unless toggled open, filtered by specific tab, or searched
                 const isSectionExpanded = !!expandedSections[sec.id] || query.length > 0 || activeSection !== 'all';
 
                 const secBadge = appMode === 'picklist'
-                    ? `${zonePickedLines} / ${zoneSelectedLines} picked`
-                    : (zoneSelectedLines > 0 ? `${zoneSelectedLines} selected` : `${allZoneItems.length} items`);
+                    ? `${zonePickedLines} / ${zoneActiveLines} picked`
+                    : (zoneActiveLines > 0 ? `${zoneActiveLines} selected` : `${allZoneItems.length} items`);
 
                 html += `
                     <section class="rounded-2xl bg-slate-900/60 border border-slate-800/90 overflow-hidden shadow-sm">
@@ -886,9 +1153,9 @@
 
             if (visibleSectionsCount === 0) {
                 emptyState.classList.remove('hidden');
-                if (appMode === 'picklist' && catalog.filter(i => i.qty > 0).length === 0) {
-                    document.getElementById('empty-state-title').textContent = 'Your picklist is empty';
-                    document.getElementById('empty-state-desc').textContent = 'Switch to "1. Set Qty" to add item quantities for your warehouse run.';
+                if (appMode === 'picklist' && deptCatalog.filter(i => getItemTotalQty(i) > 0).length === 0) {
+                    document.getElementById('empty-state-title').textContent = `Your ${activeDepartment === 'clothing' ? 'Clothing' : 'Hard Lines'} picklist is empty`;
+                    document.getElementById('empty-state-desc').textContent = 'Switch to "1. Set Qty" to enter quantities for your warehouse run.';
                 } else {
                     document.getElementById('empty-state-title').textContent = 'No matching items';
                     document.getElementById('empty-state-desc').textContent = 'Try clearing your search or filter to see your stock items.';
@@ -925,7 +1192,7 @@
                 });
             });
 
-            // Quantity Increment (+)
+            // Hard Lines: Quantity Increment (+)
             container.querySelectorAll('.qty-inc-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const item = catalog.find(i => i.id === btn.dataset.incId);
@@ -938,7 +1205,7 @@
                 });
             });
 
-            // Quantity Decrement (-)
+            // Hard Lines: Quantity Decrement (-)
             container.querySelectorAll('.qty-dec-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const item = catalog.find(i => i.id === btn.dataset.decId);
@@ -952,7 +1219,7 @@
                 });
             });
 
-            // Direct Quantity Number Input
+            // Hard Lines: Direct Quantity Number Input
             container.querySelectorAll('.qty-num-input').forEach(input => {
                 input.addEventListener('change', () => {
                     const item = catalog.find(i => i.id === input.dataset.qtyInputId);
@@ -967,12 +1234,79 @@
                 });
             });
 
-            // Picklist Checkboxes
+            // Hard Lines: Picklist Checkboxes
             container.querySelectorAll('.pick-checkbox').forEach(cb => {
                 cb.addEventListener('change', () => {
                     const item = catalog.find(i => i.id === cb.dataset.pickId);
                     if (!item) return;
                     item.picked = cb.checked;
+                    saveState();
+                    renderTabs();
+                    updateHeaderAndBars();
+                    renderMain();
+                });
+            });
+
+            // Clothing: Size Increment (+)
+            container.querySelectorAll('.cloth-inc-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = catalog.find(i => i.id === btn.dataset.cincId);
+                    const sz = btn.dataset.size;
+                    if (!item || !sz) return;
+                    item.sizes = item.sizes || createEmptySizesMap();
+                    item.sizes[sz] = (Number(item.sizes[sz]) || 0) + 1;
+                    saveState();
+                    renderTabs();
+                    updateHeaderAndBars();
+                    renderMain();
+                });
+            });
+
+            // Clothing: Size Decrement (-)
+            container.querySelectorAll('.cloth-dec-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = catalog.find(i => i.id === btn.dataset.cdecId);
+                    const sz = btn.dataset.size;
+                    if (!item || !sz) return;
+                    item.sizes = item.sizes || createEmptySizesMap();
+                    item.pickedSizes = item.pickedSizes || createEmptyPickedSizesMap();
+                    const cur = Number(item.sizes[sz]) || 0;
+                    if (cur <= 0) return;
+                    item.sizes[sz] = cur - 1;
+                    if (item.sizes[sz] === 0) item.pickedSizes[sz] = false;
+                    saveState();
+                    renderTabs();
+                    updateHeaderAndBars();
+                    renderMain();
+                });
+            });
+
+            // Clothing: Direct Size Number Input
+            container.querySelectorAll('.cloth-num-input').forEach(input => {
+                input.addEventListener('change', () => {
+                    const item = catalog.find(i => i.id === input.dataset.cinputId);
+                    const sz = input.dataset.size;
+                    if (!item || !sz) return;
+                    item.sizes = item.sizes || createEmptySizesMap();
+                    item.pickedSizes = item.pickedSizes || createEmptyPickedSizesMap();
+                    const val = Math.max(0, parseInt(input.value, 10) || 0);
+                    item.sizes[sz] = val;
+                    if (val === 0) item.pickedSizes[sz] = false;
+                    saveState();
+                    renderTabs();
+                    updateHeaderAndBars();
+                    renderMain();
+                });
+            });
+
+            // Clothing: Picklist Size Checkboxes
+            container.querySelectorAll('.cloth-pick-checkbox').forEach(cb => {
+                cb.addEventListener('change', () => {
+                    const item = catalog.find(i => i.id === cb.dataset.cpickId);
+                    const sz = cb.dataset.size;
+                    if (!item || !sz) return;
+                    item.pickedSizes = item.pickedSizes || createEmptyPickedSizesMap();
+                    item.pickedSizes[sz] = cb.checked;
                     saveState();
                     renderTabs();
                     updateHeaderAndBars();
@@ -995,15 +1329,18 @@
             });
         }
 
-        // Copy Picklist formatted for WhatsApp
+        // Copy Picklist formatted for WhatsApp (scoped to activeDepartment)
         function copyPicklistToClipboard() {
-            const selectedItems = catalog.filter(i => i.qty > 0);
+            const deptCatalog = catalog.filter(i => (i.department || 'hardlines') === activeDepartment);
+            const selectedItems = deptCatalog.filter(i => getItemTotalQty(i) > 0);
             if (selectedItems.length === 0) {
                 showToast('Add some quantities first!');
                 return;
             }
 
-            const lines = [];
+            const deptHeader = activeDepartment === 'clothing' ? '=== CLOTHING PICKLIST ===' : '=== HARD LINES PICKLIST ===';
+            const lines = [deptHeader, ''];
+
             STORE_SECTIONS.forEach(sec => {
                 const secItems = selectedItems.filter(i => i.sectionId === sec.id);
                 if (secItems.length === 0) return;
@@ -1019,10 +1356,21 @@
                 groupsMap.forEach((items, groupName) => {
                     lines.push(`*${groupName.toUpperCase()}*`);
                     items.forEach(item => {
-                        const formatted = formatAutomaticContainerQty(item);
-                        const statusMark = item.picked ? '✅ ' : '';
-                        const totalSuffix = formatted.hasBreakdown ? ` (${item.qty} items)` : '';
-                        lines.push(`${statusMark}${formatted.primary} ${item.name}${totalSuffix}`);
+                        if (activeDepartment === 'clothing') {
+                            const sizes = item.sizes || {};
+                            const pickedSizes = item.pickedSizes || {};
+                            const activeSz = CLOTHING_SIZES.filter(sz => (Number(sizes[sz]) || 0) > 0);
+                            const sizeSummary = activeSz.map(sz => {
+                                const check = pickedSizes[sz] ? '✅' : '';
+                                return `${check}x${sizes[sz]} ${sz.toUpperCase()}`;
+                            }).join(', ');
+                            lines.push(`${sizeSummary} ${item.name}`);
+                        } else {
+                            const formatted = formatAutomaticContainerQty(item);
+                            const statusMark = item.picked ? '✅ ' : '';
+                            const totalSuffix = formatted.hasBreakdown ? ` (${item.qty} items)` : '';
+                            lines.push(`${statusMark}${formatted.primary} ${item.name}${totalSuffix}`);
+                        }
                     });
                     lines.push('');
                 });
@@ -1037,7 +1385,7 @@
             tempArea.select();
             try {
                 document.execCommand('copy');
-                showToast('Picklist copied for WhatsApp!');
+                showToast(`${activeDepartment === 'clothing' ? 'Clothing' : 'Hard Lines'} picklist copied!`);
             } catch (err) {
                 showToast('Could not copy automatically');
             }
@@ -1045,8 +1393,22 @@
         }
 
         // Modal Handlers
+        function updateAddModalPackagingVisibility() {
+            const dept = document.getElementById('add-dept-select').value;
+            const pkgFields = document.getElementById('add-packaging-fields');
+            if (dept === 'clothing') {
+                pkgFields.classList.add('hidden');
+            } else {
+                pkgFields.classList.remove('hidden');
+            }
+        }
+
         function openAddModal(preselectSectionId) {
             const modal = document.getElementById('add-item-modal');
+            const deptSelect = document.getElementById('add-dept-select');
+            deptSelect.value = activeDepartment;
+            updateAddModalPackagingVisibility();
+
             const select = document.getElementById('add-section-select');
             select.innerHTML = STORE_SECTIONS.map(s =>
                 `<option value="${s.id}" ${s.id === (preselectSectionId || (activeSection !== 'all' ? activeSection : 'quidditch')) ? 'selected' : ''}>${escapeHtml(s.label)}</option>`
@@ -1077,6 +1439,29 @@
             loadState();
             // Auto-sync from Git catalog.json if hosted alongside index.html
             fetchGitCatalogIfAvailable(false);
+
+            // Department Switching (Hard Lines vs Clothing)
+            document.getElementById('dept-hardlines-btn').addEventListener('click', () => {
+                if (activeDepartment === 'hardlines') return;
+                activeDepartment = 'hardlines';
+                activeSection = 'all';
+                secondaryFilterActive = false;
+                expandedSections = {};
+                renderTabs();
+                updateHeaderAndBars();
+                renderMain();
+            });
+
+            document.getElementById('dept-clothing-btn').addEventListener('click', () => {
+                if (activeDepartment === 'clothing') return;
+                activeDepartment = 'clothing';
+                activeSection = 'all';
+                secondaryFilterActive = false;
+                expandedSections = {};
+                renderTabs();
+                updateHeaderAndBars();
+                renderMain();
+            });
 
             // Export / Import Catalog Modal Events
             document.getElementById('open-sync-modal-btn').addEventListener('click', () => {
@@ -1179,9 +1564,10 @@
             // Primary Bottom Action Button
             document.getElementById('primary-action-btn').addEventListener('click', () => {
                 if (appMode === 'setup') {
-                    const selectedCount = catalog.filter(i => i.qty > 0).length;
+                    const deptCatalog = catalog.filter(i => (i.department || 'hardlines') === activeDepartment);
+                    const selectedCount = deptCatalog.filter(i => getItemTotalQty(i) > 0).length;
                     if (selectedCount === 0) {
-                        showToast('Set at least 1 item quantity first');
+                        showToast('Set at least 1 quantity first');
                         return;
                     }
                     appMode = 'picklist';
@@ -1210,12 +1596,14 @@
             });
 
             // Add Item Modal Events
+            document.getElementById('add-dept-select').addEventListener('change', updateAddModalPackagingVisibility);
             document.getElementById('open-add-modal-btn').addEventListener('click', () => openAddModal());
             document.getElementById('close-add-modal-btn').addEventListener('click', () => document.getElementById('add-item-modal').classList.add('hidden'));
             document.getElementById('cancel-add-modal-btn').addEventListener('click', () => document.getElementById('add-item-modal').classList.add('hidden'));
 
             document.getElementById('add-item-form').addEventListener('submit', (e) => {
                 e.preventDefault();
+                const dept = document.getElementById('add-dept-select').value === 'clothing' ? 'clothing' : 'hardlines';
                 const secId = document.getElementById('add-section-select').value;
                 const grp = document.getElementById('add-group-input').value.trim() || 'General';
                 const rawNames = document.getElementById('add-names-input').value;
@@ -1226,26 +1614,40 @@
                 if (names.length === 0) return;
 
                 names.forEach(name => {
-                    catalog.push({
-                        id: `item-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
-                        sectionId: secId,
-                        group: grp,
-                        name,
-                        qty: 0,
-                        picked: false,
-                        innerQty,
-                        boxQty
-                    });
+                    if (dept === 'clothing') {
+                        catalog.push({
+                            id: `cloth-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+                            department: 'clothing',
+                            sectionId: secId,
+                            group: grp,
+                            name,
+                            sizes: createEmptySizesMap(),
+                            pickedSizes: createEmptyPickedSizesMap()
+                        });
+                    } else {
+                        catalog.push({
+                            id: `item-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+                            department: 'hardlines',
+                            sectionId: secId,
+                            group: grp,
+                            name,
+                            qty: 0,
+                            picked: false,
+                            innerQty,
+                            boxQty
+                        });
+                    }
                 });
 
                 saveState();
+                activeDepartment = dept;
                 activeSection = secId;
                 expandedSections[secId] = true;
                 renderTabs();
                 updateHeaderAndBars();
                 renderMain();
                 document.getElementById('add-item-modal').classList.add('hidden');
-                showToast(`Added ${names.length} item${names.length === 1 ? '' : 's'}!`);
+                showToast(`Added ${names.length} ${dept === 'clothing' ? 'clothing' : 'hard lines'} item${names.length === 1 ? '' : 's'}!`);
             });
 
             // Pack Size Modal Events
@@ -1283,6 +1685,9 @@
 
             // Clear / Reset Confirmation Modal
             document.getElementById('clear-all-btn').addEventListener('click', () => {
+                const deptLabel = activeDepartment === 'clothing' ? 'Clothing' : 'Hard Lines';
+                document.getElementById('confirm-title').textContent = `Reset ${deptLabel} Quantities?`;
+                document.getElementById('confirm-desc').textContent = `This will clear all entered quantities and uncheck all picked items in ${deptLabel}.`;
                 document.getElementById('confirm-modal').classList.remove('hidden');
             });
             document.getElementById('confirm-cancel-btn').addEventListener('click', () => {
@@ -1290,8 +1695,14 @@
             });
             document.getElementById('confirm-ok-btn').addEventListener('click', () => {
                 catalog.forEach(item => {
-                    item.qty = 0;
-                    item.picked = false;
+                    if ((item.department || 'hardlines') !== activeDepartment) return;
+                    if (item.department === 'clothing') {
+                        item.sizes = createEmptySizesMap();
+                        item.pickedSizes = createEmptyPickedSizesMap();
+                    } else {
+                        item.qty = 0;
+                        item.picked = false;
+                    }
                 });
                 appMode = 'setup';
                 secondaryFilterActive = false;
@@ -1300,7 +1711,7 @@
                 updateHeaderAndBars();
                 renderMain();
                 document.getElementById('confirm-modal').classList.add('hidden');
-                showToast('All quantities cleared');
+                showToast(`Cleared ${activeDepartment === 'clothing' ? 'Clothing' : 'Hard Lines'} quantities`);
             });
 
             // Initial Render (Zones collapsed by default)
