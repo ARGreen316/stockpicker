@@ -84,6 +84,13 @@
                         <span class="hidden sm:inline">Add Item</span>
                     </button>
 
+                    <button id="open-whatsapp-modal-btn" type="button" title="Paste WhatsApp Stock List" class="px-3 py-2 rounded-xl bg-emerald-950/70 hover:bg-emerald-900/70 border border-emerald-700/70 text-xs font-bold text-emerald-300 transition-colors flex items-center gap-1">
+                        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                        </svg>
+                        <span>Paste WA</span>
+                    </button>
+
                     <button id="open-sync-modal-btn" type="button" title="Export or Import Catalog JSON" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-xs font-bold text-slate-200 transition-colors flex items-center gap-1">
                         <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
@@ -151,71 +158,80 @@
             <div id="bottom-bar-info" class="text-xs text-slate-400 font-medium">
                 Tap <span class="text-slate-200 font-bold">+</span> to add items to your warehouse run
             </div>
-            <button id="primary-action-btn" type="button" class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-[0.99] text-slate-950 font-extrabold text-xs sm:text-sm transition-all shadow-lg shadow-amber-500/20 flex items-center gap-2 shrink-0">
-                <span id="primary-action-text">Generate Picklist</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                </svg>
-            </button>
+            <div class="flex items-center gap-2 shrink-0">
+                <button id="whatsapp-share-btn" type="button" class="hidden px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 active:scale-[0.99] text-slate-950 font-extrabold text-xs sm:text-sm transition-all shadow-lg shadow-emerald-500/20 flex items-center gap-1.5">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+                    </svg>
+                    <span>WhatsApp</span>
+                </button>
+                <button id="primary-action-btn" type="button" class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-[0.99] text-slate-950 font-extrabold text-xs sm:text-sm transition-all shadow-lg shadow-amber-500/20 flex items-center gap-2 shrink-0">
+                    <span id="primary-action-text">Generate Picklist</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
     </div>
 
-    <!-- Modal 1: Add New Item / Bulk Paste into Section -->
+    <!-- Modal 1: Add Product(s) -->
     <div id="add-item-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl">
             <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between">
-                <h2 id="add-modal-title" class="text-base font-extrabold text-white">Add Products to Catalog</h2>
+                <h2 class="text-base font-extrabold text-white">Add Product(s)</h2>
                 <button id="close-add-modal-btn" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
             </div>
-            <form id="add-item-form" class="p-5 space-y-4">
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Department</label>
-                    <select id="add-dept-select" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-amber-500">
-                        <option value="hardlines">Hard Lines (Standard Units / Boxes)</option>
-                        <option value="clothing">Clothing (Sized: XS, S, M, L, XL, XXL)</option>
-                    </select>
+            <form id="add-item-form" class="p-5 space-y-3.5">
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Department</label>
+                        <select id="add-dept-select" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs font-bold text-white focus:outline-none focus:border-amber-500">
+                            <option value="hardlines">Hard Lines</option>
+                            <option value="clothing">Clothing</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Store Zone</label>
+                        <select id="add-section-select" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs font-bold text-white focus:outline-none focus:border-amber-500">
+                        </select>
+                    </div>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Store Zone</label>
-                    <select id="add-section-select" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-amber-500">
-                        <!-- Populated dynamically -->
-                    </select>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Subsection / House (Optional)</label>
+                    <input id="add-group-input" type="text" placeholder="e.g. Gryffindor, Lego, General" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-amber-500">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Subsection / House (Optional)</label>
-                    <input type="text" id="add-group-input" placeholder="e.g., General, Gryffindor, Vaults..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Product Name(s) — One per line</label>
-                    <textarea id="add-names-input" rows="4" required placeholder="e.g.&#10;Galleon Coin Pouch&#10;Niffler Plush&#10;Dragon Keyring" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"></textarea>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Product Name(s) — one per line</label>
+                    <textarea id="add-names-input" rows="3" required placeholder="e.g.&#10;Chocolate Frog&#10;Bertie Bott's Beans" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-amber-500"></textarea>
                 </div>
                 <div id="add-packaging-fields" class="grid grid-cols-2 gap-3">
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Inner / Pack Qty</label>
-                        <input type="number" id="add-inner-input" min="0" placeholder="e.g. 6" class="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Units per Inner / Pack</label>
+                        <input id="add-inner-input" type="number" min="0" placeholder="0" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-amber-500">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Box Qty</label>
-                        <input type="number" id="add-box-input" min="0" placeholder="e.g. 24" class="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Units per Box</label>
+                        <input id="add-box-input" type="number" min="0" placeholder="0" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-amber-500">
                     </div>
                 </div>
                 <div class="pt-2 flex items-center justify-end gap-2">
-                    <button type="button" id="cancel-add-modal-btn" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300">Cancel</button>
-                    <button type="submit" class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-extrabold">Save to Catalog</button>
+                    <button type="button" id="cancel-add-modal-btn" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300">Cancel</button>
+                    <button type="submit" class="px-5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-extrabold">Add to Catalog</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <!-- Modal 2: Edit Inner/Pack & Box Packaging Quantities -->
+    <!-- Modal 2: Packaging / Inner & Box Setup -->
     <div id="pack-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-sm overflow-hidden shadow-2xl">
             <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between">
-                <h2 id="pack-modal-title" class="text-base font-extrabold text-white truncate pr-2">Packaging Setup</h2>
+                <h2 id="pack-modal-title" class="text-base font-extrabold text-white truncate pr-2">Container Sizes</h2>
                 <button id="close-pack-modal-btn" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
@@ -224,39 +240,41 @@
             </div>
             <form id="pack-form" class="p-5 space-y-4">
                 <input type="hidden" id="pack-item-id">
-                <p class="text-xs text-slate-400 leading-relaxed">
-                    Set how many individual items fit in an <span id="pack-unit-hint" class="text-slate-200 font-semibold">Inner / Pack</span> and a shipping <span class="text-slate-200 font-semibold">Box</span>. Picklists convert quantities automatically.
+                <p class="text-xs text-slate-400">
+                    Set how many units come inside a single <span id="pack-unit-hint" class="text-sky-300 font-bold">Pack</span> and master shipping <span class="text-sky-300 font-bold">Box</span>.
                 </p>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
-                        <label id="pack-inner-label" class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Units per Pack</label>
-                        <input type="number" id="pack-inner-input" min="0" placeholder="0 = none" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-amber-500">
+                        <label id="pack-inner-label" class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Units per Pack</label>
+                        <input id="pack-inner-input" type="number" min="0" placeholder="0" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm font-bold text-white focus:outline-none focus:border-sky-500">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Units per Box</label>
-                        <input type="number" id="pack-box-input" min="0" placeholder="0 = none" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-amber-500">
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Units per Box</label>
+                        <input id="pack-box-input" type="number" min="0" placeholder="0" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm font-bold text-white focus:outline-none focus:border-sky-500">
                     </div>
                 </div>
-                <label class="flex items-center gap-2.5 pt-1 cursor-pointer select-none">
-                    <input type="checkbox" id="pack-apply-matching" class="w-4 h-4 rounded border-slate-700 bg-slate-950 text-amber-500 focus:ring-amber-500">
-                    <span class="text-xs text-slate-300">Apply to all items with this exact name</span>
+                <label class="flex items-center gap-2.5 cursor-pointer select-none">
+                    <input type="checkbox" id="pack-apply-matching" class="w-4 h-4 rounded border-slate-700 bg-slate-950 text-sky-500 focus:ring-sky-500">
+                    <span class="text-xs text-slate-300">Apply to all matching items across houses/zones</span>
                 </label>
-                <div class="pt-2 flex items-center justify-end gap-2">
-                    <button type="button" id="cancel-pack-modal-btn" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300">Cancel</button>
-                    <button type="submit" class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-extrabold">Save Sizes</button>
+                <div class="pt-1 flex items-center justify-end gap-2">
+                    <button type="button" id="cancel-pack-modal-btn" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300">Cancel</button>
+                    <button type="submit" class="px-5 py-2 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-extrabold">Save Sizes</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <!-- Modal 3: Confirm Clear Dialog -->
+    <!-- Modal 3: Confirm Reset Quantities -->
     <div id="confirm-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-sm p-5 space-y-4 shadow-2xl">
-            <h3 id="confirm-title" class="text-base font-extrabold text-white">Reset Quantities?</h3>
-            <p id="confirm-desc" class="text-xs text-slate-400 leading-relaxed">This will clear all entered quantities and uncheck all picked items.</p>
+            <h2 class="text-base font-extrabold text-white">Reset All Quantities?</h2>
+            <p class="text-xs text-slate-400 leading-relaxed">
+                This will zero out all selected Hard Lines and Clothing quantities across every zone so you can start a fresh picklist. Your catalog items and pack sizes will stay saved.
+            </p>
             <div class="flex items-center justify-end gap-2 pt-1">
                 <button id="confirm-cancel-btn" type="button" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300">Cancel</button>
-                <button id="confirm-ok-btn" type="button" class="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-xs font-extrabold text-white">Reset All</button>
+                <button id="confirm-ok-btn" type="button" class="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-extrabold">Reset Quantities</button>
             </div>
         </div>
     </div>
@@ -304,13 +322,89 @@
                     <textarea id="import-catalog-textarea" rows="3" placeholder="Paste catalog JSON here to import..." class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-slate-200 placeholder-slate-600 focus:outline-none focus:border-amber-500"></textarea>
                     <div class="flex items-center justify-between gap-2 pt-1">
                         <label class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300 cursor-pointer border border-slate-700">
-                            <span>Load .json File</span>
-                            <input type="file" id="import-catalog-file" accept=".json,application/json" class="hidden">
+                            <span>Load .json / .csv File</span>
+                            <input type="file" id="import-catalog-file" accept=".json,.csv,application/json,text/csv" class="hidden">
                         </label>
                         <button id="apply-import-json-btn" type="button" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-extrabold">
                             Import Pasted JSON
                         </button>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5: Paste WhatsApp Stock List -->
+    <div id="whatsapp-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl">
+            <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between">
+                <h2 class="text-base font-extrabold text-white flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                    Paste WhatsApp Stock List
+                </h2>
+                <button id="close-whatsapp-modal-btn" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <form id="whatsapp-parse-form" class="p-5 space-y-4">
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Paste your team's raw WhatsApp message below. Zones (<code class="text-amber-300">_Quidditch_</code>, <code class="text-amber-300">*DIAGON ALLEY*</code>), houses (<code class="text-amber-300">*SLY*</code>, <code class="text-amber-300">*GRY*</code>), sizes (<code class="text-purple-300">X2 xs, x3 m</code>), and item counts are parsed automatically.
+                </p>
+                <div>
+                    <textarea id="whatsapp-paste-input" rows="7" required placeholder="Paste WhatsApp message here...&#10;e.g.&#10;_Quidditch section_&#10;*RAVENCLAW*&#10;X2 m / 1 L quid jumper&#10;X3 ps mug" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-emerald-500"></textarea>
+                </div>
+                <label class="flex items-center gap-2.5 cursor-pointer select-none">
+                    <input type="checkbox" id="whatsapp-clear-existing" checked class="w-4 h-4 rounded border-slate-700 bg-slate-950 text-emerald-500 focus:ring-emerald-500">
+                    <span class="text-xs text-slate-300">Clear previous quantities before importing</span>
+                </label>
+                <div class="pt-1 flex items-center justify-end gap-2">
+                    <button type="button" id="cancel-whatsapp-modal-btn" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300">Cancel</button>
+                    <button type="submit" class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-extrabold shadow-lg shadow-emerald-500/20">
+                        Generate Picklist
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal 6: Shelf Reference Photo Viewer / Setter -->
+    <div id="shelf-photo-modal" class="hidden fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl">
+            <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between">
+                <h2 id="shelf-photo-title" class="text-base font-extrabold text-white truncate pr-2">Shelf Reference Photo</h2>
+                <button id="close-shelf-photo-btn" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="p-5 space-y-4">
+                <input type="hidden" id="shelf-photo-key">
+                <div id="shelf-photo-preview-wrap" class="hidden rounded-xl overflow-hidden border border-slate-800 bg-slate-950">
+                    <img id="shelf-photo-img" src="" alt="Shelf reference" class="w-full max-h-64 object-contain mx-auto">
+                </div>
+                <div id="shelf-photo-empty" class="py-8 px-4 text-center rounded-xl border border-dashed border-slate-800 bg-slate-950/50 text-xs text-slate-400">
+                    No shelf reference photo set for this section yet.
+                </div>
+                <div class="space-y-2">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400">Upload Photo or Paste Image URL</label>
+                    <div class="flex items-center gap-2">
+                        <label class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-200 cursor-pointer border border-slate-700 shrink-0">
+                            <span>Choose Photo</span>
+                            <input type="file" id="shelf-photo-file" accept="image/*" class="hidden">
+                        </label>
+                        <input type="url" id="shelf-photo-url-input" placeholder="https://..." class="flex-1 px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-amber-500">
+                    </div>
+                </div>
+                <div class="flex items-center justify-between pt-1">
+                    <button type="button" id="remove-shelf-photo-btn" class="px-3 py-2 rounded-xl bg-rose-950/50 hover:bg-rose-900/60 text-xs font-bold text-rose-300">
+                        Remove Photo
+                    </button>
+                    <button type="button" id="save-shelf-photo-btn" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-extrabold">
+                        Save Photo
+                    </button>
                 </div>
             </div>
         </div>
@@ -323,32 +417,35 @@
 
     <script>
         // Application State & Storage Key
-        const STORAGE_KEY = 'stock_picker_beta_catalog_v2';
+        const STORAGE_KEY = 'stock_picker_beta_catalog_v3';
         const CLOTHING_SIZES = ['xs', 's', 'm', 'l', 'xl', 'xxl'];
         let catalog = [];
+        let shelfPhotos = {};
         let activeDepartment = 'hardlines'; // 'hardlines' | 'clothing'
         let appMode = 'setup'; // 'setup' | 'picklist'
         let activeSection = 'all';
         let searchQuery = '';
         let secondaryFilterActive = false;
         let expandedSections = {};
-        let collapsedGroups = {};
+        let expandedGroups = {};
 
-        // 1. Store Zones Definition (All 10 requested zones)
+        // 1. Store Zones Definition (All 12 cleaned-up zones)
         const STORE_SECTIONS = [
-            { id: 'quidditch', label: 'Quidditch' },
-            { id: 'diagon-alley', label: 'Diagon Alley' },
-            { id: 'gringotts', label: 'Gringotts (B&G)' },
             { id: 'ollivanders', label: 'Ollivanders' },
+            { id: 'knight-bus', label: 'Knight bus' },
             { id: 'honeydukes', label: 'Honeydukes' },
-            { id: 'minalima', label: 'Minalima' },
+            { id: 'queue-line', label: 'Queue Line' },
+            { id: 'gringotts', label: 'Gringotts' },
+            { id: 'diagon-alley', label: 'Diagon Alley' },
+            { id: 'minalima', label: 'MinaLima' },
+            { id: 'scrib', label: 'Scrib' },
             { id: 'robes', label: 'Robes' },
-            { id: 'toys', label: 'Toys' },
-            { id: 'plush', label: 'Plush' },
-            { id: 'scrib', label: 'Scrib' }
+            { id: 'bear-bunker', label: 'Bear Bunker' },
+            { id: 'qudditch', label: 'Qudditch' },
+            { id: 'toys', label: 'Toys' }
         ];
 
-        // 2. Default Catalog Items (Quidditch 4 Houses Hard Lines + Clothing)
+        // 2. Default Catalog Items (Qudditch 4 Houses Hard Lines + Clothing + Toys Lego Subsection)
         const QUIDDITCH_HOUSES = ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin'];
         const QUIDDITCH_ITEMS = [
             { name: 'Glass Mug', innerQty: 0, boxQty: 0 },
@@ -394,7 +491,7 @@
                     list.push({
                         id: `item-${idx++}`,
                         department: 'hardlines',
-                        sectionId: 'quidditch',
+                        sectionId: 'qudditch',
                         group: house,
                         name: item.name,
                         qty: 0,
@@ -404,13 +501,25 @@
                     });
                 });
             });
+            // Pre-configured Lego subsection inside Toys
+            list.push({
+                id: `item-${idx++}`,
+                department: 'hardlines',
+                sectionId: 'toys',
+                group: 'Lego',
+                name: 'Lego Set (Sample)',
+                qty: 0,
+                picked: false,
+                innerQty: 0,
+                boxQty: 0
+            });
             // Clothing
             QUIDDITCH_HOUSES.forEach(house => {
                 QUIDDITCH_CLOTHING_ITEMS.forEach(name => {
                     list.push({
                         id: `cloth-${idx++}`,
                         department: 'clothing',
-                        sectionId: 'quidditch',
+                        sectionId: 'qudditch',
                         group: house,
                         name,
                         sizes: createEmptySizesMap(),
@@ -455,7 +564,7 @@
         // Save state to localStorage safely
         function saveState() {
             try {
-                localStorage.setItem(STORAGE_KEY, JSON.stringify({ catalog }));
+                localStorage.setItem(STORAGE_KEY, JSON.stringify({ catalog, shelfPhotos }));
             } catch (e) {
                 console.error('Failed to save catalog:', e);
             }
@@ -467,9 +576,13 @@
                 const raw = localStorage.getItem(STORAGE_KEY);
                 if (raw) {
                     const parsed = JSON.parse(raw);
+                    if (parsed && parsed.shelfPhotos && typeof parsed.shelfPhotos === 'object') {
+                        shelfPhotos = parsed.shelfPhotos;
+                    }
                     if (parsed && Array.isArray(parsed.catalog) && parsed.catalog.length > 0) {
                         catalog = parsed.catalog.map(item => ({
                             ...item,
+                            sectionId: item.sectionId === 'quidditch' ? 'qudditch' : item.sectionId,
                             department: item.department === 'clothing' ? 'clothing' : 'hardlines',
                             sizes: item.department === 'clothing'
                                 ? { ...createEmptySizesMap(), ...(item.sizes || {}) }
@@ -495,8 +608,9 @@
         // Prepare clean catalog JSON for Git export (zeroing out active daily quantities)
         function getCleanCatalogExportData() {
             return {
-                version: 2,
+                version: 3,
                 updatedAt: new Date().toISOString(),
+                shelfPhotos,
                 catalog: catalog.map(item => {
                     if (item.department === 'clothing') {
                         return {
@@ -522,6 +636,9 @@
 
         // Merge imported catalog JSON while preserving any active quantities already entered on device
         function applyImportedCatalog(data) {
+            if (data && data.shelfPhotos && typeof data.shelfPhotos === 'object') {
+                shelfPhotos = { ...shelfPhotos, ...data.shelfPhotos };
+            }
             const incomingList = Array.isArray(data) ? data : (data && Array.isArray(data.catalog) ? data.catalog : null);
             if (!incomingList || incomingList.length === 0) return;
 
@@ -534,14 +651,15 @@
             catalog = incomingList.map((raw, i) => {
                 const dept = raw.department === 'clothing' ? 'clothing' : 'hardlines';
                 const grp = raw.group || 'General';
-                const key = `${dept}::${raw.sectionId}::${grp.toLowerCase()}::${String(raw.name || '').trim().toLowerCase()}`;
+                const normalizedSecId = raw.sectionId === 'quidditch' ? 'qudditch' : (raw.sectionId || 'qudditch');
+                const key = `${dept}::${normalizedSecId}::${grp.toLowerCase()}::${String(raw.name || '').trim().toLowerCase()}`;
                 const prev = existingByKey.get(key);
 
                 if (dept === 'clothing') {
                     return {
                         id: raw.id || (prev && prev.id) || `cloth-${Date.now()}-${i}`,
                         department: 'clothing',
-                        sectionId: raw.sectionId || 'quidditch',
+                        sectionId: normalizedSecId,
                         group: grp,
                         name: String(raw.name || 'Unnamed Garment'),
                         sizes: prev && prev.sizes ? { ...createEmptySizesMap(), ...prev.sizes } : createEmptySizesMap(),
@@ -551,7 +669,7 @@
                 return {
                     id: raw.id || (prev && prev.id) || `item-${Date.now()}-${i}`,
                     department: 'hardlines',
-                    sectionId: raw.sectionId || 'quidditch',
+                    sectionId: normalizedSecId,
                     group: grp,
                     name: String(raw.name || 'Unnamed Item'),
                     qty: prev ? (Number(prev.qty) || 0) : 0,
@@ -565,6 +683,124 @@
             renderTabs();
             updateHeaderAndBars();
             renderMain();
+        }
+
+        // RFC-4180 CSV parser & direct CSV-to-Catalog importer
+        function parseCSVRows(text) {
+            const rows = [];
+            let currentRow = [];
+            let currentField = '';
+            let inQuotes = false;
+            const cleanText = text.replace(/^\uFEFF/, '');
+
+            for (let i = 0; i < cleanText.length; i++) {
+                const ch = cleanText[i];
+                const next = cleanText[i + 1];
+                if (inQuotes) {
+                    if (ch === '"' && next === '"') {
+                        currentField += '"';
+                        i++;
+                    } else if (ch === '"') {
+                        inQuotes = false;
+                    } else {
+                        currentField += ch;
+                    }
+                } else {
+                    if (ch === '"') {
+                        inQuotes = true;
+                    } else if (ch === ',') {
+                        currentRow.push(currentField);
+                        currentField = '';
+                    } else if (ch === '\r' && next === '\n') {
+                        currentRow.push(currentField);
+                        rows.push(currentRow);
+                        currentRow = [];
+                        currentField = '';
+                        i++;
+                    } else if (ch === '\n' || ch === '\r') {
+                        currentRow.push(currentField);
+                        rows.push(currentRow);
+                        currentRow = [];
+                        currentField = '';
+                    } else {
+                        currentField += ch;
+                    }
+                }
+            }
+            if (currentField.length > 0 || currentRow.length > 0) {
+                currentRow.push(currentField);
+                rows.push(currentRow);
+            }
+            return rows.filter(r => r.some(cell => cell.trim() !== ''));
+        }
+
+        function importCSVToCatalog(csvText) {
+            const rows = parseCSVRows(csvText);
+            if (rows.length < 2) {
+                showToast('CSV file appears empty');
+                return;
+            }
+            const headers = rows[0].map(h => h.trim());
+            const zoneLabelToId = new Map(STORE_SECTIONS.map(z => [z.label.toLowerCase(), z.id]));
+            zoneLabelToId.set('quidditch', 'qudditch');
+
+            const dedupedEntries = new Map();
+            let seq = 1;
+
+            rows.slice(1).forEach(cols => {
+                const rec = {};
+                headers.forEach((h, idx) => {
+                    rec[h] = (cols[idx] ?? '').trim();
+                });
+
+                const name = rec['Product Name'] || rec['Title'] || rec['Name'] || '';
+                if (!name) return;
+
+                const deptRaw = (rec['Suggested Dept'] || rec['Department'] || 'Hard Lines').toLowerCase();
+                const dept = deptRaw === 'clothing' ? 'clothing' : 'hardlines';
+                const subsection = rec['Suggested Subsection'] || rec['Subsection'] || 'General';
+                const innerQty = parseInt(rec['Inner / Pack Qty'] || rec['Inner Qty'] || '0', 10) || 0;
+                const boxQty = parseInt(rec['Box Qty'] || '0', 10) || 0;
+
+                const zones = [];
+                let isBinned = false;
+                ['Zone 1', 'Zone 2', 'Zone 3', 'Zone 4', 'Zone'].forEach(col => {
+                    const val = (rec[col] || '').trim();
+                    if (!val) return;
+                    if (['bin', 'binned', 'exclude'].includes(val.toLowerCase())) {
+                        isBinned = true;
+                    } else if (!zones.includes(val)) {
+                        zones.push(val);
+                    }
+                });
+
+                if (isBinned && zones.length === 0) return;
+
+                zones.forEach(zoneLabel => {
+                    const secId = zoneLabelToId.get(zoneLabel.toLowerCase()) || zoneLabel.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+                    const dedupeKey = `${dept}::${secId}::${subsection.toLowerCase()}::${name.toLowerCase()}`;
+                    if (!dedupedEntries.has(dedupeKey)) {
+                        dedupedEntries.set(dedupeKey, {
+                            id: `${dept === 'clothing' ? 'cloth' : 'item'}-${seq++}`,
+                            department: dept,
+                            sectionId: secId,
+                            group: subsection,
+                            name,
+                            innerQty,
+                            boxQty
+                        });
+                    }
+                });
+            });
+
+            const importedList = Array.from(dedupedEntries.values());
+            if (importedList.length === 0) {
+                showToast('No zoned products found in CSV');
+                return;
+            }
+
+            applyImportedCatalog({ catalog: importedList });
+            showToast(`Imported ${importedList.length} zone entries from CSV!`);
         }
 
         // Render Store Zone Filter Pills
@@ -671,6 +907,7 @@
             const bottomInfo = document.getElementById('bottom-bar-info');
             const primaryBtn = document.getElementById('primary-action-btn');
             const primaryText = document.getElementById('primary-action-text');
+            const whatsappBtn = document.getElementById('whatsapp-share-btn');
 
             picklistBadge.textContent = activeLines;
 
@@ -685,6 +922,7 @@
                 bottomInfo.innerHTML = activeLines > 0
                     ? `<span class="text-white font-bold">${activeLines}</span> line${activeLines === 1 ? '' : 's'} (${totalUnits} units) ready`
                     : `Tap <span class="text-slate-200 font-bold">+</span> to add items to your warehouse run`;
+                whatsappBtn.classList.add('hidden');
                 primaryBtn.className = 'px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-[0.99] text-slate-950 font-extrabold text-xs sm:text-sm transition-all shadow-lg shadow-amber-500/20 flex items-center gap-2 shrink-0';
                 primaryText.textContent = 'Generate Picklist';
             } else {
@@ -697,15 +935,95 @@
                 progressBar.className = 'h-full bg-emerald-500 transition-all duration-300 rounded-full';
                 progressBar.style.width = `${pct}%`;
                 bottomInfo.innerHTML = `<span class="text-emerald-400 font-bold">${pickedLines}/${activeLines}</span> picked · <span class="text-slate-200 font-semibold">${totalUnits}</span> units`;
-                primaryBtn.className = 'px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 active:scale-[0.99] text-slate-950 font-extrabold text-xs sm:text-sm transition-all shadow-lg shadow-emerald-500/20 flex items-center gap-2 shrink-0';
-                primaryText.textContent = 'Copy for WhatsApp';
+                whatsappBtn.classList.remove('hidden');
+                primaryBtn.className = 'px-3.5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 active:scale-[0.99] text-slate-200 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5 shrink-0';
+                primaryText.textContent = 'Copy';
+            }
+        }
+
+        // Build formatted picklist text for WhatsApp sharing & clipboard copy
+        function buildPicklistWhatsAppText() {
+            const deptCatalog = catalog.filter(i => (i.department || 'hardlines') === activeDepartment);
+            const lines = [];
+            const headerLabel = activeDepartment === 'clothing' ? '*CLOTHING PICKLIST*' : '*HARD LINES PICKLIST*';
+            lines.push(headerLabel);
+
+            STORE_SECTIONS.forEach(sec => {
+                const secItems = deptCatalog.filter(i => i.sectionId === sec.id && getItemTotalQty(i) > 0);
+                if (secItems.length === 0) return;
+
+                lines.push(`\n_${sec.label.toUpperCase()}_`);
+                const groupsMap = new Map();
+                secItems.forEach(item => {
+                    const grp = item.group || 'General';
+                    if (!groupsMap.has(grp)) groupsMap.set(grp, []);
+                    groupsMap.get(grp).push(item);
+                });
+
+                groupsMap.forEach((items, grpName) => {
+                    if (grpName && grpName !== 'General') {
+                        lines.push(`*${grpName.toUpperCase()}*`);
+                    }
+                    items.forEach(item => {
+                        if (item.department === 'clothing') {
+                            const sizeParts = [];
+                            CLOTHING_SIZES.forEach(sz => {
+                                const q = Number((item.sizes && item.sizes[sz]) || 0);
+                                if (q > 0) sizeParts.push(`x${q} ${sz.toUpperCase()}`);
+                            });
+                            if (sizeParts.length > 0) {
+                                lines.push(`${sizeParts.join(', ')} ${item.name}`);
+                            }
+                        } else {
+                            const formatted = formatAutomaticContainerQty(item);
+                            const suffix = formatted.hasBreakdown ? ` (${item.qty} items)` : '';
+                            lines.push(`${formatted.primary} ${item.name}${suffix}`);
+                        }
+                    });
+                });
+            });
+
+            if (lines.length <= 1) return null;
+            return lines.join('\n');
+        }
+
+        // Format and copy active picklist for WhatsApp
+        function copyPicklistToClipboard() {
+            const text = buildPicklistWhatsAppText();
+            if (!text) {
+                showToast('Nothing in picklist to copy!');
+                return;
             }
 
-            if (secondaryFilterActive) {
-                secFilterBtn.className = 'px-3 py-1.5 rounded-xl bg-amber-500/20 border border-amber-500/50 text-xs font-bold text-amber-300 transition-colors shrink-0';
-            } else {
-                secFilterBtn.className = 'px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs font-bold text-slate-300 hover:border-slate-700 transition-colors shrink-0';
+            const tempArea = document.createElement('textarea');
+            tempArea.value = text;
+            tempArea.style.position = 'fixed';
+            tempArea.style.opacity = '0';
+            document.body.appendChild(tempArea);
+            tempArea.select();
+            try {
+                document.execCommand('copy');
+                showToast('Copied picklist for WhatsApp!');
+            } catch (err) {
+                showToast('Failed to copy to clipboard');
             }
+            document.body.removeChild(tempArea);
+        }
+
+        // Share active picklist directly into WhatsApp
+        function sharePicklistToWhatsApp() {
+            const text = buildPicklistWhatsAppText();
+            if (!text) {
+                showToast('Nothing in picklist to share!');
+                return;
+            }
+
+            const encoded = encodeURIComponent(text);
+            const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent || '');
+            const waUrl = isMobile
+                ? `whatsapp://send?text=${encoded}`
+                : `https://api.whatsapp.com/send?text=${encoded}`;
+            window.open(waUrl, '_blank', 'noopener,noreferrer');
         }
 
         // Escape HTML entities safely
@@ -829,16 +1147,14 @@
                     }
                 }
 
-                // Apply search filter
+                // Apply search query filter
                 if (query.length > 0) {
-                    secItems = secItems.filter(item =>
-                        item.name.toLowerCase().includes(query) ||
-                        (item.group || '').toLowerCase().includes(query) ||
-                        sec.label.toLowerCase().includes(query)
-                    );
+                    secItems = secItems.filter(item => {
+                        const haystack = `${item.name} ${item.group || ''} ${sec.label}`.toLowerCase();
+                        return haystack.includes(query);
+                    });
                 }
 
-                // Hide empty zones when filtering/searching or in picklist mode
                 if (secItems.length === 0 && (query.length > 0 || secondaryFilterActive || appMode === 'picklist')) {
                     return;
                 }
@@ -865,222 +1181,131 @@
                         </div>
                     `;
                 } else {
+                    const hasMultipleGroups = groupsMap.size > 1;
                     groupsMap.forEach((items, groupName) => {
                         const groupKey = `${activeDepartment}::${sec.id}::${groupName}`;
-                        const isGroupCollapsed = !!collapsedGroups[groupKey] && query.length === 0;
+                        // When multiple house/group subsections exist in a zone, open with them collapsed by default
+                        const isGroupExpanded = query.length > 0 || !hasMultipleGroups || !!expandedGroups[groupKey];
+                        const isGroupCollapsed = !isGroupExpanded;
                         const groupActiveLines = items.reduce((s, i) => s + getItemActiveLinesCount(i), 0);
                         const groupPickedLines = items.reduce((s, i) => s + getItemPickedLinesCount(i), 0);
 
                         const groupCounterText = appMode === 'picklist'
                             ? `${groupPickedLines}/${groupActiveLines}`
                             : (groupActiveLines > 0 ? `${groupActiveLines} selected` : `${items.length} items`);
+                        const photoKey = `${sec.id}::${groupName}`;
+                        const hasPhoto = !!shelfPhotos[photoKey];
 
                         let rowsHtml = '';
                         items.forEach(item => {
-                            if (activeDepartment === 'clothing') {
-                                // CLOTHING RENDERING
-                                const totalQty = getItemTotalQty(item);
-                                const sizes = item.sizes || createEmptySizesMap();
-                                const pickedSizes = item.pickedSizes || createEmptyPickedSizesMap();
-
+                            if (item.department === 'clothing') {
+                                const totalGarmentQty = getItemTotalQty(item);
                                 if (appMode === 'setup') {
-                                    const isSelected = totalQty > 0;
-                                    const sizeGridHtml = CLOTHING_SIZES.map(sz => {
-                                        const val = Number(sizes[sz]) || 0;
-                                        const activeSz = val > 0;
+                                    const sizeSteppersHtml = CLOTHING_SIZES.map(sz => {
+                                        const val = Number((item.sizes && item.sizes[sz]) || 0);
                                         return `
-                                            <div class="flex flex-col items-center p-1.5 rounded-xl border transition-all ${
-                                                activeSz
-                                                    ? 'bg-purple-950/50 border-purple-500/60'
-                                                    : 'bg-slate-950 border-slate-800/90'
-                                            }">
-                                                <span class="text-[10px] font-black uppercase tracking-wider mb-1 ${activeSz ? 'text-purple-300' : 'text-slate-400'}">${sz}</span>
-                                                <div class="flex items-center gap-0.5 w-full justify-center">
-                                                    <button type="button" data-cdec-id="${item.id}" data-size="${sz}" class="cloth-dec-btn w-6 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 active:scale-95 text-slate-200 font-bold text-xs flex items-center justify-center">
-                                                        −
-                                                    </button>
-                                                    <input
-                                                        type="number"
-                                                        min="0"
-                                                        value="${val}"
-                                                        data-cinput-id="${item.id}"
-                                                        data-size="${sz}"
-                                                        aria-label="${escapeHtml(item.name)} size ${sz.toUpperCase()}"
-                                                        class="cloth-num-input w-7 h-7 rounded-lg text-center text-xs font-extrabold tabular-nums border focus:outline-none focus:border-purple-400 ${
-                                                            activeSz
-                                                                ? 'bg-purple-500/20 text-purple-200 border-purple-500/50'
-                                                                : 'bg-slate-900 text-slate-400 border-slate-800'
-                                                        }"
-                                                    >
-                                                    <button type="button" data-cinc-id="${item.id}" data-size="${sz}" class="cloth-inc-btn w-6 h-7 rounded-lg bg-purple-600 hover:bg-purple-500 active:scale-95 text-white font-extrabold text-xs flex items-center justify-center">
-                                                        +
-                                                    </button>
+                                            <div class="flex flex-col items-center p-1.5 rounded-xl border ${val > 0 ? 'bg-purple-950/40 border-purple-500/60' : 'bg-slate-950/80 border-slate-800/80'}">
+                                                <span class="text-[10px] font-black uppercase tracking-wider ${val > 0 ? 'text-purple-300' : 'text-slate-400'}">${sz}</span>
+                                                <div class="flex items-center gap-1 mt-1">
+                                                    <button type="button" data-cloth-dec="${item.id}" data-size="${sz}" class="cloth-dec-btn w-6 h-6 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs flex items-center justify-center">-</button>
+                                                    <input type="number" min="0" data-cloth-input="${item.id}" data-size="${sz}" value="${val}" class="cloth-qty-input w-7 text-center bg-transparent text-xs font-extrabold ${val > 0 ? 'text-white' : 'text-slate-500'} focus:outline-none">
+                                                    <button type="button" data-cloth-inc="${item.id}" data-size="${sz}" class="cloth-inc-btn w-6 h-6 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs flex items-center justify-center">+</button>
                                                 </div>
                                             </div>
                                         `;
                                     }).join('');
 
                                     rowsHtml += `
-                                        <div class="p-3 rounded-xl border transition-all space-y-2.5 ${
-                                            isSelected
-                                                ? 'bg-slate-900 border-purple-500/50 shadow-sm'
-                                                : 'bg-slate-950/70 border-slate-800/80'
-                                        }">
+                                        <div class="p-3 rounded-xl border transition-all ${totalGarmentQty > 0 ? 'bg-slate-900 border-purple-500/50' : 'bg-slate-900/60 border-slate-800/80'} space-y-2.5">
                                             <div class="flex items-center justify-between gap-2">
-                                                <div class="text-sm font-bold ${isSelected ? 'text-white' : 'text-slate-200'}">
-                                                    ${escapeHtml(item.name)}
-                                                </div>
-                                                ${isSelected ? `<span class="px-2 py-0.5 rounded-md bg-purple-500/20 text-purple-300 border border-purple-500/40 text-[11px] font-extrabold tabular-nums">${totalQty} total</span>` : ''}
+                                                <span class="text-xs sm:text-sm font-bold text-white">${escapeHtml(item.name)}</span>
+                                                ${totalGarmentQty > 0 ? `<span class="px-2 py-0.5 rounded-md bg-purple-500/20 border border-purple-500/40 text-purple-300 text-[11px] font-extrabold tabular-nums">${totalGarmentQty} total</span>` : ''}
                                             </div>
                                             <div class="grid grid-cols-3 sm:grid-cols-6 gap-1.5">
-                                                ${sizeGridHtml}
+                                                ${sizeSteppersHtml}
                                             </div>
                                         </div>
                                     `;
                                 } else {
-                                    // Clothing Picklist Mode: Individual Size Checkboxes per Garment
-                                    const activeSizesList = CLOTHING_SIZES.filter(sz => (Number(sizes[sz]) || 0) > 0);
-                                    const sizeRowsHtml = activeSizesList.map(sz => {
-                                        const qty = Number(sizes[sz]) || 0;
-                                        const isPicked = !!pickedSizes[sz];
-                                        if (secondaryFilterActive && isPicked) return '';
+                                    CLOTHING_SIZES.forEach(sz => {
+                                        const qty = Number((item.sizes && item.sizes[sz]) || 0);
+                                        if (qty <= 0) return;
+                                        const isPicked = !!(item.pickedSizes && item.pickedSizes[sz]);
+                                        if (secondaryFilterActive && isPicked) return;
 
-                                        return `
-                                            <label class="flex items-center justify-between gap-3 px-3 py-2 rounded-lg border cursor-pointer select-none transition-all ${
+                                        rowsHtml += `
+                                            <label class="flex items-center justify-between gap-3 p-3 rounded-xl border cursor-pointer transition-all select-none ${
                                                 isPicked
-                                                    ? 'bg-slate-950/40 border-slate-800/50 opacity-50'
-                                                    : 'bg-slate-950/90 border-slate-800 hover:border-purple-500/40'
+                                                    ? 'bg-slate-900/40 border-slate-800/60 opacity-60'
+                                                    : 'bg-slate-900 border-slate-800 hover:border-slate-700'
                                             }">
-                                                <div class="flex items-center gap-2.5">
-                                                    <input
-                                                        type="checkbox"
-                                                        data-cpick-id="${item.id}"
-                                                        data-size="${sz}"
-                                                        ${isPicked ? 'checked' : ''}
-                                                        class="cloth-pick-checkbox w-4 h-4 rounded border-slate-600 bg-slate-950 text-emerald-500 focus:ring-emerald-500 cursor-pointer"
-                                                    >
-                                                    <span class="px-2 py-0.5 rounded text-xs font-black uppercase tracking-wider ${
-                                                        isPicked
-                                                            ? 'bg-slate-800 text-slate-500 line-through'
-                                                            : 'bg-purple-500/20 text-purple-300 border border-purple-500/40'
-                                                    }">
-                                                        ${sz}
-                                                    </span>
-                                                    <span class="text-xs font-semibold ${isPicked ? 'line-through text-slate-500' : 'text-slate-200'}">
-                                                        ${escapeHtml(item.name)}
-                                                    </span>
+                                                <div class="flex items-center gap-3 min-w-0">
+                                                    <input type="checkbox" data-cloth-pick="${item.id}" data-size="${sz}" ${isPicked ? 'checked' : ''} class="cloth-pick-cb w-5 h-5 rounded-lg border-slate-700 bg-slate-950 text-emerald-500 focus:ring-emerald-500 shrink-0">
+                                                    <div class="min-w-0">
+                                                        <div class="text-xs sm:text-sm font-bold ${isPicked ? 'line-through text-slate-500' : 'text-white'} truncate">
+                                                            <span class="uppercase text-purple-300 mr-1">${sz}</span> ${escapeHtml(item.name)}
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <span class="px-2.5 py-0.5 rounded-md text-xs font-extrabold tabular-nums border ${
+                                                <span class="px-2.5 py-1 rounded-lg text-xs font-black tabular-nums shrink-0 ${
                                                     isPicked
-                                                        ? 'bg-slate-900 text-slate-500 border-slate-800'
-                                                        : 'bg-amber-500/15 text-amber-300 border-amber-500/40'
-                                                }">
-                                                    x${qty}
-                                                </span>
+                                                        ? 'bg-slate-800 text-slate-500'
+                                                        : 'bg-purple-500/20 text-purple-300 border border-purple-500/40'
+                                                }">x${qty}</span>
                                             </label>
                                         `;
-                                    }).join('');
-
-                                    if (sizeRowsHtml.trim().length > 0) {
-                                        rowsHtml += `
-                                            <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1.5">
-                                                <div class="flex items-center justify-between px-1">
-                                                    <span class="text-xs font-extrabold text-slate-200">${escapeHtml(item.name)}</span>
-                                                    <span class="text-[11px] font-bold text-slate-400 tabular-nums">${totalQty} pcs</span>
-                                                </div>
-                                                <div class="space-y-1.5">
-                                                    ${sizeRowsHtml}
-                                                </div>
-                                            </div>
-                                        `;
-                                    }
+                                    });
                                 }
                             } else {
-                                // HARD LINES RENDERING
+                                const qty = Number(item.qty) || 0;
                                 const { singular } = getSubUnitTerms(item.name);
-                                const hasPackConfig = (item.innerQty > 0 || item.boxQty > 0);
-                                const packSummaryParts = [];
-                                if (item.innerQty > 0) packSummaryParts.push(`${singular}: ${item.innerQty}`);
-                                if (item.boxQty > 0) packSummaryParts.push(`Box: ${item.boxQty}`);
-                                const packLabel = hasPackConfig ? packSummaryParts.join(' · ') : `+ Set ${singular} / Box`;
+                                const packSummary = (item.innerQty > 0 || item.boxQty > 0)
+                                    ? `${item.innerQty > 0 ? `${singular}: ${item.innerQty}` : ''}${item.innerQty > 0 && item.boxQty > 0 ? ' · ' : ''}${item.boxQty > 0 ? `Box: ${item.boxQty}` : ''}`
+                                    : `+ Set ${singular} / Box`;
 
                                 if (appMode === 'setup') {
-                                    const isSelected = item.qty > 0;
                                     rowsHtml += `
                                         <div class="flex items-center justify-between gap-2.5 p-2.5 sm:p-3 rounded-xl border transition-all ${
-                                            isSelected
-                                                ? 'bg-slate-900 border-amber-500/50 shadow-sm'
-                                                : 'bg-slate-950/70 border-slate-800/80 hover:border-slate-700/80'
+                                            qty > 0 ? 'bg-slate-900 border-amber-500/50' : 'bg-slate-900/60 border-slate-800/80'
                                         }">
                                             <div class="min-w-0 flex-1">
-                                                <div class="text-sm font-semibold ${isSelected ? 'text-white' : 'text-slate-200'} truncate">
-                                                    ${escapeHtml(item.name)}
-                                                </div>
-                                                <button type="button" data-pack-id="${item.id}" class="edit-pack-btn mt-1 inline-flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 rounded-md transition-colors ${
-                                                    hasPackConfig
-                                                        ? 'bg-slate-800 text-amber-300/90 hover:bg-slate-700'
-                                                        : 'text-slate-500 hover:text-slate-300 hover:bg-slate-800/60'
+                                                <div class="text-xs sm:text-sm font-bold text-white truncate">${escapeHtml(item.name)}</div>
+                                                <button type="button" data-pack-id="${item.id}" class="open-pack-btn mt-1 inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold transition-colors ${
+                                                    (item.innerQty > 0 || item.boxQty > 0)
+                                                        ? 'bg-sky-950/70 text-sky-300 border border-sky-800/60 hover:bg-sky-900/70'
+                                                        : 'bg-slate-800/80 text-slate-400 hover:text-slate-200'
                                                 }">
-                                                    ${escapeHtml(packLabel)}
+                                                    ${escapeHtml(packSummary)}
                                                 </button>
                                             </div>
-
-                                            <!-- Quantity Stepper -->
                                             <div class="flex items-center gap-1.5 shrink-0">
-                                                <button type="button" data-dec-id="${item.id}" class="qty-dec-btn w-9 h-9 rounded-xl bg-slate-800 hover:bg-slate-700 active:scale-95 text-slate-200 font-bold text-base flex items-center justify-center border border-slate-700/70">
-                                                    −
-                                                </button>
-                                                <input 
-                                                    type="number" 
-                                                    min="0" 
-                                                    value="${item.qty}" 
-                                                    data-qty-input-id="${item.id}"
-                                                    aria-label="Quantity for ${escapeHtml(item.name)}"
-                                                    class="qty-num-input w-12 h-9 rounded-xl text-center text-sm font-extrabold tabular-nums border focus:outline-none focus:border-amber-500 ${
-                                                        isSelected
-                                                            ? 'bg-amber-500/15 text-amber-300 border-amber-500/50'
-                                                            : 'bg-slate-950 text-slate-400 border-slate-800'
-                                                    }"
-                                                >
-                                                <button type="button" data-inc-id="${item.id}" class="qty-inc-btn w-9 h-9 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 font-extrabold text-base flex items-center justify-center shadow-sm">
-                                                    +
-                                                </button>
+                                                <button type="button" data-dec-id="${item.id}" class="dec-qty-btn w-8 h-8 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-extrabold text-sm flex items-center justify-center">-</button>
+                                                <input type="number" min="0" data-qty-input="${item.id}" value="${qty}" class="qty-number-input w-11 h-8 text-center rounded-xl bg-slate-950 border border-slate-800 text-xs sm:text-sm font-extrabold ${qty > 0 ? 'text-amber-300 border-amber-500/40' : 'text-slate-400'} focus:outline-none focus:border-amber-500">
+                                                <button type="button" data-inc-id="${item.id}" class="inc-qty-btn w-8 h-8 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-extrabold text-sm flex items-center justify-center">+</button>
                                             </div>
                                         </div>
                                     `;
                                 } else {
-                                    // Hard Lines Picklist Mode Row with Automatic Box / Inner / Pack Breakdown
+                                    const isPicked = !!item.picked;
                                     const formatted = formatAutomaticContainerQty(item);
                                     rowsHtml += `
-                                        <label class="flex items-center justify-between gap-3 p-3 rounded-xl border cursor-pointer select-none transition-all ${
-                                            item.picked
-                                                ? 'bg-slate-950/40 border-slate-800/50 opacity-55'
+                                        <label class="flex items-center justify-between gap-3 p-3 rounded-xl border cursor-pointer transition-all select-none ${
+                                            isPicked
+                                                ? 'bg-slate-900/40 border-slate-800/60 opacity-60'
                                                 : 'bg-slate-900 border-slate-800 hover:border-slate-700'
                                         }">
-                                            <div class="flex items-center gap-3 min-w-0 flex-1">
-                                                <input 
-                                                    type="checkbox" 
-                                                    data-pick-id="${item.id}" 
-                                                    ${item.picked ? 'checked' : ''}
-                                                    class="pick-checkbox w-5 h-5 rounded-lg border-slate-600 bg-slate-950 text-emerald-500 focus:ring-emerald-500 shrink-0 cursor-pointer"
-                                                >
-                                                <div class="min-w-0 flex-1">
-                                                    <div class="text-sm font-bold ${item.picked ? 'line-through text-slate-500' : 'text-slate-100'}">
-                                                        ${escapeHtml(item.name)}
-                                                    </div>
-                                                    ${formatted.secondary ? `<div class="text-[11px] font-medium text-slate-400 mt-0.5">${escapeHtml(formatted.secondary)}</div>` : ''}
+                                            <div class="flex items-center gap-3 min-w-0">
+                                                <input type="checkbox" data-pick-id="${item.id}" ${isPicked ? 'checked' : ''} class="pick-item-cb w-5 h-5 rounded-lg border-slate-700 bg-slate-950 text-emerald-500 focus:ring-emerald-500 shrink-0">
+                                                <div class="min-w-0">
+                                                    <div class="text-xs sm:text-sm font-bold ${isPicked ? 'line-through text-slate-500' : 'text-white'} truncate">${escapeHtml(item.name)}</div>
+                                                    ${formatted.secondary ? `<div class="text-[10px] font-semibold text-slate-400 mt-0.5">${escapeHtml(formatted.secondary)}</div>` : ''}
                                                 </div>
                                             </div>
-
-                                            <span class="shrink-0 px-2.5 py-1 rounded-lg text-xs font-extrabold tabular-nums border ${
-                                                item.picked
-                                                    ? 'bg-slate-900 text-slate-500 border-slate-800'
-                                                    : formatted.hasBreakdown
-                                                        ? 'bg-emerald-500/15 text-emerald-300 border-emerald-500/40'
-                                                        : 'bg-amber-500/15 text-amber-300 border-amber-500/40'
-                                            }">
-                                                ${escapeHtml(formatted.primary)}
-                                            </span>
+                                            <span class="px-2.5 py-1 rounded-lg text-xs font-black tabular-nums shrink-0 ${
+                                                isPicked
+                                                    ? 'bg-slate-800 text-slate-500'
+                                                    : 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                                            }">${escapeHtml(formatted.primary)}</span>
                                         </label>
                                     `;
                                 }
@@ -1088,63 +1313,55 @@
                         });
 
                         groupsHtml += `
-                            <div class="rounded-xl bg-slate-950/60 border border-slate-800/80 overflow-hidden">
-                                <button type="button" data-grp-key="${escapeHtml(groupKey)}" class="grp-toggle w-full px-3.5 py-2.5 flex items-center justify-between gap-2 bg-slate-900/60 hover:bg-slate-900 transition-colors text-left">
-                                    <div class="flex items-center gap-2">
-                                        <span class="px-2.5 py-0.5 rounded-md text-xs font-extrabold uppercase tracking-wide border ${getGroupBadgeStyle(groupName)}">
-                                            ${escapeHtml(groupName)}
-                                        </span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span class="text-[11px] font-bold text-slate-400 tabular-nums">${groupCounterText}</span>
-                                        <svg class="w-4 h-4 text-slate-400 transition-transform duration-150 ${isGroupCollapsed ? '-rotate-90' : 'rotate-0'}" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <div class="rounded-xl bg-slate-950/70 border border-slate-800/90 overflow-hidden">
+                                <div class="px-3.5 py-2.5 bg-slate-900/70 flex items-center justify-between gap-2">
+                                    <button type="button" data-toggle-group="${escapeHtml(groupKey)}" class="grp-toggle flex items-center gap-2 text-left flex-1 min-w-0">
+                                        <svg class="w-4 h-4 text-slate-400 transition-transform shrink-0 ${isGroupCollapsed ? '-rotate-90' : ''}" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
                                         </svg>
-                                    </div>
-                                </button>
-                                <div class="${isGroupCollapsed ? 'hidden' : 'p-2.5 space-y-2'}">
-                                    ${rowsHtml}
+                                        <span class="px-2 py-0.5 rounded-md border text-[11px] font-extrabold tracking-wide ${getGroupBadgeStyle(groupName)}">${escapeHtml(groupName)}</span>
+                                        <span class="text-[11px] font-semibold text-slate-400 tabular-nums">${escapeHtml(groupCounterText)}</span>
+                                    </button>
+                                    <button type="button" data-photo-key="${escapeHtml(photoKey)}" data-photo-title="${escapeHtml(sec.label + ' — ' + groupName)}" title="Shelf Reference Photo" class="open-photo-btn p-1.5 rounded-lg border transition-colors shrink-0 ${
+                                        hasPhoto
+                                            ? 'bg-amber-500/20 border-amber-500/40 text-amber-300'
+                                            : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white'
+                                    }">
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                    </button>
                                 </div>
+                                ${isGroupCollapsed ? '' : `<div class="p-2.5 space-y-2">${rowsHtml}</div>`}
                             </div>
                         `;
                     });
                 }
 
-                // Calculate Zone-Level Summary Badge
-                const allZoneItems = deptCatalog.filter(i => i.sectionId === sec.id);
-                const zoneActiveLines = allZoneItems.reduce((s, i) => s + getItemActiveLinesCount(i), 0);
-                const zonePickedLines = allZoneItems.reduce((s, i) => s + getItemPickedLinesCount(i), 0);
-
-                // Top-level store zones stay collapsed on initial load unless toggled open, filtered by specific tab, or searched
+                const sectionSelectedLines = secItems.reduce((s, i) => s + getItemActiveLinesCount(i), 0);
+                const sectionPickedLines = secItems.reduce((s, i) => s + getItemPickedLinesCount(i), 0);
                 const isSectionExpanded = !!expandedSections[sec.id] || query.length > 0 || activeSection !== 'all';
-
                 const secBadge = appMode === 'picklist'
-                    ? `${zonePickedLines} / ${zoneActiveLines} picked`
-                    : (zoneActiveLines > 0 ? `${zoneActiveLines} selected` : `${allZoneItems.length} items`);
+                    ? `${sectionPickedLines} / ${sectionSelectedLines} picked`
+                    : (sectionSelectedLines > 0 ? `${sectionSelectedLines} selected` : `${secItems.length} items`);
 
                 html += `
-                    <section class="rounded-2xl bg-slate-900/60 border border-slate-800/90 overflow-hidden shadow-sm">
-                        <button 
-                            type="button" 
-                            data-toggle-sec="${sec.id}"
-                            aria-expanded="${isSectionExpanded}"
-                            class="sec-toggle w-full px-4 py-3.5 bg-slate-900 hover:bg-slate-800/90 transition-colors flex items-center justify-between gap-2 text-left"
-                        >
-                            <div class="flex items-center gap-2.5">
-                                <svg class="w-4 h-4 text-amber-400 transition-transform duration-200 ${isSectionExpanded ? 'rotate-0' : '-rotate-90'}" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <section class="rounded-2xl bg-slate-900/80 border border-slate-800 overflow-hidden shadow-sm">
+                        <button type="button" data-toggle-sec="${sec.id}" class="sec-toggle w-full px-4 py-3.5 flex items-center justify-between gap-3 text-left hover:bg-slate-800/40 transition-colors">
+                            <div class="flex items-center gap-2.5 min-w-0">
+                                <svg class="w-4 h-4 text-amber-400 transition-transform shrink-0 ${isSectionExpanded ? '' : '-rotate-90'}" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
                                 </svg>
-                                <h2 class="text-sm sm:text-base font-extrabold uppercase tracking-wider text-amber-300">
-                                    ${escapeHtml(sec.label)}
-                                </h2>
+                                <h2 class="text-sm sm:text-base font-extrabold uppercase tracking-wider text-white truncate">${escapeHtml(sec.label)}</h2>
                             </div>
-                            <span class="text-xs font-bold px-2.5 py-0.5 rounded-lg bg-slate-950 text-slate-300 border border-slate-800 tabular-nums">
-                                ${secBadge}
-                            </span>
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-extrabold tabular-nums shrink-0 ${
+                                sectionSelectedLines > 0
+                                    ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                                    : 'bg-slate-950 text-slate-400 border border-slate-800'
+                            }">${escapeHtml(secBadge)}</span>
                         </button>
-                        <div class="${isSectionExpanded ? 'p-3 space-y-3 border-t border-slate-800/80' : 'hidden'}">
-                            ${groupsHtml}
-                        </div>
+                        ${isSectionExpanded ? `<div class="px-3.5 pb-3.5 pt-1 space-y-3 border-t border-slate-800/70">${groupsHtml}</div>` : ''}
                     </section>
                 `;
             });
@@ -1153,12 +1370,14 @@
 
             if (visibleSectionsCount === 0) {
                 emptyState.classList.remove('hidden');
-                if (appMode === 'picklist' && deptCatalog.filter(i => getItemTotalQty(i) > 0).length === 0) {
-                    document.getElementById('empty-state-title').textContent = `Your ${activeDepartment === 'clothing' ? 'Clothing' : 'Hard Lines'} picklist is empty`;
-                    document.getElementById('empty-state-desc').textContent = 'Switch to "1. Set Qty" to enter quantities for your warehouse run.';
+                const titleEl = document.getElementById('empty-state-title');
+                const descEl = document.getElementById('empty-state-desc');
+                if (appMode === 'picklist') {
+                    titleEl.textContent = 'Your picklist is empty';
+                    descEl.textContent = 'Switch to "1. Set Qty" or tap "Paste WA" to add items for your warehouse run.';
                 } else {
-                    document.getElementById('empty-state-title').textContent = 'No matching items';
-                    document.getElementById('empty-state-desc').textContent = 'Try clearing your search or filter to see your stock items.';
+                    titleEl.textContent = 'No matching items';
+                    descEl.textContent = 'Try clearing your search filter or adding products with "+ Add Item".';
                 }
             } else {
                 emptyState.classList.add('hidden');
@@ -1167,50 +1386,36 @@
             bindDynamicEvents(container);
         }
 
+        // Bind all interactive events inside the rendered checklist container
         function bindDynamicEvents(container) {
-            // Top-Level Store Zone Expand/Collapse Toggles
             container.querySelectorAll('.sec-toggle').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const sid = btn.dataset.toggleSec;
-                    if (activeSection !== 'all') {
-                        activeSection = 'all';
-                        expandedSections[sid] = false;
-                        renderTabs();
-                    } else {
-                        expandedSections[sid] = !expandedSections[sid];
-                    }
+                    expandedSections[sid] = !expandedSections[sid];
                     renderMain();
                 });
             });
 
-            // Subsection / House Collapse Toggles
             container.querySelectorAll('.grp-toggle').forEach(btn => {
                 btn.addEventListener('click', () => {
-                    const key = btn.dataset.grpKey;
-                    collapsedGroups[key] = !collapsedGroups[key];
+                    const gkey = btn.dataset.toggleGroup;
+                    expandedGroups[gkey] = !expandedGroups[gkey];
                     renderMain();
                 });
             });
 
-            // Hard Lines: Quantity Increment (+)
-            container.querySelectorAll('.qty-inc-btn').forEach(btn => {
+            container.querySelectorAll('.quick-add-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
-                    const item = catalog.find(i => i.id === btn.dataset.incId);
-                    if (!item) return;
-                    item.qty += 1;
-                    saveState();
-                    renderTabs();
-                    updateHeaderAndBars();
-                    renderMain();
+                    openAddModal(btn.dataset.quickAddSec);
                 });
             });
 
-            // Hard Lines: Quantity Decrement (-)
-            container.querySelectorAll('.qty-dec-btn').forEach(btn => {
+            // Hard Lines quantity steppers & inputs
+            container.querySelectorAll('.dec-qty-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const item = catalog.find(i => i.id === btn.dataset.decId);
-                    if (!item || item.qty <= 0) return;
-                    item.qty -= 1;
+                    if (!item) return;
+                    item.qty = Math.max(0, (Number(item.qty) || 0) - 1);
                     if (item.qty === 0) item.picked = false;
                     saveState();
                     renderTabs();
@@ -1219,14 +1424,11 @@
                 });
             });
 
-            // Hard Lines: Direct Quantity Number Input
-            container.querySelectorAll('.qty-num-input').forEach(input => {
-                input.addEventListener('change', () => {
-                    const item = catalog.find(i => i.id === input.dataset.qtyInputId);
+            container.querySelectorAll('.inc-qty-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = catalog.find(i => i.id === btn.dataset.incId);
                     if (!item) return;
-                    const val = Math.max(0, parseInt(input.value, 10) || 0);
-                    item.qty = val;
-                    if (val === 0) item.picked = false;
+                    item.qty = (Number(item.qty) || 0) + 1;
                     saveState();
                     renderTabs();
                     updateHeaderAndBars();
@@ -1234,12 +1436,12 @@
                 });
             });
 
-            // Hard Lines: Picklist Checkboxes
-            container.querySelectorAll('.pick-checkbox').forEach(cb => {
-                cb.addEventListener('change', () => {
-                    const item = catalog.find(i => i.id === cb.dataset.pickId);
+            container.querySelectorAll('.qty-number-input').forEach(inp => {
+                inp.addEventListener('change', () => {
+                    const item = catalog.find(i => i.id === inp.dataset.qtyInput);
                     if (!item) return;
-                    item.picked = cb.checked;
+                    item.qty = Math.max(0, parseInt(inp.value, 10) || 0);
+                    if (item.qty === 0) item.picked = false;
                     saveState();
                     renderTabs();
                     updateHeaderAndBars();
@@ -1247,13 +1449,26 @@
                 });
             });
 
-            // Clothing: Size Increment (+)
+            // Clothing per-size steppers & inputs
+            container.querySelectorAll('.cloth-dec-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = catalog.find(i => i.id === btn.dataset.clothDec);
+                    const sz = btn.dataset.size;
+                    if (!item || !item.sizes) return;
+                    item.sizes[sz] = Math.max(0, (Number(item.sizes[sz]) || 0) - 1);
+                    if (item.sizes[sz] === 0 && item.pickedSizes) item.pickedSizes[sz] = false;
+                    saveState();
+                    renderTabs();
+                    updateHeaderAndBars();
+                    renderMain();
+                });
+            });
+
             container.querySelectorAll('.cloth-inc-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
-                    const item = catalog.find(i => i.id === btn.dataset.cincId);
+                    const item = catalog.find(i => i.id === btn.dataset.clothInc);
                     const sz = btn.dataset.size;
-                    if (!item || !sz) return;
-                    item.sizes = item.sizes || createEmptySizesMap();
+                    if (!item || !item.sizes) return;
                     item.sizes[sz] = (Number(item.sizes[sz]) || 0) + 1;
                     saveState();
                     renderTabs();
@@ -1262,18 +1477,13 @@
                 });
             });
 
-            // Clothing: Size Decrement (-)
-            container.querySelectorAll('.cloth-dec-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const item = catalog.find(i => i.id === btn.dataset.cdecId);
-                    const sz = btn.dataset.size;
-                    if (!item || !sz) return;
-                    item.sizes = item.sizes || createEmptySizesMap();
-                    item.pickedSizes = item.pickedSizes || createEmptyPickedSizesMap();
-                    const cur = Number(item.sizes[sz]) || 0;
-                    if (cur <= 0) return;
-                    item.sizes[sz] = cur - 1;
-                    if (item.sizes[sz] === 0) item.pickedSizes[sz] = false;
+            container.querySelectorAll('.cloth-qty-input').forEach(inp => {
+                inp.addEventListener('change', () => {
+                    const item = catalog.find(i => i.id === inp.dataset.clothInput);
+                    const sz = inp.dataset.size;
+                    if (!item || !item.sizes) return;
+                    item.sizes[sz] = Math.max(0, parseInt(inp.value, 10) || 0);
+                    if (item.sizes[sz] === 0 && item.pickedSizes) item.pickedSizes[sz] = false;
                     saveState();
                     renderTabs();
                     updateHeaderAndBars();
@@ -1281,71 +1491,103 @@
                 });
             });
 
-            // Clothing: Direct Size Number Input
-            container.querySelectorAll('.cloth-num-input').forEach(input => {
-                input.addEventListener('change', () => {
-                    const item = catalog.find(i => i.id === input.dataset.cinputId);
-                    const sz = input.dataset.size;
-                    if (!item || !sz) return;
-                    item.sizes = item.sizes || createEmptySizesMap();
-                    item.pickedSizes = item.pickedSizes || createEmptyPickedSizesMap();
-                    const val = Math.max(0, parseInt(input.value, 10) || 0);
-                    item.sizes[sz] = val;
-                    if (val === 0) item.pickedSizes[sz] = false;
-                    saveState();
-                    renderTabs();
-                    updateHeaderAndBars();
-                    renderMain();
-                });
-            });
-
-            // Clothing: Picklist Size Checkboxes
-            container.querySelectorAll('.cloth-pick-checkbox').forEach(cb => {
+            // Picklist checkboxes (Hard Lines & Clothing)
+            container.querySelectorAll('.pick-item-cb').forEach(cb => {
                 cb.addEventListener('change', () => {
-                    const item = catalog.find(i => i.id === cb.dataset.cpickId);
+                    const item = catalog.find(i => i.id === cb.dataset.pickId);
+                    if (!item) return;
+                    item.picked = cb.checked;
+                    saveState();
+                    updateHeaderAndBars();
+                    renderMain();
+                });
+            });
+
+            container.querySelectorAll('.cloth-pick-cb').forEach(cb => {
+                cb.addEventListener('change', () => {
+                    const item = catalog.find(i => i.id === cb.dataset.clothPick);
                     const sz = cb.dataset.size;
-                    if (!item || !sz) return;
-                    item.pickedSizes = item.pickedSizes || createEmptyPickedSizesMap();
+                    if (!item) return;
+                    if (!item.pickedSizes) item.pickedSizes = createEmptyPickedSizesMap();
                     item.pickedSizes[sz] = cb.checked;
                     saveState();
-                    renderTabs();
                     updateHeaderAndBars();
                     renderMain();
                 });
             });
 
-            // Edit Inner / Pack / Box Sizes
-            container.querySelectorAll('.edit-pack-btn').forEach(btn => {
+            // Open Packaging Setup Modal
+            container.querySelectorAll('.open-pack-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
-                    openPackModal(btn.dataset.packId);
+                    const item = catalog.find(i => i.id === btn.dataset.packId);
+                    if (!item) return;
+                    const { singular, plural } = getSubUnitTerms(item.name);
+                    document.getElementById('pack-item-id').value = item.id;
+                    document.getElementById('pack-modal-title').textContent = item.name;
+                    document.getElementById('pack-unit-hint').textContent = singular;
+                    document.getElementById('pack-inner-label').textContent = `Units per ${singular}`;
+                    document.getElementById('pack-inner-input').value = item.innerQty || '';
+                    document.getElementById('pack-box-input').value = item.boxQty || '';
+                    document.getElementById('pack-apply-matching').checked = false;
+                    document.getElementById('pack-modal').classList.remove('hidden');
                 });
             });
 
-            // Quick Add to Empty Zone
-            container.querySelectorAll('.quick-add-btn').forEach(btn => {
+            // Open Shelf Reference Photo Modal
+            container.querySelectorAll('.open-photo-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
-                    openAddModal(btn.dataset.quickAddSec);
+                    const pKey = btn.dataset.photoKey;
+                    const pTitle = btn.dataset.photoTitle;
+                    document.getElementById('shelf-photo-key').value = pKey;
+                    document.getElementById('shelf-photo-title').textContent = pTitle;
+                    const existingUrl = shelfPhotos[pKey] || '';
+                    document.getElementById('shelf-photo-url-input').value = existingUrl;
+                    updateShelfPhotoPreview(existingUrl);
+                    document.getElementById('shelf-photo-modal').classList.remove('hidden');
                 });
             });
         }
 
-        // Copy Picklist formatted for WhatsApp (scoped to activeDepartment)
+        function updateShelfPhotoPreview(src) {
+            const wrap = document.getElementById('shelf-photo-preview-wrap');
+            const img = document.getElementById('shelf-photo-img');
+            const empty = document.getElementById('shelf-photo-empty');
+            if (src) {
+                img.src = src;
+                wrap.classList.remove('hidden');
+                empty.classList.add('hidden');
+            } else {
+                img.src = '';
+                wrap.classList.add('hidden');
+                empty.classList.remove('hidden');
+            }
+        }
+
+        function openAddModal(preselectSecId) {
+            const secSelect = document.getElementById('add-section-select');
+            secSelect.innerHTML = STORE_SECTIONS.map(s => `<option value="${s.id}">${escapeHtml(s.label)}</option>`).join('');
+            secSelect.value = preselectSecId || (activeSection !== 'all' ? activeSection : 'qudditch');
+            document.getElementById('add-dept-select').value = activeDepartment;
+            document.getElementById('add-packaging-fields').classList.toggle('hidden', activeDepartment === 'clothing');
+            document.getElementById('add-group-input').value = '';
+            document.getElementById('add-names-input').value = '';
+            document.getElementById('add-inner-input').value = '';
+            document.getElementById('add-box-input').value = '';
+            document.getElementById('add-item-modal').classList.remove('hidden');
+        }
+
+        // Format and copy active picklist for WhatsApp
         function copyPicklistToClipboard() {
             const deptCatalog = catalog.filter(i => (i.department || 'hardlines') === activeDepartment);
-            const selectedItems = deptCatalog.filter(i => getItemTotalQty(i) > 0);
-            if (selectedItems.length === 0) {
-                showToast('Add some quantities first!');
-                return;
-            }
-
-            const deptHeader = activeDepartment === 'clothing' ? '=== CLOTHING PICKLIST ===' : '=== HARD LINES PICKLIST ===';
-            const lines = [deptHeader, ''];
+            const lines = [];
+            const headerLabel = activeDepartment === 'clothing' ? '*CLOTHING PICKLIST*' : '*HARD LINES PICKLIST*';
+            lines.push(headerLabel);
 
             STORE_SECTIONS.forEach(sec => {
-                const secItems = selectedItems.filter(i => i.sectionId === sec.id);
+                const secItems = deptCatalog.filter(i => i.sectionId === sec.id && getItemTotalQty(i) > 0);
                 if (secItems.length === 0) return;
 
-                lines.push(`_${sec.label}_`);
+                lines.push(`\n_${sec.label.toUpperCase()}_`);
                 const groupsMap = new Map();
                 secItems.forEach(item => {
                     const grp = item.group || 'General';
@@ -1353,30 +1595,35 @@
                     groupsMap.get(grp).push(item);
                 });
 
-                groupsMap.forEach((items, groupName) => {
-                    lines.push(`*${groupName.toUpperCase()}*`);
+                groupsMap.forEach((items, grpName) => {
+                    if (grpName && grpName !== 'General') {
+                        lines.push(`*${grpName.toUpperCase()}*`);
+                    }
                     items.forEach(item => {
-                        if (activeDepartment === 'clothing') {
-                            const sizes = item.sizes || {};
-                            const pickedSizes = item.pickedSizes || {};
-                            const activeSz = CLOTHING_SIZES.filter(sz => (Number(sizes[sz]) || 0) > 0);
-                            const sizeSummary = activeSz.map(sz => {
-                                const check = pickedSizes[sz] ? '✅' : '';
-                                return `${check}x${sizes[sz]} ${sz.toUpperCase()}`;
-                            }).join(', ');
-                            lines.push(`${sizeSummary} ${item.name}`);
+                        if (item.department === 'clothing') {
+                            const sizeParts = [];
+                            CLOTHING_SIZES.forEach(sz => {
+                                const q = Number((item.sizes && item.sizes[sz]) || 0);
+                                if (q > 0) sizeParts.push(`x${q} ${sz.toUpperCase()}`);
+                            });
+                            if (sizeParts.length > 0) {
+                                lines.push(`${sizeParts.join(', ')} ${item.name}`);
+                            }
                         } else {
                             const formatted = formatAutomaticContainerQty(item);
-                            const statusMark = item.picked ? '✅ ' : '';
-                            const totalSuffix = formatted.hasBreakdown ? ` (${item.qty} items)` : '';
-                            lines.push(`${statusMark}${formatted.primary} ${item.name}${totalSuffix}`);
+                            const suffix = formatted.hasBreakdown ? ` (${item.qty} items)` : '';
+                            lines.push(`${formatted.primary} ${item.name}${suffix}`);
                         }
                     });
-                    lines.push('');
                 });
             });
 
-            const text = lines.join('\n').trim();
+            if (lines.length <= 1) {
+                showToast('Nothing in picklist to copy!');
+                return;
+            }
+
+            const text = lines.join('\n');
             const tempArea = document.createElement('textarea');
             tempArea.value = text;
             tempArea.style.position = 'fixed';
@@ -1385,168 +1632,192 @@
             tempArea.select();
             try {
                 document.execCommand('copy');
-                showToast(`${activeDepartment === 'clothing' ? 'Clothing' : 'Hard Lines'} picklist copied!`);
+                showToast('Copied picklist for WhatsApp!');
             } catch (err) {
-                showToast('Could not copy automatically');
+                showToast('Failed to copy to clipboard');
             }
             document.body.removeChild(tempArea);
         }
 
-        // Modal Handlers
-        function updateAddModalPackagingVisibility() {
-            const dept = document.getElementById('add-dept-select').value;
-            const pkgFields = document.getElementById('add-packaging-fields');
-            if (dept === 'clothing') {
-                pkgFields.classList.add('hidden');
-            } else {
-                pkgFields.classList.remove('hidden');
+        // Parse pasted WhatsApp message into active catalog quantities
+        function parseWhatsAppMessage(rawText, clearExisting) {
+            if (clearExisting) {
+                catalog.forEach(item => {
+                    if (item.department === 'clothing') {
+                        item.sizes = createEmptySizesMap();
+                        item.pickedSizes = createEmptyPickedSizesMap();
+                    } else {
+                        item.qty = 0;
+                        item.picked = false;
+                    }
+                });
             }
+
+            let currentSecId = 'qudditch';
+            let currentGroup = 'General';
+            let matchedCount = 0;
+
+            const sectionMatchers = [
+                { regex: /quidditch|qudditch/i, id: 'qudditch' },
+                { regex: /diagon\s*alley/i, id: 'diagon-alley' },
+                { regex: /gringotts|b\s*&\s*g/i, id: 'gringotts' },
+                { regex: /ollivanders/i, id: 'ollivanders' },
+                { regex: /honeydukes/i, id: 'honeydukes' },
+                { regex: /minalima/i, id: 'minalima' },
+                { regex: /robes/i, id: 'robes' },
+                { regex: /toys/i, id: 'toys' },
+                { regex: /scrib/i, id: 'scrib' },
+                { regex: /knight\s*bus/i, id: 'knight-bus' },
+                { regex: /queue\s*line/i, id: 'queue-line' },
+                { regex: /bear\s*bunker/i, id: 'bear-bunker' }
+            ];
+
+            const houseMatchers = [
+                { regex: /\b(ravenclaw|rave)\b/i, group: 'Ravenclaw' },
+                { regex: /\b(slytherin|sly)\b/i, group: 'Slytherin' },
+                { regex: /\b(gryffindor|gry)\b/i, group: 'Gryffindor' },
+                { regex: /\b(hufflepuff|huff)\b/i, group: 'Hufflepuff' },
+                { regex: /\b(lego)\b/i, group: 'Lego' },
+                { regex: /\b(general)\b/i, group: 'General' }
+            ];
+
+            rawText.split(/\r?\n/).forEach(rawLine => {
+                const line = rawLine.trim();
+                if (!line) return;
+
+                // Check for section header
+                const stripped = line.replace(/[*_~]/g, '').trim();
+                const isHeaderLike = /^[_*].*[_*]$/.test(line) || (stripped === stripped.toUpperCase() && !/\d/.test(stripped));
+
+                let matchedSec = null;
+                for (const sm of sectionMatchers) {
+                    if (sm.regex.test(stripped) && (isHeaderLike || stripped.length < 28)) {
+                        matchedSec = sm.id;
+                        break;
+                    }
+                }
+                if (matchedSec) {
+                    currentSecId = matchedSec;
+                    currentGroup = 'General';
+                    return;
+                }
+
+                // Check for house/subsection header
+                if (isHeaderLike || stripped.length < 20) {
+                    for (const hm of houseMatchers) {
+                        if (hm.regex.test(stripped) && !/\d/.test(stripped)) {
+                            currentGroup = hm.group;
+                            return;
+                        }
+                    }
+                }
+
+                // Check for clothing sizes on line (e.g., "X2 m / 1 L quid jumper" or "X2 xs, x3m, x2xl , 1 xxl emb tee")
+                const sizeRegex = /(?:x\s*)?(\d+)\s*(xs|s|m|l|xl|xxl)\b/gi;
+                const sizeMatches = [...stripped.matchAll(sizeRegex)];
+                if (sizeMatches.length > 0) {
+                    const itemNamePart = stripped
+                        .replace(/(?:x\s*)?\d+\s*(?:xs|s|m|l|xl|xxl)\b/gi, ' ')
+                        .replace(/[,/]+/g, ' ')
+                        .replace(/\s+/g, ' ')
+                        .trim();
+
+                    if (itemNamePart) {
+                        let target = catalog.find(i =>
+                            i.department === 'clothing' &&
+                            i.sectionId === currentSecId &&
+                            (i.group || 'General').toLowerCase() === currentGroup.toLowerCase() &&
+                            i.name.toLowerCase().includes(itemNamePart.toLowerCase())
+                        );
+                        if (!target) {
+                            target = {
+                                id: `cloth-wa-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+                                department: 'clothing',
+                                sectionId: currentSecId,
+                                group: currentGroup,
+                                name: itemNamePart,
+                                sizes: createEmptySizesMap(),
+                                pickedSizes: createEmptyPickedSizesMap()
+                            };
+                            catalog.push(target);
+                        }
+                        sizeMatches.forEach(m => {
+                            const count = parseInt(m[1], 10) || 0;
+                            const sz = m[2].toLowerCase();
+                            target.sizes[sz] = (Number(target.sizes[sz]) || 0) + count;
+                        });
+                        matchedCount++;
+                        return;
+                    }
+                }
+
+                // Standard Hard Lines item: leading count like "X4 lion mascot plush" or "7 mini trunk"
+                const qtyMatch = stripped.match(/^(?:x\s*)?(\d+)\s+(.+)$/i);
+                if (qtyMatch) {
+                    const count = parseInt(qtyMatch[1], 10) || 0;
+                    const itemName = qtyMatch[2].trim();
+                    let target = catalog.find(i =>
+                        (i.department || 'hardlines') === 'hardlines' &&
+                        i.sectionId === currentSecId &&
+                        (i.group || 'General').toLowerCase() === currentGroup.toLowerCase() &&
+                        i.name.toLowerCase() === itemName.toLowerCase()
+                    );
+                    if (!target) {
+                        target = {
+                            id: `item-wa-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+                            department: 'hardlines',
+                            sectionId: currentSecId,
+                            group: currentGroup,
+                            name: itemName,
+                            qty: 0,
+                            picked: false,
+                            innerQty: /\bps\s*mug\b/i.test(itemName) ? 6 : 0,
+                            boxQty: /\bps\s*mug\b/i.test(itemName) ? 24 : 0
+                        };
+                        catalog.push(target);
+                    }
+                    target.qty = (Number(target.qty) || 0) + count;
+                    matchedCount++;
+                }
+            });
+
+            saveState();
+            appMode = 'picklist';
+            renderTabs();
+            updateHeaderAndBars();
+            renderMain();
+            showToast(`Parsed ${matchedCount} line${matchedCount === 1 ? '' : 's'} into picklist!`);
         }
 
-        function openAddModal(preselectSectionId) {
-            const modal = document.getElementById('add-item-modal');
-            const deptSelect = document.getElementById('add-dept-select');
-            deptSelect.value = activeDepartment;
-            updateAddModalPackagingVisibility();
-
-            const select = document.getElementById('add-section-select');
-            select.innerHTML = STORE_SECTIONS.map(s =>
-                `<option value="${s.id}" ${s.id === (preselectSectionId || (activeSection !== 'all' ? activeSection : 'quidditch')) ? 'selected' : ''}>${escapeHtml(s.label)}</option>`
-            ).join('');
-            document.getElementById('add-group-input').value = '';
-            document.getElementById('add-names-input').value = '';
-            document.getElementById('add-inner-input').value = '';
-            document.getElementById('add-box-input').value = '';
-            modal.classList.remove('hidden');
-        }
-
-        function openPackModal(itemId) {
-            const item = catalog.find(i => i.id === itemId);
-            if (!item) return;
-            const { singular, plural } = getSubUnitTerms(item.name);
-            document.getElementById('pack-item-id').value = item.id;
-            document.getElementById('pack-modal-title').textContent = item.name;
-            document.getElementById('pack-unit-hint').textContent = singular;
-            document.getElementById('pack-inner-label').textContent = `Units per ${singular}`;
-            document.getElementById('pack-inner-input').value = item.innerQty || '';
-            document.getElementById('pack-box-input').value = item.boxQty || '';
-            document.getElementById('pack-apply-matching').checked = true;
-            document.getElementById('pack-modal').classList.remove('hidden');
-        }
-
-        // Wire Static Controls on Load
+        // Initialize App & Event Listeners
         document.addEventListener('DOMContentLoaded', () => {
             loadState();
-            // Auto-sync from Git catalog.json if hosted alongside index.html
+            renderTabs();
+            updateHeaderAndBars();
+            renderMain();
             fetchGitCatalogIfAvailable(false);
 
-            // Department Switching (Hard Lines vs Clothing)
+            // Department Toggle
             document.getElementById('dept-hardlines-btn').addEventListener('click', () => {
-                if (activeDepartment === 'hardlines') return;
                 activeDepartment = 'hardlines';
                 activeSection = 'all';
-                secondaryFilterActive = false;
-                expandedSections = {};
                 renderTabs();
                 updateHeaderAndBars();
                 renderMain();
             });
 
             document.getElementById('dept-clothing-btn').addEventListener('click', () => {
-                if (activeDepartment === 'clothing') return;
                 activeDepartment = 'clothing';
                 activeSection = 'all';
-                secondaryFilterActive = false;
-                expandedSections = {};
                 renderTabs();
                 updateHeaderAndBars();
                 renderMain();
             });
 
-            // Export / Import Catalog Modal Events
-            document.getElementById('open-sync-modal-btn').addEventListener('click', () => {
-                document.getElementById('import-catalog-textarea').value = '';
-                document.getElementById('sync-modal').classList.remove('hidden');
-            });
-            document.getElementById('close-sync-modal-btn').addEventListener('click', () => {
-                document.getElementById('sync-modal').classList.add('hidden');
-            });
-
-            document.getElementById('download-catalog-btn').addEventListener('click', () => {
-                const jsonStr = JSON.stringify(getCleanCatalogExportData(), null, 2);
-                const blob = new Blob([jsonStr], { type: 'application/json' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'catalog.json';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-                showToast('Downloaded catalog.json!');
-            });
-
-            document.getElementById('copy-catalog-json-btn').addEventListener('click', () => {
-                const jsonStr = JSON.stringify(getCleanCatalogExportData(), null, 2);
-                const tempArea = document.createElement('textarea');
-                tempArea.value = jsonStr;
-                tempArea.style.position = 'fixed';
-                tempArea.style.opacity = '0';
-                document.body.appendChild(tempArea);
-                tempArea.select();
-                try {
-                    document.execCommand('copy');
-                    showToast('Catalog JSON copied!');
-                } catch (e) {
-                    showToast('Failed to copy JSON');
-                }
-                document.body.removeChild(tempArea);
-            });
-
-            document.getElementById('reload-git-catalog-btn').addEventListener('click', async () => {
-                await fetchGitCatalogIfAvailable(true);
-                document.getElementById('sync-modal').classList.add('hidden');
-            });
-
-            document.getElementById('apply-import-json-btn').addEventListener('click', () => {
-                const rawText = document.getElementById('import-catalog-textarea').value.trim();
-                if (!rawText) {
-                    showToast('Paste catalog JSON first');
-                    return;
-                }
-                try {
-                    const parsed = JSON.parse(rawText);
-                    applyImportedCatalog(parsed);
-                    document.getElementById('sync-modal').classList.add('hidden');
-                    showToast(`Imported ${catalog.length} catalog items!`);
-                } catch (e) {
-                    showToast('Invalid JSON format');
-                }
-            });
-
-            document.getElementById('import-catalog-file').addEventListener('change', (e) => {
-                const file = e.target.files && e.target.files[0];
-                if (!file) return;
-                const reader = new FileReader();
-                reader.onload = (evt) => {
-                    try {
-                        const parsed = JSON.parse(evt.target.result);
-                        applyImportedCatalog(parsed);
-                        document.getElementById('sync-modal').classList.add('hidden');
-                        showToast(`Loaded ${catalog.length} items from ${file.name}!`);
-                    } catch (err) {
-                        showToast('Invalid JSON file');
-                    }
-                };
-                reader.readAsText(file);
-                e.target.value = '';
-            });
-
-            // Mode switching
+            // Step Mode Toggle
             document.getElementById('mode-setup-btn').addEventListener('click', () => {
                 appMode = 'setup';
                 secondaryFilterActive = false;
-                expandedSections = {}; // Start zones collapsed cleanly
                 renderTabs();
                 updateHeaderAndBars();
                 renderMain();
@@ -1555,24 +1826,20 @@
             document.getElementById('mode-picklist-btn').addEventListener('click', () => {
                 appMode = 'picklist';
                 secondaryFilterActive = false;
-                expandedSections = {}; // Start zones collapsed cleanly
                 renderTabs();
                 updateHeaderAndBars();
                 renderMain();
             });
 
-            // Primary Bottom Action Button
+            // Primary Bottom Action Button & Direct WhatsApp Share Button
+            document.getElementById('whatsapp-share-btn').addEventListener('click', () => {
+                sharePicklistToWhatsApp();
+            });
+
             document.getElementById('primary-action-btn').addEventListener('click', () => {
                 if (appMode === 'setup') {
-                    const deptCatalog = catalog.filter(i => (i.department || 'hardlines') === activeDepartment);
-                    const selectedCount = deptCatalog.filter(i => getItemTotalQty(i) > 0).length;
-                    if (selectedCount === 0) {
-                        showToast('Set at least 1 quantity first');
-                        return;
-                    }
                     appMode = 'picklist';
                     secondaryFilterActive = false;
-                    expandedSections = {};
                     renderTabs();
                     updateHeaderAndBars();
                     renderMain();
@@ -1582,41 +1849,70 @@
                 }
             });
 
-            // Search Input
+            // Search & Secondary Filter
             document.getElementById('search-input').addEventListener('input', (e) => {
                 searchQuery = e.target.value;
                 renderMain();
             });
 
-            // Secondary Filter Toggle
             document.getElementById('toggle-secondary-filter').addEventListener('click', () => {
                 secondaryFilterActive = !secondaryFilterActive;
                 updateHeaderAndBars();
                 renderMain();
             });
 
-            // Add Item Modal Events
-            document.getElementById('add-dept-select').addEventListener('change', updateAddModalPackagingVisibility);
-            document.getElementById('open-add-modal-btn').addEventListener('click', () => openAddModal());
-            document.getElementById('close-add-modal-btn').addEventListener('click', () => document.getElementById('add-item-modal').classList.add('hidden'));
-            document.getElementById('cancel-add-modal-btn').addEventListener('click', () => document.getElementById('add-item-modal').classList.add('hidden'));
+            // Confirm Reset Modal
+            document.getElementById('clear-all-btn').addEventListener('click', () => {
+                document.getElementById('confirm-modal').classList.remove('hidden');
+            });
+            document.getElementById('confirm-cancel-btn').addEventListener('click', () => {
+                document.getElementById('confirm-modal').classList.add('hidden');
+            });
+            document.getElementById('confirm-ok-btn').addEventListener('click', () => {
+                catalog.forEach(item => {
+                    if (item.department === 'clothing') {
+                        item.sizes = createEmptySizesMap();
+                        item.pickedSizes = createEmptyPickedSizesMap();
+                    } else {
+                        item.qty = 0;
+                        item.picked = false;
+                    }
+                });
+                saveState();
+                renderTabs();
+                updateHeaderAndBars();
+                renderMain();
+                document.getElementById('confirm-modal').classList.add('hidden');
+                showToast('All quantities cleared');
+            });
 
+            // Add Item Modal
+            document.getElementById('open-add-modal-btn').addEventListener('click', () => openAddModal());
+            document.getElementById('close-add-modal-btn').addEventListener('click', () => {
+                document.getElementById('add-item-modal').classList.add('hidden');
+            });
+            document.getElementById('cancel-add-modal-btn').addEventListener('click', () => {
+                document.getElementById('add-item-modal').classList.add('hidden');
+            });
+            document.getElementById('add-dept-select').addEventListener('change', (e) => {
+                document.getElementById('add-packaging-fields').classList.toggle('hidden', e.target.value === 'clothing');
+            });
             document.getElementById('add-item-form').addEventListener('submit', (e) => {
                 e.preventDefault();
-                const dept = document.getElementById('add-dept-select').value === 'clothing' ? 'clothing' : 'hardlines';
+                const dept = document.getElementById('add-dept-select').value;
                 const secId = document.getElementById('add-section-select').value;
                 const grp = document.getElementById('add-group-input').value.trim() || 'General';
-                const rawNames = document.getElementById('add-names-input').value;
-                const innerQty = Math.max(0, parseInt(document.getElementById('add-inner-input').value, 10) || 0);
-                const boxQty = Math.max(0, parseInt(document.getElementById('add-box-input').value, 10) || 0);
+                const names = document.getElementById('add-names-input').value
+                    .split(/\r?\n/)
+                    .map(s => s.trim())
+                    .filter(Boolean);
+                const innerQty = parseInt(document.getElementById('add-inner-input').value, 10) || 0;
+                const boxQty = parseInt(document.getElementById('add-box-input').value, 10) || 0;
 
-                const names = rawNames.split('\n').map(n => n.trim()).filter(Boolean);
-                if (names.length === 0) return;
-
-                names.forEach(name => {
+                names.forEach((name, idx) => {
                     if (dept === 'clothing') {
                         catalog.push({
-                            id: `cloth-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+                            id: `cloth-${Date.now()}-${idx}`,
                             department: 'clothing',
                             sectionId: secId,
                             group: grp,
@@ -1626,7 +1922,7 @@
                         });
                     } else {
                         catalog.push({
-                            id: `item-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+                            id: `item-${Date.now()}-${idx}`,
                             department: 'hardlines',
                             sectionId: secId,
                             group: grp,
@@ -1639,85 +1935,182 @@
                     }
                 });
 
-                saveState();
                 activeDepartment = dept;
-                activeSection = secId;
                 expandedSections[secId] = true;
+                expandedGroups[`${dept}::${secId}::${grp}`] = true;
+                saveState();
                 renderTabs();
                 updateHeaderAndBars();
                 renderMain();
                 document.getElementById('add-item-modal').classList.add('hidden');
-                showToast(`Added ${names.length} ${dept === 'clothing' ? 'clothing' : 'hard lines'} item${names.length === 1 ? '' : 's'}!`);
+                showToast(`Added ${names.length} product${names.length === 1 ? '' : 's'}!`);
             });
 
-            // Pack Size Modal Events
-            document.getElementById('close-pack-modal-btn').addEventListener('click', () => document.getElementById('pack-modal').classList.add('hidden'));
-            document.getElementById('cancel-pack-modal-btn').addEventListener('click', () => document.getElementById('pack-modal').classList.add('hidden'));
-
+            // Packaging Setup Modal
+            document.getElementById('close-pack-modal-btn').addEventListener('click', () => {
+                document.getElementById('pack-modal').classList.add('hidden');
+            });
+            document.getElementById('cancel-pack-modal-btn').addEventListener('click', () => {
+                document.getElementById('pack-modal').classList.add('hidden');
+            });
             document.getElementById('pack-form').addEventListener('submit', (e) => {
                 e.preventDefault();
                 const id = document.getElementById('pack-item-id').value;
-                const target = catalog.find(i => i.id === id);
-                if (!target) return;
-
-                const newInner = Math.max(0, parseInt(document.getElementById('pack-inner-input').value, 10) || 0);
-                const newBox = Math.max(0, parseInt(document.getElementById('pack-box-input').value, 10) || 0);
+                const innerQty = Math.max(0, parseInt(document.getElementById('pack-inner-input').value, 10) || 0);
+                const boxQty = Math.max(0, parseInt(document.getElementById('pack-box-input').value, 10) || 0);
                 const applyAll = document.getElementById('pack-apply-matching').checked;
 
-                if (applyAll) {
-                    const targetNameLower = target.name.trim().toLowerCase();
-                    catalog.forEach(item => {
-                        if (item.name.trim().toLowerCase() === targetNameLower) {
-                            item.innerQty = newInner;
-                            item.boxQty = newBox;
-                        }
-                    });
-                } else {
-                    target.innerQty = newInner;
-                    target.boxQty = newBox;
-                }
-
-                saveState();
-                renderMain();
-                document.getElementById('pack-modal').classList.add('hidden');
-                showToast('Packaging sizes saved');
-            });
-
-            // Clear / Reset Confirmation Modal
-            document.getElementById('clear-all-btn').addEventListener('click', () => {
-                const deptLabel = activeDepartment === 'clothing' ? 'Clothing' : 'Hard Lines';
-                document.getElementById('confirm-title').textContent = `Reset ${deptLabel} Quantities?`;
-                document.getElementById('confirm-desc').textContent = `This will clear all entered quantities and uncheck all picked items in ${deptLabel}.`;
-                document.getElementById('confirm-modal').classList.remove('hidden');
-            });
-            document.getElementById('confirm-cancel-btn').addEventListener('click', () => {
-                document.getElementById('confirm-modal').classList.add('hidden');
-            });
-            document.getElementById('confirm-ok-btn').addEventListener('click', () => {
-                catalog.forEach(item => {
-                    if ((item.department || 'hardlines') !== activeDepartment) return;
-                    if (item.department === 'clothing') {
-                        item.sizes = createEmptySizesMap();
-                        item.pickedSizes = createEmptyPickedSizesMap();
+                const target = catalog.find(i => i.id === id);
+                if (target) {
+                    if (applyAll) {
+                        const matchName = target.name.trim().toLowerCase();
+                        catalog.forEach(i => {
+                            if ((i.department || 'hardlines') === 'hardlines' && i.name.trim().toLowerCase() === matchName) {
+                                i.innerQty = innerQty;
+                                i.boxQty = boxQty;
+                            }
+                        });
                     } else {
-                        item.qty = 0;
-                        item.picked = false;
+                        target.innerQty = innerQty;
+                        target.boxQty = boxQty;
                     }
-                });
-                appMode = 'setup';
-                secondaryFilterActive = false;
-                saveState();
-                renderTabs();
-                updateHeaderAndBars();
-                renderMain();
-                document.getElementById('confirm-modal').classList.add('hidden');
-                showToast(`Cleared ${activeDepartment === 'clothing' ? 'Clothing' : 'Hard Lines'} quantities`);
+                    saveState();
+                    renderMain();
+                    showToast('Updated container sizes');
+                }
+                document.getElementById('pack-modal').classList.add('hidden');
             });
 
-            // Initial Render (Zones collapsed by default)
-            renderTabs();
-            updateHeaderAndBars();
-            renderMain();
+            // Catalog Export / Import Modal
+            document.getElementById('open-sync-modal-btn').addEventListener('click', () => {
+                document.getElementById('import-catalog-textarea').value = '';
+                document.getElementById('sync-modal').classList.remove('hidden');
+            });
+            document.getElementById('close-sync-modal-btn').addEventListener('click', () => {
+                document.getElementById('sync-modal').classList.add('hidden');
+            });
+            document.getElementById('download-catalog-btn').addEventListener('click', () => {
+                const dataStr = JSON.stringify(getCleanCatalogExportData(), null, 2);
+                const blob = new Blob([dataStr], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'catalog.json';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                showToast('Downloaded catalog.json!');
+            });
+            document.getElementById('copy-catalog-json-btn').addEventListener('click', () => {
+                const dataStr = JSON.stringify(getCleanCatalogExportData(), null, 2);
+                const ta = document.createElement('textarea');
+                ta.value = dataStr;
+                ta.style.position = 'fixed';
+                ta.style.opacity = '0';
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                showToast('Copied catalog JSON!');
+            });
+            document.getElementById('reload-git-catalog-btn').addEventListener('click', () => {
+                fetchGitCatalogIfAvailable(true);
+            });
+            document.getElementById('import-catalog-file').addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    const content = ev.target.result;
+                    if (file.name.toLowerCase().endsWith('.csv')) {
+                        importCSVToCatalog(content);
+                        document.getElementById('sync-modal').classList.add('hidden');
+                    } else {
+                        try {
+                            const parsed = JSON.parse(content);
+                            applyImportedCatalog(parsed);
+                            document.getElementById('sync-modal').classList.add('hidden');
+                            showToast(`Imported ${catalog.length} items!`);
+                        } catch (err) {
+                            showToast('Invalid JSON file');
+                        }
+                    }
+                };
+                reader.readAsText(file);
+                e.target.value = '';
+            });
+            document.getElementById('apply-import-json-btn').addEventListener('click', () => {
+                const raw = document.getElementById('import-catalog-textarea').value.trim();
+                if (!raw) return;
+                try {
+                    const parsed = JSON.parse(raw);
+                    applyImportedCatalog(parsed);
+                    document.getElementById('sync-modal').classList.add('hidden');
+                    showToast(`Imported ${catalog.length} items!`);
+                } catch (err) {
+                    showToast('Invalid JSON format');
+                }
+            });
+
+            // WhatsApp Modal
+            document.getElementById('open-whatsapp-modal-btn').addEventListener('click', () => {
+                document.getElementById('whatsapp-paste-input').value = '';
+                document.getElementById('whatsapp-modal').classList.remove('hidden');
+            });
+            document.getElementById('close-whatsapp-modal-btn').addEventListener('click', () => {
+                document.getElementById('whatsapp-modal').classList.add('hidden');
+            });
+            document.getElementById('cancel-whatsapp-modal-btn').addEventListener('click', () => {
+                document.getElementById('whatsapp-modal').classList.add('hidden');
+            });
+            document.getElementById('whatsapp-parse-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const text = document.getElementById('whatsapp-paste-input').value;
+                const clear = document.getElementById('whatsapp-clear-existing').checked;
+                parseWhatsAppMessage(text, clear);
+                document.getElementById('whatsapp-modal').classList.add('hidden');
+            });
+
+            // Shelf Reference Photo Modal
+            document.getElementById('close-shelf-photo-btn').addEventListener('click', () => {
+                document.getElementById('shelf-photo-modal').classList.add('hidden');
+            });
+            document.getElementById('shelf-photo-url-input').addEventListener('input', (e) => {
+                updateShelfPhotoPreview(e.target.value.trim());
+            });
+            document.getElementById('shelf-photo-file').addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    document.getElementById('shelf-photo-url-input').value = ev.target.result;
+                    updateShelfPhotoPreview(ev.target.result);
+                };
+                reader.readAsDataURL(file);
+                e.target.value = '';
+            });
+            document.getElementById('save-shelf-photo-btn').addEventListener('click', () => {
+                const key = document.getElementById('shelf-photo-key').value;
+                const val = document.getElementById('shelf-photo-url-input').value.trim();
+                if (val) {
+                    shelfPhotos[key] = val;
+                } else {
+                    delete shelfPhotos[key];
+                }
+                saveState();
+                renderMain();
+                document.getElementById('shelf-photo-modal').classList.add('hidden');
+                showToast('Shelf reference photo saved!');
+            });
+            document.getElementById('remove-shelf-photo-btn').addEventListener('click', () => {
+                const key = document.getElementById('shelf-photo-key').value;
+                delete shelfPhotos[key];
+                saveState();
+                renderMain();
+                document.getElementById('shelf-photo-modal').classList.add('hidden');
+                showToast('Shelf photo removed');
+            });
         });
     </script>
 </body>

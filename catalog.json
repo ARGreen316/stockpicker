@@ -1,0 +1,4714 @@
+{
+  "version": 3,
+  "updatedAt": "2026-11-20T23:07:19.296Z",
+  "shelfPhotos": {},
+  "catalog": [
+    {
+      "id": "cloth-1",
+      "department": "clothing",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Diagon Alley Christmas Hoodie"
+    },
+    {
+      "id": "cloth-2",
+      "department": "clothing",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Diagon Alley Christmas Knitted Jumper"
+    },
+    {
+      "id": "cloth-3",
+      "department": "clothing",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Diagon Alley Christmas Pyjama Set"
+    },
+    {
+      "id": "cloth-4",
+      "department": "clothing",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Diagon Alley in the Snow Spirit Jersey"
+    },
+    {
+      "id": "cloth-5",
+      "department": "clothing",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Dobby Loungewear Set"
+    },
+    {
+      "id": "cloth-6",
+      "department": "clothing",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Dobby Oversized Cosy Hoodie"
+    },
+    {
+      "id": "item-7",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Funko POP! Luna in Dress Vinyl Figure",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "cloth-8",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor Embroidery Print T-Shirt"
+    },
+    {
+      "id": "cloth-9",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor Fleece Hoodie"
+    },
+    {
+      "id": "cloth-10",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor House Spirit Jersey"
+    },
+    {
+      "id": "cloth-11",
+      "department": "clothing",
+      "sectionId": "robes",
+      "group": "Gryffindor",
+      "name": "Gryffindor Knitted School Cardigan"
+    },
+    {
+      "id": "cloth-12",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor Quidditch Jumper"
+    },
+    {
+      "id": "cloth-13",
+      "department": "clothing",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Hagrid's Hut Pyjama Set"
+    },
+    {
+      "id": "cloth-14",
+      "department": "clothing",
+      "sectionId": "knight-bus",
+      "group": "General",
+      "name": "Happee Birthdae Zip Hoodie"
+    },
+    {
+      "id": "cloth-15",
+      "department": "clothing",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Harry Potter 'H' Pyjama Set"
+    },
+    {
+      "id": "cloth-16",
+      "department": "clothing",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Harry Potter 'H' Replica Jumper"
+    },
+    {
+      "id": "cloth-17",
+      "department": "clothing",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hedwig Cosy Loungewear Set"
+    },
+    {
+      "id": "cloth-18",
+      "department": "clothing",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hogwarts Christmas Knitted Jumper"
+    },
+    {
+      "id": "cloth-19",
+      "department": "clothing",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hogwarts Christmas Pyjamas"
+    },
+    {
+      "id": "cloth-20",
+      "department": "clothing",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hogwarts Christmas Sequin Knitted Jumper"
+    },
+    {
+      "id": "cloth-21",
+      "department": "clothing",
+      "sectionId": "knight-bus",
+      "group": "General",
+      "name": "Hogwarts Crest Rugby Top"
+    },
+    {
+      "id": "cloth-22",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Embroidery Print T-Shirt"
+    },
+    {
+      "id": "cloth-23",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Fleece Hoodie"
+    },
+    {
+      "id": "cloth-24",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff House Spirit Jersey"
+    },
+    {
+      "id": "cloth-25",
+      "department": "clothing",
+      "sectionId": "robes",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Knitted School Cardigan"
+    },
+    {
+      "id": "cloth-26",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Quidditch Jumper"
+    },
+    {
+      "id": "cloth-27",
+      "department": "clothing",
+      "sectionId": "robes",
+      "group": "Gryffindor",
+      "name": "Kids Personalised Gryffindor Robe"
+    },
+    {
+      "id": "cloth-28",
+      "department": "clothing",
+      "sectionId": "robes",
+      "group": "Hufflepuff",
+      "name": "Kids Personalised Hufflepuff Robe"
+    },
+    {
+      "id": "cloth-29",
+      "department": "clothing",
+      "sectionId": "robes",
+      "group": "Ravenclaw",
+      "name": "Kids Personalised Ravenclaw Robe"
+    },
+    {
+      "id": "cloth-30",
+      "department": "clothing",
+      "sectionId": "robes",
+      "group": "Slytherin",
+      "name": "Kids Personalised Slytherin Robe"
+    },
+    {
+      "id": "item-31",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Madam Malkin's Robes Glass Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "cloth-32",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "MM25 Gryffindor Hoodie"
+    },
+    {
+      "id": "cloth-33",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "MM25 Gryffindor Spirit Jersey"
+    },
+    {
+      "id": "cloth-34",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "MM25 Gryffindor T-Shirt"
+    },
+    {
+      "id": "cloth-35",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "MM25 Hufflepuff Hoodie"
+    },
+    {
+      "id": "cloth-36",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "MM25 Hufflepuff Spirit Jersey"
+    },
+    {
+      "id": "cloth-37",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "MM25 Hufflepuff T-Shirt"
+    },
+    {
+      "id": "cloth-38",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "MM25 Ravenclaw Hoodie"
+    },
+    {
+      "id": "cloth-39",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "MM25 Ravenclaw Spirit Jersey"
+    },
+    {
+      "id": "cloth-40",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "MM25 Ravenclaw T-Shirt"
+    },
+    {
+      "id": "cloth-41",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "MM25 Slytherin Hoodie"
+    },
+    {
+      "id": "cloth-42",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "MM25 Slytherin Spirit Jersey"
+    },
+    {
+      "id": "cloth-43",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "MM25 Slytherin T-Shirt"
+    },
+    {
+      "id": "cloth-44",
+      "department": "clothing",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Niffler Oversized Hoodie"
+    },
+    {
+      "id": "cloth-45",
+      "department": "clothing",
+      "sectionId": "robes",
+      "group": "Gryffindor",
+      "name": "Personalised Gryffindor Robe"
+    },
+    {
+      "id": "cloth-46",
+      "department": "clothing",
+      "sectionId": "robes",
+      "group": "Gryffindor",
+      "name": "Personalised Gryffindor Triwizard Shirt"
+    },
+    {
+      "id": "cloth-47",
+      "department": "clothing",
+      "sectionId": "robes",
+      "group": "Hufflepuff",
+      "name": "Personalised Hufflepuff Robe"
+    },
+    {
+      "id": "cloth-48",
+      "department": "clothing",
+      "sectionId": "robes",
+      "group": "Ravenclaw",
+      "name": "Personalised Ravenclaw Robe"
+    },
+    {
+      "id": "cloth-49",
+      "department": "clothing",
+      "sectionId": "robes",
+      "group": "Ravenclaw",
+      "name": "Personalised Ravenclaw Triwizard Shirt"
+    },
+    {
+      "id": "cloth-50",
+      "department": "clothing",
+      "sectionId": "robes",
+      "group": "Slytherin",
+      "name": "Personalised Slytherin Robe"
+    },
+    {
+      "id": "cloth-51",
+      "department": "clothing",
+      "sectionId": "robes",
+      "group": "Slytherin",
+      "name": "Personalised Slytherin Triwizard Shirt"
+    },
+    {
+      "id": "cloth-52",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Embroidery Print T-Shirt"
+    },
+    {
+      "id": "cloth-53",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Fleece Hoodie"
+    },
+    {
+      "id": "cloth-54",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw House Spirit Jersey"
+    },
+    {
+      "id": "cloth-55",
+      "department": "clothing",
+      "sectionId": "robes",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Knitted School Cardigan"
+    },
+    {
+      "id": "cloth-56",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Quidditch Jumper"
+    },
+    {
+      "id": "cloth-57",
+      "department": "clothing",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Ron Weasley 'R' Pyjama Set"
+    },
+    {
+      "id": "cloth-58",
+      "department": "clothing",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Ron Weasley 'R' Replica Jumper"
+    },
+    {
+      "id": "cloth-59",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Slytherin Embroidery Print T-Shirt"
+    },
+    {
+      "id": "cloth-60",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Slytherin Fleece Hoodie"
+    },
+    {
+      "id": "cloth-61",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Slytherin House Spirit Jersey"
+    },
+    {
+      "id": "cloth-62",
+      "department": "clothing",
+      "sectionId": "robes",
+      "group": "Slytherin",
+      "name": "Slytherin Knitted School Cardigan"
+    },
+    {
+      "id": "cloth-63",
+      "department": "clothing",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Slytherin Quidditch Jumper"
+    },
+    {
+      "id": "item-64",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Acceptance Letter Card Holder",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-65",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Acceptance Letter Crossbody Bag",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-66",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Acceptance Letter Gold Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-67",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Acceptance Letter Mug & Plush Gift Set",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-68",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Acceptance Letter Snow Globe",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-69",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Acceptance Letter Throw Blanket",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-70",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Advanced Potion Making Journal",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-71",
+      "department": "hardlines",
+      "sectionId": "queue-line",
+      "group": "Gryffindor",
+      "name": "Albus Dumbledore Wand Pen and Bookmark",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-72",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Albus Dumbledore's Wand - Fantastic Beasts",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-73",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Authentic Gryffindor Scarf",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-74",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Authentic Gryffindor Tie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-75",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Authentic Hufflepuff Scarf",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-76",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Authentic Slytherin Scarf",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-77",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Baby Niffler Ginger Plush",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-78",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Baby Niffler Plush",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-79",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Bag of Gringotts Galleons Chocolate Coins",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-80",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Bellatrix Lestrange's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-81",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Bertie Bott's Every Flavour Beans",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-82",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Bertie Bott’s Every Flavour Beans Mini Soft Toy",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-83",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Bertie Botts Beans Souvenir Tin",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-84",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Bertie Botts Glass Ornament",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-85",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Bottled Butterbeer",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-86",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Bottled Butterbeer 4-Pack",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-87",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Bow Clip Gryffindor",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-88",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Bow Clip Hufflepuff",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-89",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "Bow Clip Ravenclaw",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-90",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Bow Clip Slytherin",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-91",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Bowtruckle Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-92",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Buckbeak Soft Toy",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-93",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Butterbeer Biscuits",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-94",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Butterbeer Bottle Metal Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-95",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Butterbeer Chocolate Bar",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-96",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Butterbeer Fudge Barrel",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-97",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Butterbeer Glass",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-98",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Butterbeer Logo Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-99",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Butterbeer Lollipop",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-100",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Butterbeer Magnet Bottle Opener",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-101",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Butterbeer Shopper Tote - Large",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-102",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Butterbeer Shopper Tote - Medium",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-103",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Butterbeer Shopper Tote - Small",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-104",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Butterbeer Stein Mini Soft Toy",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-105",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Butterbeer Tankard Glass Ornament",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-106",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Butterbeer Tankard Metal Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-107",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Butterbeer Tea Towel",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-108",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "Hufflepuff",
+      "name": "Cedric Diggory's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-109",
+      "department": "hardlines",
+      "sectionId": "minalima",
+      "group": "General",
+      "name": "Chamber of Secrets - MinaLima Edition",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-110",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Chocolate Frog - with authentic film packaging",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-111",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Chocolate Frog Mini Soft Toy",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-112",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Chocolate Frog Souvenir Tin",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-113",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Crookshanks Cosy Mug",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-114",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Crookshanks Soft Toy",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-115",
+      "department": "hardlines",
+      "sectionId": "minalima",
+      "group": "General",
+      "name": "Dark Arts Defence Journal",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-116",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Dark Arts Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-117",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Dark Chocolate Frog - with authentic film packaging",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-118",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Death Eater's Wand - Skull",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-119",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Death Eater's Wand - Swirl",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-120",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "Deathly Hallows Pin",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-121",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Diagon Alley Christmas 3-Pack Socks",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-122",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Diagon Alley Christmas Bear",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-123",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Diagon Alley Christmas Bear Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-124",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Diagon Alley Christmas Blanket",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-125",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Diagon Alley Christmas Blue Mug",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-126",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Diagon Alley Christmas Bookmark",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-127",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Diagon Alley Christmas Candle Set",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-128",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Diagon Alley Christmas Globe Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-129",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Diagon Alley Christmas Magnet Set",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-130",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Diagon Alley Christmas Pin Set",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-131",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Diagon Alley Christmas Pink Mug",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-132",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Diagon Alley Christmas Sack",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-133",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Diagon Alley Christmas Snow Globe",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-134",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Diagon Alley Christmas Snow Globe Pen",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-135",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Diagon Alley in the Snow Puzzle",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-136",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Diagon Alley Wizarding Shops LEGO®",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-137",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Dobby Christmas Bauble",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-138",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Dobby Cosy Socks",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-139",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Dobby Mug & Plush Gift Set",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-140",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Dobby Sleep Mask",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-141",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Dobby Soft Toy",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-142",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Dobby the Free Elf LEGO®",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-143",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Dobby the House-Elf Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-144",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Dobby TY Bouncer",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-145",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Draco Malfoy Charms Handbag",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-146",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Draco Malfoy's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-147",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Dumbledore TY Squishy Beanie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-148",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Dumbledore's Lectern Owl Wand Stand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-149",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Exploding Bon Bons",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-150",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Fang Soft Toy",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-151",
+      "department": "hardlines",
+      "sectionId": "minalima",
+      "group": "General",
+      "name": "Fantastic Beasts & Where to Find Them Journal",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-152",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Fawkes Phoenix Soft Toy",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-153",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Fizzing Whizzbees Chocolate",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-154",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Flourish & Blotts Glass Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-155",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Flying Ford Anglia LEGO®",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-156",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Forbidden Forest - Expecto Patronum LEGO®",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-157",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Fudge Flies",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-158",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Funko POP! Hagrid Vinyl Figure - Large",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-159",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Funko POP! Harry Potter Vinyl Figure",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-160",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Funko POP! Hedwig Vinyl Figure",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-161",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Funko POP! Hermione with Crookshanks Vinyl Figure",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-162",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Gellert Grindelwald's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-163",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Ginny Weasley's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-164",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Goblet of Fire Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-165",
+      "department": "hardlines",
+      "sectionId": "queue-line",
+      "group": "General",
+      "name": "Golden Snitch Necklace",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-166",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "Golden Snitch Pin Badge",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-167",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Golden Snitch Toy",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-168",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Golden Snitch TY Bouncer",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-169",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Golden Snitch Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-170",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Griffin Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-171",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor 3-Pack Socks",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-172",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "Gryffindor",
+      "name": "Gryffindor Attribute Spinner Key Ring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-173",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor Bear Plush",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-174",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor Compact Mirror",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-175",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor Cosmetics Bag",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-176",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "Gryffindor",
+      "name": "Gryffindor Crest Embossed Journal",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-177",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Gryffindor",
+      "name": "Gryffindor Crest Medallion Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-178",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor House Baseball Cap",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-179",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Gryffindor",
+      "name": "Gryffindor House Points Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-180",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor House Tie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-181",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor Knitted Crest Scarf",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-182",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor Knitted Hat",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-183",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor Knitted Mitten Capped Gloves",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-184",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "Gryffindor",
+      "name": "Gryffindor Mascot & Traits Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-185",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "Gryffindor",
+      "name": "Gryffindor Metal Crest Journal",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-186",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "Gryffindor",
+      "name": "Gryffindor Milk Chocolate Bar",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-187",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor Nail File Set",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-188",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor Patch Backpack",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-189",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor Pen",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-190",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor PS Mug",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-191",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor Quill",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-192",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "Gryffindor",
+      "name": "Gryffindor Scarf Bookmark",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-193",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Gryffindor",
+      "name": "Gryffindor Scarf Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-194",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor Scrunchie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-195",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor Striped Headband",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-196",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "Gryffindor",
+      "name": "Gryffindor Traits Pin",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-197",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Hagrid & Harry's Motorcycle Ride LEGO®",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-198",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Hagrid & Harry's Privet Drive Escape LEGO®",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-199",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Hagrid TY Squishy Beanie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-200",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Hagrid's Hut Cup & Straw",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-201",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Hagrid's Hut Cushion",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-202",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Hagrid's Hut Glass Candle",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-203",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Happee Birthdae Cake Mini Soft Toy",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-204",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "General",
+      "name": "Happee Birthdae Cosy Socks",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-205",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "General",
+      "name": "Happee Birthdae Cup & Straw",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-206",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "General",
+      "name": "Happee Birthdae Glass",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-207",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "General",
+      "name": "Happee Birthdae Hair Clip",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-208",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "General",
+      "name": "Happee Birthdae Scrunchie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-209",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "Harry Potter and the Half-Blood Prince Illustrated Edition",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-210",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Harry Potter Book Cover Glass Ornament",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-211",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Harry Potter Charms Handbag",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-212",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "Harry Potter Film Wizardry Book",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-213",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Harry Potter Glasses",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-214",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Harry Potter Monopoly Boardgame",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-215",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Harry Potter Monopoly Deal",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-216",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "Harry Potter Paperback Boxset Collection",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-217",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "Harry Potter Shopping Bag Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-218",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Harry Potter TY Bouncer",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-219",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Harry Potter TY Squishy Beanie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-220",
+      "department": "hardlines",
+      "sectionId": "queue-line",
+      "group": "General",
+      "name": "Harry Potter Wand Pen and Bookmark Set",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-221",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Harry Potter's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-222",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "HBO Series Draco Malfoy Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-223",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "HBO Series Harry Potter Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-224",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "HBO Series Hermione Granger Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-225",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "HBO Series Ron Weasley Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-226",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Hedwig at 4 Privet Drive LEGO®",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-227",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hedwig Christmas Pramsuit",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-228",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hedwig Cosy Mug",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-229",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hedwig Cosy Socks",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-230",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hedwig Glass Ornament",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-231",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hedwig List Notepad",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-232",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Hedwig Soft Toy - Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-233",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Hedwig Soft Toy - Large",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-234",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Hedwig Soft Toy - Medium",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-235",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Hedwig Soft Toy - Small",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-236",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Hedwig TY Bouncer",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-237",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Hedwig TY Squishy Beanie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-238",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Hedwig Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-239",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hedwig Weekly Desk Planner",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-240",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Hermione Granger Charms Handbag",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-241",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Hermione Granger TY Squishy Beanie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-242",
+      "department": "hardlines",
+      "sectionId": "queue-line",
+      "group": "General",
+      "name": "Hermione Granger Wand Pen and Bookmark",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-243",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Hermione Granger's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-244",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "History Of Magic Jewellery Box",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-245",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hogsmeade Christmas Mini Snow Globe",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-246",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "General",
+      "name": "Hogwarts Boxed Writing Quill",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-247",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Hogwarts Castle - Sorting Hat Ceremony LEGO®",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-248",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hogwarts Castle Christmas Mug & Socks Gift Set",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-249",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hogwarts Castle Gold Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-250",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hogwarts Christmas Gold Snow Globe",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-251",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hogwarts Christmas Metal Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-252",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hogwarts Christmas Photo Frame",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-253",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hogwarts Christmas Slipper Socks",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-254",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hogwarts Christmas Velvet Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-255",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "General",
+      "name": "Hogwarts Crest Cup & Straw",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-256",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "Hogwarts Crest Embossed Journal",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-257",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Hogwarts Crest Medallion Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-258",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Hogwarts Express Acceptance Letter Cushion",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-259",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hogwarts Express Gold Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-260",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hogwarts Express Mug & Socks Gift Set",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-261",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Hogwarts Express Replica Ticket",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-262",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "Hogwarts Express Sign Pin Badge",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-263",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Hogwarts Express Ticket Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-264",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "Hogwarts Express Ticket Magnet",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-265",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Hogwarts House Crest LEGO®",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-266",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "General",
+      "name": "Hogwarts Pen & Ink Quill Set",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-267",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "General",
+      "name": "Hogwarts Quill - Black",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-268",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "General",
+      "name": "Hogwarts Quill - White",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-269",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "Hogwarts Scarf Bookmark",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-270",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Hogwarts Scarf Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-271",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Hogwarts School Crest Knitted Gloves",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-272",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Hogwarts School Crest Knitted Hat",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-273",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Hogwarts School Crest Knitted Scarf",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-274",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Hogwarts School Motto Wand Stand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-275",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hogwarts Trunk Mini Soft Toy",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-276",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Honeydukes All Butter Toffees",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-277",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Honeydukes Caramel Sea Salt Fudge",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-278",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Honeydukes Chocolate Coin",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-279",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Honeydukes Christmas Blanket",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-280",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Honeydukes Christmas Cosy Socks",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-281",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Honeydukes Christmas Cushion",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-282",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Honeydukes Christmas Keychain",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-283",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Honeydukes Christmas Mini Snow Globe",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-284",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Honeydukes Christmas Mug",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-285",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Honeydukes Christmas Plate",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-286",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Honeydukes Glass Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-287",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Honeydukes Milk Chocolate Honeycomb",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-288",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff 3-Pack Socks",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-289",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Attribute Pin",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-290",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Bear Plush",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-291",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Compact Mirror",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-292",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Cosmetics Bag",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-293",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Crest Embossed Journal",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-294",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Crest Medallion Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-295",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff House Baseball Cap",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-296",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff House Crest Notebook",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-297",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff House Points Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-298",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff House Tie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-299",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff House Traits Pin Badge",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-300",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Knitted Crest Scarf",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-301",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Knitted Hat",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-302",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Knitted Mitten Capped Gloves",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-303",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Mascot & Traits Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-304",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Mascot Badger Soft Toy",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-305",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Milk Chocolate Bar",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-306",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Nail File Set",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-307",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Patch Backpack",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-308",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Pen",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-309",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff PS Mug",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-310",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Quill",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-311",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Scarf Bookmark",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-312",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Scarf Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-313",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Scrunchie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-314",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff Striped Headband",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-315",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Interactive Baby Niffler Plush Pet",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-316",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Interactive Snowy Owl Plush Pet",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-317",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "L.O.L. Surprise! Harry Potter Doll Assortment",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-318",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "General",
+      "name": "Large Trunk",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-319",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Leta Lestrange's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-320",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Lord Voldemort's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-321",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Loungefly Stained Glass Mermaid Backpack",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-322",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Loungefly Stained Glass Mermaid Wallet",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-323",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Love Potion Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-324",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Luna Lovegood Charms Handbag",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-325",
+      "department": "hardlines",
+      "sectionId": "queue-line",
+      "group": "General",
+      "name": "Luna Lovegood Nargles Tote Bag",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-326",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Luna Lovegood Spectrespecs",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-327",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Luna Lovegood's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-328",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Luna Spectrespecs Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-329",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "Luna's Spectrespecs Pin Badge",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-330",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "General",
+      "name": "Magical Hogwarts Scrunchies 2-Pack",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-331",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Marauder's Map Replica",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-332",
+      "department": "hardlines",
+      "sectionId": "queue-line",
+      "group": "General",
+      "name": "Marauder's Map Shopper Tote - Medium",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-333",
+      "department": "hardlines",
+      "sectionId": "queue-line",
+      "group": "General",
+      "name": "Marauder's Map Shopper Tote - Small",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-334",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Marauder's Map Socks",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-335",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Marauder's Map Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-336",
+      "department": "hardlines",
+      "sectionId": "minalima",
+      "group": "General",
+      "name": "MinaLima Chocolate Frog Notecard",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-337",
+      "department": "hardlines",
+      "sectionId": "minalima",
+      "group": "General",
+      "name": "MinaLima Christmas Hanging Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-338",
+      "department": "hardlines",
+      "sectionId": "minalima",
+      "group": "General",
+      "name": "MinaLima Defenders of Hogwarts Board Game",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-339",
+      "department": "hardlines",
+      "sectionId": "minalima",
+      "group": "General",
+      "name": "MinaLima Honeydukes Hanging Garland",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-340",
+      "department": "hardlines",
+      "sectionId": "minalima",
+      "group": "General",
+      "name": "MinaLima Honeydukes Playing Cards",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-341",
+      "department": "hardlines",
+      "sectionId": "minalima",
+      "group": "General",
+      "name": "Minalima Wizarding Christmas 3D Notecard",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-342",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "General",
+      "name": "Mini Hogwarts School Trunk Replica",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-343",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Miniverse Harry Potter Honeydukes Playset",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-344",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Miniverse Harry Potter Make It Mini - Hogwarts",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-345",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Miniverse Harry Potter Make It Mini - Honeydukes",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-346",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Miniverse Harry Potter Make It Mini - Potions",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-347",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Miniverse Harry Potter Potions Class Playset",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-348",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Miniverse Make It Mini - Harry Potter's Birthday Cake",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-349",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "MM25 Gryffindor Glass Mug",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-350",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "MM25 Gryffindor Magnet",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-351",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "MM25 Gryffindor Socks",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-352",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "MM25 Gryffindor Tumbler",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-353",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "MM25 Hufflepuff Glass Mug",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-354",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "MM25 Hufflepuff Magnet",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-355",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "MM25 Hufflepuff Socks",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-356",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "MM25 Hufflepuff Tumbler",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-357",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "MM25 Ravenclaw Glass Mug",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-358",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "MM25 Ravenclaw Magnet",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-359",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "MM25 Ravenclaw Socks",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-360",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "MM25 Ravenclaw Tumbler",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-361",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "MM25 Slytherin Glass Mug",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-362",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "MM25 Slytherin Magnet",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-363",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "MM25 Slytherin Socks",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-364",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "MM25 Slytherin Tumbler",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-365",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Narcissa Malfoy's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-366",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Neville Longbottom's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-367",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "New Edition Harry Potter and the Chamber of Secrets (Paperback)",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-368",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "New Edition Harry Potter and the Deathly Hallows (Paperback)",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-369",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "New Edition Harry Potter and the Goblet of Fire (Paperback)",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-370",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "New Edition Harry Potter and the Half-Blood Prince (Paperback)",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-371",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "New Edition Harry Potter and the Order of the Phoenix (Paperback)",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-372",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "New Edition Harry Potter and the Philosopher's Stone (Paperback)",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-373",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "New Edition Harry Potter and the Prisoner of Azkaban (Paperback)",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-374",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Newt Scamander's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-375",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Niffler Christmas Bauble",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-376",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Niffler Cosy Mug",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-377",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Niffler Cosy Mug & Plush Gift Set",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-378",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Niffler Cosy Socks",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-379",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Niffler Plush",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-380",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Norbert - Hagrid's Baby Dragon LEGO®",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-381",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Ollivanders Glass Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-382",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Ollivanders Mini Snow Globe",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-383",
+      "department": "hardlines",
+      "sectionId": "queue-line",
+      "group": "General",
+      "name": "Open At The Close Canvas Tote Bag",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-384",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Peppermint Toads",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-385",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "Gryffindor",
+      "name": "Personalised Gryffindor Crest Notebook",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-386",
+      "department": "hardlines",
+      "sectionId": "minalima",
+      "group": "General",
+      "name": "Philosopher's Stone - MinaLima Edition",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-387",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Philosopher's Stone Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-388",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Phoenix Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-389",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Pickett Soft Toy",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-390",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Plush Hedwig Notebook",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-391",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "Pocket Potters - Dobby",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-392",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "Pocket Potters - Hagrid",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-393",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "Pocket Potters - Harry Potter",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-394",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "Pocket Potters - Hermione Granger",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-395",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "Pocket Potters - Luna Lovegood",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-396",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "Pocket Potters - Professor Dumbledore",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-397",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "Pocket Potters - Ron Weasley",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-398",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "POP! Deluxe: Chocolate Frog",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-399",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "POP! Movies: Harry in London Shirt Exclusive",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-400",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "POP! Movies: Harry Potter",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-401",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "POP! Movies: Hermione Granger",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-402",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "POP! Movies: Ron Weasley",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-403",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "POP! Ride Super Deluxe: Knight Bus",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-404",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Porpentina Goldstein Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-405",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Potions Jewellery Box",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-406",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Professor Dumbledore's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-407",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Professor Lupin's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-408",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Professor McGonagall's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-409",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Professor Snape's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-410",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "Purple Pygmy Puff Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-411",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Queenie Goldstein's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-412",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw 3-Pack Socks",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-413",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Bear Plush",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-414",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Compact Mirror",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-415",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Cosmetics Bag",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-416",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Crest Embossed Journal",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-417",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Crest Medallion Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-418",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw House Baseball Cap",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-419",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw House Crest Notebook",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-420",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw House Points Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-421",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw House Tie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-422",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Knitted Crest Scarf",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-423",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Knitted Hat",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-424",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Knitted Mitten Capped Gloves",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-425",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Mascot & Traits Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-426",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Milk Chocolate Bar",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-427",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Nail File Set",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-428",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Patch Backpack",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-429",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Pen",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-430",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw PS Mug",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-431",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Quill",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-432",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Scarf Bookmark",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-433",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Scarf Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-434",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Scrunchie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-435",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Striped Headband",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-436",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw Traits Pin",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-437",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Ron Weasley TY Squishy Beanie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-438",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Ron Weasley's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-439",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Scabbers Plush",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-440",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Seraphina Picquery's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-441",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Sirius Black's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-442",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Sitting Niffler Plush",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-443",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Slime Life Harry Potter Amortentia Inspired Slime",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-444",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Slime Life Harry Potter Mandrake Restorative Draught Inspired Slime",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-445",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Slime Life Harry Potter Polyjuice Potion Inspired Slime",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-446",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Slime Life Harry Potter Skele-Gro Inspired Slime",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-447",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Slytherin 3-Pack Socks",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-448",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Slytherin",
+      "name": "Slytherin Attribute Pin",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-449",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Slytherin Bear Plush",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-450",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Slytherin Compact Mirror",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-451",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Slytherin Cosmetics Bag",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-452",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Slytherin",
+      "name": "Slytherin Crest Embossed Journal",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-453",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Slytherin",
+      "name": "Slytherin Crest Medallion Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-454",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "Slytherin",
+      "name": "Slytherin Dark Chocolate Bar",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-455",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Slytherin House Baseball Cap",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-456",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Slytherin",
+      "name": "Slytherin House Points Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-457",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Slytherin House Tie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-458",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Slytherin Knitted Crest Scarf",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-459",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Slytherin Knitted Hat",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-460",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Slytherin Knitted Mitten Capped Gloves",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-461",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "Slytherin",
+      "name": "Slytherin Mascot & Traits Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-462",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Slytherin Mascot Snake Soft Toy",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-463",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Slytherin",
+      "name": "Slytherin Metal Crest Journal",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-464",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Slytherin Nail File Set",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-465",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Slytherin Patch Backpack",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-466",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Slytherin",
+      "name": "Slytherin Pen",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-467",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Slytherin PS Mug",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-468",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Slytherin",
+      "name": "Slytherin Quill",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-469",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Slytherin",
+      "name": "Slytherin Scarf Bookmark",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-470",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Slytherin",
+      "name": "Slytherin Scarf Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-471",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Slytherin Scrunchie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-472",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Slytherin Striped Headband",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-473",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Slytherin",
+      "name": "Slytherin Traits Pin",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-474",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Sorting Hat Gold Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-475",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "name": "Sorting Hat Magnet",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-476",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Steiff Dobby Plush",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-477",
+      "department": "hardlines",
+      "sectionId": "queue-line",
+      "group": "General",
+      "name": "The Chosen One Canvas Tote Bag",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-478",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "Hufflepuff",
+      "name": "The Cup of Hufflepuff Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-479",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "Ravenclaw",
+      "name": "The Diadem of Ravenclaw Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-480",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "The Golden Snitch Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-481",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "Slytherin",
+      "name": "The Locket Of Slytherin Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-482",
+      "department": "hardlines",
+      "sectionId": "minalima",
+      "group": "General",
+      "name": "The Prisoner Of Azkaban - Minalima Edition",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-483",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "Gryffindor",
+      "name": "The Sword of Gryffindor Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-484",
+      "department": "hardlines",
+      "sectionId": "minalima",
+      "group": "General",
+      "name": "The Tales of Beedle the Bard Journal",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-485",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Thestral Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-486",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Three Broomsticks Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-487",
+      "department": "hardlines",
+      "sectionId": "queue-line",
+      "group": "General",
+      "name": "Time Turner Necklace",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-488",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Time Turner Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-489",
+      "department": "hardlines",
+      "sectionId": "queue-line",
+      "group": "General",
+      "name": "Time-Turner Earrings",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-490",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Time-Turner Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-491",
+      "department": "hardlines",
+      "sectionId": "queue-line",
+      "group": "General",
+      "name": "Time-Turner Pendant Necklace",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-492",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Tom Riddle Diary Replica",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-493",
+      "department": "hardlines",
+      "sectionId": "ollivanders",
+      "group": "General",
+      "name": "Ukrainian Ironbelly's Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-494",
+      "department": "hardlines",
+      "sectionId": "queue-line",
+      "group": "General",
+      "name": "Wand Canvas Tote Bag",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-495",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Weasleys' Wizard Wheezes Glass Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-496",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Weasleys' Wizard Wheezes Magnet",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-497",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Weasleys' Wizard Wheezes Mini Snow Globe",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-498",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Weasleys' Wizard Wheezes Tealight",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-499",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "White Chocolate Frog - with authentic film packaging",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-500",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "General",
+      "name": "Wizard Chess Set",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215564898-0",
+      "department": "hardlines",
+      "sectionId": "bear-bunker",
+      "group": "Gryffindor",
+      "name": "Bear",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215564898-1",
+      "department": "hardlines",
+      "sectionId": "bear-bunker",
+      "group": "Gryffindor",
+      "name": "Tie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215564898-2",
+      "department": "hardlines",
+      "sectionId": "bear-bunker",
+      "group": "Gryffindor",
+      "name": "Scarf",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215564898-3",
+      "department": "hardlines",
+      "sectionId": "bear-bunker",
+      "group": "Gryffindor",
+      "name": "Robe",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215564898-4",
+      "department": "hardlines",
+      "sectionId": "bear-bunker",
+      "group": "Gryffindor",
+      "name": "Mascot",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215579738-0",
+      "department": "hardlines",
+      "sectionId": "bear-bunker",
+      "group": "Slytherin",
+      "name": "Bear",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215579738-1",
+      "department": "hardlines",
+      "sectionId": "bear-bunker",
+      "group": "Slytherin",
+      "name": "Tie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215579738-2",
+      "department": "hardlines",
+      "sectionId": "bear-bunker",
+      "group": "Slytherin",
+      "name": "Scarf",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215579738-3",
+      "department": "hardlines",
+      "sectionId": "bear-bunker",
+      "group": "Slytherin",
+      "name": "Robe",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215579738-4",
+      "department": "hardlines",
+      "sectionId": "bear-bunker",
+      "group": "Slytherin",
+      "name": "Mascot",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215590768-0",
+      "department": "hardlines",
+      "sectionId": "bear-bunker",
+      "group": "Hufflepuff",
+      "name": "Bear",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215590768-1",
+      "department": "hardlines",
+      "sectionId": "bear-bunker",
+      "group": "Hufflepuff",
+      "name": "Tie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215590768-2",
+      "department": "hardlines",
+      "sectionId": "bear-bunker",
+      "group": "Hufflepuff",
+      "name": "Scarf",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215590768-3",
+      "department": "hardlines",
+      "sectionId": "bear-bunker",
+      "group": "Hufflepuff",
+      "name": "Robe",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215590768-4",
+      "department": "hardlines",
+      "sectionId": "bear-bunker",
+      "group": "Hufflepuff",
+      "name": "Mascot",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215598797-0",
+      "department": "hardlines",
+      "sectionId": "bear-bunker",
+      "group": "Ravenclaw",
+      "name": "Bear",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215598797-1",
+      "department": "hardlines",
+      "sectionId": "bear-bunker",
+      "group": "Ravenclaw",
+      "name": "Tie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215598797-2",
+      "department": "hardlines",
+      "sectionId": "bear-bunker",
+      "group": "Ravenclaw",
+      "name": "Scarf",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215598797-3",
+      "department": "hardlines",
+      "sectionId": "bear-bunker",
+      "group": "Ravenclaw",
+      "name": "Robe",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215598797-4",
+      "department": "hardlines",
+      "sectionId": "bear-bunker",
+      "group": "Ravenclaw",
+      "name": "Mascot",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "cloth-1795215704169-0",
+      "department": "clothing",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Stone Hoodie"
+    },
+    {
+      "id": "cloth-1795215704169-1",
+      "department": "clothing",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Stone T-Shirt"
+    },
+    {
+      "id": "cloth-1795215704169-2",
+      "department": "clothing",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Black Sweater"
+    },
+    {
+      "id": "cloth-1795215704169-3",
+      "department": "clothing",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Black T-Shirt"
+    },
+    {
+      "id": "cloth-1795215704169-4",
+      "department": "clothing",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Gilet"
+    },
+    {
+      "id": "cloth-1795215704169-5",
+      "department": "clothing",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Teddy Fleece"
+    },
+    {
+      "id": "cloth-1795215704169-6",
+      "department": "clothing",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Khaki Hoodie"
+    },
+    {
+      "id": "cloth-1795215704169-7",
+      "department": "clothing",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Stone Spirit Jersey"
+    },
+    {
+      "id": "cloth-1795215704169-8",
+      "department": "clothing",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Black Spirit Jersey"
+    },
+    {
+      "id": "cloth-1795215704169-9",
+      "department": "clothing",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "White T-Shirt"
+    },
+    {
+      "id": "cloth-1795215704169-10",
+      "department": "clothing",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Varsity Jacket"
+    },
+    {
+      "id": "item-1795215793349-0",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Stone Mug",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215793349-1",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Stone Water Bottle",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215793349-2",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Stone Cup and Straw",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215793349-3",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Ridged Mug",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215793349-4",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Ridged Bottle",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215793349-5",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Black Cap",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215793349-6",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "Stone Cap",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795215793349-7",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "General",
+      "name": "LDN Funko",
+      "innerQty": 0,
+      "boxQty": 0
+    }
+  ]
+}
