@@ -1,9 +1,10 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-21T10:47:23.280Z",
+  "updatedAt": "2026-11-21T17:26:36.724Z",
   "shelfPhotos": {},
   "sectionFloors": {
-    "qudditch": "RG"
+    "qudditch": "RG",
+    "diagon-alley": "RG"
   },
   "catalog": [
     {
@@ -994,11 +995,20 @@
       "boxQty": 0
     },
     {
-      "id": "item-121",
+      "id": "item-121-SM",
       "department": "hardlines",
       "sectionId": "diagon-alley",
       "group": "General",
-      "name": "Diagon Alley Christmas 3-Pack Socks",
+      "name": "Diagon Alley Christmas 3-Pack Socks S/M",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-121-ML",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Diagon Alley Christmas 3-Pack Socks M/L",
       "innerQty": 0,
       "boxQty": 0
     },
@@ -1147,11 +1157,20 @@
       "boxQty": 0
     },
     {
-      "id": "item-138",
+      "id": "item-138-SM",
       "department": "hardlines",
       "sectionId": "diagon-alley",
       "group": "General",
-      "name": "Dobby Cosy Socks",
+      "name": "Dobby Cosy Socks S/M",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-138-ML",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Dobby Cosy Socks M/L",
       "innerQty": 0,
       "boxQty": 0
     },
@@ -1444,11 +1463,20 @@
       "boxQty": 0
     },
     {
-      "id": "item-171",
+      "id": "item-171-SM",
       "department": "hardlines",
       "sectionId": "qudditch",
       "group": "Gryffindor",
-      "name": "Gryffindor 3-Pack Socks",
+      "name": "Gryffindor 3-Pack Socks S/M",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-171-ML",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "Gryffindor 3-Pack Socks M/L",
       "innerQty": 0,
       "boxQty": 0
     },
@@ -1741,15 +1769,6 @@
       "boxQty": 0
     },
     {
-      "id": "item-204",
-      "department": "hardlines",
-      "sectionId": "knight-bus",
-      "group": "General",
-      "name": "HBDH Cosy Socks",
-      "innerQty": 0,
-      "boxQty": 0
-    },
-    {
       "id": "item-205",
       "department": "hardlines",
       "sectionId": "knight-bus",
@@ -1965,11 +1984,20 @@
       "boxQty": 0
     },
     {
-      "id": "item-229",
+      "id": "item-229-SM",
       "department": "hardlines",
       "sectionId": "diagon-alley",
       "group": "General",
-      "name": "Hedwig Cosy Socks",
+      "name": "Hedwig Cosy Socks S/M",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-229-ML",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hedwig Cosy Socks M/L",
       "innerQty": 0,
       "boxQty": 0
     },
@@ -2181,11 +2209,20 @@
       "boxQty": 0
     },
     {
-      "id": "item-253",
+      "id": "item-253-SM",
       "department": "hardlines",
       "sectionId": "diagon-alley",
       "group": "General",
-      "name": "Hogwarts Christmas Slipper Socks",
+      "name": "Hogwarts Christmas Slipper Socks S/M",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-253-ML",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Hogwarts Christmas Slipper Socks M/L",
       "innerQty": 0,
       "boxQty": 0
     },
@@ -2424,11 +2461,20 @@
       "boxQty": 0
     },
     {
-      "id": "item-280",
+      "id": "item-280-SM",
       "department": "hardlines",
       "sectionId": "honeydukes",
       "group": "General",
-      "name": "Honeydukes Christmas Cosy Socks",
+      "name": "Honeydukes Christmas Cosy Socks S/M",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-280-ML",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "name": "Honeydukes Christmas Cosy Socks M/L",
       "innerQty": 0,
       "boxQty": 0
     },
@@ -2496,11 +2542,20 @@
       "boxQty": 0
     },
     {
-      "id": "item-288",
+      "id": "item-288-SM",
       "department": "hardlines",
       "sectionId": "qudditch",
       "group": "Hufflepuff",
-      "name": "Hufflepuff 3-Pack Socks",
+      "name": "Hufflepuff 3-Pack Socks S/M",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-288-ML",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "Hufflepuff 3-Pack Socks M/L",
       "innerQty": 0,
       "boxQty": 0
     },
@@ -2910,11 +2965,20 @@
       "boxQty": 0
     },
     {
-      "id": "item-334",
+      "id": "item-334-SM",
       "department": "hardlines",
       "sectionId": "robes",
       "group": "General",
-      "name": "Marauder's Map Socks",
+      "name": "Marauder's Map Socks S/M",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-334-ML",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "General",
+      "name": "Marauder's Map Socks M/L",
       "innerQty": 0,
       "boxQty": 0
     },
@@ -3063,11 +3127,20 @@
       "boxQty": 0
     },
     {
-      "id": "item-351",
+      "id": "item-351-SM",
       "department": "hardlines",
       "sectionId": "qudditch",
       "group": "Gryffindor",
-      "name": "MM25 Gryffindor Socks",
+      "name": "MM25 Gryffindor Socks S/M",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-351-ML",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Gryffindor",
+      "name": "MM25 Gryffindor Socks M/L",
       "innerQty": 0,
       "boxQty": 0
     },
@@ -3099,11 +3172,20 @@
       "boxQty": 0
     },
     {
-      "id": "item-355",
+      "id": "item-355-SM",
       "department": "hardlines",
       "sectionId": "qudditch",
       "group": "Hufflepuff",
-      "name": "MM25 Hufflepuff Socks",
+      "name": "MM25 Hufflepuff Socks S/M",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-355-ML",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Hufflepuff",
+      "name": "MM25 Hufflepuff Socks M/L",
       "innerQty": 0,
       "boxQty": 0
     },
@@ -3135,11 +3217,20 @@
       "boxQty": 0
     },
     {
-      "id": "item-359",
+      "id": "item-359-SM",
       "department": "hardlines",
       "sectionId": "qudditch",
       "group": "Ravenclaw",
-      "name": "MM25 Ravenclaw Socks",
+      "name": "MM25 Ravenclaw Socks S/M",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-359-ML",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "MM25 Ravenclaw Socks M/L",
       "innerQty": 0,
       "boxQty": 0
     },
@@ -3171,11 +3262,20 @@
       "boxQty": 0
     },
     {
-      "id": "item-363",
+      "id": "item-363-SM",
       "department": "hardlines",
       "sectionId": "qudditch",
       "group": "Slytherin",
-      "name": "MM25 Slytherin Socks",
+      "name": "MM25 Slytherin Socks S/M",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-363-ML",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "MM25 Slytherin Socks M/L",
       "innerQty": 0,
       "boxQty": 0
     },
@@ -3306,11 +3406,20 @@
       "boxQty": 0
     },
     {
-      "id": "item-378",
+      "id": "item-378-SM",
       "department": "hardlines",
       "sectionId": "diagon-alley",
       "group": "General",
-      "name": "Niffler Cosy Socks",
+      "name": "Niffler Cosy Socks S/M",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-378-ML",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "Niffler Cosy Socks M/L",
       "innerQty": 0,
       "boxQty": 0
     },
@@ -3612,11 +3721,20 @@
       "boxQty": 0
     },
     {
-      "id": "item-412",
+      "id": "item-412-SM",
       "department": "hardlines",
       "sectionId": "qudditch",
       "group": "Ravenclaw",
-      "name": "Ravenclaw 3-Pack Socks",
+      "name": "Ravenclaw 3-Pack Socks S/M",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-412-ML",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "Ravenclaw 3-Pack Socks M/L",
       "innerQty": 0,
       "boxQty": 0
     },
@@ -3927,11 +4045,20 @@
       "boxQty": 0
     },
     {
-      "id": "item-447",
+      "id": "item-447-SM",
       "department": "hardlines",
       "sectionId": "qudditch",
       "group": "Slytherin",
-      "name": "Slytherin 3-Pack Socks",
+      "name": "Slytherin 3-Pack Socks S/M",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-447-ML",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "Slytherin 3-Pack Socks M/L",
       "innerQty": 0,
       "boxQty": 0
     },
@@ -4791,6 +4918,201 @@
       "sectionId": "qudditch",
       "group": "Ravenclaw",
       "name": "Rugby Top"
+    },
+    {
+      "id": "item-wa-1795274154485-khhm",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "General",
+      "name": "HBDH Cosy Socks S/M",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-wa-1795274154486-ozbi",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "General",
+      "name": "Hogwarts purple crest journal",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-wa-1795274154486-ide1",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "General",
+      "name": "HBDH Cosy Socks M/L",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-wa-1795274154486-3ptc",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "Hufflepuff",
+      "name": "Crest scarfs",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-wa-1795274154486-ujyx",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "Hufflepuff",
+      "name": "knitted hats",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-wa-1795274154486-7sqp",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "Hufflepuff",
+      "name": "gloves",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-wa-1795274154487-l7ia",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "Hufflepuff",
+      "name": "glass mugs",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-wa-1795274154487-d6vf",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "Hufflepuff",
+      "name": "Tumblers",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-wa-1795274154487-gshj",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "Hufflepuff",
+      "name": "pack head banfd",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-wa-1795274716793-usci",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "General",
+      "name": "Knitted hats",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-wa-1795274716793-i6a3",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "General",
+      "name": "gloves",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-wa-1795274716793-fjlr",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "General",
+      "name": "glass mugs",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-wa-1795274716794-y3nq",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "General",
+      "name": "knitted scarfs",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-wa-1795274716794-inqn",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "General",
+      "name": "cosmetic bags",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-wa-1795274716794-yzqq",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "General",
+      "name": "Gryff crest keychains",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-wa-1795274716794-crwh",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "General",
+      "name": "cosmetic mirrors",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-wa-1795274716794-d0pd",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "General",
+      "name": "authentic scarfs",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "cloth-wa-1795274915464-rp3b",
+      "department": "clothing",
+      "sizeType": "adult",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "name": "X2 PACK MMM M"
+    },
+    {
+      "id": "cloth-wa-1795276276268-g0de",
+      "department": "clothing",
+      "sizeType": "adult",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "X3 PACKS MM L"
+    },
+    {
+      "id": "cloth-wa-1795276276269-hffc",
+      "department": "clothing",
+      "sizeType": "adult",
+      "sectionId": "qudditch",
+      "group": "Slytherin",
+      "name": "X2 PACKS MM L"
+    },
+    {
+      "id": "item-wa-1795276618853-c2a1",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "snitch keyrings",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-wa-1795276618854-d2rj",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "name": "time turner keyrings",
+      "innerQty": 0,
+      "boxQty": 0
     }
   ]
 }

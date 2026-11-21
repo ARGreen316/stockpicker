@@ -97,11 +97,11 @@
                         <span class="hidden sm:inline">Add Item</span>
                     </button>
 
-                    <button id="open-whatsapp-modal-btn" type="button" title="Paste WhatsApp Stock List" class="px-3 py-2 rounded-xl bg-emerald-950/70 hover:bg-emerald-900/70 border border-emerald-700/70 text-xs font-bold text-emerald-300 transition-colors flex items-center gap-1">
-                        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                    <button id="open-whatsapp-modal-btn" type="button" title="Paste Team Picklist" class="px-3 py-2 rounded-xl bg-indigo-950/80 hover:bg-indigo-900/80 border border-indigo-700/70 text-xs font-bold text-indigo-300 transition-colors flex items-center gap-1">
+                        <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
                         </svg>
-                        <span>Paste WA</span>
+                        <span>Paste List</span>
                     </button>
 
                     <button id="open-sync-modal-btn" type="button" title="Export or Import Catalog JSON" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-xs font-bold text-slate-200 transition-colors flex items-center gap-1">
@@ -172,11 +172,11 @@
                 Tap <span class="text-slate-200 font-bold">+</span> to add items to your warehouse run
             </div>
             <div class="flex items-center gap-2 shrink-0">
-                <button id="whatsapp-share-btn" type="button" class="hidden px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 active:scale-[0.99] text-slate-950 font-extrabold text-xs sm:text-sm transition-all shadow-lg shadow-emerald-500/20 flex items-center gap-1.5">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+                <button id="whatsapp-share-btn" type="button" class="hidden px-4 py-2.5 rounded-xl bg-indigo-500 hover:bg-indigo-400 active:scale-[0.99] text-white font-extrabold text-xs sm:text-sm transition-all shadow-lg shadow-indigo-500/20 flex items-center gap-1.5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
                     </svg>
-                    <span>WhatsApp</span>
+                    <span>Share to Teams</span>
                 </button>
                 <button id="primary-action-btn" type="button" class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-[0.99] text-slate-950 font-extrabold text-xs sm:text-sm transition-all shadow-lg shadow-amber-500/20 flex items-center gap-2 shrink-0">
                     <span id="primary-action-text">Generate Picklist</span>
@@ -190,8 +190,8 @@
 
     <!-- Modal 1: Add Product(s) -->
     <div id="add-item-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl">
-            <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
+            <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between shrink-0">
                 <h2 class="text-base font-extrabold text-white">Add Product(s)</h2>
                 <button id="close-add-modal-btn" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -199,20 +199,24 @@
                     </svg>
                 </button>
             </div>
-            <form id="add-item-form" class="p-5 space-y-3.5">
-                <div class="grid grid-cols-2 gap-3">
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Department</label>
-                        <select id="add-dept-select" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs font-bold text-white focus:outline-none focus:border-amber-500">
-                            <option value="hardlines">Hard Lines</option>
-                            <option value="clothing">Clothing</option>
-                        </select>
+            <form id="add-item-form" class="p-5 space-y-3.5 overflow-y-auto">
+                <div>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Department</label>
+                    <select id="add-dept-select" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs font-bold text-white focus:outline-none focus:border-amber-500">
+                        <option value="hardlines">Hard Lines (incl. Socks)</option>
+                        <option value="clothing">Clothing</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Store Zone(s) — tick all zones where item lives</label>
+                    <div id="add-zones-checkboxes" class="grid grid-cols-2 sm:grid-cols-3 gap-1.5 p-2.5 rounded-xl bg-slate-950 border border-slate-800 max-h-36 overflow-y-auto">
                     </div>
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Store Zone</label>
-                        <select id="add-section-select" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs font-bold text-white focus:outline-none focus:border-amber-500">
-                        </select>
-                    </div>
+                </div>
+                <div id="add-sock-sizes-wrap">
+                    <label class="flex items-center gap-2.5 cursor-pointer select-none p-2 rounded-xl bg-slate-950/80 border border-slate-800">
+                        <input type="checkbox" id="add-sock-sizes-cb" class="w-4 h-4 rounded border-slate-700 bg-slate-950 text-sky-500 focus:ring-sky-500">
+                        <span class="text-xs font-bold text-sky-300">Create S/M &amp; M/L sock pairs (Hard Lines)</span>
+                    </label>
                 </div>
                 <div id="add-size-type-wrap" class="hidden">
                     <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Clothing Size Range</label>
@@ -289,8 +293,8 @@
 
     <!-- Modal 2B: Rename / Edit Product -->
     <div id="edit-item-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-sm overflow-hidden shadow-2xl">
-            <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
+            <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between shrink-0">
                 <h2 class="text-base font-extrabold text-white">Rename / Edit Item</h2>
                 <button id="close-edit-modal-btn" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -298,7 +302,7 @@
                     </svg>
                 </button>
             </div>
-            <form id="edit-item-form" class="p-5 space-y-4">
+            <form id="edit-item-form" class="p-5 space-y-3.5 overflow-y-auto">
                 <input type="hidden" id="edit-item-id">
                 <div class="grid grid-cols-2 gap-3">
                     <div>
@@ -316,6 +320,17 @@
                 <div>
                     <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Work Name</label>
                     <input id="edit-item-name-input" type="text" required class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm font-bold text-white focus:outline-none focus:border-amber-500">
+                </div>
+                <div>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Assigned Store Zone(s)</label>
+                    <div id="edit-zones-checkboxes" class="grid grid-cols-2 sm:grid-cols-3 gap-1.5 p-2.5 rounded-xl bg-slate-950 border border-slate-800 max-h-36 overflow-y-auto">
+                    </div>
+                </div>
+                <div id="edit-sock-sizes-wrap" class="hidden">
+                    <label class="flex items-center gap-2.5 cursor-pointer select-none p-2 rounded-xl bg-slate-950/80 border border-slate-800">
+                        <input type="checkbox" id="edit-sock-sizes-cb" class="w-4 h-4 rounded border-slate-700 bg-slate-950 text-sky-500 focus:ring-sky-500">
+                        <span class="text-xs font-bold text-sky-300">Split into S/M &amp; M/L sock pairs (Hard Lines)</span>
+                    </label>
                 </div>
                 <div id="edit-size-type-wrap" class="hidden">
                     <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Clothing Size Range</label>
@@ -401,11 +416,11 @@
         </div>
     </div>
 
-    <!-- Modal 5: Paste WhatsApp Stock List -->
+    <!-- Modal 5: Paste Team Picklist -->
     <div id="whatsapp-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl">
             <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between">
-                <h2 class="text-base font-extrabold text-emerald-400">Paste WhatsApp List</h2>
+                <h2 class="text-base font-extrabold text-indigo-400">Paste Team Picklist</h2>
                 <button id="close-whatsapp-modal-btn" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
@@ -414,16 +429,16 @@
             </div>
             <form id="whatsapp-parse-form" class="p-5 space-y-4">
                 <div>
-                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Paste team WhatsApp message below</label>
-                    <textarea id="whatsapp-paste-input" rows="6" required placeholder="_QUDDITCH_&#10;*GRYFFINDOR*&#10;x12 PS Mug&#10;x2 M, x1 L Sherpa" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-emerald-500"></textarea>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Paste Teams / typed stock list below</label>
+                    <textarea id="whatsapp-paste-input" rows="7" required placeholder="DIAGON ALLEY:&#10;DA SNOWGLOBE X 17&#10;X20 snitch keyrings&#10;MUGS:&#10;DA BLUE X12 (+1 box for under cart)" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500"></textarea>
                 </div>
                 <label class="flex items-center gap-2.5 cursor-pointer select-none">
-                    <input type="checkbox" id="whatsapp-clear-existing" checked class="w-4 h-4 rounded border-slate-700 bg-slate-950 text-emerald-500 focus:ring-emerald-500">
+                    <input type="checkbox" id="whatsapp-clear-existing" checked class="w-4 h-4 rounded border-slate-700 bg-slate-950 text-indigo-500 focus:ring-indigo-500">
                     <span class="text-xs text-slate-300">Clear previous quantities before importing</span>
                 </label>
                 <div class="pt-1 flex items-center justify-end gap-2">
                     <button type="button" id="cancel-whatsapp-modal-btn" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300">Cancel</button>
-                    <button type="submit" class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-extrabold shadow-lg shadow-emerald-500/20">
+                    <button type="submit" class="px-5 py-2.5 rounded-xl bg-indigo-500 hover:bg-indigo-400 text-white text-xs font-extrabold shadow-lg shadow-indigo-500/20">
                         Generate Picklist
                     </button>
                 </div>
@@ -700,10 +715,33 @@
                         sectionFloors = parsed.sectionFloors;
                     }
                     if (parsed && Array.isArray(parsed.catalog) && parsed.catalog.length > 0) {
-                        catalog = parsed.catalog.map(item => {
-                            const dept = item.department === 'clothing' ? 'clothing' : 'hardlines';
+                        const migrated = [];
+                        parsed.catalog.forEach(item => {
+                            const isSock = /\bsocks?\b/i.test(String(item.name || ''));
+                            const dept = isSock ? 'hardlines' : (item.department === 'clothing' ? 'clothing' : 'hardlines');
                             const sizeType = dept === 'clothing' ? getItemSizeConfig(item).sizeType : undefined;
-                            return {
+
+                            // Ensure any socks moved out of clothing get S/M and M/L hardlines items
+                            if (isSock && item.department === 'clothing') {
+                                const baseName = String(item.name || '').replace(/\s*\(?(s\/m|m\/l)\)?$/i, '').trim();
+                                ['S/M', 'M/L'].forEach(szLabel => {
+                                    migrated.push({
+                                        id: `${item.id}-${szLabel.replace('/', '')}`,
+                                        department: 'hardlines',
+                                        sectionId: item.sectionId === 'quidditch' ? 'qudditch' : item.sectionId,
+                                        group: item.group || 'General',
+                                        name: `${baseName} ${szLabel}`,
+                                        qty: 0,
+                                        picked: false,
+                                        note: '',
+                                        innerQty: 0,
+                                        boxQty: 0
+                                    });
+                                });
+                                return;
+                            }
+
+                            migrated.push({
                                 ...item,
                                 sectionId: item.sectionId === 'quidditch' ? 'qudditch' : item.sectionId,
                                 department: dept,
@@ -716,10 +754,12 @@
                                     : undefined,
                                 qty: dept === 'clothing' ? 0 : (Number(item.qty) || 0),
                                 picked: dept === 'clothing' ? false : !!item.picked,
+                                note: item.note || '',
                                 innerQty: Number(item.innerQty) || 0,
                                 boxQty: Number(item.boxQty) || 0
-                            };
+                            });
                         });
+                        catalog = migrated;
                         return;
                     }
                 }
@@ -779,7 +819,8 @@
             });
 
             catalog = incomingList.map((raw, i) => {
-                const dept = raw.department === 'clothing' ? 'clothing' : 'hardlines';
+                const isSock = /\bsocks?\b/i.test(String(raw.name || ''));
+                const dept = isSock ? 'hardlines' : (raw.department === 'clothing' ? 'clothing' : 'hardlines');
                 const grp = raw.group || 'General';
                 const normalizedSecId = raw.sectionId === 'quidditch' ? 'qudditch' : (raw.sectionId || 'qudditch');
                 const key = `${dept}::${normalizedSecId}::${grp.toLowerCase()}::${String(raw.name || '').trim().toLowerCase()}`;
@@ -806,6 +847,7 @@
                     name: String(raw.name || 'Unnamed Item'),
                     qty: prev ? (Number(prev.qty) || 0) : 0,
                     picked: prev ? !!prev.picked : false,
+                    note: prev ? (prev.note || '') : '',
                     innerQty: Number(raw.innerQty) || 0,
                     boxQty: Number(raw.boxQty) || 0
                 };
@@ -888,8 +930,9 @@
                 const name = rec['Product Name'] || rec['Title'] || rec['Name'] || '';
                 if (!name) return;
 
+                const isSock = /\bsocks?\b/i.test(name);
                 const deptRaw = (rec['Suggested Dept'] || rec['Department'] || 'Hard Lines').toLowerCase();
-                const dept = deptRaw === 'clothing' ? 'clothing' : 'hardlines';
+                const dept = isSock ? 'hardlines' : (deptRaw === 'clothing' ? 'clothing' : 'hardlines');
                 const variantCol = rec['Variant / Size'] || rec['Variant'] || rec['Size'] || '';
                 const sizeType = dept === 'clothing' ? inferSizeTypeFromText(`${name} ${variantCol}`) : undefined;
                 const subsection = rec['Suggested Subsection'] || rec['Subsection'] || 'General';
@@ -912,6 +955,24 @@
 
                 zones.forEach(zoneLabel => {
                     const secId = zoneLabelToId.get(zoneLabel.toLowerCase()) || zoneLabel.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+                    if (isSock && !/\b(s\/m|m\/l)\b/i.test(name)) {
+                        ['S/M', 'M/L'].forEach(szLabel => {
+                            const sockName = `${name} ${szLabel}`;
+                            const dedupeKey = `hardlines::${secId}::${subsection.toLowerCase()}::${sockName.toLowerCase()}`;
+                            if (!dedupedEntries.has(dedupeKey)) {
+                                dedupedEntries.set(dedupeKey, {
+                                    id: `item-${seq++}`,
+                                    department: 'hardlines',
+                                    sectionId: secId,
+                                    group: subsection,
+                                    name: sockName,
+                                    innerQty,
+                                    boxQty
+                                });
+                            }
+                        });
+                        return;
+                    }
                     const dedupeKey = `${dept}::${secId}::${subsection.toLowerCase()}::${name.toLowerCase()}`;
                     if (!dedupedEntries.has(dedupeKey)) {
                         dedupedEntries.set(dedupeKey, {
@@ -1000,6 +1061,18 @@
 
         // Sync Department Toggle, Mode Toggle, Progress Bar, and Sticky Bottom Bar
         function updateHeaderAndBars() {
+            const setupBtn = document.getElementById('mode-setup-btn');
+            const picklistBtn = document.getElementById('mode-picklist-btn');
+            const picklistBadge = document.getElementById('picklist-mode-badge');
+            const secFilterLabel = document.getElementById('secondary-filter-label');
+            const summaryText = document.getElementById('status-summary-text');
+            const percentText = document.getElementById('status-percent-text');
+            const progressBar = document.getElementById('progress-bar');
+            const bottomInfo = document.getElementById('bottom-bar-info');
+            const whatsappBtn = document.getElementById('whatsapp-share-btn');
+            const primaryBtn = document.getElementById('primary-action-btn');
+            const primaryText = document.getElementById('primary-action-text');
+
             document.querySelectorAll('.floor-filter-btn').forEach(btn => {
                 const isSelected = btn.dataset.floorFilter === activeFloor;
                 btn.className = isSelected
@@ -1043,25 +1116,16 @@
             }
 
             const deptCatalog = catalog.filter(i => (i.department || 'hardlines') === activeDepartment && visibleSecIds.has(i.sectionId));
-            const activeLines = deptCatalog.reduce((s, i) => s + getItemActiveLinesCount(i), 0);
-            const pickedLines = deptCatalog.reduce((s, i) => s + getItemPickedLinesCount(i), 0);
+            const mergedPicklist = appMode === 'picklist' ? getMergedPicklistEntries() : [];
+            const activeLines = appMode === 'picklist'
+                ? mergedPicklist.reduce((s, e) => s + e.activeLines, 0)
+                : deptCatalog.reduce((s, i) => s + getItemActiveLinesCount(i), 0);
+            const pickedLines = appMode === 'picklist'
+                ? mergedPicklist.reduce((s, e) => s + e.pickedLines, 0)
+                : deptCatalog.reduce((s, i) => s + getItemPickedLinesCount(i), 0);
             const totalUnits = deptCatalog.reduce((s, i) => s + getItemTotalQty(i), 0);
             const activeZonesCount = new Set(deptCatalog.filter(i => getItemTotalQty(i) > 0).map(i => i.sectionId)).size;
-
-            const setupBtn = document.getElementById('mode-setup-btn');
-            const picklistBtn = document.getElementById('mode-picklist-btn');
-            const picklistBadge = document.getElementById('picklist-mode-badge');
-            const secFilterBtn = document.getElementById('toggle-secondary-filter');
-            const secFilterLabel = document.getElementById('secondary-filter-label');
-            const summaryText = document.getElementById('status-summary-text');
-            const percentText = document.getElementById('status-percent-text');
-            const progressBar = document.getElementById('progress-bar');
-            const bottomInfo = document.getElementById('bottom-bar-info');
-            const primaryBtn = document.getElementById('primary-action-btn');
-            const primaryText = document.getElementById('primary-action-text');
-            const whatsappBtn = document.getElementById('whatsapp-share-btn');
-
-            picklistBadge.textContent = activeLines;
+            picklistBadge.textContent = deptCatalog.reduce((s, i) => s + getItemActiveLinesCount(i), 0);
 
             if (appMode === 'setup') {
                 setupBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-amber-500 text-slate-950 shadow-sm';
@@ -1082,7 +1146,7 @@
                 picklistBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-emerald-500 text-slate-950 shadow-sm flex items-center gap-1.5';
                 secFilterLabel.textContent = 'Hide Picked';
                 const pct = activeLines > 0 ? Math.round((pickedLines / activeLines) * 100) : 0;
-                summaryText.textContent = `${pickedLines} of ${activeLines} line${activeLines === 1 ? '' : 's'} picked`;
+                summaryText.textContent = `${pickedLines} of ${activeLines} combined line${activeLines === 1 ? '' : 's'} picked`;
                 percentText.textContent = `${pct}% complete`;
                 progressBar.className = 'h-full bg-emerald-500 transition-all duration-300 rounded-full';
                 progressBar.style.width = `${pct}%`;
@@ -1093,61 +1157,162 @@
             }
         }
 
-        // Build formatted picklist text for WhatsApp sharing & clipboard copy
-        function buildPicklistWhatsAppText() {
+        // Merge identical items across multiple zones into combined warehouse picklist entries
+        function getMergedPicklistEntries() {
             const visibleSecs = getVisibleStoreSections();
             const visibleSecIds = new Set(visibleSecs.map(s => s.id));
-            const deptCatalog = catalog.filter(i => (i.department || 'hardlines') === activeDepartment && visibleSecIds.has(i.sectionId));
-            const lines = [];
-            const floorTag = activeFloor !== 'all' ? ` (${activeFloor.toUpperCase()})` : '';
-            const headerLabel = activeDepartment === 'clothing'
-                ? `*CLOTHING PICKLIST${floorTag}*`
-                : `*HARD LINES PICKLIST${floorTag}*`;
-            lines.push(headerLabel);
+            const secLabelMap = new Map(STORE_SECTIONS.map(s => [s.id, s.label]));
+            const deptCatalog = catalog.filter(i =>
+                (i.department || 'hardlines') === activeDepartment &&
+                visibleSecIds.has(i.sectionId) &&
+                (activeSection === 'all' || i.sectionId === activeSection) &&
+                getItemTotalQty(i) > 0
+            );
 
-            visibleSecs.forEach(sec => {
-                const secItems = deptCatalog.filter(i => i.sectionId === sec.id && getItemTotalQty(i) > 0);
-                if (secItems.length === 0) return;
+            const mergedMap = new Map();
 
-                lines.push(`\n_${sec.label.toUpperCase()}_`);
-                const groupsMap = new Map();
-                secItems.forEach(item => {
-                    const grp = item.group || 'General';
-                    if (!groupsMap.has(grp)) groupsMap.set(grp, []);
-                    groupsMap.get(grp).push(item);
-                });
+            deptCatalog.forEach(item => {
+                const mergeKey = `${item.department || 'hardlines'}::${item.name.trim().toLowerCase()}`;
+                const zoneName = secLabelMap.get(item.sectionId) || item.sectionId;
 
-                groupsMap.forEach((items, grpName) => {
-                    if (grpName && grpName !== 'General') {
-                        lines.push(`*${grpName.toUpperCase()}*`);
-                    }
-                    items.forEach(item => {
-                        if (item.department === 'clothing') {
-                            const sizeParts = [];
-                            const { keys, labels } = getItemSizeConfig(item);
-                            keys.forEach(sz => {
-                                const q = Number((item.sizes && item.sizes[sz]) || 0);
-                                if (q > 0) sizeParts.push(`x${q} ${labels[sz] || sz.toUpperCase()}`);
-                            });
-                            if (sizeParts.length > 0) {
-                                lines.push(`${sizeParts.join(', ')} ${item.name}`);
-                            }
-                        } else {
-                            const formatted = formatAutomaticContainerQty(item);
-                            const suffix = formatted.hasBreakdown ? ` (${item.qty} items)` : '';
-                            lines.push(`${formatted.primary} ${item.name}${suffix}`);
+                if (!mergedMap.has(mergeKey)) {
+                    const sizeType = item.department === 'clothing' ? getItemSizeConfig(item).sizeType : undefined;
+                    mergedMap.set(mergeKey, {
+                        key: mergeKey,
+                        department: item.department || 'hardlines',
+                        name: item.name,
+                        sizeType,
+                        totalQty: 0,
+                        innerQty: Number(item.innerQty) || 0,
+                        boxQty: Number(item.boxQty) || 0,
+                        sourceItems: [],
+                        zoneParts: [],
+                        notes: [],
+                        sizes: sizeType ? createEmptySizesMap(sizeType) : undefined,
+                        pickedSizes: sizeType ? createEmptyPickedSizesMap(sizeType) : undefined
+                    });
+                }
+
+                const entry = mergedMap.get(mergeKey);
+                entry.sourceItems.push(item);
+                if (!entry.innerQty && item.innerQty) entry.innerQty = Number(item.innerQty) || 0;
+                if (!entry.boxQty && item.boxQty) entry.boxQty = Number(item.boxQty) || 0;
+                if (item.note && !entry.notes.includes(item.note)) {
+                    entry.notes.push(item.note);
+                }
+
+                if (item.department === 'clothing') {
+                    const { keys } = getItemSizeConfig(item);
+                    let itemSum = 0;
+                    keys.forEach(sz => {
+                        const q = Number((item.sizes && item.sizes[sz]) || 0);
+                        if (q > 0) {
+                            entry.sizes[sz] = (entry.sizes[sz] || 0) + q;
+                            itemSum += q;
                         }
                     });
-                });
+                    entry.totalQty += itemSum;
+                    entry.zoneParts.push({ zone: zoneName, qty: itemSum });
+                } else {
+                    const q = Number(item.qty) || 0;
+                    entry.totalQty += q;
+                    entry.zoneParts.push({ zone: zoneName, qty: q });
+                }
             });
 
-            if (lines.length <= 1) return null;
+            return Array.from(mergedMap.values()).map(entry => {
+                if (entry.department === 'clothing') {
+                    const { keys } = SIZE_SETS[entry.sizeType] || SIZE_SETS.adult;
+                    let activeLines = 0;
+                    let pickedLines = 0;
+                    keys.forEach(sz => {
+                        if ((entry.sizes[sz] || 0) > 0) {
+                            activeLines++;
+                            const allSourcesPicked = entry.sourceItems
+                                .filter(src => Number((src.sizes && src.sizes[sz]) || 0) > 0)
+                                .every(src => !!(src.pickedSizes && src.pickedSizes[sz]));
+                            entry.pickedSizes[sz] = allSourcesPicked;
+                            if (allSourcesPicked) pickedLines++;
+                        }
+                    });
+                    entry.activeLines = activeLines;
+                    entry.pickedLines = pickedLines;
+                    entry.isPicked = activeLines > 0 && pickedLines === activeLines;
+                } else {
+                    entry.activeLines = 1;
+                    entry.isPicked = entry.sourceItems.every(src => !!src.picked);
+                    entry.pickedLines = entry.isPicked ? 1 : 0;
+                }
+                return entry;
+            });
+        }
+
+        // Build clean, Teams-friendly picklist text (combining duplicate items across zones)
+        function buildPicklistShareText() {
+            const entries = getMergedPicklistEntries();
+            if (entries.length === 0) return null;
+
+            const floorTag = activeFloor !== 'all' ? ` (${activeFloor.toUpperCase()})` : '';
+            const deptTitle = activeDepartment === 'clothing' ? 'CLOTHING PICKLIST' : 'HARD LINES PICKLIST';
+            const lines = [`=== ${deptTitle}${floorTag} ===`];
+
+            // Group single-zone entries under their zone header, and multi-zone combined items under COMBINED MULTI-ZONE
+            const singleZoneGroups = new Map();
+            const multiZoneEntries = [];
+
+            entries.forEach(entry => {
+                const uniqueZones = [...new Set(entry.zoneParts.map(p => p.zone))];
+                if (uniqueZones.length > 1) {
+                    multiZoneEntries.push(entry);
+                } else {
+                    const zName = uniqueZones[0] || 'General';
+                    if (!singleZoneGroups.has(zName)) singleZoneGroups.set(zName, []);
+                    singleZoneGroups.get(zName).push(entry);
+                }
+            });
+
+            const formatEntryLine = (entry, includeZoneBreakdown = false) => {
+                const noteSuffix = entry.notes.length > 0 ? ` (${entry.notes.join('; ')})` : '';
+                const splitSuffix = includeZoneBreakdown
+                    ? ` [${entry.zoneParts.map(p => `${p.qty} ${p.zone}`).join(' + ')}]`
+                    : '';
+
+                if (entry.department === 'clothing') {
+                    const { keys, labels } = SIZE_SETS[entry.sizeType] || SIZE_SETS.adult;
+                    const sizeParts = [];
+                    keys.forEach(sz => {
+                        const q = Number(entry.sizes[sz] || 0);
+                        if (q > 0) sizeParts.push(`x${q} ${labels[sz] || sz.toUpperCase()}`);
+                    });
+                    return `${sizeParts.join(', ')} ${entry.name}${splitSuffix}${noteSuffix}`;
+                } else {
+                    const formatted = formatAutomaticContainerQty({
+                        name: entry.name,
+                        qty: entry.totalQty,
+                        innerQty: entry.innerQty,
+                        boxQty: entry.boxQty
+                    });
+                    const unitSuffix = formatted.hasBreakdown ? ` (${entry.totalQty} items)` : '';
+                    return `${formatted.primary} ${entry.name}${unitSuffix}${splitSuffix}${noteSuffix}`;
+                }
+            };
+
+            if (multiZoneEntries.length > 0) {
+                lines.push(`\nCOMBINED MULTI-ZONE:`);
+                multiZoneEntries.forEach(entry => lines.push(formatEntryLine(entry, true)));
+            }
+
+            singleZoneGroups.forEach((zoneEntries, zName) => {
+                lines.push(`\n${zName.toUpperCase()}:`);
+                zoneEntries.forEach(entry => lines.push(formatEntryLine(entry, false)));
+            });
+
             return lines.join('\n');
         }
 
-        // Format and copy active picklist for WhatsApp
+        // Format and copy active picklist for Microsoft Teams
         function copyPicklistToClipboard() {
-            const text = buildPicklistWhatsAppText();
+            const text = buildPicklistShareText();
             if (!text) {
                 showToast('Nothing in picklist to copy!');
                 return;
@@ -1161,27 +1326,33 @@
             tempArea.select();
             try {
                 document.execCommand('copy');
-                showToast('Copied picklist for WhatsApp!');
+                showToast('Copied picklist for Teams!');
             } catch (err) {
                 showToast('Failed to copy to clipboard');
             }
             document.body.removeChild(tempArea);
         }
 
-        // Share active picklist directly into WhatsApp
-        function sharePicklistToWhatsApp() {
-            const text = buildPicklistWhatsAppText();
+        // Share active picklist via mobile share sheet (Microsoft Teams) with clipboard fallback
+        async function sharePicklistToTeams() {
+            const text = buildPicklistShareText();
             if (!text) {
                 showToast('Nothing in picklist to share!');
                 return;
             }
 
-            const encoded = encodeURIComponent(text);
-            const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent || '');
-            const waUrl = isMobile
-                ? `whatsapp://send?text=${encoded}`
-                : `https://api.whatsapp.com/send?text=${encoded}`;
-            window.open(waUrl, '_blank', 'noopener,noreferrer');
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: 'Store Stock Picklist',
+                        text
+                    });
+                    return;
+                } catch (err) {
+                    if (err && err.name === 'AbortError') return;
+                }
+            }
+            copyPicklistToClipboard();
         }
 
         // Escape HTML entities safely
@@ -1280,6 +1451,117 @@
             const container = document.getElementById('checklist-container');
             const emptyState = document.getElementById('empty-state');
             const query = searchQuery.trim().toLowerCase();
+
+            // In 2. Picklist mode, render combined warehouse picklist (merging multi-zone items)
+            if (appMode === 'picklist') {
+                let mergedEntries = getMergedPicklistEntries();
+                if (secondaryFilterActive) {
+                    mergedEntries = mergedEntries.filter(e => !e.isPicked);
+                }
+                if (query.length > 0) {
+                    mergedEntries = mergedEntries.filter(e => {
+                        const hay = `${e.name} ${e.zoneParts.map(p => p.zone).join(' ')} ${e.notes.join(' ')}`.toLowerCase();
+                        return hay.includes(query);
+                    });
+                }
+
+                if (mergedEntries.length === 0) {
+                    container.innerHTML = '';
+                    emptyState.classList.remove('hidden');
+                    document.getElementById('empty-state-title').textContent = 'Your picklist is empty';
+                    document.getElementById('empty-state-desc').textContent = 'Switch to "1. Set Qty" or tap "Paste List" to add items for your warehouse run.';
+                    return;
+                }
+
+                emptyState.classList.add('hidden');
+                const mergedHtml = mergedEntries.map(entry => {
+                    const uniqueZones = [...new Set(entry.zoneParts.map(p => p.zone))];
+                    const zoneBreakdownText = uniqueZones.length > 1
+                        ? entry.zoneParts.map(p => `${p.qty} ${p.zone}`).join(' · ')
+                        : uniqueZones[0];
+                    const noteHtml = entry.notes.length > 0
+                        ? `<div class="mt-1 inline-flex items-center px-2 py-0.5 rounded-md bg-amber-950/70 border border-amber-700/60 text-amber-300 text-[10px] font-bold">Note: ${escapeHtml(entry.notes.join(' · '))}</div>`
+                        : '';
+
+                    if (entry.department === 'clothing') {
+                        const { keys, labels } = SIZE_SETS[entry.sizeType] || SIZE_SETS.adult;
+                        return keys.map(sz => {
+                            const qty = Number(entry.sizes[sz] || 0);
+                            if (qty <= 0) return '';
+                            const isPicked = !!entry.pickedSizes[sz];
+                            if (secondaryFilterActive && isPicked) return '';
+
+                            return `
+                                <label class="flex items-center justify-between gap-3 p-3 rounded-xl border cursor-pointer transition-all select-none ${
+                                    isPicked
+                                        ? 'bg-slate-900/40 border-slate-800/60 opacity-60'
+                                        : 'bg-slate-900 border-slate-800 hover:border-slate-700'
+                                }">
+                                    <div class="flex items-center gap-3 min-w-0">
+                                        <input type="checkbox" data-merged-key="${escapeHtml(entry.key)}" data-size="${sz}" ${isPicked ? 'checked' : ''} class="merged-cloth-pick-cb w-5 h-5 rounded-lg border-slate-700 bg-slate-950 text-emerald-500 focus:ring-emerald-500 shrink-0">
+                                        <div class="min-w-0">
+                                            <div class="text-xs sm:text-sm font-bold ${isPicked ? 'line-through text-slate-500' : 'text-white'} truncate">
+                                                <span class="uppercase text-purple-300 mr-1">${labels[sz]}</span> ${escapeHtml(entry.name)}
+                                            </div>
+                                            <div class="text-[10px] font-semibold text-slate-400 mt-0.5">${escapeHtml(zoneBreakdownText)}</div>
+                                            ${noteHtml}
+                                        </div>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-lg text-xs font-black tabular-nums shrink-0 ${
+                                        isPicked
+                                            ? 'bg-slate-800 text-slate-500'
+                                            : 'bg-purple-500/20 text-purple-300 border border-purple-500/40'
+                                    }">x${qty}</span>
+                                </label>
+                            `;
+                        }).join('');
+                    } else {
+                        const isPicked = entry.isPicked;
+                        const formatted = formatAutomaticContainerQty({
+                            name: entry.name,
+                            qty: entry.totalQty,
+                            innerQty: entry.innerQty,
+                            boxQty: entry.boxQty
+                        });
+                        const subDetails = [formatted.secondary, zoneBreakdownText].filter(Boolean).join(' · ');
+
+                        return `
+                            <label class="flex items-center justify-between gap-3 p-3 rounded-xl border cursor-pointer transition-all select-none ${
+                                isPicked
+                                    ? 'bg-slate-900/40 border-slate-800/60 opacity-60'
+                                    : 'bg-slate-900 border-slate-800 hover:border-slate-700'
+                            }">
+                                <div class="flex items-center gap-3 min-w-0">
+                                    <input type="checkbox" data-merged-key="${escapeHtml(entry.key)}" ${isPicked ? 'checked' : ''} class="merged-pick-cb w-5 h-5 rounded-lg border-slate-700 bg-slate-950 text-emerald-500 focus:ring-emerald-500 shrink-0">
+                                    <div class="min-w-0">
+                                        <div class="text-xs sm:text-sm font-bold ${isPicked ? 'line-through text-slate-500' : 'text-white'} truncate">${escapeHtml(entry.name)}</div>
+                                        ${subDetails ? `<div class="text-[10px] font-semibold text-slate-400 mt-0.5">${escapeHtml(subDetails)}</div>` : ''}
+                                        ${noteHtml}
+                                    </div>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-black tabular-nums shrink-0 ${
+                                    isPicked
+                                        ? 'bg-slate-800 text-slate-500'
+                                        : 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                                }">${escapeHtml(formatted.primary)}</span>
+                            </label>
+                        `;
+                    }
+                }).join('');
+
+                container.innerHTML = `
+                    <section class="rounded-2xl bg-slate-900/80 border border-slate-800 p-3.5 space-y-2.5 shadow-sm">
+                        <div class="flex items-center justify-between px-1 pb-1 border-b border-slate-800/80">
+                            <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-400">Combined Warehouse Picklist</span>
+                            <span class="text-[11px] font-semibold text-slate-400">${mergedEntries.length} unique item${mergedEntries.length === 1 ? '' : 's'}</span>
+                        </div>
+                        <div class="space-y-2">${mergedHtml}</div>
+                    </section>
+                `;
+                bindDynamicEvents(container);
+                return;
+            }
+
             const visibleSecs = getVisibleStoreSections();
             const deptCatalog = catalog.filter(i => (i.department || 'hardlines') === activeDepartment);
 
@@ -1686,12 +1968,29 @@
                 });
             });
 
-            // Picklist checkboxes (Hard Lines & Clothing)
-            container.querySelectorAll('.pick-item-cb').forEach(cb => {
+            // Picklist checkboxes (Combined Multi-Zone & Single-Zone)
+            container.querySelectorAll('.merged-pick-cb').forEach(cb => {
                 cb.addEventListener('change', () => {
-                    const item = catalog.find(i => i.id === cb.dataset.pickId);
-                    if (!item) return;
-                    item.picked = cb.checked;
+                    const mKey = cb.dataset.mergedKey;
+                    const entry = getMergedPicklistEntries().find(e => e.key === mKey);
+                    if (!entry) return;
+                    entry.sourceItems.forEach(src => { src.picked = cb.checked; });
+                    saveState();
+                    updateHeaderAndBars();
+                    renderMain();
+                });
+            });
+
+            container.querySelectorAll('.merged-cloth-pick-cb').forEach(cb => {
+                cb.addEventListener('change', () => {
+                    const mKey = cb.dataset.mergedKey;
+                    const sz = cb.dataset.size;
+                    const entry = getMergedPicklistEntries().find(e => e.key === mKey);
+                    if (!entry) return;
+                    entry.sourceItems.forEach(src => {
+                        if (!src.pickedSizes) src.pickedSizes = createEmptyPickedSizesMap();
+                        src.pickedSizes[sz] = cb.checked;
+                    });
                     saveState();
                     updateHeaderAndBars();
                     renderMain();
@@ -1738,8 +2037,25 @@
                     document.getElementById('edit-item-dept-select').value = currentDept;
                     document.getElementById('edit-item-name-input').value = item.name;
                     document.getElementById('edit-item-group-input').value = item.group || 'General';
+
+                    // Populate multi-zone checkboxes pre-ticked with all zones where this item exists
+                    const matchingZones = new Set(
+                        catalog
+                            .filter(i => (i.department || 'hardlines') === currentDept && i.name.trim().toLowerCase() === item.name.trim().toLowerCase())
+                            .map(i => i.sectionId)
+                    );
+                    const editZonesWrap = document.getElementById('edit-zones-checkboxes');
+                    editZonesWrap.innerHTML = STORE_SECTIONS.map(s => `
+                        <label class="flex items-center gap-1.5 text-[11px] font-semibold text-slate-200 cursor-pointer select-none px-1.5 py-1 rounded hover:bg-slate-900">
+                            <input type="checkbox" value="${s.id}" ${matchingZones.has(s.id) ? 'checked' : ''} class="edit-zone-cb w-3.5 h-3.5 rounded border-slate-700 bg-slate-900 text-amber-500">
+                            <span class="truncate">${escapeHtml(s.label)}</span>
+                        </label>
+                    `).join('');
+
                     const isClothing = currentDept === 'clothing';
                     document.getElementById('edit-size-type-wrap').classList.toggle('hidden', !isClothing);
+                    document.getElementById('edit-sock-sizes-wrap').classList.toggle('hidden', isClothing);
+                    document.getElementById('edit-sock-sizes-cb').checked = false;
                     document.getElementById('edit-size-type-select').value = isClothing
                         ? getItemSizeConfig(item).sizeType
                         : inferSizeTypeFromText(item.name);
@@ -1780,12 +2096,19 @@
         }
 
         function openAddModal(preselectSecId) {
-            const secSelect = document.getElementById('add-section-select');
-            secSelect.innerHTML = STORE_SECTIONS.map(s => `<option value="${s.id}">${escapeHtml(s.label)}</option>`).join('');
-            secSelect.value = preselectSecId || (activeSection !== 'all' ? activeSection : 'qudditch');
+            const defaultSecId = preselectSecId || (activeSection !== 'all' ? activeSection : 'qudditch');
+            const zonesWrap = document.getElementById('add-zones-checkboxes');
+            zonesWrap.innerHTML = STORE_SECTIONS.map(s => `
+                <label class="flex items-center gap-1.5 text-[11px] font-semibold text-slate-200 cursor-pointer select-none px-1.5 py-1 rounded hover:bg-slate-900">
+                    <input type="checkbox" value="${s.id}" ${s.id === defaultSecId ? 'checked' : ''} class="add-zone-cb w-3.5 h-3.5 rounded border-slate-700 bg-slate-900 text-amber-500">
+                    <span class="truncate">${escapeHtml(s.label)}</span>
+                </label>
+            `).join('');
             document.getElementById('add-dept-select').value = activeDepartment;
             document.getElementById('add-packaging-fields').classList.toggle('hidden', activeDepartment === 'clothing');
             document.getElementById('add-size-type-wrap').classList.toggle('hidden', activeDepartment !== 'clothing');
+            document.getElementById('add-sock-sizes-wrap').classList.toggle('hidden', activeDepartment === 'clothing');
+            document.getElementById('add-sock-sizes-cb').checked = false;
             document.getElementById('add-size-type-select').value = 'adult';
             document.getElementById('add-group-input').value = '';
             document.getElementById('add-names-input').value = '';
@@ -1794,80 +2117,17 @@
             document.getElementById('add-item-modal').classList.remove('hidden');
         }
 
-        // Format and copy active picklist for WhatsApp
-        function copyPicklistToClipboard() {
-            const deptCatalog = catalog.filter(i => (i.department || 'hardlines') === activeDepartment);
-            const lines = [];
-            const headerLabel = activeDepartment === 'clothing' ? '*CLOTHING PICKLIST*' : '*HARD LINES PICKLIST*';
-            lines.push(headerLabel);
-
-            STORE_SECTIONS.forEach(sec => {
-                const secItems = deptCatalog.filter(i => i.sectionId === sec.id && getItemTotalQty(i) > 0);
-                if (secItems.length === 0) return;
-
-                lines.push(`\n_${sec.label.toUpperCase()}_`);
-                const groupsMap = new Map();
-                secItems.forEach(item => {
-                    const grp = item.group || 'General';
-                    if (!groupsMap.has(grp)) groupsMap.set(grp, []);
-                    groupsMap.get(grp).push(item);
-                });
-
-                groupsMap.forEach((items, grpName) => {
-                    if (grpName && grpName !== 'General') {
-                        lines.push(`*${grpName.toUpperCase()}*`);
-                    }
-                    items.forEach(item => {
-                        if (item.department === 'clothing') {
-                            const sizeParts = [];
-                            const { keys, labels } = getItemSizeConfig(item);
-                            keys.forEach(sz => {
-                                const q = Number((item.sizes && item.sizes[sz]) || 0);
-                                if (q > 0) sizeParts.push(`x${q} ${labels[sz] || sz.toUpperCase()}`);
-                            });
-                            if (sizeParts.length > 0) {
-                                lines.push(`${sizeParts.join(', ')} ${item.name}`);
-                            }
-                        } else {
-                            const formatted = formatAutomaticContainerQty(item);
-                            const suffix = formatted.hasBreakdown ? ` (${item.qty} items)` : '';
-                            lines.push(`${formatted.primary} ${item.name}${suffix}`);
-                        }
-                    });
-                });
-            });
-
-            if (lines.length <= 1) {
-                showToast('Nothing in picklist to copy!');
-                return;
-            }
-
-            const text = lines.join('\n');
-            const tempArea = document.createElement('textarea');
-            tempArea.value = text;
-            tempArea.style.position = 'fixed';
-            tempArea.style.opacity = '0';
-            document.body.appendChild(tempArea);
-            tempArea.select();
-            try {
-                document.execCommand('copy');
-                showToast('Copied picklist for WhatsApp!');
-            } catch (err) {
-                showToast('Failed to copy to clipboard');
-            }
-            document.body.removeChild(tempArea);
-        }
-
-        // Parse pasted WhatsApp message into active catalog quantities
+        // Smart Free-Text & Teams List Parser (supports leading/trailing qty, boxes/packs, notes, and custom Subsection: headers)
         function parseWhatsAppMessage(rawText, clearExisting) {
             if (clearExisting) {
                 catalog.forEach(item => {
                     if (item.department === 'clothing') {
-                        item.sizes = createEmptySizesMap();
-                        item.pickedSizes = createEmptyPickedSizesMap();
+                        item.sizes = createEmptySizesMap(getItemSizeConfig(item).sizeType);
+                        item.pickedSizes = createEmptyPickedSizesMap(getItemSizeConfig(item).sizeType);
                     } else {
                         item.qty = 0;
                         item.picked = false;
+                        item.note = '';
                     }
                 });
             }
@@ -1900,17 +2160,21 @@
                 { regex: /\b(general)\b/i, group: 'General' }
             ];
 
+            const toTitleCase = (str) => str.toLowerCase().replace(/\b\w/g, ch => ch.toUpperCase());
+
             rawText.split(/\r?\n/).forEach(rawLine => {
                 const line = rawLine.trim();
-                if (!line) return;
+                if (!line || line.startsWith('===')) return;
 
-                // Check for section header
                 const stripped = line.replace(/[*_~]/g, '').trim();
-                const isHeaderLike = /^[_*].*[_*]$/.test(line) || (stripped === stripped.toUpperCase() && !/\d/.test(stripped));
+                const endsWithColon = /:\s*$/.test(stripped);
+                const noColonText = stripped.replace(/:\s*$/, '').trim();
+                const isHeaderLike = endsWithColon || /^[_*].*[_*]$/.test(line) || (noColonText === noColonText.toUpperCase() && !/\d/.test(noColonText));
 
+                // 1. Check for Store Zone header (e.g. "DIAGON ALLEY:" or "_QUDDITCH_")
                 let matchedSec = null;
                 for (const sm of sectionMatchers) {
-                    if (sm.regex.test(stripped) && (isHeaderLike || stripped.length < 28)) {
+                    if (sm.regex.test(noColonText) && (isHeaderLike || noColonText.length < 28)) {
                         matchedSec = sm.id;
                         break;
                     }
@@ -1921,28 +2185,41 @@
                     return;
                 }
 
-                // Check for house/subsection header
-                if (isHeaderLike || stripped.length < 20) {
+                // 2. Check for Subsection header (either known House/Lego or any header ending in ":" like "MUGS:", "Ornaments:", "Hedwig trolley:")
+                if (endsWithColon && !/\d/.test(noColonText)) {
+                    currentGroup = toTitleCase(noColonText);
+                    return;
+                }
+                if (isHeaderLike || noColonText.length < 20) {
                     for (const hm of houseMatchers) {
-                        if (hm.regex.test(stripped)) {
+                        if (hm.regex.test(noColonText)) {
                             currentGroup = hm.group;
                             return;
                         }
                     }
                 }
 
-                // Check for clothing sizes on line (e.g., "X2 m / 1 L quid jumper" or "X2 xxxxs, x1 xxs robe")
-                const sizeRegex = /(?:x\s*)?(\d+)\s*(xxxxs|xxxs|xxs|xs|s|m|l|xl|xxl)\b/gi;
-                const sizeMatches = [...stripped.matchAll(sizeRegex)];
+                // 3. Extract inline parenthetical notes e.g. "(if not fill it with 9 interactive owls)" or "(+1 box on top for under the cart)"
+                const extractedNotes = [];
+                const lineWithoutNotes = stripped.replace(/\(([^)]+)\)/g, (_, noteContent) => {
+                    extractedNotes.push(noteContent.trim());
+                    return ' ';
+                }).replace(/\s+/g, ' ').trim();
+                const inlineNote = extractedNotes.join('; ');
+
+                // 4. Check for Clothing sizes on line (e.g. "x2 M, x1 L Sherpa" — ignoring "S/M" or "M/L" socks!)
+                const isSockLine = /\bsocks?\b/i.test(lineWithoutNotes);
+                const sizeRegex = /(?:x\s*)?(\d+)\s*(xxxxs|xxxs|xxs|xs|s|m|l|xl|xxl)(?!\s*\/)\b/gi;
+                const sizeMatches = isSockLine ? [] : [...lineWithoutNotes.matchAll(sizeRegex)];
                 if (sizeMatches.length > 0) {
-                    const itemNamePart = stripped
+                    const itemNamePart = lineWithoutNotes
                         .replace(/(?:x\s*)?\d+\s*(?:xxxxs|xxxs|xxs|xs|s|m|l|xl|xxl)\b/gi, ' ')
                         .replace(/[,/]+/g, ' ')
                         .replace(/\s+/g, ' ')
                         .trim();
 
                     if (itemNamePart) {
-                        const inferredType = inferSizeTypeFromText(`${itemNamePart} ${stripped}`);
+                        const inferredType = inferSizeTypeFromText(`${itemNamePart} ${lineWithoutNotes}`);
                         let target = catalog.find(i =>
                             i.department === 'clothing' &&
                             i.sectionId === currentSecId &&
@@ -1977,11 +2254,26 @@
                     }
                 }
 
-                // Standard Hard Lines item: leading count like "X4 lion mascot plush" or "7 mini trunk"
-                const qtyMatch = stripped.match(/^(?:x\s*)?(\d+)\s+(.+)$/i);
-                if (qtyMatch) {
-                    const count = parseInt(qtyMatch[1], 10) || 0;
-                    const itemName = qtyMatch[2].trim();
+                // 5. Hard Lines parsing:
+                //    a) Leading quantity: "X20 snitch keyrings", "x 5 DA blanket"
+                //    b) Trailing quantity + optional unit: "DA SNOWGLOBE X 17", "AL mug and plush x1 box", "Large snowy owl x  5"
+                let count = 0;
+                let containerUnit = '';
+                let itemName = '';
+
+                const leadingMatch = lineWithoutNotes.match(/^x\s*(\d+)\s+(.+)$/i) || lineWithoutNotes.match(/^(\d+)\s+(.+)$/i);
+                const trailingMatch = lineWithoutNotes.match(/^(.+?)\s+x\s*(\d+)(?:\s*(box|boxes|inner|inners|pack|packs))?\s*$/i);
+
+                if (trailingMatch) {
+                    itemName = trailingMatch[1].trim();
+                    count = parseInt(trailingMatch[2], 10) || 0;
+                    containerUnit = (trailingMatch[3] || '').toLowerCase();
+                } else if (leadingMatch) {
+                    count = parseInt(leadingMatch[1], 10) || 0;
+                    itemName = leadingMatch[2].trim();
+                }
+
+                if (count > 0 && itemName) {
                     let target = catalog.find(i =>
                         (i.department || 'hardlines') === 'hardlines' &&
                         i.sectionId === currentSecId &&
@@ -1997,12 +2289,35 @@
                             name: itemName,
                             qty: 0,
                             picked: false,
+                            note: '',
                             innerQty: /\bps\s*mug\b/i.test(itemName) ? 6 : 0,
                             boxQty: /\bps\s*mug\b/i.test(itemName) ? 24 : 0
                         };
                         catalog.push(target);
                     }
-                    target.qty = (Number(target.qty) || 0) + count;
+
+                    // Convert box/inner/pack counts if configured on the item, otherwise note it clearly
+                    let resolvedUnits = count;
+                    let containerNote = '';
+                    if (containerUnit.startsWith('box')) {
+                        if (target.boxQty > 0) {
+                            resolvedUnits = count * target.boxQty;
+                        } else {
+                            containerNote = `${count} ${count === 1 ? 'Box' : 'Boxes'}`;
+                        }
+                    } else if (containerUnit.startsWith('inner') || containerUnit.startsWith('pack')) {
+                        if (target.innerQty > 0) {
+                            resolvedUnits = count * target.innerQty;
+                        } else {
+                            containerNote = `${count} ${containerUnit}`;
+                        }
+                    }
+
+                    target.qty = (Number(target.qty) || 0) + resolvedUnits;
+                    const combinedNote = [containerNote, inlineNote].filter(Boolean).join(' · ');
+                    if (combinedNote) {
+                        target.note = target.note ? `${target.note}; ${combinedNote}` : combinedNote;
+                    }
                     matchedCount++;
                 }
             });
@@ -2068,9 +2383,9 @@
                 renderMain();
             });
 
-            // Primary Bottom Action Button & Direct WhatsApp Share Button
+            // Primary Bottom Action Button & Direct Share to Teams Button
             document.getElementById('whatsapp-share-btn').addEventListener('click', () => {
-                sharePicklistToWhatsApp();
+                sharePicklistToTeams();
             });
 
             document.getElementById('primary-action-btn').addEventListener('click', () => {
@@ -2108,11 +2423,12 @@
             document.getElementById('confirm-ok-btn').addEventListener('click', () => {
                 catalog.forEach(item => {
                     if (item.department === 'clothing') {
-                        item.sizes = createEmptySizesMap();
-                        item.pickedSizes = createEmptyPickedSizesMap();
+                        item.sizes = createEmptySizesMap(getItemSizeConfig(item).sizeType);
+                        item.pickedSizes = createEmptyPickedSizesMap(getItemSizeConfig(item).sizeType);
                     } else {
                         item.qty = 0;
                         item.picked = false;
+                        item.note = '';
                     }
                 });
                 saveState();
@@ -2132,58 +2448,79 @@
                 document.getElementById('add-item-modal').classList.add('hidden');
             });
             document.getElementById('add-dept-select').addEventListener('change', (e) => {
-                document.getElementById('add-packaging-fields').classList.toggle('hidden', e.target.value === 'clothing');
-                document.getElementById('add-size-type-wrap').classList.toggle('hidden', e.target.value !== 'clothing');
+                const isClothing = e.target.value === 'clothing';
+                document.getElementById('add-packaging-fields').classList.toggle('hidden', isClothing);
+                document.getElementById('add-size-type-wrap').classList.toggle('hidden', !isClothing);
+                document.getElementById('add-sock-sizes-wrap').classList.toggle('hidden', isClothing);
             });
             document.getElementById('add-item-form').addEventListener('submit', (e) => {
                 e.preventDefault();
                 const dept = document.getElementById('add-dept-select').value;
-                const secId = document.getElementById('add-section-select').value;
+                const selectedZones = Array.from(document.querySelectorAll('.add-zone-cb:checked')).map(cb => cb.value);
+                if (selectedZones.length === 0) {
+                    showToast('Select at least 1 Store Zone');
+                    return;
+                }
+                const createSockPairs = dept === 'hardlines' && document.getElementById('add-sock-sizes-cb').checked;
                 const sizeType = document.getElementById('add-size-type-select').value || 'adult';
                 const grp = document.getElementById('add-group-input').value.trim() || 'General';
-                const names = document.getElementById('add-names-input').value
+                const rawNames = document.getElementById('add-names-input').value
                     .split(/\r?\n/)
                     .map(s => s.trim())
                     .filter(Boolean);
                 const innerQty = parseInt(document.getElementById('add-inner-input').value, 10) || 0;
                 const boxQty = parseInt(document.getElementById('add-box-input').value, 10) || 0;
 
-                names.forEach((name, idx) => {
-                    if (dept === 'clothing') {
-                        catalog.push({
-                            id: `cloth-${Date.now()}-${idx}`,
-                            department: 'clothing',
-                            sizeType,
-                            sectionId: secId,
-                            group: grp,
-                            name,
-                            sizes: createEmptySizesMap(sizeType),
-                            pickedSizes: createEmptyPickedSizesMap(sizeType)
-                        });
+                const expandedNames = [];
+                rawNames.forEach(n => {
+                    if (createSockPairs && !/\b(s\/m|m\/l)\b/i.test(n)) {
+                        expandedNames.push(`${n} S/M`, `${n} M/L`);
                     } else {
-                        catalog.push({
-                            id: `item-${Date.now()}-${idx}`,
-                            department: 'hardlines',
-                            sectionId: secId,
-                            group: grp,
-                            name,
-                            qty: 0,
-                            picked: false,
-                            innerQty,
-                            boxQty
-                        });
+                        expandedNames.push(n);
                     }
                 });
 
+                let addedCount = 0;
+                selectedZones.forEach(secId => {
+                    expandedNames.forEach((name, idx) => {
+                        if (dept === 'clothing') {
+                            catalog.push({
+                                id: `cloth-${Date.now()}-${secId}-${idx}`,
+                                department: 'clothing',
+                                sizeType,
+                                sectionId: secId,
+                                group: grp,
+                                name,
+                                sizes: createEmptySizesMap(sizeType),
+                                pickedSizes: createEmptyPickedSizesMap(sizeType)
+                            });
+                        } else {
+                            catalog.push({
+                                id: `item-${Date.now()}-${secId}-${idx}`,
+                                department: 'hardlines',
+                                sectionId: secId,
+                                group: grp,
+                                name,
+                                qty: 0,
+                                picked: false,
+                                note: '',
+                                innerQty,
+                                boxQty
+                            });
+                        }
+                        expandedSections[secId] = true;
+                        expandedGroups[`${dept}::${secId}::${grp}`] = true;
+                        addedCount++;
+                    });
+                });
+
                 activeDepartment = dept;
-                expandedSections[secId] = true;
-                expandedGroups[`${dept}::${secId}::${grp}`] = true;
                 saveState();
                 renderTabs();
                 updateHeaderAndBars();
                 renderMain();
                 document.getElementById('add-item-modal').classList.add('hidden');
-                showToast(`Added ${names.length} product${names.length === 1 ? '' : 's'}!`);
+                showToast(`Added ${addedCount} zone entr${addedCount === 1 ? 'y' : 'ies'}!`);
             });
 
             // Packaging Setup Modal
@@ -2225,6 +2562,7 @@
             document.getElementById('edit-item-dept-select').addEventListener('change', (e) => {
                 const isClothing = e.target.value === 'clothing';
                 document.getElementById('edit-size-type-wrap').classList.toggle('hidden', !isClothing);
+                document.getElementById('edit-sock-sizes-wrap').classList.toggle('hidden', isClothing);
                 if (isClothing) {
                     const currentName = document.getElementById('edit-item-name-input').value;
                     document.getElementById('edit-size-type-select').value = inferSizeTypeFromText(currentName);
@@ -2253,8 +2591,14 @@
                 const newName = document.getElementById('edit-item-name-input').value.trim();
                 const newGroup = document.getElementById('edit-item-group-input').value.trim() || 'General';
                 const newSizeType = document.getElementById('edit-size-type-select').value || 'adult';
+                const splitSocks = newDept === 'hardlines' && document.getElementById('edit-sock-sizes-cb').checked;
                 const renameAll = document.getElementById('edit-rename-matching').checked;
+                const checkedZones = Array.from(document.querySelectorAll('.edit-zone-cb:checked')).map(cb => cb.value);
                 if (!newName) return;
+                if (checkedZones.length === 0) {
+                    showToast('Select at least 1 Store Zone');
+                    return;
+                }
 
                 const target = catalog.find(i => i.id === id);
                 if (target) {
@@ -2281,6 +2625,7 @@
                             item.pickedSizes = undefined;
                             item.qty = Number(item.qty) || 0;
                             item.picked = !!item.picked;
+                            item.note = item.note || '';
                             item.innerQty = Number(item.innerQty) || 0;
                             item.boxQty = Number(item.boxQty) || 0;
                         }
@@ -2295,6 +2640,71 @@
                     } else {
                         applyChangesToItem(target);
                     }
+
+                    // Sync multi-zone checkboxes: add missing ticked zones & remove unticked zones for this product
+                    const currentMatching = catalog.filter(i =>
+                        (i.department || 'hardlines') === newDept && i.name.trim().toLowerCase() === newName.toLowerCase()
+                    );
+                    const existingSecIds = new Set(currentMatching.map(i => i.sectionId));
+
+                    // Remove zones that were unticked
+                    catalog = catalog.filter(i => {
+                        if ((i.department || 'hardlines') === newDept && i.name.trim().toLowerCase() === newName.toLowerCase()) {
+                            return checkedZones.includes(i.sectionId);
+                        }
+                        return true;
+                    });
+
+                    // Add newly ticked zones
+                    checkedZones.forEach((secId, zIdx) => {
+                        if (!existingSecIds.has(secId)) {
+                            if (newDept === 'clothing') {
+                                catalog.push({
+                                    id: `cloth-${Date.now()}-${secId}-${zIdx}`,
+                                    department: 'clothing',
+                                    sizeType: newSizeType,
+                                    sectionId: secId,
+                                    group: newGroup,
+                                    name: newName,
+                                    sizes: createEmptySizesMap(newSizeType),
+                                    pickedSizes: createEmptyPickedSizesMap(newSizeType)
+                                });
+                            } else {
+                                catalog.push({
+                                    id: `item-${Date.now()}-${secId}-${zIdx}`,
+                                    department: 'hardlines',
+                                    sectionId: secId,
+                                    group: newGroup,
+                                    name: newName,
+                                    qty: 0,
+                                    picked: false,
+                                    note: '',
+                                    innerQty: Number(target.innerQty) || 0,
+                                    boxQty: Number(target.boxQty) || 0
+                                });
+                            }
+                        }
+                    });
+
+                    // Optional: split Hard Lines sock item into S/M and M/L pairs across all its zones
+                    if (splitSocks && !/\b(s\/m|m\/l)\b/i.test(newName)) {
+                        const expandedCatalog = [];
+                        catalog.forEach(i => {
+                            if ((i.department || 'hardlines') === 'hardlines' && i.name.trim().toLowerCase() === newName.toLowerCase()) {
+                                ['S/M', 'M/L'].forEach(szLabel => {
+                                    expandedCatalog.push({
+                                        ...i,
+                                        id: `${i.id}-${szLabel.replace('/', '')}`,
+                                        name: `${newName} ${szLabel}`
+                                    });
+                                });
+                            } else {
+                                expandedCatalog.push(i);
+                            }
+                        });
+                        catalog = expandedCatalog;
+                    }
+
                     activeDepartment = newDept;
                     saveState();
                     renderTabs();
