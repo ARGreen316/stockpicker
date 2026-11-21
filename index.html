@@ -63,6 +63,19 @@
                             <span id="dept-clothing-badge" class="hidden px-1.5 py-0.2 rounded bg-purple-500/20 text-purple-300 text-[10px] font-black tabular-nums">0</span>
                         </button>
                     </div>
+
+                    <!-- Floor Filter: All Floors vs RG vs First Floor -->
+                    <div class="inline-flex p-0.5 rounded-xl bg-slate-900 border border-slate-800">
+                        <button type="button" data-floor-filter="all" class="floor-filter-btn px-2 py-1 rounded-lg text-xs font-extrabold transition-all bg-indigo-500 text-white shadow-sm">
+                            All Floors
+                        </button>
+                        <button type="button" data-floor-filter="RG" class="floor-filter-btn px-2 py-1 rounded-lg text-xs font-extrabold transition-all text-slate-400 hover:text-white">
+                            RG
+                        </button>
+                        <button type="button" data-floor-filter="First Floor" class="floor-filter-btn px-2 py-1 rounded-lg text-xs font-extrabold transition-all text-slate-400 hover:text-white">
+                            First Floor
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 2-Step Mode Toggle + Add Item -->
@@ -487,6 +500,8 @@
         };
         let catalog = [];
         let shelfPhotos = {};
+        let sectionFloors = {};
+        let activeFloor = 'all'; // 'all' | 'RG' | 'First Floor'
         let activeDepartment = 'hardlines'; // 'hardlines' | 'clothing'
         let appMode = 'setup'; // 'setup' | 'picklist'
         let activeSection = 'all';
@@ -495,21 +510,34 @@
         let expandedSections = {};
         let expandedGroups = {};
 
-        // 1. Store Zones Definition (All 12 cleaned-up zones)
+        // 1. Store Zones Definition (All 12 cleaned-up zones with default Floor assignments)
         const STORE_SECTIONS = [
-            { id: 'ollivanders', label: 'Ollivanders' },
-            { id: 'knight-bus', label: 'Knight bus' },
-            { id: 'honeydukes', label: 'Honeydukes' },
-            { id: 'queue-line', label: 'Queue Line' },
-            { id: 'gringotts', label: 'Gringotts' },
-            { id: 'diagon-alley', label: 'Diagon Alley' },
-            { id: 'minalima', label: 'MinaLima' },
-            { id: 'scrib', label: 'Scrib' },
-            { id: 'robes', label: 'Robes' },
-            { id: 'bear-bunker', label: 'Bear Bunker' },
-            { id: 'qudditch', label: 'Qudditch' },
-            { id: 'toys', label: 'Toys' }
+            { id: 'ollivanders', label: 'Ollivanders', defaultFloor: 'RG' },
+            { id: 'knight-bus', label: 'Knight bus', defaultFloor: 'RG' },
+            { id: 'honeydukes', label: 'Honeydukes', defaultFloor: 'RG' },
+            { id: 'queue-line', label: 'Queue Line', defaultFloor: 'RG' },
+            { id: 'gringotts', label: 'Gringotts', defaultFloor: 'RG' },
+            { id: 'diagon-alley', label: 'Diagon Alley', defaultFloor: 'RG' },
+            { id: 'minalima', label: 'MinaLima', defaultFloor: 'First Floor' },
+            { id: 'scrib', label: 'Scrib', defaultFloor: 'First Floor' },
+            { id: 'robes', label: 'Robes', defaultFloor: 'First Floor' },
+            { id: 'bear-bunker', label: 'Bear Bunker', defaultFloor: 'First Floor' },
+            { id: 'qudditch', label: 'Qudditch', defaultFloor: 'First Floor' },
+            { id: 'toys', label: 'Toys', defaultFloor: 'First Floor' }
         ];
+
+        function getSectionFloor(secId) {
+            if (sectionFloors[secId] === 'RG' || sectionFloors[secId] === 'First Floor') {
+                return sectionFloors[secId];
+            }
+            const found = STORE_SECTIONS.find(s => s.id === secId);
+            return found ? found.defaultFloor : 'RG';
+        }
+
+        function getVisibleStoreSections() {
+            if (activeFloor === 'all') return STORE_SECTIONS;
+            return STORE_SECTIONS.filter(sec => getSectionFloor(sec.id) === activeFloor);
+        }
 
         // 2. Default Catalog Items (Qudditch 4 Houses Hard Lines + Clothing + Toys Lego Subsection)
         const QUIDDITCH_HOUSES = ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin'];
@@ -653,7 +681,7 @@
         // Save state to localStorage safely
         function saveState() {
             try {
-                localStorage.setItem(STORAGE_KEY, JSON.stringify({ catalog, shelfPhotos }));
+                localStorage.setItem(STORAGE_KEY, JSON.stringify({ catalog, shelfPhotos, sectionFloors }));
             } catch (e) {
                 console.error('Failed to save catalog:', e);
             }
@@ -667,6 +695,9 @@
                     const parsed = JSON.parse(raw);
                     if (parsed && parsed.shelfPhotos && typeof parsed.shelfPhotos === 'object') {
                         shelfPhotos = parsed.shelfPhotos;
+                    }
+                    if (parsed && parsed.sectionFloors && typeof parsed.sectionFloors === 'object') {
+                        sectionFloors = parsed.sectionFloors;
                     }
                     if (parsed && Array.isArray(parsed.catalog) && parsed.catalog.length > 0) {
                         catalog = parsed.catalog.map(item => {
@@ -705,6 +736,7 @@
                 version: 3,
                 updatedAt: new Date().toISOString(),
                 shelfPhotos,
+                sectionFloors,
                 catalog: catalog.map(item => {
                     if (item.department === 'clothing') {
                         return {
@@ -733,6 +765,9 @@
         function applyImportedCatalog(data) {
             if (data && data.shelfPhotos && typeof data.shelfPhotos === 'object') {
                 shelfPhotos = { ...shelfPhotos, ...data.shelfPhotos };
+            }
+            if (data && data.sectionFloors && typeof data.sectionFloors === 'object') {
+                sectionFloors = { ...sectionFloors, ...data.sectionFloors };
             }
             const incomingList = Array.isArray(data) ? data : (data && Array.isArray(data.catalog) ? data.catalog : null);
             if (!incomingList || incomingList.length === 0) return;
@@ -907,10 +942,19 @@
         function renderTabs() {
             const tabsEl = document.getElementById('category-tabs');
             if (!tabsEl) return;
-            const deptCatalog = catalog.filter(i => (i.department || 'hardlines') === activeDepartment);
+            const visibleSecs = getVisibleStoreSections();
+            const visibleSecIds = new Set(visibleSecs.map(s => s.id));
+            if (activeSection !== 'all' && !visibleSecIds.has(activeSection)) {
+                activeSection = 'all';
+            }
+
+            const deptCatalog = catalog.filter(i =>
+                (i.department || 'hardlines') === activeDepartment && visibleSecIds.has(i.sectionId)
+            );
 
             const totalActiveLines = deptCatalog.reduce((sum, i) => sum + getItemActiveLinesCount(i), 0);
             const allActive = activeSection === 'all';
+            const allLabel = activeFloor === 'all' ? 'All Zones' : `All ${activeFloor} Zones`;
 
             let html = `
                 <button type="button" data-sec-tab="all" class="zone-tab-btn px-3 py-1.5 rounded-xl text-xs font-extrabold whitespace-nowrap transition-all border shrink-0 flex items-center gap-1.5 ${
@@ -918,12 +962,12 @@
                         ? 'bg-amber-500 text-slate-950 border-amber-400 shadow-sm'
                         : 'bg-slate-900 text-slate-300 border-slate-800 hover:border-slate-700'
                 }">
-                    <span>All Zones</span>
+                    <span>${escapeHtml(allLabel)}</span>
                     ${totalActiveLines > 0 ? `<span class="px-1.5 py-0.2 rounded-md text-[10px] font-black tabular-nums ${allActive ? 'bg-slate-950/20 text-slate-950' : 'bg-slate-800 text-amber-300'}">${totalActiveLines}</span>` : ''}
                 </button>
             `;
 
-            STORE_SECTIONS.forEach(sec => {
+            visibleSecs.forEach(sec => {
                 const secItems = deptCatalog.filter(i => i.sectionId === sec.id);
                 const secActiveLines = secItems.reduce((sum, i) => sum + getItemActiveLinesCount(i), 0);
                 if (appMode === 'picklist' && secActiveLines === 0) return;
@@ -956,16 +1000,24 @@
 
         // Sync Department Toggle, Mode Toggle, Progress Bar, and Sticky Bottom Bar
         function updateHeaderAndBars() {
+            document.querySelectorAll('.floor-filter-btn').forEach(btn => {
+                const isSelected = btn.dataset.floorFilter === activeFloor;
+                btn.className = isSelected
+                    ? 'floor-filter-btn px-2 py-1 rounded-lg text-xs font-extrabold transition-all bg-indigo-500 text-white shadow-sm'
+                    : 'floor-filter-btn px-2 py-1 rounded-lg text-xs font-extrabold transition-all text-slate-400 hover:text-white';
+            });
+
             const hlBtn = document.getElementById('dept-hardlines-btn');
             const clBtn = document.getElementById('dept-clothing-btn');
             const hlBadge = document.getElementById('dept-hardlines-badge');
             const clBadge = document.getElementById('dept-clothing-badge');
+            const visibleSecIds = new Set(getVisibleStoreSections().map(s => s.id));
 
             const hlLines = catalog
-                .filter(i => (i.department || 'hardlines') === 'hardlines')
+                .filter(i => (i.department || 'hardlines') === 'hardlines' && visibleSecIds.has(i.sectionId))
                 .reduce((s, i) => s + getItemActiveLinesCount(i), 0);
             const clLines = catalog
-                .filter(i => i.department === 'clothing')
+                .filter(i => i.department === 'clothing' && visibleSecIds.has(i.sectionId))
                 .reduce((s, i) => s + getItemActiveLinesCount(i), 0);
 
             if (hlLines > 0) {
@@ -990,7 +1042,7 @@
                 clBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all bg-purple-500 text-white shadow-sm flex items-center gap-1';
             }
 
-            const deptCatalog = catalog.filter(i => (i.department || 'hardlines') === activeDepartment);
+            const deptCatalog = catalog.filter(i => (i.department || 'hardlines') === activeDepartment && visibleSecIds.has(i.sectionId));
             const activeLines = deptCatalog.reduce((s, i) => s + getItemActiveLinesCount(i), 0);
             const pickedLines = deptCatalog.reduce((s, i) => s + getItemPickedLinesCount(i), 0);
             const totalUnits = deptCatalog.reduce((s, i) => s + getItemTotalQty(i), 0);
@@ -1043,12 +1095,17 @@
 
         // Build formatted picklist text for WhatsApp sharing & clipboard copy
         function buildPicklistWhatsAppText() {
-            const deptCatalog = catalog.filter(i => (i.department || 'hardlines') === activeDepartment);
+            const visibleSecs = getVisibleStoreSections();
+            const visibleSecIds = new Set(visibleSecs.map(s => s.id));
+            const deptCatalog = catalog.filter(i => (i.department || 'hardlines') === activeDepartment && visibleSecIds.has(i.sectionId));
             const lines = [];
-            const headerLabel = activeDepartment === 'clothing' ? '*CLOTHING PICKLIST*' : '*HARD LINES PICKLIST*';
+            const floorTag = activeFloor !== 'all' ? ` (${activeFloor.toUpperCase()})` : '';
+            const headerLabel = activeDepartment === 'clothing'
+                ? `*CLOTHING PICKLIST${floorTag}*`
+                : `*HARD LINES PICKLIST${floorTag}*`;
             lines.push(headerLabel);
 
-            STORE_SECTIONS.forEach(sec => {
+            visibleSecs.forEach(sec => {
                 const secItems = deptCatalog.filter(i => i.sectionId === sec.id && getItemTotalQty(i) > 0);
                 if (secItems.length === 0) return;
 
@@ -1223,12 +1280,13 @@
             const container = document.getElementById('checklist-container');
             const emptyState = document.getElementById('empty-state');
             const query = searchQuery.trim().toLowerCase();
+            const visibleSecs = getVisibleStoreSections();
             const deptCatalog = catalog.filter(i => (i.department || 'hardlines') === activeDepartment);
 
             let html = '';
             let visibleSectionsCount = 0;
 
-            STORE_SECTIONS.forEach(sec => {
+            visibleSecs.forEach(sec => {
                 if (activeSection !== 'all' && activeSection !== sec.id) return;
 
                 let secItems = deptCatalog.filter(item => item.sectionId === sec.id);
@@ -1456,25 +1514,33 @@
                 const sectionSelectedLines = secItems.reduce((s, i) => s + getItemActiveLinesCount(i), 0);
                 const sectionPickedLines = secItems.reduce((s, i) => s + getItemPickedLinesCount(i), 0);
                 const isSectionExpanded = !!expandedSections[sec.id] || query.length > 0 || activeSection !== 'all';
+                const currentFloor = getSectionFloor(sec.id);
                 const secBadge = appMode === 'picklist'
                     ? `${sectionPickedLines} / ${sectionSelectedLines} picked`
                     : (sectionSelectedLines > 0 ? `${sectionSelectedLines} selected` : `${secItems.length} items`);
 
                 html += `
                     <section class="rounded-2xl bg-slate-900/80 border border-slate-800 overflow-hidden shadow-sm">
-                        <button type="button" data-toggle-sec="${sec.id}" class="sec-toggle w-full px-4 py-3.5 flex items-center justify-between gap-3 text-left hover:bg-slate-800/40 transition-colors">
-                            <div class="flex items-center gap-2.5 min-w-0">
+                        <div class="flex items-center justify-between gap-2 px-4 py-3.5 hover:bg-slate-800/40 transition-colors">
+                            <button type="button" data-toggle-sec="${sec.id}" class="sec-toggle flex items-center gap-2.5 min-w-0 flex-1 text-left">
                                 <svg class="w-4 h-4 text-amber-400 transition-transform shrink-0 ${isSectionExpanded ? '' : '-rotate-90'}" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
                                 </svg>
                                 <h2 class="text-sm sm:text-base font-extrabold uppercase tracking-wider text-white truncate">${escapeHtml(sec.label)}</h2>
+                            </button>
+                            <div class="flex items-center gap-2 shrink-0">
+                                <button type="button" data-toggle-floor="${sec.id}" title="Tap to switch zone floor (RG / First Floor)" class="toggle-floor-btn px-2 py-1 rounded-lg text-[10px] font-extrabold uppercase tracking-wider border transition-colors ${
+                                    currentFloor === 'RG'
+                                        ? 'bg-indigo-950/80 text-indigo-300 border-indigo-700/70 hover:bg-indigo-900/70'
+                                        : 'bg-teal-950/80 text-teal-300 border-teal-700/70 hover:bg-teal-900/70'
+                                }">${escapeHtml(currentFloor)}</button>
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-extrabold tabular-nums ${
+                                    sectionSelectedLines > 0
+                                        ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                                        : 'bg-slate-950 text-slate-400 border border-slate-800'
+                                }">${escapeHtml(secBadge)}</span>
                             </div>
-                            <span class="px-2.5 py-1 rounded-lg text-xs font-extrabold tabular-nums shrink-0 ${
-                                sectionSelectedLines > 0
-                                    ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
-                                    : 'bg-slate-950 text-slate-400 border border-slate-800'
-                            }">${escapeHtml(secBadge)}</span>
-                        </button>
+                        </div>
                         ${isSectionExpanded ? `<div class="px-3.5 pb-3.5 pt-1 space-y-3 border-t border-slate-800/70">${groupsHtml}</div>` : ''}
                     </section>
                 `;
@@ -1507,6 +1573,21 @@
                     const sid = btn.dataset.toggleSec;
                     expandedSections[sid] = !expandedSections[sid];
                     renderMain();
+                });
+            });
+
+            container.querySelectorAll('.toggle-floor-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const sid = btn.dataset.toggleFloor;
+                    const nextFloor = getSectionFloor(sid) === 'RG' ? 'First Floor' : 'RG';
+                    sectionFloors[sid] = nextFloor;
+                    saveState();
+                    renderTabs();
+                    updateHeaderAndBars();
+                    renderMain();
+                    const secObj = STORE_SECTIONS.find(s => s.id === sid);
+                    showToast(`${secObj ? secObj.label : 'Zone'} moved to ${nextFloor}`);
                 });
             });
 
@@ -1941,6 +2022,17 @@
             updateHeaderAndBars();
             renderMain();
             fetchGitCatalogIfAvailable(false);
+
+            // Floor Filter Toggle (All Floors / RG / First Floor)
+            document.querySelectorAll('.floor-filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    activeFloor = btn.dataset.floorFilter;
+                    activeSection = 'all';
+                    renderTabs();
+                    updateHeaderAndBars();
+                    renderMain();
+                });
+            });
 
             // Department Toggle
             document.getElementById('dept-hardlines-btn').addEventListener('click', () => {

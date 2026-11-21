@@ -1,7 +1,10 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-21T10:37:46.821Z",
+  "updatedAt": "2026-11-21T10:47:23.280Z",
   "shelfPhotos": {},
+  "sectionFloors": {
+    "qudditch": "RG"
+  },
   "catalog": [
     {
       "id": "cloth-1",
