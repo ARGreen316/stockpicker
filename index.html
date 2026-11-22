@@ -110,6 +110,23 @@
                         </svg>
                         <span class="hidden sm:inline">Catalog</span>
                     </button>
+
+                    <!-- Overflow Menu (Shelf-Walk Order & Advanced Tools) -->
+                    <div class="relative">
+                        <button id="open-more-menu-btn" type="button" title="More Tools" class="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-slate-300 hover:text-white transition-colors flex items-center justify-center">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6h.01M12 12h.01M12 18h.01"></path>
+                            </svg>
+                        </button>
+                        <div id="more-menu-dropdown" class="hidden absolute right-0 mt-2 w-56 rounded-2xl bg-slate-900 border border-slate-700/90 shadow-2xl py-1.5 z-50">
+                            <button id="menu-shelf-order-btn" type="button" class="w-full px-4 py-2.5 text-left text-xs font-bold text-slate-200 hover:bg-slate-800 flex items-center gap-2.5">
+                                <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                                </svg>
+                                <span>Arrange Shelf-Walk Order</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -322,6 +339,11 @@
                     <input id="edit-item-name-input" type="text" required class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm font-bold text-white focus:outline-none focus:border-amber-500">
                 </div>
                 <div>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Warehouse Aisle / Bay (Optional)</label>
+                    <input id="edit-item-aisle-input" type="text" list="warehouse-aisles-datalist" placeholder="e.g. Aisle 1, Aisle 2, Mezzanine" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs font-bold text-sky-300 placeholder-slate-600 focus:outline-none focus:border-sky-500">
+                    <datalist id="warehouse-aisles-datalist"></datalist>
+                </div>
+                <div>
                     <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Assigned Store Zone(s)</label>
                     <div id="edit-zones-checkboxes" class="grid grid-cols-2 sm:grid-cols-3 gap-1.5 p-2.5 rounded-xl bg-slate-950 border border-slate-800 max-h-36 overflow-y-auto">
                     </div>
@@ -412,6 +434,42 @@
                         <button id="apply-import-json-btn" type="button" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-extrabold">Apply Pasted JSON</button>
                     </div>
                 </div>
+
+                <div class="border-t border-slate-800 pt-3 space-y-2">
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">Team Tools (Merge JSON &amp; Clean Names)</label>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button id="open-merge-json-btn" type="button" class="px-3 py-2 rounded-xl bg-indigo-950/90 hover:bg-indigo-900 border border-indigo-700/70 text-xs font-bold text-indigo-300">
+                            Merge Team JSON
+                        </button>
+                        <button id="clean-house-prefixes-btn" type="button" class="px-3 py-2 rounded-xl bg-amber-950/70 hover:bg-amber-900/70 border border-amber-700/60 text-xs font-bold text-amber-300">
+                            Clean House Names
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4B: Merge Team Catalog JSON -->
+    <div id="merge-json-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl">
+            <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between">
+                <h2 class="text-base font-extrabold text-indigo-300">Merge Team Member's JSON</h2>
+                <button id="close-merge-json-btn" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="p-5 space-y-3.5">
+                <p class="text-xs text-slate-400">
+                    Paste a teammate's exported <code class="text-sky-300">catalog.json</code> below. Any zones they edited will merge into your catalog without wiping out your other zones!
+                </p>
+                <textarea id="merge-json-textarea" rows="6" placeholder='Paste teammate JSON here...' class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500 font-mono"></textarea>
+                <div class="flex justify-end gap-2">
+                    <button type="button" id="cancel-merge-json-btn" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300">Cancel</button>
+                    <button type="button" id="apply-merge-json-btn" class="px-5 py-2 rounded-xl bg-indigo-500 hover:bg-indigo-400 text-white text-xs font-extrabold">Merge Into Catalog</button>
+                </div>
             </div>
         </div>
     </div>
@@ -487,6 +545,40 @@
         </div>
     </div>
 
+    <!-- Modal 7: Arrange Shop Floor Shelf-Walk Order -->
+    <div id="shelf-order-modal" class="hidden fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-lg max-h-[88vh] flex flex-col overflow-hidden shadow-2xl">
+            <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between shrink-0">
+                <div>
+                    <h2 class="text-base font-extrabold text-white">Arrange Shelf-Walk Order</h2>
+                    <p class="text-[11px] text-slate-400 mt-0.5">Drag items (or use ↑/↓) to match the order you walk the bays</p>
+                </div>
+                <button id="close-shelf-order-btn" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="px-5 py-3 bg-slate-950/60 border-b border-slate-800 grid grid-cols-2 gap-2.5 shrink-0">
+                <div>
+                    <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Store Zone</label>
+                    <select id="shelf-order-zone-select" class="w-full px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-700 text-xs font-bold text-white focus:outline-none focus:border-amber-500"></select>
+                </div>
+                <div>
+                    <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Subsection</label>
+                    <select id="shelf-order-group-select" class="w-full px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-700 text-xs font-bold text-amber-300 focus:outline-none focus:border-amber-500"></select>
+                </div>
+            </div>
+            <div id="shelf-order-list" class="flex-1 overflow-y-auto p-4 space-y-1.5">
+                <!-- Populated dynamically -->
+            </div>
+            <div class="px-5 py-3.5 border-t border-slate-800 flex items-center justify-end gap-2 shrink-0">
+                <button type="button" id="cancel-shelf-order-btn" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300">Cancel</button>
+                <button type="button" id="save-shelf-order-btn" class="px-5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-extrabold">Save Shelf Order</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Toast Notification -->
     <div id="toast" class="fixed top-20 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-200 px-4 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold shadow-xl border border-emerald-400/30">
         Copied to clipboard!
@@ -516,6 +608,8 @@
         let catalog = [];
         let shelfPhotos = {};
         let sectionFloors = {};
+        let warehouseAisles = [];
+        let picklistViewMode = 'aisle'; // 'aisle' | 'zone'
         let activeFloor = 'all'; // 'all' | 'RG' | 'First Floor'
         let activeDepartment = 'hardlines'; // 'hardlines' | 'clothing'
         let appMode = 'setup'; // 'setup' | 'picklist'
@@ -613,19 +707,20 @@
         function buildDefaultCatalog() {
             const list = [];
             let idx = 1;
-            // Hard Lines
             QUIDDITCH_HOUSES.forEach(house => {
-                QUIDDITCH_ITEMS.forEach(item => {
+                QUIDDITCH_ITEMS.forEach(raw => {
                     list.push({
                         id: `item-${idx++}`,
                         department: 'hardlines',
                         sectionId: 'qudditch',
                         group: house,
-                        name: item.name,
+                        aisle: '',
+                        name: raw.name,
                         qty: 0,
                         picked: false,
-                        innerQty: item.innerQty,
-                        boxQty: item.boxQty
+                        note: '',
+                        innerQty: raw.innerQty || 0,
+                        boxQty: raw.boxQty || 0
                     });
                 });
             });
@@ -635,9 +730,11 @@
                 department: 'hardlines',
                 sectionId: 'toys',
                 group: 'Lego',
+                aisle: '',
                 name: 'Lego Set (Sample)',
                 qty: 0,
                 picked: false,
+                note: '',
                 innerQty: 0,
                 boxQty: 0
             });
@@ -649,6 +746,7 @@
                         department: 'clothing',
                         sectionId: 'qudditch',
                         group: house,
+                        aisle: '',
                         name,
                         sizeType: 'adult',
                         sizes: createEmptySizesMap('adult'),
@@ -696,7 +794,7 @@
         // Save state to localStorage safely
         function saveState() {
             try {
-                localStorage.setItem(STORAGE_KEY, JSON.stringify({ catalog, shelfPhotos, sectionFloors }));
+                localStorage.setItem(STORAGE_KEY, JSON.stringify({ catalog, shelfPhotos, sectionFloors, warehouseAisles }));
             } catch (e) {
                 console.error('Failed to save catalog:', e);
             }
@@ -714,6 +812,9 @@
                     if (parsed && parsed.sectionFloors && typeof parsed.sectionFloors === 'object') {
                         sectionFloors = parsed.sectionFloors;
                     }
+                    if (parsed && Array.isArray(parsed.warehouseAisles)) {
+                        warehouseAisles = parsed.warehouseAisles;
+                    }
                     if (parsed && Array.isArray(parsed.catalog) && parsed.catalog.length > 0) {
                         const migrated = [];
                         parsed.catalog.forEach(item => {
@@ -730,6 +831,7 @@
                                         department: 'hardlines',
                                         sectionId: item.sectionId === 'quidditch' ? 'qudditch' : item.sectionId,
                                         group: item.group || 'General',
+                                        aisle: item.aisle || '',
                                         name: `${baseName} ${szLabel}`,
                                         qty: 0,
                                         picked: false,
@@ -745,6 +847,7 @@
                                 ...item,
                                 sectionId: item.sectionId === 'quidditch' ? 'qudditch' : item.sectionId,
                                 department: dept,
+                                aisle: item.aisle || '',
                                 sizeType,
                                 sizes: dept === 'clothing'
                                     ? { ...createEmptySizesMap(sizeType), ...(item.sizes || {}) }
@@ -777,6 +880,7 @@
                 updatedAt: new Date().toISOString(),
                 shelfPhotos,
                 sectionFloors,
+                warehouseAisles,
                 catalog: catalog.map(item => {
                     if (item.department === 'clothing') {
                         return {
@@ -785,6 +889,7 @@
                             sizeType: getItemSizeConfig(item).sizeType,
                             sectionId: item.sectionId,
                             group: item.group || 'General',
+                            aisle: item.aisle || '',
                             name: item.name
                         };
                     }
@@ -793,6 +898,8 @@
                         department: 'hardlines',
                         sectionId: item.sectionId,
                         group: item.group || 'General',
+                        aisle: item.aisle || '',
+                        sortOrder: item.sortOrder !== undefined ? Number(item.sortOrder) : undefined,
                         name: item.name,
                         innerQty: Number(item.innerQty) || 0,
                         boxQty: Number(item.boxQty) || 0
@@ -808,6 +915,9 @@
             }
             if (data && data.sectionFloors && typeof data.sectionFloors === 'object') {
                 sectionFloors = { ...sectionFloors, ...data.sectionFloors };
+            }
+            if (data && Array.isArray(data.warehouseAisles) && data.warehouseAisles.length > 0) {
+                warehouseAisles = [...data.warehouseAisles];
             }
             const incomingList = Array.isArray(data) ? data : (data && Array.isArray(data.catalog) ? data.catalog : null);
             if (!incomingList || incomingList.length === 0) return;
@@ -825,6 +935,10 @@
                 const normalizedSecId = raw.sectionId === 'quidditch' ? 'qudditch' : (raw.sectionId || 'qudditch');
                 const key = `${dept}::${normalizedSecId}::${grp.toLowerCase()}::${String(raw.name || '').trim().toLowerCase()}`;
                 const prev = existingByKey.get(key);
+                const aisleVal = raw.aisle || (prev && prev.aisle) || '';
+                if (aisleVal && !warehouseAisles.includes(aisleVal)) {
+                    warehouseAisles.push(aisleVal);
+                }
 
                 if (dept === 'clothing') {
                     const sizeType = (raw.sizeType && SIZE_SETS[raw.sizeType]) ? raw.sizeType : inferSizeTypeFromText(raw.name);
@@ -834,6 +948,7 @@
                         sizeType,
                         sectionId: normalizedSecId,
                         group: grp,
+                        aisle: aisleVal,
                         name: String(raw.name || 'Unnamed Garment'),
                         sizes: prev && prev.sizes ? { ...createEmptySizesMap(sizeType), ...prev.sizes } : createEmptySizesMap(sizeType),
                         pickedSizes: prev && prev.pickedSizes ? { ...createEmptyPickedSizesMap(sizeType), ...prev.pickedSizes } : createEmptyPickedSizesMap(sizeType)
@@ -844,6 +959,7 @@
                     department: 'hardlines',
                     sectionId: normalizedSecId,
                     group: grp,
+                    aisle: aisleVal,
                     name: String(raw.name || 'Unnamed Item'),
                     qty: prev ? (Number(prev.qty) || 0) : 0,
                     picked: prev ? !!prev.picked : false,
@@ -1172,7 +1288,8 @@
             const mergedMap = new Map();
 
             deptCatalog.forEach(item => {
-                const mergeKey = `${item.department || 'hardlines'}::${item.name.trim().toLowerCase()}`;
+                const displayName = getWarehouseDisplayName(item);
+                const mergeKey = `${item.department || 'hardlines'}::${displayName.trim().toLowerCase()}`;
                 const zoneName = secLabelMap.get(item.sectionId) || item.sectionId;
 
                 if (!mergedMap.has(mergeKey)) {
@@ -1180,7 +1297,8 @@
                     mergedMap.set(mergeKey, {
                         key: mergeKey,
                         department: item.department || 'hardlines',
-                        name: item.name,
+                        name: displayName,
+                        aisle: item.aisle || '',
                         sizeType,
                         totalQty: 0,
                         innerQty: Number(item.innerQty) || 0,
@@ -1195,6 +1313,7 @@
 
                 const entry = mergedMap.get(mergeKey);
                 entry.sourceItems.push(item);
+                if (!entry.aisle && item.aisle) entry.aisle = item.aisle;
                 if (!entry.innerQty && item.innerQty) entry.innerQty = Number(item.innerQty) || 0;
                 if (!entry.boxQty && item.boxQty) entry.boxQty = Number(item.boxQty) || 0;
                 if (item.note && !entry.notes.includes(item.note)) {
@@ -1239,15 +1358,48 @@
                     entry.pickedLines = pickedLines;
                     entry.isPicked = activeLines > 0 && pickedLines === activeLines;
                 } else {
-                    entry.activeLines = 1;
-                    entry.isPicked = entry.sourceItems.every(src => !!src.picked);
-                    entry.pickedLines = entry.isPicked ? 1 : 0;
+                    entry.activeLines = entry.totalQty > 0 ? 1 : 0;
+                    const allSourcesPicked = entry.sourceItems.length > 0 && entry.sourceItems.every(src => !!src.picked);
+                    entry.pickedLines = allSourcesPicked ? 1 : 0;
+                    entry.isPicked = allSourcesPicked;
                 }
                 return entry;
             });
         }
 
-        // Build clean, Teams-friendly picklist text (combining duplicate items across zones)
+        // Re-attach House prefix in Warehouse Picklist if stripped on Shop Floor view
+        function getWarehouseDisplayName(item) {
+            const grp = String(item.group || '').trim();
+            const name = String(item.name || '').trim();
+            if (['Gryffindor', 'Slytherin', 'Ravenclaw', 'Hufflepuff'].includes(grp)) {
+                if (!name.toLowerCase().includes(grp.toLowerCase())) {
+                    return `${grp} ${name}`;
+                }
+            }
+            return name;
+        }
+
+        // Sort Warehouse Aisles in defined walking order
+        function getOrderedAisleNames(entries) {
+            const presentAisles = new Set(entries.map(e => e.aisle || 'Unassigned Aisle'));
+            const ordered = [];
+            warehouseAisles.forEach(a => {
+                if (presentAisles.has(a)) {
+                    ordered.push(a);
+                    presentAisles.delete(a);
+                }
+            });
+            Array.from(presentAisles)
+                .filter(a => a !== 'Unassigned Aisle')
+                .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+                .forEach(a => ordered.push(a));
+            if (presentAisles.has('Unassigned Aisle')) {
+                ordered.push('Unassigned Aisle');
+            }
+            return ordered;
+        }
+
+        // Build clean, Teams-friendly picklist text (supports both Warehouse Aisle order & Shop Floor Zone order)
         function buildPicklistShareText() {
             const entries = getMergedPicklistEntries();
             if (entries.length === 0) return null;
@@ -1255,21 +1407,6 @@
             const floorTag = activeFloor !== 'all' ? ` (${activeFloor.toUpperCase()})` : '';
             const deptTitle = activeDepartment === 'clothing' ? 'CLOTHING PICKLIST' : 'HARD LINES PICKLIST';
             const lines = [`=== ${deptTitle}${floorTag} ===`];
-
-            // Group single-zone entries under their zone header, and multi-zone combined items under COMBINED MULTI-ZONE
-            const singleZoneGroups = new Map();
-            const multiZoneEntries = [];
-
-            entries.forEach(entry => {
-                const uniqueZones = [...new Set(entry.zoneParts.map(p => p.zone))];
-                if (uniqueZones.length > 1) {
-                    multiZoneEntries.push(entry);
-                } else {
-                    const zName = uniqueZones[0] || 'General';
-                    if (!singleZoneGroups.has(zName)) singleZoneGroups.set(zName, []);
-                    singleZoneGroups.get(zName).push(entry);
-                }
-            });
 
             const formatEntryLine = (entry, includeZoneBreakdown = false) => {
                 const noteSuffix = entry.notes.length > 0 ? ` (${entry.notes.join('; ')})` : '';
@@ -1297,14 +1434,49 @@
                 }
             };
 
+            if (picklistViewMode === 'aisle') {
+                const orderedAisles = getOrderedAisleNames(entries);
+                orderedAisles.forEach(aisleName => {
+                    const aisleEntries = entries.filter(e => (e.aisle || 'Unassigned Aisle') === aisleName);
+                    if (aisleEntries.length === 0) return;
+                    lines.push(`\n${aisleName.toUpperCase()}:`);
+                    aisleEntries.forEach(entry => lines.push(formatEntryLine(entry, true)));
+                });
+                return lines.join('\n');
+            }
+
+            const multiZoneEntries = [];
+            const singleZoneHierarchy = new Map(); // zoneLabel -> Map(groupName -> entry[])
+
+            entries.forEach(entry => {
+                const uniqueZones = [...new Set(entry.zoneParts.map(p => p.zone))];
+                if (uniqueZones.length > 1) {
+                    multiZoneEntries.push(entry);
+                } else {
+                    const zName = uniqueZones[0] || 'General';
+                    const grpName = (entry.sourceItems[0] && entry.sourceItems[0].group) || 'General';
+                    if (!singleZoneHierarchy.has(zName)) singleZoneHierarchy.set(zName, new Map());
+                    const grpMap = singleZoneHierarchy.get(zName);
+                    if (!grpMap.has(grpName)) grpMap.set(grpName, []);
+                    grpMap.get(grpName).push(entry);
+                }
+            });
+
             if (multiZoneEntries.length > 0) {
                 lines.push(`\nCOMBINED MULTI-ZONE:`);
                 multiZoneEntries.forEach(entry => lines.push(formatEntryLine(entry, true)));
             }
 
-            singleZoneGroups.forEach((zoneEntries, zName) => {
-                lines.push(`\n${zName.toUpperCase()}:`);
-                zoneEntries.forEach(entry => lines.push(formatEntryLine(entry, false)));
+            STORE_SECTIONS.forEach(sec => {
+                const grpMap = singleZoneHierarchy.get(sec.label);
+                if (!grpMap || grpMap.size === 0) return;
+                lines.push(`\n${sec.label.toUpperCase()}:`);
+                grpMap.forEach((grpEntries, grpName) => {
+                    if (grpName && grpName !== 'General') {
+                        lines.push(`${grpName}:`);
+                    }
+                    grpEntries.forEach(entry => lines.push(formatEntryLine(entry, false)));
+                });
             });
 
             return lines.join('\n');
@@ -1452,7 +1624,83 @@
             const emptyState = document.getElementById('empty-state');
             const query = searchQuery.trim().toLowerCase();
 
-            // In 2. Picklist mode, render combined warehouse picklist (merging multi-zone items)
+            // Helper to render a single picklist item card (supports both single-zone & combined multi-zone entries)
+            const renderPicklistEntryCard = (entry, showZoneBreakdown = false) => {
+                const uniqueZones = [...new Set(entry.zoneParts.map(p => p.zone))];
+                const zoneBreakdownText = showZoneBreakdown
+                    ? entry.zoneParts.map(p => `${p.qty} ${p.zone}`).join(' · ')
+                    : '';
+                const noteHtml = entry.notes.length > 0
+                    ? `<div class="mt-1 inline-flex items-center px-2 py-0.5 rounded-md bg-amber-950/70 border border-amber-700/60 text-amber-300 text-[10px] font-bold">Note: ${escapeHtml(entry.notes.join(' · '))}</div>`
+                    : '';
+
+                if (entry.department === 'clothing') {
+                    const { keys, labels } = SIZE_SETS[entry.sizeType] || SIZE_SETS.adult;
+                    return keys.map(sz => {
+                        const qty = Number(entry.sizes[sz] || 0);
+                        if (qty <= 0) return '';
+                        const isPicked = !!entry.pickedSizes[sz];
+                        if (secondaryFilterActive && isPicked) return '';
+
+                        return `
+                            <label class="flex items-center justify-between gap-3 p-3 rounded-xl border cursor-pointer transition-all select-none ${
+                                isPicked
+                                    ? 'bg-slate-900/40 border-slate-800/60 opacity-60'
+                                    : 'bg-slate-900 border-slate-800 hover:border-slate-700'
+                            }">
+                                <div class="flex items-center gap-3 min-w-0">
+                                    <input type="checkbox" data-merged-key="${escapeHtml(entry.key)}" data-size="${sz}" ${isPicked ? 'checked' : ''} class="merged-cloth-pick-cb w-5 h-5 rounded-lg border-slate-700 bg-slate-950 text-emerald-500 focus:ring-emerald-500 shrink-0">
+                                    <div class="min-w-0">
+                                        <div class="text-xs sm:text-sm font-bold ${isPicked ? 'line-through text-slate-500' : 'text-white'} truncate">
+                                            <span class="uppercase text-purple-300 mr-1">${labels[sz]}</span> ${escapeHtml(entry.name)}
+                                        </div>
+                                        ${zoneBreakdownText ? `<div class="text-[10px] font-semibold text-slate-400 mt-0.5">${escapeHtml(zoneBreakdownText)}</div>` : ''}
+                                        ${noteHtml}
+                                    </div>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-black tabular-nums shrink-0 ${
+                                    isPicked
+                                        ? 'bg-slate-800 text-slate-500'
+                                        : 'bg-purple-500/20 text-purple-300 border border-purple-500/40'
+                                }">x${qty}</span>
+                            </label>
+                        `;
+                    }).join('');
+                } else {
+                    const isPicked = entry.isPicked;
+                    const formatted = formatAutomaticContainerQty({
+                        name: entry.name,
+                        qty: entry.totalQty,
+                        innerQty: entry.innerQty,
+                        boxQty: entry.boxQty
+                    });
+                    const subDetails = [formatted.secondary, zoneBreakdownText].filter(Boolean).join(' · ');
+
+                    return `
+                        <label class="flex items-center justify-between gap-3 p-3 rounded-xl border cursor-pointer transition-all select-none ${
+                            isPicked
+                                ? 'bg-slate-900/40 border-slate-800/60 opacity-60'
+                                : 'bg-slate-900 border-slate-800 hover:border-slate-700'
+                        }">
+                            <div class="flex items-center gap-3 min-w-0">
+                                <input type="checkbox" data-merged-key="${escapeHtml(entry.key)}" ${isPicked ? 'checked' : ''} class="merged-pick-cb w-5 h-5 rounded-lg border-slate-700 bg-slate-950 text-emerald-500 focus:ring-emerald-500 shrink-0">
+                                <div class="min-w-0">
+                                    <div class="text-xs sm:text-sm font-bold ${isPicked ? 'line-through text-slate-500' : 'text-white'} truncate">${escapeHtml(entry.name)}</div>
+                                    ${subDetails ? `<div class="text-[10px] font-semibold text-slate-400 mt-0.5">${escapeHtml(subDetails)}</div>` : ''}
+                                    ${noteHtml}
+                                </div>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-black tabular-nums shrink-0 ${
+                                isPicked
+                                    ? 'bg-slate-800 text-slate-500'
+                                    : 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                            }">${escapeHtml(formatted.primary)}</span>
+                        </label>
+                    `;
+                }
+            };
+
+            // In 2. Picklist mode, render Zone by Zone & Subsection by Subsection (with multi-zone duplicates combined at top)
             if (appMode === 'picklist') {
                 let mergedEntries = getMergedPicklistEntries();
                 if (secondaryFilterActive) {
@@ -1460,7 +1708,8 @@
                 }
                 if (query.length > 0) {
                     mergedEntries = mergedEntries.filter(e => {
-                        const hay = `${e.name} ${e.zoneParts.map(p => p.zone).join(' ')} ${e.notes.join(' ')}`.toLowerCase();
+                        const groupsStr = e.sourceItems.map(s => s.group || '').join(' ');
+                        const hay = `${e.name} ${groupsStr} ${e.zoneParts.map(p => p.zone).join(' ')} ${e.notes.join(' ')}`.toLowerCase();
                         return hay.includes(query);
                     });
                 }
@@ -1474,90 +1723,140 @@
                 }
 
                 emptyState.classList.add('hidden');
-                const mergedHtml = mergedEntries.map(entry => {
-                    const uniqueZones = [...new Set(entry.zoneParts.map(p => p.zone))];
-                    const zoneBreakdownText = uniqueZones.length > 1
-                        ? entry.zoneParts.map(p => `${p.qty} ${p.zone}`).join(' · ')
-                        : uniqueZones[0];
-                    const noteHtml = entry.notes.length > 0
-                        ? `<div class="mt-1 inline-flex items-center px-2 py-0.5 rounded-md bg-amber-950/70 border border-amber-700/60 text-amber-300 text-[10px] font-bold">Note: ${escapeHtml(entry.notes.join(' · '))}</div>`
-                        : '';
 
-                    if (entry.department === 'clothing') {
-                        const { keys, labels } = SIZE_SETS[entry.sizeType] || SIZE_SETS.adult;
-                        return keys.map(sz => {
-                            const qty = Number(entry.sizes[sz] || 0);
-                            if (qty <= 0) return '';
-                            const isPicked = !!entry.pickedSizes[sz];
-                            if (secondaryFilterActive && isPicked) return '';
-
-                            return `
-                                <label class="flex items-center justify-between gap-3 p-3 rounded-xl border cursor-pointer transition-all select-none ${
-                                    isPicked
-                                        ? 'bg-slate-900/40 border-slate-800/60 opacity-60'
-                                        : 'bg-slate-900 border-slate-800 hover:border-slate-700'
-                                }">
-                                    <div class="flex items-center gap-3 min-w-0">
-                                        <input type="checkbox" data-merged-key="${escapeHtml(entry.key)}" data-size="${sz}" ${isPicked ? 'checked' : ''} class="merged-cloth-pick-cb w-5 h-5 rounded-lg border-slate-700 bg-slate-950 text-emerald-500 focus:ring-emerald-500 shrink-0">
-                                        <div class="min-w-0">
-                                            <div class="text-xs sm:text-sm font-bold ${isPicked ? 'line-through text-slate-500' : 'text-white'} truncate">
-                                                <span class="uppercase text-purple-300 mr-1">${labels[sz]}</span> ${escapeHtml(entry.name)}
-                                            </div>
-                                            <div class="text-[10px] font-semibold text-slate-400 mt-0.5">${escapeHtml(zoneBreakdownText)}</div>
-                                            ${noteHtml}
-                                        </div>
-                                    </div>
-                                    <span class="px-2.5 py-1 rounded-lg text-xs font-black tabular-nums shrink-0 ${
-                                        isPicked
-                                            ? 'bg-slate-800 text-slate-500'
-                                            : 'bg-purple-500/20 text-purple-300 border border-purple-500/40'
-                                    }">x${qty}</span>
-                                </label>
-                            `;
-                        }).join('');
-                    } else {
-                        const isPicked = entry.isPicked;
-                        const formatted = formatAutomaticContainerQty({
-                            name: entry.name,
-                            qty: entry.totalQty,
-                            innerQty: entry.innerQty,
-                            boxQty: entry.boxQty
-                        });
-                        const subDetails = [formatted.secondary, zoneBreakdownText].filter(Boolean).join(' · ');
-
-                        return `
-                            <label class="flex items-center justify-between gap-3 p-3 rounded-xl border cursor-pointer transition-all select-none ${
-                                isPicked
-                                    ? 'bg-slate-900/40 border-slate-800/60 opacity-60'
-                                    : 'bg-slate-900 border-slate-800 hover:border-slate-700'
-                            }">
-                                <div class="flex items-center gap-3 min-w-0">
-                                    <input type="checkbox" data-merged-key="${escapeHtml(entry.key)}" ${isPicked ? 'checked' : ''} class="merged-pick-cb w-5 h-5 rounded-lg border-slate-700 bg-slate-950 text-emerald-500 focus:ring-emerald-500 shrink-0">
-                                    <div class="min-w-0">
-                                        <div class="text-xs sm:text-sm font-bold ${isPicked ? 'line-through text-slate-500' : 'text-white'} truncate">${escapeHtml(entry.name)}</div>
-                                        ${subDetails ? `<div class="text-[10px] font-semibold text-slate-400 mt-0.5">${escapeHtml(subDetails)}</div>` : ''}
-                                        ${noteHtml}
-                                    </div>
-                                </div>
-                                <span class="px-2.5 py-1 rounded-lg text-xs font-black tabular-nums shrink-0 ${
-                                    isPicked
-                                        ? 'bg-slate-800 text-slate-500'
-                                        : 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
-                                }">${escapeHtml(formatted.primary)}</span>
-                            </label>
-                        `;
-                    }
-                }).join('');
-
-                container.innerHTML = `
-                    <section class="rounded-2xl bg-slate-900/80 border border-slate-800 p-3.5 space-y-2.5 shadow-sm">
-                        <div class="flex items-center justify-between px-1 pb-1 border-b border-slate-800/80">
-                            <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-400">Combined Warehouse Picklist</span>
-                            <span class="text-[11px] font-semibold text-slate-400">${mergedEntries.length} unique item${mergedEntries.length === 1 ? '' : 's'}</span>
+                // View Switcher Bar inside 2. Picklist: By Warehouse Aisle vs By Shop Floor Zone
+                const viewToggleBarHtml = `
+                    <div class="flex flex-wrap items-center justify-between gap-2 bg-slate-900/90 border border-slate-800 px-3.5 py-2.5 rounded-2xl">
+                        <span class="text-xs font-bold text-slate-300">Group Picklist By:</span>
+                        <div class="inline-flex p-0.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-extrabold">
+                            <button type="button" id="pickview-aisle-btn" class="px-3 py-1 rounded-lg transition-all ${
+                                picklistViewMode === 'aisle' ? 'bg-sky-500 text-slate-950 shadow-sm' : 'text-slate-400 hover:text-white'
+                            }">Warehouse Aisle</button>
+                            <button type="button" id="pickview-zone-btn" class="px-3 py-1 rounded-lg transition-all ${
+                                picklistViewMode === 'zone' ? 'bg-amber-500 text-slate-950 shadow-sm' : 'text-slate-400 hover:text-white'
+                            }">Shop Floor Zone</button>
                         </div>
-                        <div class="space-y-2">${mergedHtml}</div>
-                    </section>
+                    </div>
                 `;
+
+                if (picklistViewMode === 'aisle') {
+                    const orderedAisles = getOrderedAisleNames(mergedEntries);
+                    let aisleHtml = viewToggleBarHtml;
+
+                    orderedAisles.forEach(aisleName => {
+                        const aisleEntries = mergedEntries.filter(e => (e.aisle || 'Unassigned Aisle') === aisleName);
+                        if (aisleEntries.length === 0) return;
+
+                        const rowsHtml = aisleEntries.map(e => renderPicklistEntryCard(e, true)).join('');
+                        if (!rowsHtml.trim()) return;
+
+                        const aislePicked = aisleEntries.reduce((s, e) => s + e.pickedLines, 0);
+                        const aisleTotal = aisleEntries.reduce((s, e) => s + e.activeLines, 0);
+                        const isUnassigned = aisleName === 'Unassigned Aisle';
+
+                        aisleHtml += `
+                            <section class="rounded-2xl bg-slate-900/85 border ${isUnassigned ? 'border-slate-800' : 'border-sky-500/40'} overflow-hidden shadow-sm">
+                                <div class="flex items-center justify-between gap-2 px-4 py-3 ${isUnassigned ? 'bg-slate-900' : 'bg-sky-500/10'} border-b border-slate-800/80">
+                                    <h2 class="text-sm sm:text-base font-extrabold uppercase tracking-wider ${isUnassigned ? 'text-slate-300' : 'text-sky-300'}">${escapeHtml(aisleName)}</h2>
+                                    <span class="px-2.5 py-1 rounded-lg text-xs font-extrabold tabular-nums bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">${aislePicked} / ${aisleTotal} picked</span>
+                                </div>
+                                <div class="p-3 space-y-2">${rowsHtml}</div>
+                            </section>
+                        `;
+                    });
+
+                    container.innerHTML = aisleHtml;
+                    bindDynamicEvents(container);
+                    return;
+                }
+
+                const multiZoneEntries = [];
+                const zoneHierarchy = new Map(); // secId -> Map(groupName -> entry[])
+
+                mergedEntries.forEach(entry => {
+                    const uniqueZones = [...new Set(entry.zoneParts.map(p => p.zone))];
+                    if (uniqueZones.length > 1) {
+                        multiZoneEntries.push(entry);
+                    } else {
+                        const src = entry.sourceItems[0];
+                        const secId = src ? src.sectionId : 'qudditch';
+                        const grpName = (src && src.group) || 'General';
+                        if (!zoneHierarchy.has(secId)) zoneHierarchy.set(secId, new Map());
+                        const grpMap = zoneHierarchy.get(secId);
+                        if (!grpMap.has(grpName)) grpMap.set(grpName, []);
+                        grpMap.get(grpName).push(entry);
+                    }
+                });
+
+                let picklistHtml = viewToggleBarHtml;
+
+                // 1. Combined Multi-Zone Card (only appears if the same item is needed across 2+ zones)
+                if (multiZoneEntries.length > 0) {
+                    const multiRows = multiZoneEntries.map(e => renderPicklistEntryCard(e, true)).join('');
+                    const multiPicked = multiZoneEntries.reduce((s, e) => s + e.pickedLines, 0);
+                    const multiTotal = multiZoneEntries.reduce((s, e) => s + e.activeLines, 0);
+                    picklistHtml += `
+                        <section class="rounded-2xl bg-slate-900/90 border border-amber-500/40 overflow-hidden shadow-sm">
+                            <div class="flex items-center justify-between gap-2 px-4 py-3 bg-amber-500/10 border-b border-amber-500/30">
+                                <h2 class="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-amber-300">Combined Multi-Zone Items</h2>
+                                <span class="px-2.5 py-0.5 rounded-lg text-xs font-extrabold tabular-nums bg-amber-500/20 text-amber-300 border border-amber-500/40">${multiPicked} / ${multiTotal} picked</span>
+                            </div>
+                            <div class="p-3 space-y-2">${multiRows}</div>
+                        </section>
+                    `;
+                }
+
+                // 2. Zone-by-Zone -> Subsection-by-Subsection Cards
+                getVisibleStoreSections().forEach(sec => {
+                    const grpMap = zoneHierarchy.get(sec.id);
+                    if (!grpMap || grpMap.size === 0) return;
+
+                    let zonePicked = 0;
+                    let zoneTotal = 0;
+                    let subGroupsHtml = '';
+
+                    grpMap.forEach((grpEntries, groupName) => {
+                        const grpPicked = grpEntries.reduce((s, e) => s + e.pickedLines, 0);
+                        const grpTotal = grpEntries.reduce((s, e) => s + e.activeLines, 0);
+                        zonePicked += grpPicked;
+                        zoneTotal += grpTotal;
+
+                        const rowsHtml = grpEntries.map(e => renderPicklistEntryCard(e, false)).join('');
+                        if (!rowsHtml.trim()) return;
+
+                        subGroupsHtml += `
+                            <div class="rounded-xl bg-slate-950/70 border border-slate-800/90 overflow-hidden">
+                                <div class="px-3.5 py-2 bg-slate-900/70 flex items-center justify-between gap-2 border-b border-slate-800/70">
+                                    <span class="px-2 py-0.5 rounded-md border text-[11px] font-extrabold tracking-wide ${getGroupBadgeStyle(groupName)}">${escapeHtml(groupName)}</span>
+                                    <span class="text-[11px] font-semibold text-slate-400 tabular-nums">${grpPicked}/${grpTotal} picked</span>
+                                </div>
+                                <div class="p-2.5 space-y-2">${rowsHtml}</div>
+                            </div>
+                        `;
+                    });
+
+                    if (!subGroupsHtml.trim()) return;
+
+                    const currentFloor = getSectionFloor(sec.id);
+                    picklistHtml += `
+                        <section class="rounded-2xl bg-slate-900/80 border border-slate-800 overflow-hidden shadow-sm">
+                            <div class="flex items-center justify-between gap-2 px-4 py-3 border-b border-slate-800/80">
+                                <div class="flex items-center gap-2 min-w-0">
+                                    <h2 class="text-sm sm:text-base font-extrabold uppercase tracking-wider text-white truncate">${escapeHtml(sec.label)}</h2>
+                                    <span class="px-2 py-0.5 rounded-md text-[10px] font-extrabold uppercase tracking-wider border ${
+                                        currentFloor === 'RG'
+                                            ? 'bg-indigo-950/80 text-indigo-300 border-indigo-700/70'
+                                            : 'bg-teal-950/80 text-teal-300 border-teal-700/70'
+                                    }">${escapeHtml(currentFloor)}</span>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-extrabold tabular-nums bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">${zonePicked} / ${zoneTotal} picked</span>
+                            </div>
+                            <div class="p-3.5 space-y-3">${subGroupsHtml}</div>
+                        </section>
+                    `;
+                });
+
+                container.innerHTML = picklistHtml;
                 bindDynamicEvents(container);
                 return;
             }
@@ -1601,6 +1900,13 @@
                 }
 
                 visibleSectionsCount++;
+
+                // Sort items within the zone by custom shelf-walk order (if configured)
+                secItems.sort((a, b) => {
+                    const oa = a.sortOrder !== undefined ? Number(a.sortOrder) : Number.MAX_SAFE_INTEGER;
+                    const ob = b.sortOrder !== undefined ? Number(b.sortOrder) : Number.MAX_SAFE_INTEGER;
+                    return oa - ob;
+                });
 
                 // Group items by subsection (e.g., Gryffindor, Hufflepuff, Ravenclaw, Slytherin, General)
                 const groupsMap = new Map();
@@ -1850,6 +2156,21 @@
 
         // Bind all interactive events inside the rendered checklist container
         function bindDynamicEvents(container) {
+            const aisleViewBtn = container.querySelector('#pickview-aisle-btn');
+            const zoneViewBtn = container.querySelector('#pickview-zone-btn');
+            if (aisleViewBtn) {
+                aisleViewBtn.addEventListener('click', () => {
+                    picklistViewMode = 'aisle';
+                    renderMain();
+                });
+            }
+            if (zoneViewBtn) {
+                zoneViewBtn.addEventListener('click', () => {
+                    picklistViewMode = 'zone';
+                    renderMain();
+                });
+            }
+
             container.querySelectorAll('.sec-toggle').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const sid = btn.dataset.toggleSec;
@@ -2037,42 +2358,49 @@
                     document.getElementById('edit-item-dept-select').value = currentDept;
                     document.getElementById('edit-item-name-input').value = item.name;
                     document.getElementById('edit-item-group-input').value = item.group || 'General';
+                    document.getElementById('edit-item-aisle-input').value = item.aisle || '';
 
-                    // Populate multi-zone checkboxes pre-ticked with all zones where this item exists
-                    const matchingZones = new Set(
+                    const aisleDatalist = document.getElementById('warehouse-aisles-datalist');
+                    if (aisleDatalist) {
+                        const knownAisles = [...new Set([...warehouseAisles, ...catalog.map(i => i.aisle).filter(Boolean)])];
+                        aisleDatalist.innerHTML = knownAisles.map(a => `<option value="${escapeHtml(a)}">`).join('');
+                    }
+
+                    const existingZones = new Set(
                         catalog
                             .filter(i => (i.department || 'hardlines') === currentDept && i.name.trim().toLowerCase() === item.name.trim().toLowerCase())
                             .map(i => i.sectionId)
                     );
-                    const editZonesWrap = document.getElementById('edit-zones-checkboxes');
-                    editZonesWrap.innerHTML = STORE_SECTIONS.map(s => `
-                        <label class="flex items-center gap-1.5 text-[11px] font-semibold text-slate-200 cursor-pointer select-none px-1.5 py-1 rounded hover:bg-slate-900">
-                            <input type="checkbox" value="${s.id}" ${matchingZones.has(s.id) ? 'checked' : ''} class="edit-zone-cb w-3.5 h-3.5 rounded border-slate-700 bg-slate-900 text-amber-500">
-                            <span class="truncate">${escapeHtml(s.label)}</span>
-                        </label>
-                    `).join('');
+                    const editZonesBox = document.getElementById('edit-zones-checkboxes');
+                    if (editZonesBox) {
+                        editZonesBox.innerHTML = STORE_SECTIONS.map(sec => `
+                            <label class="flex items-center gap-1.5 text-[11px] font-semibold text-slate-200 cursor-pointer select-none px-1.5 py-1 rounded hover:bg-slate-900">
+                                <input type="checkbox" value="${sec.id}" ${existingZones.has(sec.id) ? 'checked' : ''} class="edit-zone-cb w-3.5 h-3.5 rounded border-slate-700 bg-slate-950 text-amber-500">
+                                <span class="truncate">${escapeHtml(sec.label)}</span>
+                            </label>
+                        `).join('');
+                    }
 
                     const isClothing = currentDept === 'clothing';
                     document.getElementById('edit-size-type-wrap').classList.toggle('hidden', !isClothing);
                     document.getElementById('edit-sock-sizes-wrap').classList.toggle('hidden', isClothing);
                     document.getElementById('edit-sock-sizes-cb').checked = false;
-                    document.getElementById('edit-size-type-select').value = isClothing
-                        ? getItemSizeConfig(item).sizeType
-                        : inferSizeTypeFromText(item.name);
+                    if (isClothing) {
+                        document.getElementById('edit-size-type-select').value = getItemSizeConfig(item).sizeType;
+                    }
                     document.getElementById('edit-rename-matching').checked = true;
                     document.getElementById('edit-item-modal').classList.remove('hidden');
-                    document.getElementById('edit-item-name-input').focus();
                 });
             });
 
             // Open Shelf Reference Photo Modal
             container.querySelectorAll('.open-photo-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
-                    const pKey = btn.dataset.photoKey;
-                    const pTitle = btn.dataset.photoTitle;
-                    document.getElementById('shelf-photo-key').value = pKey;
-                    document.getElementById('shelf-photo-title').textContent = pTitle;
-                    const existingUrl = shelfPhotos[pKey] || '';
+                    const key = btn.dataset.photoKey;
+                    const title = btn.dataset.photoTitle || 'Shelf Reference Photo';
+                    const existingUrl = shelfPhotos[key] || '';
+                    document.getElementById('shelf-photo-key').value = key;
+                    document.getElementById('shelf-photo-title').textContent = title;
                     document.getElementById('shelf-photo-url-input').value = existingUrl;
                     updateShelfPhotoPreview(existingUrl);
                     document.getElementById('shelf-photo-modal').classList.remove('hidden');
@@ -2080,12 +2408,12 @@
             });
         }
 
-        function updateShelfPhotoPreview(src) {
+        function updateShelfPhotoPreview(url) {
             const wrap = document.getElementById('shelf-photo-preview-wrap');
-            const img = document.getElementById('shelf-photo-img');
             const empty = document.getElementById('shelf-photo-empty');
-            if (src) {
-                img.src = src;
+            const img = document.getElementById('shelf-photo-img');
+            if (url) {
+                img.src = url;
                 wrap.classList.remove('hidden');
                 empty.classList.add('hidden');
             } else {
@@ -2096,28 +2424,32 @@
         }
 
         function openAddModal(preselectSecId) {
-            const defaultSecId = preselectSecId || (activeSection !== 'all' ? activeSection : 'qudditch');
-            const zonesWrap = document.getElementById('add-zones-checkboxes');
-            zonesWrap.innerHTML = STORE_SECTIONS.map(s => `
-                <label class="flex items-center gap-1.5 text-[11px] font-semibold text-slate-200 cursor-pointer select-none px-1.5 py-1 rounded hover:bg-slate-900">
-                    <input type="checkbox" value="${s.id}" ${s.id === defaultSecId ? 'checked' : ''} class="add-zone-cb w-3.5 h-3.5 rounded border-slate-700 bg-slate-900 text-amber-500">
-                    <span class="truncate">${escapeHtml(s.label)}</span>
-                </label>
-            `).join('');
-            document.getElementById('add-dept-select').value = activeDepartment;
-            document.getElementById('add-packaging-fields').classList.toggle('hidden', activeDepartment === 'clothing');
-            document.getElementById('add-size-type-wrap').classList.toggle('hidden', activeDepartment !== 'clothing');
-            document.getElementById('add-sock-sizes-wrap').classList.toggle('hidden', activeDepartment === 'clothing');
+            const deptSelect = document.getElementById('add-dept-select');
+            deptSelect.value = activeDepartment;
+            const isClothing = activeDepartment === 'clothing';
+            document.getElementById('add-packaging-fields').classList.toggle('hidden', isClothing);
+            document.getElementById('add-size-type-wrap').classList.toggle('hidden', !isClothing);
+            document.getElementById('add-sock-sizes-wrap').classList.toggle('hidden', isClothing);
             document.getElementById('add-sock-sizes-cb').checked = false;
             document.getElementById('add-size-type-select').value = 'adult';
             document.getElementById('add-group-input').value = '';
             document.getElementById('add-names-input').value = '';
             document.getElementById('add-inner-input').value = '';
             document.getElementById('add-box-input').value = '';
+
+            const defaultSec = preselectSecId || (activeSection !== 'all' ? activeSection : 'qudditch');
+            const zonesBox = document.getElementById('add-zones-checkboxes');
+            zonesBox.innerHTML = STORE_SECTIONS.map(sec => `
+                <label class="flex items-center gap-1.5 text-[11px] font-semibold text-slate-200 cursor-pointer select-none px-1.5 py-1 rounded hover:bg-slate-900">
+                    <input type="checkbox" value="${sec.id}" ${sec.id === defaultSec ? 'checked' : ''} class="add-zone-cb w-3.5 h-3.5 rounded border-slate-700 bg-slate-950 text-amber-500">
+                    <span class="truncate">${escapeHtml(sec.label)}</span>
+                </label>
+            `).join('');
+
             document.getElementById('add-item-modal').classList.remove('hidden');
         }
 
-        // Smart Free-Text & Teams List Parser (supports leading/trailing qty, boxes/packs, notes, and custom Subsection: headers)
+        // Smart Free-Text & Teams List Parser (supports leading/trailing qty, boxes/packs, notes, ampersands, and custom Subsection: headers)
         function parseWhatsAppMessage(rawText, clearExisting) {
             if (clearExisting) {
                 catalog.forEach(item => {
@@ -2136,10 +2468,23 @@
             let currentGroup = 'General';
             let matchedCount = 0;
 
+            const decodeEntities = (str) => String(str || '')
+                .replace(/&amp;/gi, '&')
+                .replace(/&quot;/gi, '"')
+                .replace(/&#39;|&apos;/gi, "'")
+                .replace(/&lt;/gi, '<')
+                .replace(/&gt;/gi, '>');
+
+            const normalizeAmpersand = (str) => decodeEntities(str)
+                .toLowerCase()
+                .replace(/\s*&\s*/g, ' and ')
+                .replace(/\s+/g, ' ')
+                .trim();
+
             const sectionMatchers = [
                 { regex: /quidditch|qudditch/i, id: 'qudditch' },
                 { regex: /diagon\s*alley/i, id: 'diagon-alley' },
-                { regex: /gringotts|b\s*&\s*g/i, id: 'gringotts' },
+                { regex: /gringotts|b\s*&\s*g|b\s+and\s+g/i, id: 'gringotts' },
                 { regex: /ollivanders/i, id: 'ollivanders' },
                 { regex: /honeydukes/i, id: 'honeydukes' },
                 { regex: /minalima/i, id: 'minalima' },
@@ -2162,21 +2507,24 @@
 
             const toTitleCase = (str) => str.toLowerCase().replace(/\b\w/g, ch => ch.toUpperCase());
 
-            rawText.split(/\r?\n/).forEach(rawLine => {
+            decodeEntities(rawText).split(/\r?\n/).forEach(rawLine => {
                 const line = rawLine.trim();
                 if (!line || line.startsWith('===')) return;
 
                 const stripped = line.replace(/[*_~]/g, '').trim();
                 const endsWithColon = /:\s*$/.test(stripped);
                 const noColonText = stripped.replace(/:\s*$/, '').trim();
-                const isHeaderLike = endsWithColon || /^[_*].*[_*]$/.test(line) || (noColonText === noColonText.toUpperCase() && !/\d/.test(noColonText));
+                const isHeaderLike = endsWithColon || /^[*_]/.test(line);
 
-                // 1. Check for Store Zone header (e.g. "DIAGON ALLEY:" or "_QUDDITCH_")
+                // 1. Check for Store Zone header (e.g. "DIAGON ALLEY:" or "_QUDDITCH_" — never match lines with quantities like "B&G pin set x3")
+                const hasQtyOnLine = /(?:^|\s)x\s*\d+\b/i.test(noColonText) || /^\d+\s+/.test(noColonText);
                 let matchedSec = null;
-                for (const sm of sectionMatchers) {
-                    if (sm.regex.test(noColonText) && (isHeaderLike || noColonText.length < 28)) {
-                        matchedSec = sm.id;
-                        break;
+                if (!hasQtyOnLine) {
+                    for (const sm of sectionMatchers) {
+                        if (sm.regex.test(noColonText) && (isHeaderLike || noColonText.length < 24)) {
+                            matchedSec = sm.id;
+                            break;
+                        }
                     }
                 }
                 if (matchedSec) {
@@ -2185,21 +2533,20 @@
                     return;
                 }
 
-                // 2. Check for Subsection header (either known House/Lego or any header ending in ":" like "MUGS:", "Ornaments:", "Hedwig trolley:")
-                if (endsWithColon && !/\d/.test(noColonText)) {
-                    currentGroup = toTitleCase(noColonText);
-                    return;
-                }
-                if (isHeaderLike || noColonText.length < 20) {
+                // 2. Check for Subsection header (e.g. "MUGS:", "Ornaments:", "Hedwig trolley:", or "_Gryffindor_")
+                if (!hasQtyOnLine && (endsWithColon || (isHeaderLike && noColonText.length <= 28))) {
+                    let matchedHouse = null;
                     for (const hm of houseMatchers) {
                         if (hm.regex.test(noColonText)) {
-                            currentGroup = hm.group;
-                            return;
+                            matchedHouse = hm.group;
+                            break;
                         }
                     }
+                    currentGroup = matchedHouse || toTitleCase(noColonText);
+                    return;
                 }
 
-                // 3. Extract inline parenthetical notes e.g. "(if not fill it with 9 interactive owls)" or "(+1 box on top for under the cart)"
+                // 3. Extract inline parenthetical notes e.g. "(if not fill it with 9 interactive owls)" or "(we need 1 whole basket)"
                 const extractedNotes = [];
                 const lineWithoutNotes = stripped.replace(/\(([^)]+)\)/g, (_, noteContent) => {
                     extractedNotes.push(noteContent.trim());
@@ -2256,13 +2603,14 @@
 
                 // 5. Hard Lines parsing:
                 //    a) Leading quantity: "X20 snitch keyrings", "x 5 DA blanket"
-                //    b) Trailing quantity + optional unit: "DA SNOWGLOBE X 17", "AL mug and plush x1 box", "Large snowy owl x  5"
+                //    b) Trailing quantity + optional unit: "DA SNOWGLOBE X 17", "AL MUG AND PLUSH X4 boxes", "B&G socks M/L x 20"
+                //    c) Note-only quantity: "B&G bear (we need 1 whole basket)"
                 let count = 0;
                 let containerUnit = '';
                 let itemName = '';
 
                 const leadingMatch = lineWithoutNotes.match(/^x\s*(\d+)\s+(.+)$/i) || lineWithoutNotes.match(/^(\d+)\s+(.+)$/i);
-                const trailingMatch = lineWithoutNotes.match(/^(.+?)\s+x\s*(\d+)(?:\s*(box|boxes|inner|inners|pack|packs))?\s*$/i);
+                const trailingMatch = lineWithoutNotes.match(/^(.+?)\s+x\s*(\d+)(?:\s*(box|boxes|inner|inners|pack|packs|basket|baskets))?\s*$/i);
 
                 if (trailingMatch) {
                     itemName = trailingMatch[1].trim();
@@ -2271,21 +2619,53 @@
                 } else if (leadingMatch) {
                     count = parseInt(leadingMatch[1], 10) || 0;
                     itemName = leadingMatch[2].trim();
+                } else if (inlineNote && lineWithoutNotes.length > 1) {
+                    itemName = lineWithoutNotes;
+                    const noteNumMatch = inlineNote.match(/(\d+)/);
+                    count = noteNumMatch ? (parseInt(noteNumMatch[1], 10) || 1) : 1;
                 }
 
                 if (count > 0 && itemName) {
+                    const normTargetName = normalizeAmpersand(itemName);
+                    const stripPlural = (s) => s.replace(/s\b/g, '').trim();
+                    const fuzzyMatch = (catName) => {
+                        const a = normalizeAmpersand(catName);
+                        if (a === normTargetName) return true;
+                        if (stripPlural(a) === stripPlural(normTargetName)) return true;
+                        // Tolerate minor typos like "Acerptance letter cushions" -> "Acceptance Letter Cushion"
+                        const aWords = stripPlural(a).split(' ').filter(Boolean);
+                        const bWords = stripPlural(normTargetName).split(' ').filter(Boolean);
+                        if (aWords.length >= 2 && aWords.length === bWords.length) {
+                            const shared = aWords.filter((w, idx) => w === bWords[idx] || (w.length > 4 && bWords[idx].slice(0, 3) === w.slice(0, 3)));
+                            if (shared.length === aWords.length) return true;
+                        }
+                        return false;
+                    };
+
+                    // Prefer current section, then fall back to any matching item in catalog (e.g. B&G items in Gringotts when no header was pasted)
                     let target = catalog.find(i =>
                         (i.department || 'hardlines') === 'hardlines' &&
                         i.sectionId === currentSecId &&
                         (i.group || 'General').toLowerCase() === currentGroup.toLowerCase() &&
-                        i.name.toLowerCase() === itemName.toLowerCase()
+                        fuzzyMatch(i.name)
+                    ) || catalog.find(i =>
+                        (i.department || 'hardlines') === 'hardlines' &&
+                        i.sectionId === currentSecId &&
+                        fuzzyMatch(i.name)
+                    ) || catalog.find(i =>
+                        (i.department || 'hardlines') === 'hardlines' &&
+                        fuzzyMatch(i.name)
                     );
+
                     if (!target) {
+                        // Infer zone if no zone header was given (e.g. "B&G ..." -> Gringotts)
+                        const inferredSecId = /\bb\s*&\s*g\b/i.test(itemName) ? 'gringotts' : currentSecId;
                         target = {
                             id: `item-wa-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
                             department: 'hardlines',
-                            sectionId: currentSecId,
+                            sectionId: inferredSecId,
                             group: currentGroup,
+                            aisle: '',
                             name: itemName,
                             qty: 0,
                             picked: false,
@@ -2311,6 +2691,8 @@
                         } else {
                             containerNote = `${count} ${containerUnit}`;
                         }
+                    } else if (containerUnit.startsWith('basket')) {
+                        containerNote = `${count} ${count === 1 ? 'Basket' : 'Baskets'}`;
                     }
 
                     target.qty = (Number(target.qty) || 0) + resolvedUnits;
@@ -2324,10 +2706,13 @@
 
             saveState();
             appMode = 'picklist';
+            activeFloor = 'all';
+            activeSection = 'all';
+            secondaryFilterActive = false;
             renderTabs();
             updateHeaderAndBars();
             renderMain();
-            showToast(`Parsed ${matchedCount} line${matchedCount === 1 ? '' : 's'} into picklist!`);
+            showToast(`Parsed all ${matchedCount} line${matchedCount === 1 ? '' : 's'} into picklist!`);
         }
 
         // Initialize App & Event Listeners
@@ -2590,6 +2975,7 @@
                 const newDept = document.getElementById('edit-item-dept-select').value === 'clothing' ? 'clothing' : 'hardlines';
                 const newName = document.getElementById('edit-item-name-input').value.trim();
                 const newGroup = document.getElementById('edit-item-group-input').value.trim() || 'General';
+                const newAisle = document.getElementById('edit-item-aisle-input').value.trim();
                 const newSizeType = document.getElementById('edit-size-type-select').value || 'adult';
                 const splitSocks = newDept === 'hardlines' && document.getElementById('edit-sock-sizes-cb').checked;
                 const renameAll = document.getElementById('edit-rename-matching').checked;
@@ -2598,6 +2984,9 @@
                 if (checkedZones.length === 0) {
                     showToast('Select at least 1 Store Zone');
                     return;
+                }
+                if (newAisle && !warehouseAisles.includes(newAisle)) {
+                    warehouseAisles.push(newAisle);
                 }
 
                 const target = catalog.find(i => i.id === id);
@@ -2610,6 +2999,7 @@
                         const prevDept = item.department || 'hardlines';
                         item.name = newName;
                         item.department = newDept;
+                        item.aisle = newAisle;
 
                         if (newDept === 'clothing') {
                             if (prevDept !== 'clothing' || item.sizeType !== newSizeType) {
@@ -2665,6 +3055,7 @@
                                     sizeType: newSizeType,
                                     sectionId: secId,
                                     group: newGroup,
+                                    aisle: newAisle,
                                     name: newName,
                                     sizes: createEmptySizesMap(newSizeType),
                                     pickedSizes: createEmptyPickedSizesMap(newSizeType)
@@ -2675,6 +3066,7 @@
                                     department: 'hardlines',
                                     sectionId: secId,
                                     group: newGroup,
+                                    aisle: newAisle,
                                     name: newName,
                                     qty: 0,
                                     picked: false,
@@ -2787,6 +3179,115 @@
                 }
             });
 
+            // Clean House Prefixes (strips redundant Gryffindor/Slytherin/Ravenclaw/Hufflepuff from titles inside House subsections)
+            document.getElementById('clean-house-prefixes-btn').addEventListener('click', () => {
+                let cleanedCount = 0;
+                catalog.forEach(item => {
+                    const grp = String(item.group || '').trim();
+                    if (!['Gryffindor', 'Slytherin', 'Ravenclaw', 'Hufflepuff'].includes(grp)) return;
+                    const regex = new RegExp(`\\b${grp}\\b\\s*[-:]?\\s*`, 'i');
+                    if (regex.test(item.name)) {
+                        const stripped = item.name.replace(regex, '').replace(/\s+/g, ' ').trim();
+                        if (stripped) {
+                            item.name = stripped;
+                            cleanedCount++;
+                        }
+                    }
+                });
+                saveState();
+                renderMain();
+                showToast(cleanedCount > 0 ? `Cleaned house prefix from ${cleanedCount} items!` : 'House item names are already clean!');
+            });
+
+            // Merge Team JSON Modal
+            document.getElementById('open-merge-json-btn').addEventListener('click', () => {
+                document.getElementById('sync-modal').classList.add('hidden');
+                document.getElementById('merge-json-textarea').value = '';
+                document.getElementById('merge-json-modal').classList.remove('hidden');
+            });
+            document.getElementById('close-merge-json-btn').addEventListener('click', () => {
+                document.getElementById('merge-json-modal').classList.add('hidden');
+            });
+            document.getElementById('cancel-merge-json-btn').addEventListener('click', () => {
+                document.getElementById('merge-json-modal').classList.add('hidden');
+            });
+            document.getElementById('apply-merge-json-btn').addEventListener('click', () => {
+                const raw = document.getElementById('merge-json-textarea').value.trim();
+                if (!raw) return;
+                try {
+                    const parsed = JSON.parse(raw);
+                    const incoming = Array.isArray(parsed) ? parsed : (parsed && Array.isArray(parsed.catalog) ? parsed.catalog : null);
+                    if (!incoming || incoming.length === 0) {
+                        showToast('No items found in pasted JSON');
+                        return;
+                    }
+                    if (parsed && Array.isArray(parsed.warehouseAisles)) {
+                        parsed.warehouseAisles.forEach(a => {
+                            if (a && !warehouseAisles.includes(a)) warehouseAisles.push(a);
+                        });
+                    }
+                    const existingKeys = new Set(catalog.map(i =>
+                        `${i.department || 'hardlines'}::${i.sectionId}::${(i.group || 'General').toLowerCase()}::${i.name.trim().toLowerCase()}`
+                    ));
+                    let added = 0;
+                    let updated = 0;
+                    incoming.forEach((rawItem, idx) => {
+                        const dept = rawItem.department === 'clothing' ? 'clothing' : 'hardlines';
+                        const secId = rawItem.sectionId || 'qudditch';
+                        const grp = rawItem.group || 'General';
+                        const key = `${dept}::${secId}::${grp.toLowerCase()}::${String(rawItem.name || '').trim().toLowerCase()}`;
+                        if (existingKeys.has(key)) {
+                            const match = catalog.find(i =>
+                                `${i.department || 'hardlines'}::${i.sectionId}::${(i.group || 'General').toLowerCase()}::${i.name.trim().toLowerCase()}` === key
+                            );
+                            if (match && rawItem.aisle && !match.aisle) {
+                                match.aisle = rawItem.aisle;
+                                updated++;
+                            }
+                        } else {
+                            existingKeys.add(key);
+                            if (dept === 'clothing') {
+                                const sizeType = (rawItem.sizeType && SIZE_SETS[rawItem.sizeType]) ? rawItem.sizeType : inferSizeTypeFromText(rawItem.name);
+                                catalog.push({
+                                    id: rawItem.id || `cloth-merge-${Date.now()}-${idx}`,
+                                    department: 'clothing',
+                                    sizeType,
+                                    sectionId: secId,
+                                    group: grp,
+                                    aisle: rawItem.aisle || '',
+                                    name: String(rawItem.name || 'Unnamed Garment'),
+                                    sizes: createEmptySizesMap(sizeType),
+                                    pickedSizes: createEmptyPickedSizesMap(sizeType)
+                                });
+                            } else {
+                                catalog.push({
+                                    id: rawItem.id || `item-merge-${Date.now()}-${idx}`,
+                                    department: 'hardlines',
+                                    sectionId: secId,
+                                    group: grp,
+                                    aisle: rawItem.aisle || '',
+                                    name: String(rawItem.name || 'Unnamed Item'),
+                                    qty: 0,
+                                    picked: false,
+                                    note: '',
+                                    innerQty: Number(rawItem.innerQty) || 0,
+                                    boxQty: Number(rawItem.boxQty) || 0
+                                });
+                            }
+                            added++;
+                        }
+                    });
+                    saveState();
+                    renderTabs();
+                    updateHeaderAndBars();
+                    renderMain();
+                    document.getElementById('merge-json-modal').classList.add('hidden');
+                    showToast(`Merged! +${added} new items, ${updated} aisles updated`);
+                } catch (err) {
+                    showToast('Invalid JSON format');
+                }
+            });
+
             // WhatsApp Modal
             document.getElementById('open-whatsapp-modal-btn').addEventListener('click', () => {
                 document.getElementById('whatsapp-paste-input').value = '';
@@ -2844,6 +3345,132 @@
                 renderMain();
                 document.getElementById('shelf-photo-modal').classList.add('hidden');
                 showToast('Shelf photo removed');
+            });
+
+            // Header Overflow Menu & Shelf-Walk Order Modal
+            const moreMenuBtn = document.getElementById('open-more-menu-btn');
+            const moreMenuDropdown = document.getElementById('more-menu-dropdown');
+            let shelfOrderDraftIds = [];
+
+            const renderShelfOrderList = () => {
+                const listEl = document.getElementById('shelf-order-list');
+                if (shelfOrderDraftIds.length === 0) {
+                    listEl.innerHTML = `<p class="text-xs text-slate-400 text-center py-8">No ${activeDepartment === 'clothing' ? 'Clothing' : 'Hard Lines'} items in this zone/subsection yet.</p>`;
+                    return;
+                }
+                listEl.innerHTML = shelfOrderDraftIds.map((itemId, idx) => {
+                    const item = catalog.find(i => i.id === itemId);
+                    if (!item) return '';
+                    return `
+                        <div draggable="true" data-order-idx="${idx}" class="shelf-order-row flex items-center justify-between gap-2.5 p-2.5 rounded-xl bg-slate-950 border border-slate-800 hover:border-slate-700 cursor-grab active:cursor-grabbing select-none">
+                            <div class="flex items-center gap-2.5 min-w-0">
+                                <span class="text-[11px] font-black text-slate-500 w-5 text-right tabular-nums shrink-0">${idx + 1}.</span>
+                                <span class="text-xs font-bold text-white truncate">${escapeHtml(item.name)}</span>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <button type="button" data-move-up="${idx}" ${idx === 0 ? 'disabled' : ''} class="p-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 disabled:opacity-30 text-slate-300 text-xs font-bold">↑</button>
+                                <button type="button" data-move-down="${idx}" ${idx === shelfOrderDraftIds.length - 1 ? 'disabled' : ''} class="p-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 disabled:opacity-30 text-slate-300 text-xs font-bold">↓</button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                let dragFromIdx = null;
+                listEl.querySelectorAll('.shelf-order-row').forEach(row => {
+                    row.addEventListener('dragstart', (e) => {
+                        dragFromIdx = Number(row.dataset.orderIdx);
+                        row.classList.add('opacity-50');
+                        e.dataTransfer.effectAllowed = 'move';
+                    });
+                    row.addEventListener('dragend', () => row.classList.remove('opacity-50'));
+                    row.addEventListener('dragover', (e) => {
+                        e.preventDefault();
+                        row.classList.add('border-amber-500');
+                    });
+                    row.addEventListener('dragleave', () => row.classList.remove('border-amber-500'));
+                    row.addEventListener('drop', (e) => {
+                        e.preventDefault();
+                        row.classList.remove('border-amber-500');
+                        const toIdx = Number(row.dataset.orderIdx);
+                        if (dragFromIdx !== null && dragFromIdx !== toIdx) {
+                            const [moved] = shelfOrderDraftIds.splice(dragFromIdx, 1);
+                            shelfOrderDraftIds.splice(toIdx, 0, moved);
+                            renderShelfOrderList();
+                        }
+                    });
+                });
+
+                listEl.querySelectorAll('[data-move-up]').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const i = Number(btn.dataset.moveUp);
+                        if (i > 0) {
+                            [shelfOrderDraftIds[i - 1], shelfOrderDraftIds[i]] = [shelfOrderDraftIds[i], shelfOrderDraftIds[i - 1]];
+                            renderShelfOrderList();
+                        }
+                    });
+                });
+                listEl.querySelectorAll('[data-move-down]').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const i = Number(btn.dataset.moveDown);
+                        if (i < shelfOrderDraftIds.length - 1) {
+                            [shelfOrderDraftIds[i + 1], shelfOrderDraftIds[i]] = [shelfOrderDraftIds[i], shelfOrderDraftIds[i + 1]];
+                            renderShelfOrderList();
+                        }
+                    });
+                });
+            };
+
+            const loadShelfOrderDraft = () => {
+                const secId = document.getElementById('shelf-order-zone-select').value;
+                const grp = document.getElementById('shelf-order-group-select').value;
+                const matching = catalog
+                    .filter(i => (i.department || 'hardlines') === activeDepartment && i.sectionId === secId && (i.group || 'General') === grp)
+                    .sort((a, b) => (a.sortOrder ?? Number.MAX_SAFE_INTEGER) - (b.sortOrder ?? Number.MAX_SAFE_INTEGER));
+                shelfOrderDraftIds = matching.map(i => i.id);
+                renderShelfOrderList();
+            };
+
+            const populateShelfOrderGroups = () => {
+                const secId = document.getElementById('shelf-order-zone-select').value;
+                const groups = [...new Set(
+                    catalog
+                        .filter(i => (i.department || 'hardlines') === activeDepartment && i.sectionId === secId)
+                        .map(i => i.group || 'General')
+                )];
+                if (groups.length === 0) groups.push('General');
+                const grpSel = document.getElementById('shelf-order-group-select');
+                grpSel.innerHTML = groups.map(g => `<option value="${escapeHtml(g)}">${escapeHtml(g)}</option>`).join('');
+                loadShelfOrderDraft();
+            };
+
+            moreMenuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                moreMenuDropdown.classList.toggle('hidden');
+            });
+            document.addEventListener('click', () => moreMenuDropdown.classList.add('hidden'));
+
+            document.getElementById('menu-shelf-order-btn').addEventListener('click', () => {
+                moreMenuDropdown.classList.add('hidden');
+                const zoneSel = document.getElementById('shelf-order-zone-select');
+                zoneSel.innerHTML = STORE_SECTIONS.map(s => `<option value="${s.id}">${escapeHtml(s.label)}</option>`).join('');
+                zoneSel.value = activeSection !== 'all' ? activeSection : 'diagon-alley';
+                populateShelfOrderGroups();
+                document.getElementById('shelf-order-modal').classList.remove('hidden');
+            });
+
+            document.getElementById('shelf-order-zone-select').addEventListener('change', populateShelfOrderGroups);
+            document.getElementById('shelf-order-group-select').addEventListener('change', loadShelfOrderDraft);
+            document.getElementById('close-shelf-order-btn').addEventListener('click', () => document.getElementById('shelf-order-modal').classList.add('hidden'));
+            document.getElementById('cancel-shelf-order-btn').addEventListener('click', () => document.getElementById('shelf-order-modal').classList.add('hidden'));
+            document.getElementById('save-shelf-order-btn').addEventListener('click', () => {
+                shelfOrderDraftIds.forEach((itemId, idx) => {
+                    const item = catalog.find(i => i.id === itemId);
+                    if (item) item.sortOrder = idx;
+                });
+                saveState();
+                renderMain();
+                document.getElementById('shelf-order-modal').classList.add('hidden');
+                showToast('Saved shop-floor shelf-walk order!');
             });
         });
     </script>

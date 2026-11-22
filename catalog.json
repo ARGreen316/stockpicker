@@ -1,11 +1,26 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-21T17:26:36.724Z",
+  "updatedAt": "2026-11-22T07:57:12.135Z",
   "shelfPhotos": {},
   "sectionFloors": {
     "qudditch": "RG",
     "diagon-alley": "RG"
   },
+  "warehouseAisles": [
+    "Drinkware",
+    "Plush",
+    "Toys",
+    "Bags",
+    "Consumables",
+    "Collectables",
+    "Ornaments",
+    "Accessories",
+    "Keyrings/Pin Badges",
+    "Stationary/MinaLima",
+    "Knitwear",
+    "Wands",
+    "Confectionary"
+  ],
   "catalog": [
     {
       "id": "cloth-1",
@@ -62,7 +77,8 @@
       "group": "General",
       "name": "Funko POP! Luna in Dress Vinyl Figure",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "cloth-8",
@@ -223,7 +239,8 @@
       "group": "General",
       "name": "Madam Malkin's Robes Glass Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "cloth-32",
@@ -488,7 +505,8 @@
       "group": "General",
       "name": "Acceptance Letter Card Holder",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-65",
@@ -497,7 +515,8 @@
       "group": "General",
       "name": "Acceptance Letter Crossbody Bag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-66",
@@ -506,7 +525,8 @@
       "group": "General",
       "name": "Acceptance Letter Gold Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-67",
@@ -515,7 +535,8 @@
       "group": "General",
       "name": "Acceptance Letter Mug & Plush Gift Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-68",
@@ -524,7 +545,8 @@
       "group": "General",
       "name": "Acceptance Letter Snow Globe",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-69",
@@ -533,7 +555,8 @@
       "group": "General",
       "name": "Acceptance Letter Throw Blanket",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-70",
@@ -542,7 +565,8 @@
       "group": "General",
       "name": "Advanced Potion Making Journal",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Collectables"
     },
     {
       "id": "item-71",
@@ -551,7 +575,8 @@
       "group": "Gryffindor",
       "name": "Albus Dumbledore Wand Pen and Bookmark",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-72",
@@ -560,7 +585,8 @@
       "group": "General",
       "name": "Albus Dumbledore's Wand - Fantastic Beasts",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-73",
@@ -569,7 +595,8 @@
       "group": "Gryffindor",
       "name": "Authentic Gryffindor Scarf",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Knitwear"
     },
     {
       "id": "item-74",
@@ -578,7 +605,8 @@
       "group": "Gryffindor",
       "name": "Authentic Gryffindor Tie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-75",
@@ -587,7 +615,8 @@
       "group": "Hufflepuff",
       "name": "Authentic Hufflepuff Scarf",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Knitwear"
     },
     {
       "id": "item-76",
@@ -596,7 +625,8 @@
       "group": "Slytherin",
       "name": "Authentic Slytherin Scarf",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Knitwear"
     },
     {
       "id": "item-77",
@@ -605,7 +635,8 @@
       "group": "General",
       "name": "Baby Niffler Ginger Plush",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-78",
@@ -614,7 +645,8 @@
       "group": "General",
       "name": "Baby Niffler Plush",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-79",
@@ -623,7 +655,8 @@
       "group": "General",
       "name": "Bag of Gringotts Galleons Chocolate Coins",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-80",
@@ -632,7 +665,8 @@
       "group": "General",
       "name": "Bellatrix Lestrange's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-81",
@@ -641,7 +675,8 @@
       "group": "General",
       "name": "Bertie Bott's Every Flavour Beans",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-82",
@@ -650,7 +685,8 @@
       "group": "General",
       "name": "Bertie Bott’s Every Flavour Beans Mini Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-83",
@@ -659,7 +695,8 @@
       "group": "General",
       "name": "Bertie Botts Beans Souvenir Tin",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-84",
@@ -668,7 +705,8 @@
       "group": "General",
       "name": "Bertie Botts Glass Ornament",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-85",
@@ -677,7 +715,8 @@
       "group": "General",
       "name": "Bottled Butterbeer",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-86",
@@ -686,7 +725,8 @@
       "group": "General",
       "name": "Bottled Butterbeer 4-Pack",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-87",
@@ -695,7 +735,8 @@
       "group": "Gryffindor",
       "name": "Bow Clip Gryffindor",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-88",
@@ -704,7 +745,8 @@
       "group": "Hufflepuff",
       "name": "Bow Clip Hufflepuff",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-89",
@@ -713,7 +755,8 @@
       "group": "Ravenclaw",
       "name": "Bow Clip Ravenclaw",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-90",
@@ -722,7 +765,8 @@
       "group": "Slytherin",
       "name": "Bow Clip Slytherin",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-91",
@@ -731,7 +775,8 @@
       "group": "General",
       "name": "Bowtruckle Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-92",
@@ -740,7 +785,8 @@
       "group": "General",
       "name": "Buckbeak Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-93",
@@ -749,7 +795,8 @@
       "group": "General",
       "name": "Butterbeer Biscuits",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-94",
@@ -758,7 +805,8 @@
       "group": "General",
       "name": "Butterbeer Bottle Metal Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-95",
@@ -767,7 +815,8 @@
       "group": "General",
       "name": "Butterbeer Chocolate Bar",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-96",
@@ -776,7 +825,8 @@
       "group": "General",
       "name": "Butterbeer Fudge Barrel",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-97",
@@ -785,7 +835,8 @@
       "group": "General",
       "name": "Butterbeer Glass",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-98",
@@ -794,7 +845,8 @@
       "group": "General",
       "name": "Butterbeer Logo Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-99",
@@ -803,7 +855,8 @@
       "group": "General",
       "name": "Butterbeer Lollipop",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-100",
@@ -812,7 +865,8 @@
       "group": "General",
       "name": "Butterbeer Magnet Bottle Opener",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-101",
@@ -821,7 +875,8 @@
       "group": "General",
       "name": "Butterbeer Shopper Tote - Large",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-102",
@@ -830,7 +885,8 @@
       "group": "General",
       "name": "Butterbeer Shopper Tote - Medium",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-103",
@@ -839,7 +895,8 @@
       "group": "General",
       "name": "Butterbeer Shopper Tote - Small",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-104",
@@ -848,7 +905,8 @@
       "group": "General",
       "name": "Butterbeer Stein Mini Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-105",
@@ -857,7 +915,8 @@
       "group": "General",
       "name": "Butterbeer Tankard Glass Ornament",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-106",
@@ -866,7 +925,8 @@
       "group": "General",
       "name": "Butterbeer Tankard Metal Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-107",
@@ -875,7 +935,8 @@
       "group": "General",
       "name": "Butterbeer Tea Towel",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-108",
@@ -884,7 +945,8 @@
       "group": "General",
       "name": "Cedric Diggory's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-109",
@@ -893,7 +955,8 @@
       "group": "General",
       "name": "Chamber of Secrets - MinaLima Edition",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-110",
@@ -902,7 +965,8 @@
       "group": "General",
       "name": "Chocolate Frog - with authentic film packaging",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-111",
@@ -911,7 +975,8 @@
       "group": "General",
       "name": "Chocolate Frog Mini Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-112",
@@ -920,7 +985,8 @@
       "group": "General",
       "name": "Chocolate Frog Souvenir Tin",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-113",
@@ -929,7 +995,8 @@
       "group": "General",
       "name": "Crookshanks Cosy Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-114",
@@ -938,7 +1005,8 @@
       "group": "General",
       "name": "Crookshanks Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-115",
@@ -947,7 +1015,8 @@
       "group": "General",
       "name": "Dark Arts Defence Journal",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-116",
@@ -956,7 +1025,8 @@
       "group": "General",
       "name": "Dark Arts Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-117",
@@ -965,7 +1035,8 @@
       "group": "General",
       "name": "Dark Chocolate Frog - with authentic film packaging",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-118",
@@ -974,7 +1045,8 @@
       "group": "General",
       "name": "Death Eater's Wand - Skull",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-119",
@@ -983,7 +1055,8 @@
       "group": "General",
       "name": "Death Eater's Wand - Swirl",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-120",
@@ -992,7 +1065,8 @@
       "group": "General",
       "name": "Deathly Hallows Pin",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-121-SM",
@@ -1001,7 +1075,8 @@
       "group": "General",
       "name": "Diagon Alley Christmas 3-Pack Socks S/M",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-121-ML",
@@ -1010,7 +1085,8 @@
       "group": "General",
       "name": "Diagon Alley Christmas 3-Pack Socks M/L",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-122",
@@ -1019,7 +1095,8 @@
       "group": "General",
       "name": "Diagon Alley Christmas Bear",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-123",
@@ -1028,7 +1105,8 @@
       "group": "General",
       "name": "Diagon Alley Christmas Bear Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-124",
@@ -1037,7 +1115,8 @@
       "group": "General",
       "name": "Diagon Alley Christmas Blanket",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-125",
@@ -1046,7 +1125,8 @@
       "group": "General",
       "name": "Diagon Alley Christmas Blue Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-126",
@@ -1055,7 +1135,8 @@
       "group": "General",
       "name": "Diagon Alley Christmas Bookmark",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-127",
@@ -1064,7 +1145,8 @@
       "group": "General",
       "name": "Diagon Alley Christmas Candle Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-128",
@@ -1073,7 +1155,8 @@
       "group": "General",
       "name": "Diagon Alley Christmas Globe Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-129",
@@ -1082,7 +1165,8 @@
       "group": "General",
       "name": "Diagon Alley Christmas Magnet Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-130",
@@ -1091,7 +1175,8 @@
       "group": "General",
       "name": "Diagon Alley Christmas Pin Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-131",
@@ -1100,7 +1185,8 @@
       "group": "General",
       "name": "Diagon Alley Christmas Pink Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-132",
@@ -1109,7 +1195,8 @@
       "group": "General",
       "name": "Diagon Alley Christmas Sack",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-133",
@@ -1118,7 +1205,8 @@
       "group": "General",
       "name": "Diagon Alley Christmas Snow Globe",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-134",
@@ -1127,7 +1215,8 @@
       "group": "General",
       "name": "Diagon Alley Christmas Snow Globe Pen",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-135",
@@ -1136,7 +1225,8 @@
       "group": "General",
       "name": "Diagon Alley in the Snow Puzzle",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-136",
@@ -1145,7 +1235,8 @@
       "group": "General",
       "name": "Diagon Alley Wizarding Shops LEGO®",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-137",
@@ -1154,7 +1245,8 @@
       "group": "General",
       "name": "Dobby Christmas Bauble",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-138-SM",
@@ -1163,7 +1255,8 @@
       "group": "General",
       "name": "Dobby Cosy Socks S/M",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-138-ML",
@@ -1172,7 +1265,8 @@
       "group": "General",
       "name": "Dobby Cosy Socks M/L",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-139",
@@ -1181,7 +1275,8 @@
       "group": "General",
       "name": "Dobby Mug & Plush Gift Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-140",
@@ -1190,7 +1285,8 @@
       "group": "General",
       "name": "Dobby Sleep Mask",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-141",
@@ -1199,7 +1295,8 @@
       "group": "General",
       "name": "Dobby Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-142",
@@ -1208,7 +1305,8 @@
       "group": "General",
       "name": "Dobby the Free Elf LEGO®",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-143",
@@ -1217,7 +1315,8 @@
       "group": "General",
       "name": "Dobby the House-Elf Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-144",
@@ -1226,7 +1325,8 @@
       "group": "General",
       "name": "Dobby TY Bouncer",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-145",
@@ -1235,7 +1335,8 @@
       "group": "General",
       "name": "Draco Malfoy Charms Handbag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-146",
@@ -1244,7 +1345,8 @@
       "group": "General",
       "name": "Draco Malfoy's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-147",
@@ -1253,7 +1355,8 @@
       "group": "General",
       "name": "Dumbledore TY Squishy Beanie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-148",
@@ -1262,7 +1365,8 @@
       "group": "Stand",
       "name": "Owl Wand Stand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-149",
@@ -1271,7 +1375,8 @@
       "group": "General",
       "name": "Exploding Bon Bons",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-150",
@@ -1280,7 +1385,8 @@
       "group": "General",
       "name": "Fang Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-151",
@@ -1289,7 +1395,8 @@
       "group": "General",
       "name": "Fantastic Beasts & Where to Find Them Journal",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-152",
@@ -1298,7 +1405,8 @@
       "group": "General",
       "name": "Fawkes Phoenix Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-153",
@@ -1307,7 +1415,8 @@
       "group": "General",
       "name": "Fizzing Whizzbees Chocolate",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-154",
@@ -1316,7 +1425,8 @@
       "group": "General",
       "name": "Flourish & Blotts Glass Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-155",
@@ -1325,7 +1435,8 @@
       "group": "General",
       "name": "Flying Ford Anglia LEGO®",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-156",
@@ -1334,7 +1445,8 @@
       "group": "General",
       "name": "Forbidden Forest - Expecto Patronum LEGO®",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-157",
@@ -1343,7 +1455,8 @@
       "group": "General",
       "name": "Fudge Flies",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-158",
@@ -1352,7 +1465,8 @@
       "group": "General",
       "name": "Funko POP! Hagrid Vinyl Figure - Large",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-159",
@@ -1361,7 +1475,8 @@
       "group": "General",
       "name": "Funko POP! Harry Potter Vinyl Figure",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-160",
@@ -1370,7 +1485,8 @@
       "group": "General",
       "name": "Funko POP! Hedwig Vinyl Figure",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-161",
@@ -1379,7 +1495,8 @@
       "group": "General",
       "name": "Funko POP! Hermione with Crookshanks Vinyl Figure",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-162",
@@ -1388,7 +1505,8 @@
       "group": "General",
       "name": "Gellert Grindelwald's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-163",
@@ -1397,7 +1515,8 @@
       "group": "General",
       "name": "Ginny Weasley's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-164",
@@ -1406,7 +1525,8 @@
       "group": "General",
       "name": "Goblet of Fire Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-165",
@@ -1415,7 +1535,8 @@
       "group": "General",
       "name": "Golden Snitch Necklace",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Collectables"
     },
     {
       "id": "item-166",
@@ -1424,7 +1545,8 @@
       "group": "General",
       "name": "Golden Snitch Pin Badge",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-167",
@@ -1433,7 +1555,8 @@
       "group": "General",
       "name": "Golden Snitch Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-168",
@@ -1442,7 +1565,8 @@
       "group": "General",
       "name": "Golden Snitch TY Bouncer",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-169",
@@ -1451,7 +1575,8 @@
       "group": "General",
       "name": "Golden Snitch Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-170",
@@ -1460,7 +1585,8 @@
       "group": "General",
       "name": "Griffin Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-171-SM",
@@ -1469,7 +1595,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor 3-Pack Socks S/M",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-171-ML",
@@ -1478,7 +1605,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor 3-Pack Socks M/L",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-172",
@@ -1487,7 +1615,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Attribute Spinner Key Ring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-173",
@@ -1496,7 +1625,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Bear Plush",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-174",
@@ -1505,7 +1635,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Compact Mirror",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-175",
@@ -1514,7 +1645,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Cosmetics Bag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-176",
@@ -1523,7 +1655,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Crest Embossed Journal",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-177",
@@ -1532,7 +1665,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Crest Medallion Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-178",
@@ -1541,7 +1675,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor House Baseball Cap",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-179",
@@ -1550,7 +1685,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor House Points Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-180",
@@ -1559,7 +1695,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor House Tie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-181",
@@ -1568,7 +1705,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Knitted Crest Scarf",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Knitwear"
     },
     {
       "id": "item-182",
@@ -1577,7 +1715,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Knitted Hat",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Knitwear"
     },
     {
       "id": "item-183",
@@ -1586,7 +1725,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Knitted Mitten Capped Gloves",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Knitwear"
     },
     {
       "id": "item-184",
@@ -1595,7 +1735,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Mascot & Traits Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-185",
@@ -1604,7 +1745,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Metal Crest Journal",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-186",
@@ -1613,7 +1755,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Milk Chocolate Bar",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-187",
@@ -1622,7 +1765,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Nail File Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-188",
@@ -1631,7 +1775,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Patch Backpack",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-189",
@@ -1640,7 +1785,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Pen",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-190",
@@ -1649,7 +1795,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor PS Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-191",
@@ -1658,7 +1805,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Quill",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-192",
@@ -1667,7 +1815,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Scarf Bookmark",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-193",
@@ -1676,7 +1825,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Scarf Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-194",
@@ -1685,7 +1835,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Scrunchie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-195",
@@ -1694,7 +1845,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Striped Headband",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-196",
@@ -1703,7 +1855,8 @@
       "group": "Gryffindor",
       "name": "Gryffindor Traits Pin",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-197",
@@ -1712,7 +1865,8 @@
       "group": "General",
       "name": "Hagrid & Harry's Motorcycle Ride LEGO®",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-198",
@@ -1721,7 +1875,8 @@
       "group": "General",
       "name": "Hagrid & Harry's Privet Drive Escape LEGO®",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-199",
@@ -1730,7 +1885,8 @@
       "group": "General",
       "name": "Hagrid TY Squishy Beanie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-200",
@@ -1739,7 +1895,8 @@
       "group": "General",
       "name": "Hagrid's Hut Cup & Straw",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-201",
@@ -1748,7 +1905,8 @@
       "group": "General",
       "name": "Hagrid's Hut Cushion",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-202",
@@ -1757,7 +1915,8 @@
       "group": "General",
       "name": "Hagrid's Hut Glass Candle",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-203",
@@ -1766,7 +1925,8 @@
       "group": "General",
       "name": "Happee Birthdae Cake Mini Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-205",
@@ -1775,7 +1935,8 @@
       "group": "General",
       "name": "HBDH Cup & Straw",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-206",
@@ -1784,7 +1945,8 @@
       "group": "General",
       "name": "HBDH Glass",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-207",
@@ -1793,7 +1955,8 @@
       "group": "General",
       "name": "HBDH Hair Clip",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-208",
@@ -1802,7 +1965,8 @@
       "group": "General",
       "name": "HBDH Scrunchie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-209",
@@ -1811,7 +1975,8 @@
       "group": "General",
       "name": "Harry Potter and the Half-Blood Prince Illustrated Edition",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-210",
@@ -1820,7 +1985,8 @@
       "group": "General",
       "name": "Harry Potter Book Cover Glass Ornament",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-211",
@@ -1829,7 +1995,8 @@
       "group": "General",
       "name": "Harry Potter Charms Handbag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-212",
@@ -1838,7 +2005,8 @@
       "group": "General",
       "name": "Harry Potter Film Wizardry Book",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-213",
@@ -1847,7 +2015,8 @@
       "group": "General",
       "name": "Harry Potter Glasses",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-214",
@@ -1856,7 +2025,8 @@
       "group": "General",
       "name": "Harry Potter Monopoly Boardgame",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-215",
@@ -1865,7 +2035,8 @@
       "group": "General",
       "name": "Harry Potter Monopoly Deal",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-216",
@@ -1874,7 +2045,8 @@
       "group": "General",
       "name": "Harry Potter Paperback Boxset Collection",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-217",
@@ -1883,7 +2055,8 @@
       "group": "General",
       "name": "Harry Potter Shopping Bag Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-218",
@@ -1892,7 +2065,8 @@
       "group": "General",
       "name": "Harry Potter TY Bouncer",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-219",
@@ -1901,7 +2075,8 @@
       "group": "General",
       "name": "Harry Potter TY Squishy Beanie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-220",
@@ -1910,7 +2085,8 @@
       "group": "General",
       "name": "Harry Potter Wand Pen and Bookmark Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-221",
@@ -1919,7 +2095,8 @@
       "group": "General",
       "name": "Harry Potter's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-222",
@@ -1928,7 +2105,8 @@
       "group": "General",
       "name": "HBO Series Draco Malfoy Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-223",
@@ -1937,7 +2115,8 @@
       "group": "General",
       "name": "HBO Series Harry Potter Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-224",
@@ -1946,7 +2125,8 @@
       "group": "General",
       "name": "HBO Series Hermione Granger Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-225",
@@ -1955,7 +2135,8 @@
       "group": "General",
       "name": "HBO Series Ron Weasley Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-226",
@@ -1964,7 +2145,8 @@
       "group": "General",
       "name": "Hedwig at 4 Privet Drive LEGO®",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-227",
@@ -1981,7 +2163,8 @@
       "group": "General",
       "name": "Hedwig Cosy Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-229-SM",
@@ -1990,7 +2173,8 @@
       "group": "General",
       "name": "Hedwig Cosy Socks S/M",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-229-ML",
@@ -1999,7 +2183,8 @@
       "group": "General",
       "name": "Hedwig Cosy Socks M/L",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-230",
@@ -2008,7 +2193,8 @@
       "group": "General",
       "name": "Hedwig Glass Ornament",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-231",
@@ -2017,7 +2203,8 @@
       "group": "General",
       "name": "Hedwig List Notepad",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-232",
@@ -2026,7 +2213,8 @@
       "group": "General",
       "name": "Hedwig Soft Toy - Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-233",
@@ -2035,7 +2223,8 @@
       "group": "General",
       "name": "Hedwig Soft Toy - Large",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-234",
@@ -2044,7 +2233,8 @@
       "group": "General",
       "name": "Hedwig Soft Toy - Medium",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-235",
@@ -2053,7 +2243,8 @@
       "group": "General",
       "name": "Hedwig Soft Toy - Small",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-236",
@@ -2062,7 +2253,8 @@
       "group": "General",
       "name": "Hedwig TY Bouncer",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-237",
@@ -2071,7 +2263,8 @@
       "group": "General",
       "name": "Hedwig TY Squishy Beanie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-238",
@@ -2080,7 +2273,8 @@
       "group": "General",
       "name": "Hedwig Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-239",
@@ -2089,7 +2283,8 @@
       "group": "General",
       "name": "Hedwig Weekly Desk Planner",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-240",
@@ -2098,7 +2293,8 @@
       "group": "General",
       "name": "Hermione Granger Charms Handbag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-241",
@@ -2107,7 +2303,8 @@
       "group": "General",
       "name": "Hermione Granger TY Squishy Beanie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-242",
@@ -2116,7 +2313,8 @@
       "group": "General",
       "name": "Hermione Granger Wand Pen and Bookmark",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-243",
@@ -2125,7 +2323,8 @@
       "group": "General",
       "name": "Hermione Granger's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-244",
@@ -2134,7 +2333,8 @@
       "group": "General",
       "name": "History Of Magic Jewellery Box",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Collectables"
     },
     {
       "id": "item-245",
@@ -2143,7 +2343,8 @@
       "group": "General",
       "name": "Hogsmeade Christmas Mini Snow Globe",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-246",
@@ -2152,7 +2353,8 @@
       "group": "General",
       "name": "Hogwarts Boxed Writing Quill",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-247",
@@ -2161,7 +2363,8 @@
       "group": "General",
       "name": "Hogwarts Castle - Sorting Hat Ceremony LEGO®",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-248",
@@ -2170,7 +2373,8 @@
       "group": "General",
       "name": "Hogwarts Castle Christmas Mug & Socks Gift Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-249",
@@ -2179,7 +2383,8 @@
       "group": "General",
       "name": "Hogwarts Castle Gold Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-250",
@@ -2188,7 +2393,8 @@
       "group": "General",
       "name": "Hogwarts Christmas Gold Snow Globe",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-251",
@@ -2197,7 +2403,8 @@
       "group": "General",
       "name": "Hogwarts Christmas Metal Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-252",
@@ -2206,7 +2413,8 @@
       "group": "General",
       "name": "Hogwarts Christmas Photo Frame",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-253-SM",
@@ -2215,7 +2423,8 @@
       "group": "General",
       "name": "Hogwarts Christmas Slipper Socks S/M",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-253-ML",
@@ -2224,7 +2433,8 @@
       "group": "General",
       "name": "Hogwarts Christmas Slipper Socks M/L",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-254",
@@ -2233,7 +2443,8 @@
       "group": "General",
       "name": "Hogwarts Christmas Velvet Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-255",
@@ -2242,7 +2453,8 @@
       "group": "General",
       "name": "Hogwarts Crest Cup & Straw",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-256",
@@ -2251,7 +2463,8 @@
       "group": "General",
       "name": "Hogwarts Crest Embossed Journal",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-257",
@@ -2260,7 +2473,8 @@
       "group": "General",
       "name": "Hogwarts Crest Medallion Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-258",
@@ -2269,7 +2483,8 @@
       "group": "General",
       "name": "Acceptance Letter Cushion",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-259",
@@ -2278,7 +2493,8 @@
       "group": "General",
       "name": "Hogwarts Express Gold Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-260",
@@ -2287,7 +2503,8 @@
       "group": "General",
       "name": "Hogwarts Express Mug & Socks Gift Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-261",
@@ -2296,7 +2513,8 @@
       "group": "General",
       "name": "Hogwarts Express Replica Ticket",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-262",
@@ -2305,7 +2523,8 @@
       "group": "General",
       "name": "Hogwarts Express Sign Pin Badge",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-263",
@@ -2314,7 +2533,8 @@
       "group": "General",
       "name": "Hogwarts Express Ticket Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-264",
@@ -2323,7 +2543,8 @@
       "group": "General",
       "name": "Hogwarts Express Ticket Magnet",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-265",
@@ -2332,7 +2553,8 @@
       "group": "General",
       "name": "Hogwarts House Crest LEGO®",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-266",
@@ -2341,7 +2563,8 @@
       "group": "General",
       "name": "Hogwarts Pen & Ink Quill Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-267",
@@ -2350,7 +2573,8 @@
       "group": "General",
       "name": "Hogwarts Quill - Black",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-268",
@@ -2359,7 +2583,8 @@
       "group": "General",
       "name": "Hogwarts Quill - White",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-269",
@@ -2368,7 +2593,8 @@
       "group": "General",
       "name": "Hogwarts Scarf Bookmark",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-270",
@@ -2377,7 +2603,8 @@
       "group": "General",
       "name": "Hogwarts Scarf Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-271",
@@ -2386,7 +2613,8 @@
       "group": "General",
       "name": "Hogwarts School Crest Knitted Gloves",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Knitwear"
     },
     {
       "id": "item-272",
@@ -2395,7 +2623,8 @@
       "group": "General",
       "name": "Hogwarts School Crest Knitted Hat",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Knitwear"
     },
     {
       "id": "item-273",
@@ -2404,7 +2633,8 @@
       "group": "General",
       "name": "Hogwarts School Crest Knitted Scarf",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Knitwear"
     },
     {
       "id": "item-274",
@@ -2413,7 +2643,8 @@
       "group": "Stand",
       "name": "Single Wand Stand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-275",
@@ -2422,7 +2653,8 @@
       "group": "General",
       "name": "Hogwarts Trunk Mini Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-276",
@@ -2431,7 +2663,8 @@
       "group": "General",
       "name": "Honeydukes All Butter Toffees",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-277",
@@ -2440,7 +2673,8 @@
       "group": "General",
       "name": "Honeydukes Caramel Sea Salt Fudge",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-278",
@@ -2449,7 +2683,8 @@
       "group": "General",
       "name": "Honeydukes Chocolate Coin",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-279",
@@ -2458,7 +2693,8 @@
       "group": "General",
       "name": "Honeydukes Christmas Blanket",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-280-SM",
@@ -2467,7 +2703,8 @@
       "group": "General",
       "name": "Honeydukes Christmas Cosy Socks S/M",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-280-ML",
@@ -2476,7 +2713,8 @@
       "group": "General",
       "name": "Honeydukes Christmas Cosy Socks M/L",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-281",
@@ -2485,7 +2723,8 @@
       "group": "General",
       "name": "Honeydukes Christmas Cushion",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-282",
@@ -2494,7 +2733,8 @@
       "group": "General",
       "name": "Honeydukes Christmas Keychain",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-283",
@@ -2503,7 +2743,8 @@
       "group": "General",
       "name": "Honeydukes Christmas Mini Snow Globe",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-284",
@@ -2512,7 +2753,8 @@
       "group": "General",
       "name": "Honeydukes Christmas Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-285",
@@ -2521,7 +2763,8 @@
       "group": "General",
       "name": "Honeydukes Christmas Plate",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-286",
@@ -2530,7 +2773,8 @@
       "group": "General",
       "name": "Honeydukes Glass Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-287",
@@ -2539,7 +2783,8 @@
       "group": "General",
       "name": "Honeydukes Milk Chocolate Honeycomb",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-288-SM",
@@ -2548,7 +2793,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff 3-Pack Socks S/M",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-288-ML",
@@ -2557,7 +2803,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff 3-Pack Socks M/L",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-289",
@@ -2566,7 +2813,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff Attribute Pin",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-290",
@@ -2575,7 +2823,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff Bear Plush",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-291",
@@ -2584,7 +2833,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff Compact Mirror",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-292",
@@ -2593,7 +2843,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff Cosmetics Bag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-293",
@@ -2602,7 +2853,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff Crest Embossed Journal",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-294",
@@ -2611,7 +2863,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff Crest Medallion Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-295",
@@ -2620,7 +2873,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff House Baseball Cap",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-296",
@@ -2629,7 +2883,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff House Crest Notebook",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-297",
@@ -2638,7 +2893,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff House Points Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-298",
@@ -2647,7 +2903,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff House Tie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-299",
@@ -2656,7 +2913,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff House Traits Pin Badge",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-300",
@@ -2665,7 +2923,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff Knitted Crest Scarf",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Knitwear"
     },
     {
       "id": "item-301",
@@ -2674,7 +2933,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff Knitted Hat",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Knitwear"
     },
     {
       "id": "item-302",
@@ -2683,7 +2943,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff Knitted Mitten Capped Gloves",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Knitwear"
     },
     {
       "id": "item-303",
@@ -2692,7 +2953,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff Mascot & Traits Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-304",
@@ -2701,7 +2963,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff Mascot Badger Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-305",
@@ -2710,7 +2973,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff Milk Chocolate Bar",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-306",
@@ -2719,7 +2983,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff Nail File Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-307",
@@ -2728,7 +2993,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff Patch Backpack",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-308",
@@ -2737,7 +3003,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff Pen",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-309",
@@ -2746,7 +3013,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff PS Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-310",
@@ -2755,7 +3023,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff Quill",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-311",
@@ -2764,7 +3033,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff Scarf Bookmark",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-312",
@@ -2773,7 +3043,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff Scarf Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-313",
@@ -2782,7 +3053,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff Scrunchie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-314",
@@ -2791,7 +3063,8 @@
       "group": "Hufflepuff",
       "name": "Hufflepuff Striped Headband",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-315",
@@ -2800,7 +3073,8 @@
       "group": "General",
       "name": "Interactive Baby Niffler Plush Pet",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-316",
@@ -2809,7 +3083,8 @@
       "group": "General",
       "name": "Interactive Snowy Owl Plush Pet",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-317",
@@ -2818,7 +3093,8 @@
       "group": "General",
       "name": "L.O.L. Surprise! Harry Potter Doll Assortment",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-318",
@@ -2827,7 +3103,8 @@
       "group": "General",
       "name": "Large Trunk",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-319",
@@ -2836,7 +3113,8 @@
       "group": "General",
       "name": "Leta Lestrange's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-320",
@@ -2845,7 +3123,8 @@
       "group": "General",
       "name": "Lord Voldemort's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-321",
@@ -2854,7 +3133,8 @@
       "group": "General",
       "name": "Loungefly Stained Glass Mermaid Backpack",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-322",
@@ -2863,7 +3143,8 @@
       "group": "General",
       "name": "Loungefly Stained Glass Mermaid Wallet",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-323",
@@ -2872,7 +3153,8 @@
       "group": "General",
       "name": "Love Potion Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-324",
@@ -2881,7 +3163,8 @@
       "group": "General",
       "name": "Luna Lovegood Charms Handbag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-325",
@@ -2890,7 +3173,8 @@
       "group": "General",
       "name": "Luna Lovegood Nargles Tote Bag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-326",
@@ -2899,7 +3183,8 @@
       "group": "General",
       "name": "Luna Lovegood Spectrespecs",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-327",
@@ -2908,7 +3193,8 @@
       "group": "General",
       "name": "Luna Lovegood's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-328",
@@ -2917,7 +3203,8 @@
       "group": "General",
       "name": "Luna Spectrespecs Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-329",
@@ -2926,7 +3213,8 @@
       "group": "General",
       "name": "Luna's Spectrespecs Pin Badge",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-330",
@@ -2935,7 +3223,8 @@
       "group": "General",
       "name": "Magical Hogwarts Scrunchies 2-Pack",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-331",
@@ -2944,7 +3233,8 @@
       "group": "General",
       "name": "Marauder's Map Replica",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-332",
@@ -2953,7 +3243,8 @@
       "group": "General",
       "name": "Marauder's Map Shopper Tote - Medium",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-333",
@@ -2962,7 +3253,8 @@
       "group": "General",
       "name": "Marauder's Map Shopper Tote - Small",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-334-SM",
@@ -2971,7 +3263,8 @@
       "group": "General",
       "name": "Marauder's Map Socks S/M",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-334-ML",
@@ -2980,7 +3273,8 @@
       "group": "General",
       "name": "Marauder's Map Socks M/L",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-335",
@@ -2989,7 +3283,8 @@
       "group": "General",
       "name": "Marauder's Map Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-336",
@@ -2998,7 +3293,8 @@
       "group": "General",
       "name": "MinaLima Chocolate Frog Notecard",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-337",
@@ -3007,7 +3303,8 @@
       "group": "General",
       "name": "MinaLima Christmas Hanging Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-338",
@@ -3016,7 +3313,8 @@
       "group": "General",
       "name": "MinaLima Defenders of Hogwarts Board Game",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-339",
@@ -3025,7 +3323,8 @@
       "group": "General",
       "name": "MinaLima Honeydukes Hanging Garland",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-340",
@@ -3034,7 +3333,8 @@
       "group": "General",
       "name": "MinaLima Honeydukes Playing Cards",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-341",
@@ -3043,7 +3343,8 @@
       "group": "General",
       "name": "Minalima Wizarding Christmas 3D Notecard",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-342",
@@ -3052,7 +3353,8 @@
       "group": "General",
       "name": "Mini Hogwarts School Trunk Replica",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-343",
@@ -3061,7 +3363,8 @@
       "group": "General",
       "name": "Miniverse Harry Potter Honeydukes Playset",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-344",
@@ -3070,7 +3373,8 @@
       "group": "General",
       "name": "Miniverse Harry Potter Make It Mini - Hogwarts",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-345",
@@ -3079,7 +3383,8 @@
       "group": "General",
       "name": "Miniverse Harry Potter Make It Mini - Honeydukes",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-346",
@@ -3088,7 +3393,8 @@
       "group": "General",
       "name": "Miniverse Harry Potter Make It Mini - Potions",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-347",
@@ -3097,7 +3403,8 @@
       "group": "General",
       "name": "Miniverse Harry Potter Potions Class Playset",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-348",
@@ -3106,7 +3413,8 @@
       "group": "General",
       "name": "Miniverse Make It Mini - Harry Potter's Birthday Cake",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-349",
@@ -3115,7 +3423,8 @@
       "group": "Gryffindor",
       "name": "MM25 Gryffindor Glass Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-350",
@@ -3124,7 +3433,8 @@
       "group": "Gryffindor",
       "name": "MM25 Gryffindor Magnet",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-351-SM",
@@ -3133,7 +3443,8 @@
       "group": "Gryffindor",
       "name": "MM25 Gryffindor Socks S/M",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-351-ML",
@@ -3142,7 +3453,8 @@
       "group": "Gryffindor",
       "name": "MM25 Gryffindor Socks M/L",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-352",
@@ -3151,7 +3463,8 @@
       "group": "Gryffindor",
       "name": "MM25 Gryffindor Tumbler",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-353",
@@ -3160,7 +3473,8 @@
       "group": "Hufflepuff",
       "name": "MM25 Hufflepuff Glass Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-354",
@@ -3169,7 +3483,8 @@
       "group": "Hufflepuff",
       "name": "MM25 Hufflepuff Magnet",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-355-SM",
@@ -3178,7 +3493,8 @@
       "group": "Hufflepuff",
       "name": "MM25 Hufflepuff Socks S/M",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-355-ML",
@@ -3187,7 +3503,8 @@
       "group": "Hufflepuff",
       "name": "MM25 Hufflepuff Socks M/L",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-356",
@@ -3196,7 +3513,8 @@
       "group": "Hufflepuff",
       "name": "MM25 Hufflepuff Tumbler",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-357",
@@ -3205,7 +3523,8 @@
       "group": "Ravenclaw",
       "name": "MM25 Ravenclaw Glass Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-358",
@@ -3214,7 +3533,8 @@
       "group": "Ravenclaw",
       "name": "MM25 Ravenclaw Magnet",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-359-SM",
@@ -3223,7 +3543,8 @@
       "group": "Ravenclaw",
       "name": "MM25 Ravenclaw Socks S/M",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-359-ML",
@@ -3232,7 +3553,8 @@
       "group": "Ravenclaw",
       "name": "MM25 Ravenclaw Socks M/L",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-360",
@@ -3241,7 +3563,8 @@
       "group": "Ravenclaw",
       "name": "MM25 Ravenclaw Tumbler",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-361",
@@ -3250,7 +3573,8 @@
       "group": "Slytherin",
       "name": "MM25 Slytherin Glass Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-362",
@@ -3259,7 +3583,8 @@
       "group": "Slytherin",
       "name": "MM25 Slytherin Magnet",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-363-SM",
@@ -3268,7 +3593,8 @@
       "group": "Slytherin",
       "name": "MM25 Slytherin Socks S/M",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-363-ML",
@@ -3277,7 +3603,8 @@
       "group": "Slytherin",
       "name": "MM25 Slytherin Socks M/L",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-364",
@@ -3286,7 +3613,8 @@
       "group": "Slytherin",
       "name": "MM25 Slytherin Tumbler",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-365",
@@ -3295,7 +3623,8 @@
       "group": "General",
       "name": "Narcissa Malfoy's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-366",
@@ -3304,7 +3633,8 @@
       "group": "General",
       "name": "Neville Longbottom's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-367",
@@ -3313,7 +3643,8 @@
       "group": "General",
       "name": "New Edition Harry Potter and the Chamber of Secrets (Paperback)",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-368",
@@ -3322,7 +3653,8 @@
       "group": "General",
       "name": "New Edition Harry Potter and the Deathly Hallows (Paperback)",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-369",
@@ -3331,7 +3663,8 @@
       "group": "General",
       "name": "New Edition Harry Potter and the Goblet of Fire (Paperback)",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-370",
@@ -3340,7 +3673,8 @@
       "group": "General",
       "name": "New Edition Harry Potter and the Half-Blood Prince (Paperback)",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-371",
@@ -3349,7 +3683,8 @@
       "group": "General",
       "name": "New Edition Harry Potter and the Order of the Phoenix (Paperback)",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-372",
@@ -3358,7 +3693,8 @@
       "group": "General",
       "name": "New Edition Harry Potter and the Philosopher's Stone (Paperback)",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-373",
@@ -3367,7 +3703,8 @@
       "group": "General",
       "name": "New Edition Harry Potter and the Prisoner of Azkaban (Paperback)",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-374",
@@ -3376,7 +3713,8 @@
       "group": "General",
       "name": "Newt Scamander's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-375",
@@ -3385,7 +3723,8 @@
       "group": "General",
       "name": "Niffler Christmas Bauble",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-376",
@@ -3394,7 +3733,8 @@
       "group": "General",
       "name": "Niffler Cosy Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-377",
@@ -3403,7 +3743,8 @@
       "group": "General",
       "name": "Niffler Cosy Mug & Plush Gift Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-378-SM",
@@ -3412,7 +3753,8 @@
       "group": "General",
       "name": "Niffler Cosy Socks S/M",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-378-ML",
@@ -3421,7 +3763,8 @@
       "group": "General",
       "name": "Niffler Cosy Socks M/L",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-379",
@@ -3430,7 +3773,8 @@
       "group": "General",
       "name": "Niffler Plush",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-380",
@@ -3439,7 +3783,8 @@
       "group": "General",
       "name": "Norbert - Hagrid's Baby Dragon LEGO®",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-381",
@@ -3448,7 +3793,8 @@
       "group": "General",
       "name": "Ollivanders Glass Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-382",
@@ -3457,7 +3803,8 @@
       "group": "General",
       "name": "Ollivanders Mini Snow Globe",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-383",
@@ -3466,7 +3813,8 @@
       "group": "General",
       "name": "Open At The Close Canvas Tote Bag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-384",
@@ -3475,7 +3823,8 @@
       "group": "General",
       "name": "Peppermint Toads",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-385",
@@ -3484,7 +3833,8 @@
       "group": "Gryffindor",
       "name": "Personalised Gryffindor Crest Notebook",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-386",
@@ -3493,7 +3843,8 @@
       "group": "General",
       "name": "Philosopher's Stone - MinaLima Edition",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-387",
@@ -3502,7 +3853,8 @@
       "group": "General",
       "name": "Philosopher's Stone Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-388",
@@ -3511,7 +3863,8 @@
       "group": "General",
       "name": "Phoenix Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-389",
@@ -3520,7 +3873,8 @@
       "group": "General",
       "name": "Pickett Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-390",
@@ -3529,7 +3883,8 @@
       "group": "General",
       "name": "Plush Hedwig Notebook",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-391",
@@ -3538,7 +3893,8 @@
       "group": "General",
       "name": "Pocket Potters - Dobby",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-392",
@@ -3547,7 +3903,8 @@
       "group": "General",
       "name": "Pocket Potters - Hagrid",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-393",
@@ -3556,7 +3913,8 @@
       "group": "General",
       "name": "Pocket Potters - Harry Potter",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-394",
@@ -3565,7 +3923,8 @@
       "group": "General",
       "name": "Pocket Potters - Hermione Granger",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-395",
@@ -3574,7 +3933,8 @@
       "group": "General",
       "name": "Pocket Potters - Luna Lovegood",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-396",
@@ -3583,7 +3943,8 @@
       "group": "General",
       "name": "Pocket Potters - Professor Dumbledore",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-397",
@@ -3592,7 +3953,8 @@
       "group": "General",
       "name": "Pocket Potters - Ron Weasley",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-398",
@@ -3601,7 +3963,8 @@
       "group": "General",
       "name": "POP! Deluxe: Chocolate Frog",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-399",
@@ -3610,7 +3973,8 @@
       "group": "General",
       "name": "POP! Movies: Harry in London Shirt Exclusive",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-400",
@@ -3619,7 +3983,8 @@
       "group": "General",
       "name": "POP! Movies: Harry Potter",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-401",
@@ -3628,7 +3993,8 @@
       "group": "General",
       "name": "POP! Movies: Hermione Granger",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-402",
@@ -3637,7 +4003,8 @@
       "group": "General",
       "name": "POP! Movies: Ron Weasley",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-403",
@@ -3646,7 +4013,8 @@
       "group": "General",
       "name": "POP! Ride Super Deluxe: Knight Bus",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-404",
@@ -3655,7 +4023,8 @@
       "group": "General",
       "name": "Porpentina Goldstein Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-405",
@@ -3664,7 +4033,8 @@
       "group": "General",
       "name": "Potions Jewellery Box",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Collectables"
     },
     {
       "id": "item-406",
@@ -3673,7 +4043,8 @@
       "group": "General",
       "name": "Professor Dumbledore's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-407",
@@ -3682,7 +4053,8 @@
       "group": "General",
       "name": "Professor Lupin's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-408",
@@ -3691,7 +4063,8 @@
       "group": "General",
       "name": "Professor McGonagall's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-409",
@@ -3700,7 +4073,8 @@
       "group": "General",
       "name": "Professor Snape's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-410",
@@ -3709,7 +4083,8 @@
       "group": "General",
       "name": "Purple Pygmy Puff Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-411",
@@ -3718,7 +4093,8 @@
       "group": "General",
       "name": "Queenie Goldstein's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-412-SM",
@@ -3727,7 +4103,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw 3-Pack Socks S/M",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-412-ML",
@@ -3736,7 +4113,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw 3-Pack Socks M/L",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-413",
@@ -3745,7 +4123,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw Bear Plush",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-414",
@@ -3754,7 +4133,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw Compact Mirror",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-415",
@@ -3763,7 +4143,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw Cosmetics Bag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-416",
@@ -3772,7 +4153,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw Crest Embossed Journal",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-417",
@@ -3781,7 +4163,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw Crest Medallion Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-418",
@@ -3790,7 +4173,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw House Baseball Cap",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-419",
@@ -3799,7 +4183,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw House Crest Notebook",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-420",
@@ -3808,7 +4193,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw House Points Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-421",
@@ -3817,7 +4203,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw House Tie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-422",
@@ -3826,7 +4213,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw Knitted Crest Scarf",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Knitwear"
     },
     {
       "id": "item-423",
@@ -3835,7 +4223,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw Knitted Hat",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Knitwear"
     },
     {
       "id": "item-424",
@@ -3844,7 +4233,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw Knitted Mitten Capped Gloves",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Knitwear"
     },
     {
       "id": "item-425",
@@ -3853,7 +4243,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw Mascot & Traits Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-426",
@@ -3862,7 +4253,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw Milk Chocolate Bar",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-427",
@@ -3871,7 +4263,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw Nail File Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-428",
@@ -3880,7 +4273,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw Patch Backpack",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-429",
@@ -3889,7 +4283,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw Pen",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-430",
@@ -3898,7 +4293,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw PS Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-431",
@@ -3907,7 +4303,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw Quill",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-432",
@@ -3916,7 +4313,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw Scarf Bookmark",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-433",
@@ -3925,7 +4323,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw Scarf Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-434",
@@ -3934,7 +4333,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw Scrunchie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-435",
@@ -3943,7 +4343,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw Striped Headband",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-436",
@@ -3952,7 +4353,8 @@
       "group": "Ravenclaw",
       "name": "Ravenclaw Traits Pin",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-437",
@@ -3961,7 +4363,8 @@
       "group": "General",
       "name": "Ron Weasley TY Squishy Beanie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-438",
@@ -3970,7 +4373,8 @@
       "group": "General",
       "name": "Ron Weasley's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-439",
@@ -3979,7 +4383,8 @@
       "group": "General",
       "name": "Scabbers Plush",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-440",
@@ -3988,7 +4393,8 @@
       "group": "General",
       "name": "Seraphina Picquery's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-441",
@@ -3997,7 +4403,8 @@
       "group": "General",
       "name": "Sirius Black's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-442",
@@ -4006,7 +4413,8 @@
       "group": "General",
       "name": "Sitting Niffler Plush",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-443",
@@ -4015,7 +4423,8 @@
       "group": "General",
       "name": "Slime Life Harry Potter Amortentia Inspired Slime",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-444",
@@ -4024,7 +4433,8 @@
       "group": "General",
       "name": "Slime Life Harry Potter Mandrake Restorative Draught Inspired Slime",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-445",
@@ -4033,7 +4443,8 @@
       "group": "General",
       "name": "Slime Life Harry Potter Polyjuice Potion Inspired Slime",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-446",
@@ -4042,7 +4453,8 @@
       "group": "General",
       "name": "Slime Life Harry Potter Skele-Gro Inspired Slime",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-447-SM",
@@ -4051,7 +4463,8 @@
       "group": "Slytherin",
       "name": "Slytherin 3-Pack Socks S/M",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-447-ML",
@@ -4060,7 +4473,8 @@
       "group": "Slytherin",
       "name": "Slytherin 3-Pack Socks M/L",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-448",
@@ -4069,7 +4483,8 @@
       "group": "Slytherin",
       "name": "Slytherin Attribute Pin",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-449",
@@ -4078,7 +4493,8 @@
       "group": "Slytherin",
       "name": "Slytherin Bear Plush",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-450",
@@ -4087,7 +4503,8 @@
       "group": "Slytherin",
       "name": "Slytherin Compact Mirror",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-451",
@@ -4096,7 +4513,8 @@
       "group": "Slytherin",
       "name": "Slytherin Cosmetics Bag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-452",
@@ -4105,7 +4523,8 @@
       "group": "Slytherin",
       "name": "Slytherin Crest Embossed Journal",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-453",
@@ -4114,7 +4533,8 @@
       "group": "Slytherin",
       "name": "Slytherin Crest Medallion Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-454",
@@ -4123,7 +4543,8 @@
       "group": "Slytherin",
       "name": "Slytherin Dark Chocolate Bar",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-455",
@@ -4132,7 +4553,8 @@
       "group": "Slytherin",
       "name": "Slytherin House Baseball Cap",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-456",
@@ -4141,7 +4563,8 @@
       "group": "Slytherin",
       "name": "Slytherin House Points Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-457",
@@ -4150,7 +4573,8 @@
       "group": "Slytherin",
       "name": "Slytherin House Tie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-458",
@@ -4159,7 +4583,8 @@
       "group": "Slytherin",
       "name": "Slytherin Knitted Crest Scarf",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Knitwear"
     },
     {
       "id": "item-459",
@@ -4168,7 +4593,8 @@
       "group": "Slytherin",
       "name": "Slytherin Knitted Hat",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Knitwear"
     },
     {
       "id": "item-460",
@@ -4177,7 +4603,8 @@
       "group": "Slytherin",
       "name": "Slytherin Knitted Mitten Capped Gloves",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Knitwear"
     },
     {
       "id": "item-461",
@@ -4186,7 +4613,8 @@
       "group": "Slytherin",
       "name": "Slytherin Mascot & Traits Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-462",
@@ -4195,7 +4623,8 @@
       "group": "Slytherin",
       "name": "Slytherin Mascot Snake Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-463",
@@ -4204,7 +4633,8 @@
       "group": "Slytherin",
       "name": "Slytherin Metal Crest Journal",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-464",
@@ -4213,7 +4643,8 @@
       "group": "Slytherin",
       "name": "Slytherin Nail File Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-465",
@@ -4222,7 +4653,8 @@
       "group": "Slytherin",
       "name": "Slytherin Patch Backpack",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-466",
@@ -4231,7 +4663,8 @@
       "group": "Slytherin",
       "name": "Slytherin Pen",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-467",
@@ -4240,7 +4673,8 @@
       "group": "Slytherin",
       "name": "Slytherin PS Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-468",
@@ -4249,7 +4683,8 @@
       "group": "Slytherin",
       "name": "Slytherin Quill",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-469",
@@ -4258,7 +4693,8 @@
       "group": "Slytherin",
       "name": "Slytherin Scarf Bookmark",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-470",
@@ -4267,7 +4703,8 @@
       "group": "Slytherin",
       "name": "Slytherin Scarf Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-471",
@@ -4276,7 +4713,8 @@
       "group": "Slytherin",
       "name": "Slytherin Scrunchie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-472",
@@ -4285,7 +4723,8 @@
       "group": "Slytherin",
       "name": "Slytherin Striped Headband",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-473",
@@ -4294,7 +4733,8 @@
       "group": "Slytherin",
       "name": "Slytherin Traits Pin",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-474",
@@ -4303,7 +4743,8 @@
       "group": "General",
       "name": "Sorting Hat Gold Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-475",
@@ -4312,7 +4753,8 @@
       "group": "General",
       "name": "Sorting Hat Magnet",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-476",
@@ -4321,7 +4763,8 @@
       "group": "General",
       "name": "Steiff Dobby Plush",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-477",
@@ -4330,7 +4773,8 @@
       "group": "General",
       "name": "The Chosen One Canvas Tote Bag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-478",
@@ -4339,7 +4783,8 @@
       "group": "Hufflepuff",
       "name": "The Cup of Hufflepuff Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-479",
@@ -4348,7 +4793,8 @@
       "group": "Ravenclaw",
       "name": "The Diadem of Ravenclaw Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-480",
@@ -4357,7 +4803,8 @@
       "group": "General",
       "name": "The Golden Snitch Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-481",
@@ -4366,7 +4813,8 @@
       "group": "Slytherin",
       "name": "The Locket Of Slytherin Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-482",
@@ -4375,7 +4823,8 @@
       "group": "General",
       "name": "The Prisoner Of Azkaban - Minalima Edition",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-483",
@@ -4384,7 +4833,8 @@
       "group": "Gryffindor",
       "name": "The Sword of Gryffindor Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-484",
@@ -4393,7 +4843,8 @@
       "group": "General",
       "name": "The Tales of Beedle the Bard Journal",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-485",
@@ -4402,7 +4853,8 @@
       "group": "General",
       "name": "Thestral Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-486",
@@ -4411,7 +4863,8 @@
       "group": "General",
       "name": "Three Broomsticks Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-487",
@@ -4420,7 +4873,8 @@
       "group": "General",
       "name": "Time Turner Necklace",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Collectables"
     },
     {
       "id": "item-488",
@@ -4429,7 +4883,8 @@
       "group": "General",
       "name": "Time Turner Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-489",
@@ -4438,7 +4893,8 @@
       "group": "General",
       "name": "Time-Turner Earrings",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Collectables"
     },
     {
       "id": "item-490",
@@ -4447,7 +4903,8 @@
       "group": "General",
       "name": "Time-Turner Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-491",
@@ -4456,7 +4913,8 @@
       "group": "General",
       "name": "Time-Turner Pendant Necklace",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Collectables"
     },
     {
       "id": "item-492",
@@ -4465,7 +4923,8 @@
       "group": "General",
       "name": "Tom Riddle Diary Replica",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Collectables"
     },
     {
       "id": "item-493",
@@ -4474,7 +4933,8 @@
       "group": "General",
       "name": "Ukrainian Ironbelly's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Wands"
     },
     {
       "id": "item-494",
@@ -4483,7 +4943,8 @@
       "group": "General",
       "name": "Wand Canvas Tote Bag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Bags"
     },
     {
       "id": "item-495",
@@ -4492,7 +4953,8 @@
       "group": "General",
       "name": "Weasleys' Wizard Wheezes Glass Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-496",
@@ -4501,7 +4963,8 @@
       "group": "General",
       "name": "Weasleys' Wizard Wheezes Magnet",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Keyrings/Pin Badges"
     },
     {
       "id": "item-497",
@@ -4510,7 +4973,8 @@
       "group": "General",
       "name": "Weasleys' Wizard Wheezes Mini Snow Globe",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-498",
@@ -4519,7 +4983,8 @@
       "group": "General",
       "name": "Weasleys' Wizard Wheezes Tealight",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Ornaments"
     },
     {
       "id": "item-499",
@@ -4528,7 +4993,8 @@
       "group": "General",
       "name": "White Chocolate Frog - with authentic film packaging",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Confectionary"
     },
     {
       "id": "item-500",
@@ -4537,7 +5003,8 @@
       "group": "General",
       "name": "Wizard Chess Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-1795215564898-0",
@@ -4546,7 +5013,8 @@
       "group": "Gryffindor",
       "name": "Bear",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-1795215564898-1",
@@ -4555,7 +5023,8 @@
       "group": "Gryffindor",
       "name": "Tie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-1795215564898-2",
@@ -4564,7 +5033,8 @@
       "group": "Gryffindor",
       "name": "Scarf",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-1795215564898-3",
@@ -4573,7 +5043,8 @@
       "group": "Gryffindor",
       "name": "Robe",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-1795215564898-4",
@@ -4582,7 +5053,8 @@
       "group": "Gryffindor",
       "name": "Mascot",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-1795215579738-0",
@@ -4591,7 +5063,8 @@
       "group": "Slytherin",
       "name": "Bear",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-1795215579738-1",
@@ -4600,7 +5073,8 @@
       "group": "Slytherin",
       "name": "Tie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-1795215579738-2",
@@ -4609,7 +5083,8 @@
       "group": "Slytherin",
       "name": "Scarf",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-1795215579738-3",
@@ -4618,7 +5093,8 @@
       "group": "Slytherin",
       "name": "Robe",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-1795215579738-4",
@@ -4627,7 +5103,8 @@
       "group": "Slytherin",
       "name": "Mascot",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-1795215590768-0",
@@ -4636,7 +5113,8 @@
       "group": "Hufflepuff",
       "name": "Bear",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-1795215590768-1",
@@ -4645,7 +5123,8 @@
       "group": "Hufflepuff",
       "name": "Tie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-1795215590768-2",
@@ -4654,7 +5133,8 @@
       "group": "Hufflepuff",
       "name": "Scarf",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-1795215590768-3",
@@ -4663,7 +5143,8 @@
       "group": "Hufflepuff",
       "name": "Robe",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-1795215590768-4",
@@ -4672,7 +5153,8 @@
       "group": "Hufflepuff",
       "name": "Mascot",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-1795215598797-0",
@@ -4681,7 +5163,8 @@
       "group": "Ravenclaw",
       "name": "Bear",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-1795215598797-1",
@@ -4690,7 +5173,8 @@
       "group": "Ravenclaw",
       "name": "Tie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-1795215598797-2",
@@ -4699,7 +5183,8 @@
       "group": "Ravenclaw",
       "name": "Scarf",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "item-1795215598797-3",
@@ -4708,7 +5193,8 @@
       "group": "Ravenclaw",
       "name": "Robe",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "item-1795215598797-4",
@@ -4717,7 +5203,8 @@
       "group": "Ravenclaw",
       "name": "Mascot",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Plush"
     },
     {
       "id": "cloth-1795215704169-0",
@@ -4814,7 +5301,8 @@
       "group": "General",
       "name": "Stone Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-1795215793349-1",
@@ -4823,7 +5311,8 @@
       "group": "General",
       "name": "Stone Water Bottle",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-1795215793349-2",
@@ -4832,7 +5321,8 @@
       "group": "General",
       "name": "Stone Cup and Straw",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-1795215793349-3",
@@ -4841,7 +5331,8 @@
       "group": "General",
       "name": "Ridged Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-1795215793349-4",
@@ -4850,7 +5341,8 @@
       "group": "General",
       "name": "Ridged Bottle",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Drinkware"
     },
     {
       "id": "item-1795215793349-5",
@@ -4859,7 +5351,8 @@
       "group": "General",
       "name": "Black Cap",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-1795215793349-6",
@@ -4868,7 +5361,8 @@
       "group": "General",
       "name": "Stone Cap",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-1795215793349-7",
@@ -4877,7 +5371,8 @@
       "group": "General",
       "name": "LDN Funko",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Toys"
     },
     {
       "id": "cloth-1795257180007-0",
@@ -4926,7 +5421,8 @@
       "group": "General",
       "name": "HBDH Cosy Socks S/M",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-wa-1795274154486-ozbi",
@@ -4935,7 +5431,8 @@
       "group": "General",
       "name": "Hogwarts purple crest journal",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Stationary/MinaLima"
     },
     {
       "id": "item-wa-1795274154486-ide1",
@@ -4944,7 +5441,8 @@
       "group": "General",
       "name": "HBDH Cosy Socks M/L",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "aisle": "Accessories"
     },
     {
       "id": "item-wa-1795274154486-3ptc",
