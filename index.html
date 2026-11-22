@@ -1612,10 +1612,90 @@
                 }
                 const data = await response.json();
                 applyImportedCatalog(data);
-                if (manualTrigger) showToast(`Synced ${catalog.length} items from catalog.json!`);
-            } catch (err) {
+                if (manualTrigger) showToast('Synced latest catalog.json from Git!');
+            } catch (e) {
                 if (manualTrigger) showToast('Could not fetch catalog.json');
             }
+        }
+
+        // Automatically strip redundant House word when an item is inside that House subsection
+        function cleanRedundantHouseName(name, group) {
+            const grp = String(group || '').trim();
+            const rawName = String(name || '').trim();
+            if (['Gryffindor', 'Slytherin', 'Ravenclaw', 'Hufflepuff'].includes(grp)) {
+                const regex = new RegExp(`\\b${grp}\\b\\s*[-:]?\\s*`, 'gi');
+                const cleaned = rawName.replace(regex, '').replace(/\s+/g, ' ').trim();
+                return cleaned || rawName;
+            }
+            return rawName;
+        }
+
+        // Merge imported catalog JSON while preserving any active quantities already entered on device
+        function applyImportedCatalog(data) {
+            if (data && data.shelfPhotos && typeof data.shelfPhotos === 'object') {
+                shelfPhotos = { ...shelfPhotos, ...data.shelfPhotos };
+            }
+            if (data && data.sectionFloors && typeof data.sectionFloors === 'object') {
+                sectionFloors = { ...sectionFloors, ...data.sectionFloors };
+            }
+            if (data && Array.isArray(data.warehouseAisles) && data.warehouseAisles.length > 0) {
+                warehouseAisles = [...data.warehouseAisles];
+            }
+            const incomingList = Array.isArray(data) ? data : (data && Array.isArray(data.catalog) ? data.catalog : null);
+            if (!incomingList || incomingList.length === 0) return;
+
+            const existingByKey = new Map();
+            catalog.forEach(item => {
+                const key = `${item.department || 'hardlines'}::${item.sectionId}::${(item.group || 'General').toLowerCase()}::${item.name.trim().toLowerCase()}`;
+                existingByKey.set(key, item);
+            });
+
+            catalog = incomingList.map((raw, i) => {
+                const isSock = /\bsocks?\b/i.test(String(raw.name || ''));
+                const dept = isSock ? 'hardlines' : (raw.department === 'clothing' ? 'clothing' : 'hardlines');
+                const grp = raw.group || 'General';
+                const normalizedSecId = raw.sectionId === 'quidditch' ? 'qudditch' : (raw.sectionId || 'qudditch');
+                const key = `${dept}::${normalizedSecId}::${grp.toLowerCase()}::${String(raw.name || '').trim().toLowerCase()}`;
+                const prev = existingByKey.get(key);
+                const aisleVal = raw.aisle || (prev && prev.aisle) || '';
+                if (aisleVal && !warehouseAisles.includes(aisleVal)) {
+                    warehouseAisles.push(aisleVal);
+                }
+
+                if (dept === 'clothing') {
+                    const sizeType = (raw.sizeType && SIZE_SETS[raw.sizeType]) ? raw.sizeType : inferSizeTypeFromText(raw.name);
+                    return {
+                        id: raw.id || (prev && prev.id) || `cloth-${Date.now()}-${i}`,
+                        department: 'clothing',
+                        sizeType,
+                        sectionId: normalizedSecId,
+                        group: grp,
+                        aisle: aisleVal,
+                        name: cleanRedundantHouseName(raw.name || 'Unnamed Garment', grp),
+                        sizes: prev && prev.sizes ? { ...createEmptySizesMap(sizeType), ...prev.sizes } : createEmptySizesMap(sizeType),
+                        pickedSizes: prev && prev.pickedSizes ? { ...createEmptyPickedSizesMap(sizeType), ...prev.pickedSizes } : createEmptyPickedSizesMap(sizeType)
+                    };
+                }
+                return {
+                    id: raw.id || (prev && prev.id) || `item-${Date.now()}-${i}`,
+                    department: 'hardlines',
+                    sectionId: normalizedSecId,
+                    group: grp,
+                    aisle: aisleVal,
+                    sortOrder: raw.sortOrder !== undefined ? Number(raw.sortOrder) : (prev && prev.sortOrder !== undefined ? Number(prev.sortOrder) : undefined),
+                    name: cleanRedundantHouseName(raw.name || 'Unnamed Item', grp),
+                    qty: prev ? (Number(prev.qty) || 0) : 0,
+                    picked: prev ? !!prev.picked : false,
+                    note: prev ? (prev.note || '') : '',
+                    innerQty: Number(raw.innerQty) || 0,
+                    boxQty: Number(raw.boxQty) || 0
+                };
+            });
+
+            saveState();
+            renderTabs();
+            updateHeaderAndBars();
+            renderMain();
         }
 
         // Render Main Collapsible Zones, Subsections & Items (Hard Lines or Clothing)
@@ -2867,7 +2947,8 @@
 
                 let addedCount = 0;
                 selectedZones.forEach(secId => {
-                    expandedNames.forEach((name, idx) => {
+                    expandedNames.forEach((rawName, idx) => {
+                        const name = cleanRedundantHouseName(rawName, grp);
                         if (dept === 'clothing') {
                             catalog.push({
                                 id: `cloth-${Date.now()}-${secId}-${idx}`,
@@ -2994,10 +3075,11 @@
                     const oldNameLower = target.name.trim().toLowerCase();
                     const oldDept = target.department || 'hardlines';
                     target.group = newGroup;
+                    const cleanedNewName = cleanRedundantHouseName(newName, newGroup);
 
                     const applyChangesToItem = (item) => {
                         const prevDept = item.department || 'hardlines';
-                        item.name = newName;
+                        item.name = cleanRedundantHouseName(cleanedNewName, item.group || newGroup);
                         item.department = newDept;
                         item.aisle = newAisle;
 
@@ -3033,13 +3115,13 @@
 
                     // Sync multi-zone checkboxes: add missing ticked zones & remove unticked zones for this product
                     const currentMatching = catalog.filter(i =>
-                        (i.department || 'hardlines') === newDept && i.name.trim().toLowerCase() === newName.toLowerCase()
+                        (i.department || 'hardlines') === newDept && i.name.trim().toLowerCase() === cleanedNewName.toLowerCase()
                     );
                     const existingSecIds = new Set(currentMatching.map(i => i.sectionId));
 
                     // Remove zones that were unticked
                     catalog = catalog.filter(i => {
-                        if ((i.department || 'hardlines') === newDept && i.name.trim().toLowerCase() === newName.toLowerCase()) {
+                        if ((i.department || 'hardlines') === newDept && i.name.trim().toLowerCase() === cleanedNewName.toLowerCase()) {
                             return checkedZones.includes(i.sectionId);
                         }
                         return true;
@@ -3056,7 +3138,7 @@
                                     sectionId: secId,
                                     group: newGroup,
                                     aisle: newAisle,
-                                    name: newName,
+                                    name: cleanedNewName,
                                     sizes: createEmptySizesMap(newSizeType),
                                     pickedSizes: createEmptyPickedSizesMap(newSizeType)
                                 });
@@ -3067,7 +3149,7 @@
                                     sectionId: secId,
                                     group: newGroup,
                                     aisle: newAisle,
-                                    name: newName,
+                                    name: cleanedNewName,
                                     qty: 0,
                                     picked: false,
                                     note: '',
@@ -3079,15 +3161,15 @@
                     });
 
                     // Optional: split Hard Lines sock item into S/M and M/L pairs across all its zones
-                    if (splitSocks && !/\b(s\/m|m\/l)\b/i.test(newName)) {
+                    if (splitSocks && !/\b(s\/m|m\/l)\b/i.test(cleanedNewName)) {
                         const expandedCatalog = [];
                         catalog.forEach(i => {
-                            if ((i.department || 'hardlines') === 'hardlines' && i.name.trim().toLowerCase() === newName.toLowerCase()) {
+                            if ((i.department || 'hardlines') === 'hardlines' && i.name.trim().toLowerCase() === cleanedNewName.toLowerCase()) {
                                 ['S/M', 'M/L'].forEach(szLabel => {
                                     expandedCatalog.push({
                                         ...i,
                                         id: `${i.id}-${szLabel.replace('/', '')}`,
-                                        name: `${newName} ${szLabel}`
+                                        name: `${cleanedNewName} ${szLabel}`
                                     });
                                 });
                             } else {
@@ -3102,7 +3184,7 @@
                     renderTabs();
                     updateHeaderAndBars();
                     renderMain();
-                    showToast(`Updated "${newName}"`);
+                    showToast(`Updated "${cleanedNewName}"`);
                 }
                 document.getElementById('edit-item-modal').classList.add('hidden');
             });
