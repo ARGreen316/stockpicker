@@ -104,21 +104,20 @@
                         <span>Paste List</span>
                     </button>
 
-                    <button id="open-sync-modal-btn" type="button" title="Export or Import Catalog JSON" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-xs font-bold text-slate-200 transition-colors flex items-center gap-1">
-                        <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
-                        </svg>
-                        <span class="hidden sm:inline">Catalog</span>
-                    </button>
-
-                    <!-- Overflow Menu (Shelf-Walk Order & Advanced Tools) -->
+                    <!-- Overflow Menu (Catalog Import/Export, Shelf-Walk Order & Tools) -->
                     <div class="relative">
                         <button id="open-more-menu-btn" type="button" title="More Tools" class="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-slate-300 hover:text-white transition-colors flex items-center justify-center">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 6h.01M12 12h.01M12 18h.01"></path>
                             </svg>
                         </button>
-                        <div id="more-menu-dropdown" class="hidden absolute right-0 mt-2 w-56 rounded-2xl bg-slate-900 border border-slate-700/90 shadow-2xl py-1.5 z-50">
+                        <div id="more-menu-dropdown" class="hidden absolute right-0 mt-2 w-60 rounded-2xl bg-slate-900 border border-slate-700/90 shadow-2xl py-1.5 z-50">
+                            <button id="open-sync-modal-btn" type="button" class="w-full px-4 py-2.5 text-left text-xs font-bold text-slate-200 hover:bg-slate-800 flex items-center gap-2.5">
+                                <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                                </svg>
+                                <span>Import / Export Catalog</span>
+                            </button>
                             <button id="menu-shelf-order-btn" type="button" class="w-full px-4 py-2.5 text-left text-xs font-bold text-slate-200 hover:bg-slate-800 flex items-center gap-2.5">
                                 <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -800,7 +799,7 @@
             }
         }
 
-        // Load saved state or initialize default catalog
+        // Load saved state or initialize default catalog (returns true if saved local catalog existed)
         function loadState() {
             try {
                 const raw = localStorage.getItem(STORAGE_KEY);
@@ -863,7 +862,7 @@
                             });
                         });
                         catalog = migrated;
-                        return;
+                        return true;
                     }
                 }
             } catch (e) {
@@ -871,6 +870,7 @@
             }
             catalog = buildDefaultCatalog();
             saveState();
+            return false;
         }
 
         // Prepare clean catalog JSON for Git export (zeroing out active daily quantities)
@@ -2797,11 +2797,15 @@
 
         // Initialize App & Event Listeners
         document.addEventListener('DOMContentLoaded', () => {
-            loadState();
+            const hasSavedLocalCatalog = loadState();
             renderTabs();
             updateHeaderAndBars();
             renderMain();
-            fetchGitCatalogIfAvailable(false);
+            // Only auto-pull catalog.json on first visit when no local catalog exists yet,
+            // so locking/reloading the browser never overwrites your on-device edits!
+            if (!hasSavedLocalCatalog) {
+                fetchGitCatalogIfAvailable(false);
+            }
 
             // Floor Filter Toggle (All Floors / RG / First Floor)
             document.querySelectorAll('.floor-filter-btn').forEach(btn => {
@@ -3191,6 +3195,7 @@
 
             // Catalog Export / Import Modal
             document.getElementById('open-sync-modal-btn').addEventListener('click', () => {
+                moreMenuDropdown.classList.add('hidden');
                 document.getElementById('import-catalog-textarea').value = '';
                 document.getElementById('sync-modal').classList.remove('hidden');
             });
