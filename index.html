@@ -756,6 +756,56 @@
             return list;
         }
 
+        // Latest Catalog Seed Data (preloaded on first run / preview when localStorage is empty)
+        const SEED_CATALOG_PAYLOAD = {
+            version: 3,
+            updatedAt: "2026-11-22T21:01:48.006Z",
+            shelfPhotos: {},
+            sectionFloors: {
+                qudditch: "RG",
+                "diagon-alley": "RG"
+            },
+            warehouseAisles: [
+                "Drinkware",
+                "Plush",
+                "Toys",
+                "Bags",
+                "Consumables",
+                "Collectables",
+                "Ornaments",
+                "Accessories",
+                "Keyrings/Pin Badges",
+                "Stationary/MinaLima",
+                "Knitwear",
+                "Wands",
+                "Confectionary"
+            ],
+            catalog: [
+                { id: "cloth-1", department: "clothing", sizeType: "adult", sectionId: "diagon-alley", group: "General", aisle: "", name: "Diagon Alley Christmas Hoodie" },
+                { id: "cloth-2", department: "clothing", sizeType: "adult", sectionId: "diagon-alley", group: "General", aisle: "", name: "Diagon Alley Christmas Knitted Jumper" },
+                { id: "cloth-3", department: "clothing", sizeType: "adult", sectionId: "diagon-alley", group: "General", aisle: "", name: "Diagon Alley Christmas Pyjama Set" },
+                { id: "cloth-4", department: "clothing", sizeType: "adult", sectionId: "diagon-alley", group: "General", aisle: "", name: "Diagon Alley in the Snow Spirit Jersey" },
+                { id: "cloth-5", department: "clothing", sizeType: "adult", sectionId: "diagon-alley", group: "General", aisle: "", name: "Dobby Loungewear Set" },
+                { id: "cloth-6", department: "clothing", sizeType: "adult", sectionId: "diagon-alley", group: "General", aisle: "", name: "Dobby Oversized Cosy Hoodie" },
+                { id: "item-7", department: "hardlines", sectionId: "toys", group: "Pop", aisle: "Toys", name: "Funko POP! Luna in Dress Vinyl Figure", innerQty: 0, boxQty: 0 },
+                { id: "cloth-8", department: "clothing", sizeType: "adult", sectionId: "qudditch", group: "Gryffindor", aisle: "", name: "Embroidery Print T-Shirt" },
+                { id: "cloth-9", department: "clothing", sizeType: "adult", sectionId: "qudditch", group: "Gryffindor", aisle: "", name: "Sherpa Hoodie" },
+                { id: "cloth-10", department: "clothing", sizeType: "adult", sectionId: "qudditch", group: "Gryffindor", aisle: "", name: "House Spirit Jersey" },
+                { id: "cloth-11", department: "clothing", sizeType: "adult", sectionId: "robes", group: "Gryffindor", aisle: "", name: "Knitted School Cardigan" },
+                { id: "cloth-12", department: "clothing", sizeType: "adult", sectionId: "qudditch", group: "Gryffindor", aisle: "", name: "Quidditch Jumper" },
+                { id: "item-136", department: "hardlines", sectionId: "toys", group: "Lego", aisle: "Toys", name: "Diagon Alley Wizarding Shops LEGO®", innerQty: 0, boxQty: 0 },
+                { id: "item-142", department: "hardlines", sectionId: "toys", group: "Lego", aisle: "Toys", name: "Dobby the Free Elf LEGO®", innerQty: 0, boxQty: 0 },
+                { id: "item-155", department: "hardlines", sectionId: "toys", group: "Lego", aisle: "Toys", name: "Flying Ford Anglia LEGO®", innerQty: 0, boxQty: 0 },
+                { id: "item-156", department: "hardlines", sectionId: "toys", group: "Lego", aisle: "Toys", name: "Forbidden Forest - Expecto Patronum LEGO®", innerQty: 0, boxQty: 0 },
+                { id: "item-197", department: "hardlines", sectionId: "toys", group: "Lego", aisle: "Toys", name: "Hagrid & Harry's Motorcycle Ride LEGO®", innerQty: 0, boxQty: 0 },
+                { id: "item-198", department: "hardlines", sectionId: "toys", group: "Lego", aisle: "Toys", name: "Hagrid & Harry's Privet Drive Escape LEGO®", innerQty: 0, boxQty: 0 },
+                { id: "item-226", department: "hardlines", sectionId: "toys", group: "Lego", aisle: "Toys", name: "Hedwig at 4 Privet Drive LEGO®", innerQty: 0, boxQty: 0 },
+                { id: "item-247", department: "hardlines", sectionId: "toys", group: "Lego", aisle: "Toys", name: "Hogwarts Castle - Sorting Hat Ceremony LEGO®", innerQty: 0, boxQty: 0 },
+                { id: "item-265", department: "hardlines", sectionId: "toys", group: "Lego", aisle: "Toys", name: "Hogwarts House Crest LEGO®", innerQty: 0, boxQty: 0 },
+                { id: "item-380", department: "hardlines", sectionId: "toys", group: "Lego", aisle: "Toys", name: "Norbert - Hagrid's Baby Dragon LEGO®", innerQty: 0, boxQty: 0 }
+            ]
+        };
+
         // Helpers to read total units & picked lines for either Hard Lines or Clothing items
         function getItemTotalQty(item) {
             if (item.department === 'clothing') {
@@ -868,8 +918,7 @@
             } catch (e) {
                 console.error('Failed to load catalog:', e);
             }
-            catalog = buildDefaultCatalog();
-            saveState();
+            applyImportedCatalog(SEED_CATALOG_PAYLOAD);
             return false;
         }
 
@@ -1367,7 +1416,7 @@
             });
         }
 
-        // Re-attach House prefix in Warehouse Picklist if stripped on Shop Floor view
+        // Re-attach House or LEGO prefix/suffix in Warehouse Picklist if stripped on Shop Floor view
         function getWarehouseDisplayName(item) {
             const grp = String(item.group || '').trim();
             const name = String(item.name || '').trim();
@@ -1375,6 +1424,9 @@
                 if (!name.toLowerCase().includes(grp.toLowerCase())) {
                     return `${grp} ${name}`;
                 }
+            }
+            if (grp.toLowerCase() === 'lego' && !/\blego\b/i.test(name)) {
+                return `${name} LEGO`;
             }
             return name;
         }
@@ -1410,8 +1462,9 @@
 
             const formatEntryLine = (entry, includeZoneBreakdown = false) => {
                 const noteSuffix = entry.notes.length > 0 ? ` (${entry.notes.join('; ')})` : '';
-                const splitSuffix = includeZoneBreakdown
-                    ? ` [${entry.zoneParts.map(p => `${p.qty} ${p.zone}`).join(' + ')}]`
+                const uniqueZones = [...new Set(entry.zoneParts.map(p => p.zone))];
+                const splitSuffix = (includeZoneBreakdown && uniqueZones.length > 1)
+                    ? ` (${entry.zoneParts.map(p => `${p.qty} ${p.zone}`).join(' + ')})`
                     : '';
 
                 if (entry.department === 'clothing') {
@@ -1618,13 +1671,17 @@
             }
         }
 
-        // Automatically strip redundant House word when an item is inside that House subsection
+        // Automatically strip redundant House word or trailing LEGO® when inside that subsection
         function cleanRedundantHouseName(name, group) {
             const grp = String(group || '').trim();
             const rawName = String(name || '').trim();
             if (['Gryffindor', 'Slytherin', 'Ravenclaw', 'Hufflepuff'].includes(grp)) {
                 const regex = new RegExp(`\\b${grp}\\b\\s*[-:]?\\s*`, 'gi');
                 const cleaned = rawName.replace(regex, '').replace(/\s+/g, ' ').trim();
+                return cleaned || rawName;
+            }
+            if (grp.toLowerCase() === 'lego') {
+                const cleaned = rawName.replace(/\s*[-–—]?\s*\blego\s*®?\s*$/i, '').replace(/\s+/g, ' ').trim();
                 return cleaned || rawName;
             }
             return rawName;
@@ -2025,6 +2082,7 @@
 
                         let rowsHtml = '';
                         items.forEach(item => {
+                            const displayItemName = cleanRedundantHouseName(item.name, groupName);
                             if (item.department === 'clothing') {
                                 const totalGarmentQty = getItemTotalQty(item);
                                 const { sizeType, keys, labels } = getItemSizeConfig(item);
@@ -2048,7 +2106,7 @@
                                         <div class="p-3 rounded-xl border transition-all ${totalGarmentQty > 0 ? 'bg-slate-900 border-purple-500/50' : 'bg-slate-900/60 border-slate-800/80'} space-y-2.5">
                                             <div class="flex items-center justify-between gap-2">
                                                 <div class="flex items-center gap-1.5 min-w-0">
-                                                    <span class="text-xs sm:text-sm font-bold text-white truncate">${escapeHtml(item.name)}</span>
+                                                    <span class="text-xs sm:text-sm font-bold text-white truncate">${escapeHtml(displayItemName)}</span>
                                                     ${sizeBadgeLabel ? `<span class="px-1.5 py-0.5 rounded bg-purple-950/80 border border-purple-700/60 text-purple-300 text-[10px] font-bold shrink-0">${sizeBadgeLabel}</span>` : ''}
                                                     <button type="button" data-edit-id="${item.id}" title="Rename / Change Sizes" class="open-edit-btn p-1 rounded-md text-slate-400 hover:text-amber-300 hover:bg-slate-800 shrink-0">
                                                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
@@ -2078,7 +2136,7 @@
                                                     <input type="checkbox" data-cloth-pick="${item.id}" data-size="${sz}" ${isPicked ? 'checked' : ''} class="cloth-pick-cb w-5 h-5 rounded-lg border-slate-700 bg-slate-950 text-emerald-500 focus:ring-emerald-500 shrink-0">
                                                     <div class="min-w-0">
                                                         <div class="text-xs sm:text-sm font-bold ${isPicked ? 'line-through text-slate-500' : 'text-white'} truncate">
-                                                            <span class="uppercase text-purple-300 mr-1">${labels[sz]}</span> ${escapeHtml(item.name)}
+                                                            <span class="uppercase text-purple-300 mr-1">${labels[sz]}</span> ${escapeHtml(displayItemName)}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2105,7 +2163,7 @@
                                         }">
                                             <div class="min-w-0 flex-1">
                                                 <div class="flex items-center gap-1.5 min-w-0">
-                                                    <span class="text-xs sm:text-sm font-bold text-white truncate">${escapeHtml(item.name)}</span>
+                                                    <span class="text-xs sm:text-sm font-bold text-white truncate">${escapeHtml(displayItemName)}</span>
                                                     <button type="button" data-edit-id="${item.id}" title="Rename item" class="open-edit-btn p-1 rounded-md text-slate-400 hover:text-amber-300 hover:bg-slate-800 shrink-0">
                                                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
                                                     </button>
@@ -2137,7 +2195,7 @@
                                             <div class="flex items-center gap-3 min-w-0">
                                                 <input type="checkbox" data-pick-id="${item.id}" ${isPicked ? 'checked' : ''} class="pick-item-cb w-5 h-5 rounded-lg border-slate-700 bg-slate-950 text-emerald-500 focus:ring-emerald-500 shrink-0">
                                                 <div class="min-w-0">
-                                                    <div class="text-xs sm:text-sm font-bold ${isPicked ? 'line-through text-slate-500' : 'text-white'} truncate">${escapeHtml(item.name)}</div>
+                                                    <div class="text-xs sm:text-sm font-bold ${isPicked ? 'line-through text-slate-500' : 'text-white'} truncate">${escapeHtml(displayItemName)}</div>
                                                     ${formatted.secondary ? `<div class="text-[10px] font-semibold text-slate-400 mt-0.5">${escapeHtml(formatted.secondary)}</div>` : ''}
                                                 </div>
                                             </div>
@@ -2599,13 +2657,23 @@
                 // 1. Check for Store Zone header (e.g. "DIAGON ALLEY:" or "_QUDDITCH_" — never match lines with quantities like "B&G pin set x3")
                 const hasQtyOnLine = /(?:^|\s)x\s*\d+\b/i.test(noColonText) || /^\d+\s+/.test(noColonText);
                 let matchedSec = null;
+                let matchedWarehouseAisle = null;
                 if (!hasQtyOnLine) {
-                    for (const sm of sectionMatchers) {
-                        if (sm.regex.test(noColonText) && (isHeaderLike || noColonText.length < 24)) {
-                            matchedSec = sm.id;
-                            break;
+                    const knownAisle = warehouseAisles.find(a => a.toLowerCase() === noColonText.toLowerCase());
+                    if (knownAisle) {
+                        matchedWarehouseAisle = knownAisle;
+                    } else {
+                        for (const sm of sectionMatchers) {
+                            if (sm.regex.test(noColonText) && (isHeaderLike || noColonText.length < 24)) {
+                                matchedSec = sm.id;
+                                break;
+                            }
                         }
                     }
+                }
+                if (matchedWarehouseAisle) {
+                    // Header is a Warehouse Aisle (e.g. "DRINKWARE:", "ACCESSORIES:", "KNITWEAR:")
+                    return;
                 }
                 if (matchedSec) {
                     currentSecId = matchedSec;
@@ -2628,8 +2696,15 @@
 
                 // 3. Extract inline parenthetical notes e.g. "(if not fill it with 9 interactive owls)" or "(we need 1 whole basket)"
                 const extractedNotes = [];
+                let explicitTotalItemsFromParen = 0;
                 const lineWithoutNotes = stripped.replace(/\(([^)]+)\)/g, (_, noteContent) => {
-                    extractedNotes.push(noteContent.trim());
+                    const cleanNote = noteContent.trim();
+                    const itemsTotalMatch = cleanNote.match(/^(\d+)\s+items?\s*(?:total)?$/i);
+                    if (itemsTotalMatch) {
+                        explicitTotalItemsFromParen = parseInt(itemsTotalMatch[1], 10) || 0;
+                    } else {
+                        extractedNotes.push(cleanNote);
+                    }
                     return ' ';
                 }).replace(/\s+/g, ' ').trim();
                 const inlineNote = extractedNotes.join('; ');
@@ -2676,20 +2751,20 @@
                             }
                             target.sizes[sz] = (Number(target.sizes[sz]) || 0) + count;
                         });
+                        if (inlineNote) {
+                            target.note = target.note ? `${target.note}; ${inlineNote}` : inlineNote;
+                        }
                         matchedCount++;
                         return;
                     }
                 }
 
-                // 5. Hard Lines parsing:
-                //    a) Leading quantity: "X20 snitch keyrings", "x 5 DA blanket"
-                //    b) Trailing quantity + optional unit: "DA SNOWGLOBE X 17", "AL MUG AND PLUSH X4 boxes", "B&G socks M/L x 20"
-                //    c) Note-only quantity: "B&G bear (we need 1 whole basket)"
+                // 5. Hard Lines quantity parsing (leading or trailing x12 / 2 boxes / etc.)
+                let itemName = '';
                 let count = 0;
                 let containerUnit = '';
-                let itemName = '';
 
-                const leadingMatch = lineWithoutNotes.match(/^x\s*(\d+)\s+(.+)$/i) || lineWithoutNotes.match(/^(\d+)\s+(.+)$/i);
+                const leadingMatch = lineWithoutNotes.match(/^x\s*(\d+)\s+(.+)$/i) || lineWithoutNotes.match(/^(\d+)\s+(?:(boxes|box|inners|inner|packs|pack|baskets|basket)\s+)?(.+)$/i);
                 const trailingMatch = lineWithoutNotes.match(/^(.+?)\s+x\s*(\d+)(?:\s*(box|boxes|inner|inners|pack|packs|basket|baskets))?\s*$/i);
 
                 if (trailingMatch) {
@@ -2697,8 +2772,14 @@
                     count = parseInt(trailingMatch[2], 10) || 0;
                     containerUnit = (trailingMatch[3] || '').toLowerCase();
                 } else if (leadingMatch) {
-                    count = parseInt(leadingMatch[1], 10) || 0;
-                    itemName = leadingMatch[2].trim();
+                    if (leadingMatch.length === 4) {
+                        count = parseInt(leadingMatch[1], 10) || 0;
+                        containerUnit = (leadingMatch[2] || '').toLowerCase();
+                        itemName = leadingMatch[3].trim();
+                    } else {
+                        count = parseInt(leadingMatch[1], 10) || 0;
+                        itemName = leadingMatch[2].trim();
+                    }
                 } else if (inlineNote && lineWithoutNotes.length > 1) {
                     itemName = lineWithoutNotes;
                     const noteNumMatch = inlineNote.match(/(\d+)/);
@@ -2708,33 +2789,38 @@
                 if (count > 0 && itemName) {
                     const normTargetName = normalizeAmpersand(itemName);
                     const stripPlural = (s) => s.replace(/s\b/g, '').trim();
-                    const fuzzyMatch = (catName) => {
-                        const a = normalizeAmpersand(catName);
-                        if (a === normTargetName) return true;
-                        if (stripPlural(a) === stripPlural(normTargetName)) return true;
-                        // Tolerate minor typos like "Acerptance letter cushions" -> "Acceptance Letter Cushion"
-                        const aWords = stripPlural(a).split(' ').filter(Boolean);
-                        const bWords = stripPlural(normTargetName).split(' ').filter(Boolean);
-                        if (aWords.length >= 2 && aWords.length === bWords.length) {
-                            const shared = aWords.filter((w, idx) => w === bWords[idx] || (w.length > 4 && bWords[idx].slice(0, 3) === w.slice(0, 3)));
-                            if (shared.length === aWords.length) return true;
+                    const fuzzyMatchItem = (catItem) => {
+                        const candidates = [
+                            normalizeAmpersand(catItem.name),
+                            normalizeAmpersand(getWarehouseDisplayName(catItem))
+                        ];
+                        for (const a of candidates) {
+                            if (a === normTargetName) return true;
+                            if (stripPlural(a) === stripPlural(normTargetName)) return true;
+                            // Tolerate minor typos like "Acerptance letter cushions" -> "Acceptance Letter Cushion"
+                            const aWords = stripPlural(a).split(' ').filter(Boolean);
+                            const bWords = stripPlural(normTargetName).split(' ').filter(Boolean);
+                            if (aWords.length >= 2 && aWords.length === bWords.length) {
+                                const shared = aWords.filter((w, idx) => w === bWords[idx] || (w.length > 4 && bWords[idx].slice(0, 3) === w.slice(0, 3)));
+                                if (shared.length === aWords.length) return true;
+                            }
                         }
                         return false;
                     };
 
-                    // Prefer current section, then fall back to any matching item in catalog (e.g. B&G items in Gringotts when no header was pasted)
+                    // Prefer current section, then fall back to any matching item in catalog (including House-prefixed warehouse names!)
                     let target = catalog.find(i =>
                         (i.department || 'hardlines') === 'hardlines' &&
                         i.sectionId === currentSecId &&
                         (i.group || 'General').toLowerCase() === currentGroup.toLowerCase() &&
-                        fuzzyMatch(i.name)
+                        fuzzyMatchItem(i)
                     ) || catalog.find(i =>
                         (i.department || 'hardlines') === 'hardlines' &&
                         i.sectionId === currentSecId &&
-                        fuzzyMatch(i.name)
+                        fuzzyMatchItem(i)
                     ) || catalog.find(i =>
                         (i.department || 'hardlines') === 'hardlines' &&
-                        fuzzyMatch(i.name)
+                        fuzzyMatchItem(i)
                     );
 
                     if (!target) {
@@ -2757,22 +2843,24 @@
                     }
 
                     // Convert box/inner/pack counts if configured on the item, otherwise note it clearly
-                    let resolvedUnits = count;
+                    let resolvedUnits = explicitTotalItemsFromParen > 0 ? explicitTotalItemsFromParen : count;
                     let containerNote = '';
-                    if (containerUnit.startsWith('box')) {
-                        if (target.boxQty > 0) {
-                            resolvedUnits = count * target.boxQty;
-                        } else {
-                            containerNote = `${count} ${count === 1 ? 'Box' : 'Boxes'}`;
+                    if (explicitTotalItemsFromParen === 0) {
+                        if (containerUnit.startsWith('box')) {
+                            if (target.boxQty > 0) {
+                                resolvedUnits = count * target.boxQty;
+                            } else {
+                                containerNote = `${count} ${count === 1 ? 'Box' : 'Boxes'}`;
+                            }
+                        } else if (containerUnit.startsWith('inner') || containerUnit.startsWith('pack')) {
+                            if (target.innerQty > 0) {
+                                resolvedUnits = count * target.innerQty;
+                            } else {
+                                containerNote = `${count} ${containerUnit}`;
+                            }
+                        } else if (containerUnit.startsWith('basket')) {
+                            containerNote = `${count} ${count === 1 ? 'Basket' : 'Baskets'}`;
                         }
-                    } else if (containerUnit.startsWith('inner') || containerUnit.startsWith('pack')) {
-                        if (target.innerQty > 0) {
-                            resolvedUnits = count * target.innerQty;
-                        } else {
-                            containerNote = `${count} ${containerUnit}`;
-                        }
-                    } else if (containerUnit.startsWith('basket')) {
-                        containerNote = `${count} ${count === 1 ? 'Basket' : 'Baskets'}`;
                     }
 
                     target.qty = (Number(target.qty) || 0) + resolvedUnits;
