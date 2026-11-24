@@ -188,6 +188,9 @@
                 Tap <span class="text-slate-200 font-bold">+</span> to add items to your warehouse run
             </div>
             <div class="flex items-center gap-2 shrink-0">
+                <button id="copy-shortages-btn" type="button" class="hidden px-3.5 py-2.5 rounded-xl bg-rose-600/90 hover:bg-rose-500 active:scale-[0.99] text-white font-extrabold text-xs sm:text-sm transition-all shadow-lg shadow-rose-500/20 flex items-center gap-1.5">
+                    <span>Copy Shortages (<span id="shortages-count-label">0</span>)</span>
+                </button>
                 <button id="whatsapp-share-btn" type="button" class="hidden px-4 py-2.5 rounded-xl bg-indigo-500 hover:bg-indigo-400 active:scale-[0.99] text-white font-extrabold text-xs sm:text-sm transition-all shadow-lg shadow-indigo-500/20 flex items-center gap-1.5">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
@@ -578,6 +581,41 @@
         </div>
     </div>
 
+    <!-- Modal 8: Log Warehouse Shortage / Out of Stock -->
+    <div id="shortage-modal" class="hidden fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-sm overflow-hidden shadow-2xl">
+            <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between">
+                <h2 id="shortage-modal-title" class="text-base font-extrabold text-rose-300 truncate pr-2">Report Shortage / OOS</h2>
+                <button id="close-shortage-modal-btn" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <form id="shortage-form" class="p-5 space-y-4">
+                <input type="hidden" id="shortage-merged-key">
+                <input type="hidden" id="shortage-size-key">
+                <p id="shortage-requested-label" class="text-xs text-slate-300 font-semibold">Requested: 0</p>
+                <div>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Actual Qty Found in Warehouse (0 = Out of Stock)</label>
+                    <div class="flex items-center gap-2">
+                        <input id="shortage-found-input" type="number" min="0" required class="flex-1 px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm font-extrabold text-white focus:outline-none focus:border-rose-500">
+                        <button type="button" id="shortage-mark-zero-btn" class="px-3 py-2 rounded-xl bg-rose-950/80 hover:bg-rose-900 border border-rose-700/70 text-xs font-extrabold text-rose-300 shrink-0">
+                            0 (OOS)
+                        </button>
+                    </div>
+                </div>
+                <div class="pt-1 flex items-center justify-between gap-2">
+                    <button type="button" id="clear-shortage-flag-btn" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300">Clear Flag</button>
+                    <div class="flex items-center gap-2">
+                        <button type="button" id="cancel-shortage-modal-btn" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300">Cancel</button>
+                        <button type="submit" class="px-5 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-extrabold">Save Status</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- Toast Notification -->
     <div id="toast" class="fixed top-20 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-200 px-4 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold shadow-xl border border-emerald-400/30">
         Copied to clipboard!
@@ -608,6 +646,7 @@
         let shelfPhotos = {};
         let sectionFloors = {};
         let warehouseAisles = [];
+        let shortageFlags = {}; // key -> { requested, found, name, dept, aisle, zones }
         let picklistViewMode = 'aisle'; // 'aisle' | 'zone'
         let activeFloor = 'all'; // 'all' | 'RG' | 'First Floor'
         let activeDepartment = 'hardlines'; // 'hardlines' | 'clothing'
@@ -843,7 +882,7 @@
         // Save state to localStorage safely
         function saveState() {
             try {
-                localStorage.setItem(STORAGE_KEY, JSON.stringify({ catalog, shelfPhotos, sectionFloors, warehouseAisles }));
+                localStorage.setItem(STORAGE_KEY, JSON.stringify({ catalog, shelfPhotos, sectionFloors, warehouseAisles, shortageFlags }));
             } catch (e) {
                 console.error('Failed to save catalog:', e);
             }
@@ -863,6 +902,9 @@
                     }
                     if (parsed && Array.isArray(parsed.warehouseAisles)) {
                         warehouseAisles = parsed.warehouseAisles;
+                    }
+                    if (parsed && parsed.shortageFlags && typeof parsed.shortageFlags === 'object') {
+                        shortageFlags = parsed.shortageFlags;
                     }
                     if (parsed && Array.isArray(parsed.catalog) && parsed.catalog.length > 0) {
                         const migrated = [];
@@ -1234,6 +1276,8 @@
             const percentText = document.getElementById('status-percent-text');
             const progressBar = document.getElementById('progress-bar');
             const bottomInfo = document.getElementById('bottom-bar-info');
+            const shortagesBtn = document.getElementById('copy-shortages-btn');
+            const shortagesCountLabel = document.getElementById('shortages-count-label');
             const whatsappBtn = document.getElementById('whatsapp-share-btn');
             const primaryBtn = document.getElementById('primary-action-btn');
             const primaryText = document.getElementById('primary-action-text');
@@ -1303,6 +1347,7 @@
                 bottomInfo.innerHTML = activeLines > 0
                     ? `<span class="text-white font-bold">${activeLines}</span> line${activeLines === 1 ? '' : 's'} (${totalUnits} units) ready`
                     : `Tap <span class="text-slate-200 font-bold">+</span> to add items to your warehouse run`;
+                if (shortagesBtn) shortagesBtn.classList.add('hidden');
                 whatsappBtn.classList.add('hidden');
                 primaryBtn.className = 'px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-[0.99] text-slate-950 font-extrabold text-xs sm:text-sm transition-all shadow-lg shadow-amber-500/20 flex items-center gap-2 shrink-0';
                 primaryText.textContent = 'Generate Picklist';
@@ -1311,11 +1356,16 @@
                 picklistBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-emerald-500 text-slate-950 shadow-sm flex items-center gap-1.5';
                 secFilterLabel.textContent = 'Hide Picked';
                 const pct = activeLines > 0 ? Math.round((pickedLines / activeLines) * 100) : 0;
+                const activeShortageCount = Object.values(shortageFlags).filter(s => s && s.dept === activeDepartment).length;
                 summaryText.textContent = `${pickedLines} of ${activeLines} combined line${activeLines === 1 ? '' : 's'} picked`;
                 percentText.textContent = `${pct}% complete`;
                 progressBar.className = 'h-full bg-emerald-500 transition-all duration-300 rounded-full';
                 progressBar.style.width = `${pct}%`;
                 bottomInfo.innerHTML = `<span class="text-emerald-400 font-bold">${pickedLines}/${activeLines}</span> picked · <span class="text-slate-200 font-semibold">${totalUnits}</span> units`;
+                if (shortagesBtn && shortagesCountLabel) {
+                    shortagesCountLabel.textContent = activeShortageCount;
+                    shortagesBtn.classList.toggle('hidden', activeShortageCount === 0);
+                }
                 whatsappBtn.classList.remove('hidden');
                 primaryBtn.className = 'px-3.5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 active:scale-[0.99] text-slate-200 font-bold text-xs sm:text-sm transition-all flex items-center gap-1.5 shrink-0';
                 primaryText.textContent = 'Copy';
@@ -1580,6 +1630,38 @@
             copyPicklistToClipboard();
         }
 
+        // Build and copy Warehouse Shortages / OOS report back to the shop floor
+        function copyShortagesReport() {
+            const itemsList = Object.values(shortageFlags).filter(s => s && s.dept === activeDepartment);
+            if (itemsList.length === 0) {
+                showToast('No shortages or OOS items flagged!');
+                return;
+            }
+            const deptTitle = activeDepartment === 'clothing' ? 'CLOTHING' : 'HARD LINES';
+            const lines = [`=== WAREHOUSE SHORTAGES / OOS (${deptTitle}) ===`];
+            itemsList.forEach(s => {
+                const zonesTag = s.zones ? ` [${s.zones}]` : '';
+                if (Number(s.found) === 0) {
+                    lines.push(`OUT OF STOCK: ${s.name} (needed x${s.requested})${zonesTag}`);
+                } else {
+                    lines.push(`SHORT: ${s.name} — found x${s.found} of x${s.requested}${zonesTag}`);
+                }
+            });
+            const tempArea = document.createElement('textarea');
+            tempArea.value = lines.join('\n');
+            tempArea.style.position = 'fixed';
+            tempArea.style.opacity = '0';
+            document.body.appendChild(tempArea);
+            tempArea.select();
+            try {
+                document.execCommand('copy');
+                showToast(`Copied ${itemsList.length} shortage${itemsList.length === 1 ? '' : 's'} to clipboard!`);
+            } catch (err) {
+                showToast('Failed to copy shortages');
+            }
+            document.body.removeChild(tempArea);
+        }
+
         // Escape HTML entities safely
         function escapeHtml(str) {
             return String(str ?? '')
@@ -1778,29 +1860,48 @@
                         if (qty <= 0) return '';
                         const isPicked = !!entry.pickedSizes[sz];
                         if (secondaryFilterActive && isPicked) return '';
+                        const flagKey = `${entry.key}::${sz}`;
+                        const flag = shortageFlags[flagKey];
+                        const flagBadge = flag
+                            ? (Number(flag.found) === 0
+                                ? `<span class="px-1.5 py-0.5 rounded bg-rose-950 border border-rose-700/80 text-rose-300 text-[10px] font-black uppercase">OUT OF STOCK</span>`
+                                : `<span class="px-1.5 py-0.5 rounded bg-amber-950 border border-amber-700/80 text-amber-300 text-[10px] font-black">SHORT: ${flag.found}/${qty}</span>`)
+                            : '';
 
                         return `
-                            <label class="flex items-center justify-between gap-3 p-3 rounded-xl border cursor-pointer transition-all select-none ${
-                                isPicked
-                                    ? 'bg-slate-900/40 border-slate-800/60 opacity-60'
-                                    : 'bg-slate-900 border-slate-800 hover:border-slate-700'
+                            <div class="flex items-center justify-between gap-2.5 p-3 rounded-xl border transition-all select-none ${
+                                flag
+                                    ? 'bg-rose-950/20 border-rose-700/60'
+                                    : (isPicked
+                                        ? 'bg-slate-900/40 border-slate-800/60 opacity-60'
+                                        : 'bg-slate-900 border-slate-800 hover:border-slate-700')
                             }">
-                                <div class="flex items-center gap-3 min-w-0">
+                                <label class="flex items-center gap-3 min-w-0 flex-1 cursor-pointer">
                                     <input type="checkbox" data-merged-key="${escapeHtml(entry.key)}" data-size="${sz}" ${isPicked ? 'checked' : ''} class="merged-cloth-pick-cb w-5 h-5 rounded-lg border-slate-700 bg-slate-950 text-emerald-500 focus:ring-emerald-500 shrink-0">
                                     <div class="min-w-0">
-                                        <div class="text-xs sm:text-sm font-bold ${isPicked ? 'line-through text-slate-500' : 'text-white'} truncate">
+                                        <div class="text-xs sm:text-sm font-bold ${isPicked && !flag ? 'line-through text-slate-500' : 'text-white'} truncate">
                                             <span class="uppercase text-purple-300 mr-1">${labels[sz]}</span> ${escapeHtml(entry.name)}
                                         </div>
                                         ${zoneBreakdownText ? `<div class="text-[10px] font-semibold text-slate-400 mt-0.5">${escapeHtml(zoneBreakdownText)}</div>` : ''}
+                                        ${flagBadge ? `<div class="mt-1">${flagBadge}</div>` : ''}
                                         ${noteHtml}
                                     </div>
+                                </label>
+                                <div class="flex items-center gap-1.5 shrink-0">
+                                    <button type="button" data-shortage-key="${escapeHtml(entry.key)}" data-shortage-size="${sz}" title="Flag Short or Out of Stock" class="open-shortage-btn px-2 py-1 rounded-lg border text-[10px] font-extrabold transition-colors ${
+                                        flag
+                                            ? 'bg-rose-600 text-white border-rose-500'
+                                            : 'bg-slate-950 hover:bg-rose-950/70 text-rose-300 border-slate-800 hover:border-rose-700/70'
+                                    }">
+                                        ${flag ? (Number(flag.found) === 0 ? 'OOS' : `${flag.found}/${qty}`) : 'Short / OOS'}
+                                    </button>
+                                    <span class="px-2.5 py-1 rounded-lg text-xs font-black tabular-nums ${
+                                        isPicked && !flag
+                                            ? 'bg-slate-800 text-slate-500'
+                                            : 'bg-purple-500/20 text-purple-300 border border-purple-500/40'
+                                    }">x${qty}</span>
                                 </div>
-                                <span class="px-2.5 py-1 rounded-lg text-xs font-black tabular-nums shrink-0 ${
-                                    isPicked
-                                        ? 'bg-slate-800 text-slate-500'
-                                        : 'bg-purple-500/20 text-purple-300 border border-purple-500/40'
-                                }">x${qty}</span>
-                            </label>
+                            </div>
                         `;
                     }).join('');
                 } else {
@@ -1812,27 +1913,45 @@
                         boxQty: entry.boxQty
                     });
                     const subDetails = [formatted.secondary, zoneBreakdownText].filter(Boolean).join(' · ');
+                    const flag = shortageFlags[entry.key];
+                    const flagBadge = flag
+                        ? (Number(flag.found) === 0
+                            ? `<span class="px-1.5 py-0.5 rounded bg-rose-950 border border-rose-700/80 text-rose-300 text-[10px] font-black uppercase">OUT OF STOCK</span>`
+                            : `<span class="px-1.5 py-0.5 rounded bg-amber-950 border border-amber-700/80 text-amber-300 text-[10px] font-black">SHORT: ${flag.found} of ${entry.totalQty}</span>`)
+                        : '';
 
                     return `
-                        <label class="flex items-center justify-between gap-3 p-3 rounded-xl border cursor-pointer transition-all select-none ${
-                            isPicked
-                                ? 'bg-slate-900/40 border-slate-800/60 opacity-60'
-                                : 'bg-slate-900 border-slate-800 hover:border-slate-700'
+                        <div class="flex items-center justify-between gap-2.5 p-3 rounded-xl border transition-all select-none ${
+                            flag
+                                ? 'bg-rose-950/20 border-rose-700/60'
+                                : (isPicked
+                                    ? 'bg-slate-900/40 border-slate-800/60 opacity-60'
+                                    : 'bg-slate-900 border-slate-800 hover:border-slate-700')
                         }">
-                            <div class="flex items-center gap-3 min-w-0">
+                            <label class="flex items-center gap-3 min-w-0 flex-1 cursor-pointer">
                                 <input type="checkbox" data-merged-key="${escapeHtml(entry.key)}" ${isPicked ? 'checked' : ''} class="merged-pick-cb w-5 h-5 rounded-lg border-slate-700 bg-slate-950 text-emerald-500 focus:ring-emerald-500 shrink-0">
                                 <div class="min-w-0">
-                                    <div class="text-xs sm:text-sm font-bold ${isPicked ? 'line-through text-slate-500' : 'text-white'} truncate">${escapeHtml(entry.name)}</div>
+                                    <div class="text-xs sm:text-sm font-bold ${isPicked && !flag ? 'line-through text-slate-500' : 'text-white'} truncate">${escapeHtml(entry.name)}</div>
                                     ${subDetails ? `<div class="text-[10px] font-semibold text-slate-400 mt-0.5">${escapeHtml(subDetails)}</div>` : ''}
+                                    ${flagBadge ? `<div class="mt-1">${flagBadge}</div>` : ''}
                                     ${noteHtml}
                                 </div>
+                            </label>
+                            <div class="flex items-center gap-1.5 shrink-0">
+                                <button type="button" data-shortage-key="${escapeHtml(entry.key)}" data-shortage-size="" title="Flag Short or Out of Stock" class="open-shortage-btn px-2 py-1 rounded-lg border text-[10px] font-extrabold transition-colors ${
+                                    flag
+                                        ? 'bg-rose-600 text-white border-rose-500'
+                                        : 'bg-slate-950 hover:bg-rose-950/70 text-rose-300 border-slate-800 hover:border-rose-700/70'
+                                }">
+                                    ${flag ? (Number(flag.found) === 0 ? 'OOS' : `${flag.found}/${entry.totalQty}`) : 'Short / OOS'}
+                                </button>
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-black tabular-nums ${
+                                    isPicked && !flag
+                                        ? 'bg-slate-800 text-slate-500'
+                                        : 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                                }">${escapeHtml(formatted.primary)}</span>
                             </div>
-                            <span class="px-2.5 py-1 rounded-lg text-xs font-black tabular-nums shrink-0 ${
-                                isPicked
-                                    ? 'bg-slate-800 text-slate-500'
-                                    : 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
-                            }">${escapeHtml(formatted.primary)}</span>
-                        </label>
+                        </div>
                     `;
                 }
             };
@@ -2157,6 +2276,13 @@
                                     : `+ Set ${singular} / Box`;
 
                                 if (appMode === 'setup') {
+                                    const quickInnerBtn = item.innerQty > 0
+                                        ? `<button type="button" data-add-step-id="${item.id}" data-add-step="${item.innerQty}" class="quick-step-btn px-2 py-1 rounded-lg bg-sky-950/80 hover:bg-sky-900 border border-sky-700/70 text-sky-300 text-[10px] font-extrabold tabular-nums">+${escapeHtml(singular)} (${item.innerQty})</button>`
+                                        : '';
+                                    const quickBoxBtn = item.boxQty > 0
+                                        ? `<button type="button" data-add-step-id="${item.id}" data-add-step="${item.boxQty}" class="quick-step-btn px-2 py-1 rounded-lg bg-indigo-950/80 hover:bg-indigo-900 border border-indigo-700/70 text-indigo-300 text-[10px] font-extrabold tabular-nums">+Box (${item.boxQty})</button>`
+                                        : '';
+
                                     rowsHtml += `
                                         <div class="flex items-center justify-between gap-2.5 p-2.5 sm:p-3 rounded-xl border transition-all ${
                                             qty > 0 ? 'bg-slate-900 border-amber-500/50' : 'bg-slate-900/60 border-slate-800/80'
@@ -2168,13 +2294,17 @@
                                                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
                                                     </button>
                                                 </div>
-                                                <button type="button" data-pack-id="${item.id}" class="open-pack-btn mt-1 inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold transition-colors ${
-                                                    (item.innerQty > 0 || item.boxQty > 0)
-                                                        ? 'bg-sky-950/70 text-sky-300 border border-sky-800/60 hover:bg-sky-900/70'
-                                                        : 'bg-slate-800/80 text-slate-400 hover:text-slate-200'
-                                                }">
-                                                    ${escapeHtml(packSummary)}
-                                                </button>
+                                                <div class="flex flex-wrap items-center gap-1.5 mt-1">
+                                                    <button type="button" data-pack-id="${item.id}" class="open-pack-btn inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold transition-colors ${
+                                                        (item.innerQty > 0 || item.boxQty > 0)
+                                                            ? 'bg-sky-950/70 text-sky-300 border border-sky-800/60 hover:bg-sky-900/70'
+                                                            : 'bg-slate-800/80 text-slate-400 hover:text-slate-200'
+                                                    }">
+                                                        ${escapeHtml(packSummary)}
+                                                    </button>
+                                                    ${quickInnerBtn}
+                                                    ${quickBoxBtn}
+                                                </div>
                                             </div>
                                             <div class="flex items-center gap-1.5 shrink-0">
                                                 <button type="button" data-dec-id="${item.id}" class="dec-qty-btn w-8 h-8 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-extrabold text-sm flex items-center justify-center">-</button>
@@ -2369,6 +2499,41 @@
                     renderTabs();
                     updateHeaderAndBars();
                     renderMain();
+                });
+            });
+
+            container.querySelectorAll('.quick-step-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = catalog.find(i => i.id === btn.dataset.addStepId);
+                    const step = parseInt(btn.dataset.addStep, 10) || 0;
+                    if (!item || step <= 0) return;
+                    item.qty = (Number(item.qty) || 0) + step;
+                    saveState();
+                    renderTabs();
+                    updateHeaderAndBars();
+                    renderMain();
+                });
+            });
+
+            container.querySelectorAll('.open-shortage-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const mKey = btn.dataset.shortageKey;
+                    const sz = btn.dataset.shortageSize || '';
+                    const entry = getMergedPicklistEntries().find(en => en.key === mKey);
+                    if (!entry) return;
+                    const requested = sz ? Number((entry.sizes && entry.sizes[sz]) || 0) : entry.totalQty;
+                    const labelSuffix = sz ? ` (${sz.toUpperCase()})` : '';
+                    const flagKey = sz ? `${mKey}::${sz}` : mKey;
+                    const existingFlag = shortageFlags[flagKey];
+
+                    document.getElementById('shortage-merged-key').value = mKey;
+                    document.getElementById('shortage-size-key').value = sz;
+                    document.getElementById('shortage-modal-title').textContent = `${entry.name}${labelSuffix}`;
+                    document.getElementById('shortage-requested-label').textContent = `Requested by shop floor: x${requested}`;
+                    document.getElementById('shortage-found-input').value = existingFlag ? existingFlag.found : 0;
+                    document.getElementById('shortage-modal').classList.remove('hidden');
                 });
             });
 
@@ -2941,6 +3106,10 @@
             });
 
             // Primary Bottom Action Button & Direct Share to Teams Button
+            document.getElementById('copy-shortages-btn').addEventListener('click', () => {
+                copyShortagesReport();
+            });
+
             document.getElementById('whatsapp-share-btn').addEventListener('click', () => {
                 sharePicklistToTeams();
             });
@@ -2988,12 +3157,70 @@
                         item.note = '';
                     }
                 });
+                shortageFlags = {};
                 saveState();
                 renderTabs();
                 updateHeaderAndBars();
                 renderMain();
                 document.getElementById('confirm-modal').classList.add('hidden');
                 showToast('All quantities cleared');
+            });
+
+            // Shortage / OOS Modal Handlers
+            document.getElementById('close-shortage-modal-btn').addEventListener('click', () => {
+                document.getElementById('shortage-modal').classList.add('hidden');
+            });
+            document.getElementById('cancel-shortage-modal-btn').addEventListener('click', () => {
+                document.getElementById('shortage-modal').classList.add('hidden');
+            });
+            document.getElementById('shortage-mark-zero-btn').addEventListener('click', () => {
+                document.getElementById('shortage-found-input').value = 0;
+            });
+            document.getElementById('clear-shortage-flag-btn').addEventListener('click', () => {
+                const mKey = document.getElementById('shortage-merged-key').value;
+                const sz = document.getElementById('shortage-size-key').value;
+                const flagKey = sz ? `${mKey}::${sz}` : mKey;
+                delete shortageFlags[flagKey];
+                saveState();
+                updateHeaderAndBars();
+                renderMain();
+                document.getElementById('shortage-modal').classList.add('hidden');
+                showToast('Shortage flag cleared');
+            });
+            document.getElementById('shortage-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const mKey = document.getElementById('shortage-merged-key').value;
+                const sz = document.getElementById('shortage-size-key').value;
+                const found = Math.max(0, parseInt(document.getElementById('shortage-found-input').value, 10) || 0);
+                const entry = getMergedPicklistEntries().find(en => en.key === mKey);
+                if (entry) {
+                    const requested = sz ? Number((entry.sizes && entry.sizes[sz]) || 0) : entry.totalQty;
+                    const flagKey = sz ? `${mKey}::${sz}` : mKey;
+                    const displayName = sz ? `${sz.toUpperCase()} ${entry.name}` : entry.name;
+                    const zonesStr = [...new Set(entry.zoneParts.map(p => p.zone))].join(', ');
+                    shortageFlags[flagKey] = {
+                        requested,
+                        found,
+                        name: displayName,
+                        dept: entry.department,
+                        aisle: entry.aisle || '',
+                        zones: zonesStr
+                    };
+                    // Also mark the line handled on the warehouse checklist so picker knows they checked the bay
+                    if (sz) {
+                        entry.sourceItems.forEach(src => {
+                            if (!src.pickedSizes) src.pickedSizes = createEmptyPickedSizesMap(getItemSizeConfig(src).sizeType);
+                            src.pickedSizes[sz] = true;
+                        });
+                    } else {
+                        entry.sourceItems.forEach(src => { src.picked = true; });
+                    }
+                    saveState();
+                    updateHeaderAndBars();
+                    renderMain();
+                    showToast(found === 0 ? `Flagged ${displayName} as Out of Stock` : `Logged ${found} of ${requested} found`);
+                }
+                document.getElementById('shortage-modal').classList.add('hidden');
             });
 
             // Add Item Modal
