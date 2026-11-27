@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Floor Live Sender (PoC) — Stock Picker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 pb-28 selection:bg-sky-500/30 selection:text-sky-200">
+
+    <!-- Sticky Top Header & Live Sync Controls -->
+    <header class="sticky top-0 z-30 bg-slate-950/95 backdrop-blur-md border-b border-sky-900/60 shadow-lg">
+        <div class="max-w-4xl mx-auto px-4 py-3.5 space-y-3">
+            
+            <!-- Title Row, Live Room Pill & Mode Switcher -->
+            <div class="flex flex-wrap items-center justify-between gap-2">
+                <div class="flex flex-wrap items-center gap-2">
+                    <h1 class="text-lg sm:text-xl font-extrabold tracking-tight text-white flex items-center gap-2">
+                        <span class="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-sky-500/20 text-sky-400 border border-sky-500/40">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </span>
+                        Shop Floor Live
+                    </h1>
+
+                    <!-- Live Room Badge -->
+                    <button id="open-live-room-pill" type="button" title="Change Warehouse Screen Room Code" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-sky-950/90 hover:bg-sky-900 border border-sky-700/70 text-[11px] font-extrabold text-sky-300 transition-colors">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span id="header-room-badge">HP-STUDIO-01</span>
+                    </button>
+
+                    <!-- Department Switcher: Hard Lines vs Clothing -->
+                    <div class="inline-flex p-0.5 rounded-xl bg-slate-900 border border-slate-800">
+                        <button id="dept-hardlines-btn" type="button" class="px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all bg-sky-500 text-slate-950 shadow-sm flex items-center gap-1">
+                            <span>Hard Lines</span>
+                            <span id="dept-hardlines-badge" class="hidden px-1.5 py-0.2 rounded bg-slate-950/20 text-[10px] font-black tabular-nums">0</span>
+                        </button>
+                        <button id="dept-clothing-btn" type="button" class="px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all text-slate-400 hover:text-white flex items-center gap-1">
+                            <span>Clothing</span>
+                            <span id="dept-clothing-badge" class="hidden px-1.5 py-0.2 rounded bg-purple-500/20 text-purple-300 text-[10px] font-black tabular-nums">0</span>
+                        </button>
+                    </div>
+
+                    <!-- Floor Filter: All Floors vs RG vs First Floor -->
+                    <div class="inline-flex p-0.5 rounded-xl bg-slate-900 border border-slate-800">
+                        <button type="button" data-floor-filter="all" class="floor-filter-btn px-2 py-1 rounded-lg text-xs font-extrabold transition-all bg-indigo-500 text-white shadow-sm">
+                            All Floors
+                        </button>
+                        <button type="button" data-floor-filter="RG" class="floor-filter-btn px-2 py-1 rounded-lg text-xs font-extrabold transition-all text-slate-400 hover:text-white">
+                            RG
+                        </button>
+                        <button type="button" data-floor-filter="First Floor" class="floor-filter-btn px-2 py-1 rounded-lg text-xs font-extrabold transition-all text-slate-400 hover:text-white">
+                            First Floor
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 2-Step Mode Toggle + Quick Actions -->
+                <div class="flex items-center gap-2">
+                    <div class="inline-flex p-1 rounded-xl bg-slate-900 border border-slate-800">
+                        <button id="mode-setup-btn" type="button" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-amber-500 text-slate-950 shadow-sm">
+                            1. Set Qty
+                        </button>
+                        <button id="mode-picklist-btn" type="button" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white flex items-center gap-1.5">
+                            <span>2. Review &amp; Send</span>
+                            <span id="picklist-mode-badge" class="px-1.5 py-0.2 rounded-md bg-slate-800 text-slate-300 text-[11px] tabular-nums">0</span>
+                        </button>
+                    </div>
+
+                    <button id="open-whatsapp-modal-btn" type="button" title="Paste Team Picklist" class="px-3 py-2 rounded-xl bg-indigo-950/80 hover:bg-indigo-900/80 border border-indigo-700/70 text-xs font-bold text-indigo-300 transition-colors flex items-center gap-1">
+                        <span>Paste List</span>
+                    </button>
+
+                    <button id="open-temp-json-btn" type="button" title="Temporarily Load or Paste catalog.json" class="px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-amber-500/50 text-xs font-bold text-amber-300 transition-colors flex items-center gap-1">
+                        <span>+ JSON</span>
+                    </button>
+
+                    <!-- Overflow Menu -->
+                    <div class="relative">
+                        <button id="open-more-menu-btn" type="button" title="Live & Catalog Tools" class="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-slate-300 hover:text-white transition-colors flex items-center justify-center">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6h.01M12 12h.01M12 18h.01"></path>
+                            </svg>
+                        </button>
+                        <div id="more-menu-dropdown" class="hidden absolute right-0 mt-2 w-60 rounded-2xl bg-slate-900 border border-slate-700/90 shadow-2xl py-1.5 z-50">
+                            <button id="menu-live-room-btn" type="button" class="w-full px-4 py-2.5 text-left text-xs font-bold text-sky-300 hover:bg-slate-800 flex items-center gap-2.5">
+                                <span>Warehouse Screen Room</span>
+                            </button>
+                            <a href="./warehouse_board.html" target="_blank" class="w-full px-4 py-2.5 text-left text-xs font-bold text-amber-300 hover:bg-slate-800 flex items-center gap-2.5">
+                                <span>Open Warehouse Monitor ↗</span>
+                            </a>
+                            <button id="menu-pull-git-btn" type="button" class="w-full px-4 py-2.5 text-left text-xs font-bold text-emerald-300 hover:bg-slate-800 flex items-center gap-2.5">
+                                <span>Refresh catalog.json</span>
+                            </button>
+                            <button id="menu-temp-json-btn" type="button" class="w-full px-4 py-2.5 text-left text-xs font-bold text-amber-300 hover:bg-slate-800 flex items-center gap-2.5">
+                                <span>Load / Paste JSON</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Store Zone Filter Bar -->
+            <div id="category-tabs" class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-0.5"></div>
+
+            <!-- Search, Filter & Reset Controls -->
+            <div class="flex items-center gap-2">
+                <div class="relative flex-1">
+                    <svg class="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <input id="search-input" type="search" placeholder="Search items, houses, or zones..." class="w-full pl-9 pr-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-500">
+                </div>
+                <button id="toggle-secondary-filter" type="button" class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs font-bold text-slate-300 hover:border-slate-700 transition-colors shrink-0">
+                    <span id="secondary-filter-label">Selected Only</span>
+                </button>
+                <button id="clear-all-btn" type="button" class="px-2.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs font-bold text-rose-400 hover:bg-rose-950/40 transition-colors shrink-0">
+                    Reset
+                </button>
+            </div>
+
+            <!-- Live Status & Progress Bar -->
+            <div class="space-y-1">
+                <div class="flex items-center justify-between text-[11px] font-semibold text-slate-400">
+                    <span id="status-summary-text">0 product lines queued</span>
+                    <span id="status-percent-text" class="text-sky-300 tabular-nums">Target: HP-STUDIO-01</span>
+                </div>
+                <div class="w-full h-1.5 rounded-full bg-slate-900 overflow-hidden">
+                    <div id="progress-bar" class="h-full bg-sky-500 transition-all duration-300 rounded-full" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto px-4 pt-4">
+        <div id="checklist-container" class="space-y-4"></div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="hidden text-center py-14 px-4 rounded-2xl bg-slate-900/50 border border-slate-800/80 mt-4">
+            <h3 id="empty-state-title" class="text-base font-bold text-slate-200">No matching items</h3>
+            <p id="empty-state-desc" class="text-xs text-slate-400 mt-1 max-w-sm mx-auto">Add quantities in Step 1 or paste a Teams list to push to the warehouse screen.</p>
+        </div>
+    </main>
+
+    <!-- Sticky Bottom Action Bar -->
+    <div id="bottom-action-bar" class="fixed bottom-0 inset-x-0 z-30 bg-slate-950/95 backdrop-blur-md border-t border-sky-900/60 px-4 py-3 shadow-2xl">
+        <div class="max-w-4xl mx-auto flex items-center justify-between gap-3">
+            <div id="bottom-bar-info" class="text-xs text-slate-400 font-medium">
+                Select quantities, then push straight to the warehouse screen
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+                <button id="send-live-screen-btn" type="button" class="px-4 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 active:scale-[0.99] text-slate-950 font-black text-xs sm:text-sm transition-all shadow-lg shadow-sky-500/25 flex items-center gap-1.5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                    <span>Send to Screen</span>
+                </button>
+                <button id="primary-action-btn" type="button" class="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-[0.99] text-slate-950 font-extrabold text-xs sm:text-sm transition-all flex items-center gap-1.5 shrink-0">
+                    <span id="primary-action-text">Review Queue</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Paste Team Picklist -->
+    <div id="whatsapp-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl">
+            <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between">
+                <h2 class="text-base font-extrabold text-indigo-400">Paste Team Picklist</h2>
+                <button id="close-whatsapp-modal-btn" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">✕</button>
+            </div>
+            <form id="whatsapp-parse-form" class="p-5 space-y-4">
+                <textarea id="whatsapp-paste-input" rows="6" required placeholder="DIAGON ALLEY:&#10;DA SNOWGLOBE X 17&#10;X20 snitch keyrings" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500"></textarea>
+                <label class="flex items-center gap-2.5 cursor-pointer select-none">
+                    <input type="checkbox" id="whatsapp-clear-existing" checked class="w-4 h-4 rounded border-slate-700 bg-slate-950 text-indigo-500">
+                    <span class="text-xs text-slate-300">Clear previous quantities before importing</span>
+                </label>
+                <div class="flex justify-end gap-2">
+                    <button type="button" id="cancel-whatsapp-modal-btn" class="px-4 py-2 rounded-xl bg-slate-800 text-xs font-bold text-slate-300">Cancel</button>
+                    <button type="submit" class="px-5 py-2 rounded-xl bg-indigo-500 hover:bg-indigo-400 text-white text-xs font-extrabold">Load Queue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Live Warehouse Screen Room Setup -->
+    <div id="live-room-modal" class="hidden fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-sm overflow-hidden shadow-2xl">
+            <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between">
+                <h2 class="text-base font-extrabold text-sky-300">Warehouse Live Screen Room</h2>
+                <button id="close-live-room-btn" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">✕</button>
+            </div>
+            <form id="live-room-form" class="p-5 space-y-4">
+                <div>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Room Code</label>
+                    <input id="live-room-code-input" type="text" required placeholder="HP-STUDIO-01" class="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm font-black uppercase tracking-wider text-amber-300 focus:outline-none focus:border-sky-500">
+                    <p class="text-[11px] text-slate-400 mt-1">Matches the Room Code on <code class="text-sky-300">warehouse_board.html</code>.</p>
+                </div>
+                <label class="flex items-center gap-2.5 cursor-pointer select-none">
+                    <input type="checkbox" id="live-room-replace-cb" class="w-4 h-4 rounded border-slate-700 bg-slate-950 text-sky-500">
+                    <span class="text-xs text-slate-300">Replace existing queue on warehouse screen when sending</span>
+                </label>
+                <div class="flex justify-end gap-2">
+                    <button type="button" id="cancel-live-room-btn" class="px-4 py-2 rounded-xl bg-slate-800 text-xs font-bold text-slate-300">Cancel</button>
+                    <button type="submit" class="px-5 py-2 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-extrabold">Save Room</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Temp Load / Paste Catalog JSON -->
+    <div id="temp-json-modal" class="hidden fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md overflow-hidden shadow-2xl">
+            <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between">
+                <h2 class="text-base font-extrabold text-amber-300">Load / Paste Catalog JSON</h2>
+                <button id="close-temp-json-btn" type="button" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">✕</button>
+            </div>
+            <div class="p-5 space-y-4">
+                <div>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">Choose catalog.json File</label>
+                    <label class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold text-amber-300 cursor-pointer flex items-center justify-center gap-1.5">
+                        <span>Browse .json File</span>
+                        <input type="file" id="temp-json-file-input" accept=".json,application/json" class="hidden">
+                    </label>
+                </div>
+                <div>
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Or Paste JSON Contents</label>
+                    <textarea id="temp-json-textarea" rows="6" placeholder='{"version": 3, "catalog": [...]}' class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-amber-500 font-mono"></textarea>
+                </div>
+                <div class="flex justify-end gap-2">
+                    <button type="button" id="cancel-temp-json-btn" class="px-4 py-2 rounded-xl bg-slate-800 text-xs font-bold text-slate-300">Cancel</button>
+                    <button type="button" id="apply-temp-json-btn" class="px-5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-extrabold">Apply JSON</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Confirm Reset -->
+    <div id="confirm-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-sm p-5 space-y-4 shadow-2xl">
+            <h2 class="text-base font-extrabold text-white">Reset All Quantities?</h2>
+            <p class="text-xs text-slate-400">Clears all quantities on this phone so you can build the next wave.</p>
+            <div class="flex justify-end gap-2">
+                <button type="button" id="confirm-cancel-btn" class="px-4 py-2 rounded-xl bg-slate-800 text-xs font-bold text-slate-300">Cancel</button>
+                <button type="button" id="confirm-ok-btn" class="px-4 py-2 rounded-xl bg-rose-600 text-white text-xs font-extrabold">Clear All</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed top-20 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-200 px-4 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold shadow-xl border border-emerald-400/30">
+        Sent!
+    </div>
+
+    <script>
+        const STORAGE_KEY = 'hp_shop_floor_live_poc_v1';
+        const LIVE_ROOM_STORAGE_KEY = 'hp_warehouse_live_room_v1';
+
+        const SIZE_SETS = {
+            adult: { keys: ['xs', 's', 'm', 'l', 'xl', 'xxl'], labels: { xs: 'XS', s: 'S', m: 'M', l: 'L', xl: 'XL', xxl: 'XXL' } },
+            robes: { keys: ['xxxxs', 'xxxs', 'xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl'], labels: { xxxxs: 'XXXXS', xxxs: 'XXXS', xxs: 'XXS', xs: 'XS', s: 'S', m: 'M', l: 'L', xl: 'XL', xxl: 'XXL' } },
+            kids: { keys: ['3-4y', '5-6y', '7-8y', '9-10y', '11-12y', '13-14y'], labels: { '3-4y': '3-4Y', '5-6y': '5-6Y', '7-8y': '7-8Y', '9-10y': '9-10Y', '11-12y': '11-12Y', '13-14y': '13-14Y' } },
+            baby: { keys: ['0-3m', '3-6m', '6-12m', '12-18m', '18-24m'], labels: { '0-3m': '0-3M', '3-6m': '3-6M', '6-12m': '6-12M', '12-18m': '12-18M', '18-24m': '18-24M' } }
+        };
+
+        const STORE_SECTIONS = [
+            { id: 'ollivanders', label: 'Ollivanders', defaultFloor: 'RG' },
+            { id: 'knight-bus', label: 'Knight bus', defaultFloor: 'RG' },
+            { id: 'honeydukes', label: 'Honeydukes', defaultFloor: 'RG' },
+            { id: 'queue-line', label: 'Queue Line', defaultFloor: 'RG' },
+            { id: 'gringotts', label: 'Gringotts', defaultFloor: 'RG' },
+            { id: 'diagon-alley', label: 'Diagon Alley', defaultFloor: 'RG' },
+            { id: 'minalima', label: 'MinaLima', defaultFloor: 'First Floor' },
+            { id: 'scrib', label: 'Scrib', defaultFloor: 'First Floor' },
+            { id: 'robes', label: 'Robes', defaultFloor: 'First Floor' },
+            { id: 'bear-bunker', label: 'Bear Bunker', defaultFloor: 'First Floor' },
+            { id: 'qudditch', label: 'Qudditch', defaultFloor: 'First Floor' },
+            { id: 'toys', label: 'Toys', defaultFloor: 'First Floor' }
+        ];
+
+        const SEED_CATALOG = [
+            { id: "item-1", department: "hardlines", sectionId: "qudditch", group: "Gryffindor", aisle: "Drinkware", name: "PS Mug", innerQty: 6, boxQty: 24 },
+            { id: "item-2", department: "hardlines", sectionId: "qudditch", group: "Slytherin", aisle: "Drinkware", name: "PS Mug", innerQty: 6, boxQty: 24 },
+            { id: "item-3", department: "hardlines", sectionId: "qudditch", group: "Ravenclaw", aisle: "Drinkware", name: "PS Mug", innerQty: 6, boxQty: 24 },
+            { id: "item-4", department: "hardlines", sectionId: "qudditch", group: "Hufflepuff", aisle: "Drinkware", name: "PS Mug", innerQty: 6, boxQty: 24 },
+            { id: "item-5", department: "hardlines", sectionId: "diagon-alley", group: "Ornaments", aisle: "Ornaments", name: "Diagon Alley Christmas Snow Globe", innerQty: 0, boxQty: 12 },
+            { id: "item-6", department: "hardlines", sectionId: "diagon-alley", group: "Ornaments", aisle: "Ornaments", name: "Hedwig Glass Ornament", innerQty: 6, boxQty: 24 },
+            { id: "item-7", department: "hardlines", sectionId: "honeydukes", group: "General", aisle: "Confectionary", name: "Chocolate Frog", innerQty: 12, boxQty: 24 },
+            { id: "item-8", department: "hardlines", sectionId: "ollivanders", group: "Wands", aisle: "Wands", name: "Elder Wand Interactive", innerQty: 0, boxQty: 0 },
+            { id: "item-9", department: "hardlines", sectionId: "toys", group: "Lego", aisle: "Toys", name: "Dobby the Free Elf LEGO®", innerQty: 0, boxQty: 0 },
+            { id: "cloth-1", department: "clothing", sizeType: "adult", sectionId: "qudditch", group: "Gryffindor", aisle: "", name: "Sherpa Hoodie" },
+            { id: "cloth-2", department: "clothing", sizeType: "adult", sectionId: "robes", group: "Ravenclaw", aisle: "", name: "Knitted School Cardigan" }
+        ];
+
+        let catalog = [];
+        let sectionFloors = {};
+        let liveRoomCode = 'HP-STUDIO-01';
+        let liveReplaceBoardOnSend = false;
+        let activeDepartment = 'hardlines';
+        let activeFloor = 'all';
+        let activeSection = 'all';
+        let appMode = 'setup';
+        let secondaryFilterActive = false;
+        let searchQuery = '';
+        let expandedSections = {};
+        let expandedGroups = {};
+
+        function escapeHtml(str) {
+            return String(str ?? '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        let toastTimer = null;
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            if (!toast) return;
+            toast.textContent = msg;
+            toast.classList.remove('opacity-0');
+            toast.classList.add('opacity-100');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0');
+            }, 2400);
+        }
+
+        function getSectionFloor(secId) {
+            if (sectionFloors[secId] === 'RG' || sectionFloors[secId] === 'First Floor') return sectionFloors[secId];
+            const found = STORE_SECTIONS.find(s => s.id === secId);
+            return found ? found.defaultFloor : 'RG';
+        }
+
+        function getVisibleStoreSections() {
+            if (activeFloor === 'all') return STORE_SECTIONS;
+            return STORE_SECTIONS.filter(sec => getSectionFloor(sec.id) === activeFloor);
+        }
+
+        function inferSizeTypeFromText(text) {
+            const t = String(text || '').toLowerCase();
+            if (/\b(robes?|xxxxs|xxxs|xxs)\b/.test(t)) return 'robes';
+            if (/\b(baby|infant|0-3|3-6|6-12|12-18|18-24)\b/.test(t)) return 'baby';
+            if (/\b(kids?|child|youth|3-4|5-6|7-8|9-10|11-12|13-14)\b/.test(t)) return 'kids';
+            return 'adult';
+        }
+
+        function getItemSizeConfig(item) {
+            const st = (item && item.sizeType && SIZE_SETS[item.sizeType]) ? item.sizeType : inferSizeTypeFromText(item && item.name);
+            return { sizeType: st, ...SIZE_SETS[st] };
+        }
+
+        function createEmptySizesMap(sizeType = 'adult') {
+            const cfg = SIZE_SETS[sizeType] || SIZE_SETS.adult;
+            const map = {};
+            cfg.keys.forEach(k => { map[k] = 0; });
+            return map;
+        }
+
+        function getItemTotalQty(item) {
+            if (item.department === 'clothing') {
+                const s = item.sizes || {};
+                return getItemSizeConfig(item).keys.reduce((sum, sz) => sum + (Number(s[sz]) || 0), 0);
+            }
+            return Number(item.qty) || 0;
+        }
+
+        function getItemActiveLinesCount(item) {
+            if (item.department === 'clothing') {
+                const s = item.sizes || {};
+                return getItemSizeConfig(item).keys.filter(sz => (Number(s[sz]) || 0) > 0).length;
+            }
+            return (Number(item.qty) || 0) > 0 ? 1 : 0;
+        }
+
+        function saveState() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify({ catalog, sectionFloors }));
+            } catch (e) {}
+        }
+
+        function applyImportedCatalog(data) {
+            if (data && data.sectionFloors && typeof data.sectionFloors === 'object') {
+                sectionFloors = { ...sectionFloors, ...data.sectionFloors };
+            }
+            const incoming = Array.isArray(data) ? data : (data && Array.isArray(data.catalog) ? data.catalog : null);
+            if (!incoming || incoming.length === 0) return;
+
+            catalog = incoming.map((raw, i) => {
+                const dept = raw.department === 'clothing' ? 'clothing' : 'hardlines';
+                const secId = raw.sectionId === 'quidditch' ? 'qudditch' : (raw.sectionId || 'qudditch');
+                if (dept === 'clothing') {
+                    const sizeType = (raw.sizeType && SIZE_SETS[raw.sizeType]) ? raw.sizeType : inferSizeTypeFromText(raw.name);
+                    return {
+                        id: raw.id || `cloth-${i}`,
+                        department: 'clothing',
+                        sizeType,
+                        sectionId: secId,
+                        group: raw.group || 'General',
+                        aisle: raw.aisle || '',
+                        sortOrder: raw.sortOrder,
+                        name: String(raw.name || 'Unnamed Garment'),
+                        sizes: { ...createEmptySizesMap(sizeType), ...(raw.sizes || {}) }
+                    };
+                }
+                return {
+                    id: raw.id || `item-${i}`,
+                    department: 'hardlines',
+                    sectionId: secId,
+                    group: raw.group || 'General',
+                    aisle: raw.aisle || '',
+                    sortOrder: raw.sortOrder,
+                    name: String(raw.name || 'Unnamed Item'),
+                    qty: Number(raw.qty) || 0,
+                    note: raw.note || '',
+                    innerQty: Number(raw.innerQty) || 0,
+                    boxQty: Number(raw.boxQty) || 0
+                };
+            });
+            saveState();
+            renderTabs();
+            updateHeaderAndBars();
+            renderMain();
+        }
+
+        function loadState() {
+            try {
+                const savedRoom = JSON.parse(localStorage.getItem(LIVE_ROOM_STORAGE_KEY) || 'null');
+                if (savedRoom && savedRoom.roomCode) liveRoomCode = savedRoom.roomCode;
+                if (savedRoom && typeof savedRoom.replaceBoard === 'boolean') liveReplaceBoardOnSend = savedRoom.replaceBoard;
+            } catch (e) {}
+
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY);
+                if (raw) {
+                    const parsed = JSON.parse(raw);
+                    if (parsed && Array.isArray(parsed.catalog) && parsed.catalog.length > 0) {
+                        applyImportedCatalog(parsed);
+                        return true;
+                    }
+                }
+            } catch (e) {}
+            applyImportedCatalog({ catalog: SEED_CATALOG });
+            return false;
+        }
+
+        async function fetchGitCatalogIfAvailable(manualTrigger = false) {
+            try {
+                const res = await fetch(`./catalog.json?t=${Date.now()}`, { cache: 'no-store' });
+                if (!res.ok) {
+                    if (manualTrigger) showToast('No catalog.json in repo');
+                    return;
+                }
+                const data = await res.json();
+                applyImportedCatalog(data);
+                if (manualTrigger) showToast('Refreshed catalog.json!');
+            } catch (e) {
+                if (manualTrigger) showToast('Could not fetch catalog.json');
+            }
+        }
+
+        function getWarehouseDisplayName(item) {
+            const grp = String(item.group || '').trim();
+            const name = String(item.name || '').trim();
+            if (['Gryffindor', 'Slytherin', 'Ravenclaw', 'Hufflepuff'].includes(grp)) {
+                if (!name.toLowerCase().includes(grp.toLowerCase())) return `${grp} ${name}`;
+            }
+            if (grp.toLowerCase() === 'lego' && !/\blego\b/i.test(name)) return `${name} LEGO`;
+            return name;
+        }
+
+        function getSubUnitTerms(itemName) {
+            return /\bmug\b/i.test(String(itemName || ''))
+                ? { singular: 'Inner', plural: 'Inners' }
+                : { singular: 'Pack', plural: 'Packs' };
+        }
+
+        function formatAutomaticContainerQty(item) {
+            const qty = Math.max(0, Number(item.qty) || 0);
+            const boxQty = Math.max(0, Number(item.boxQty) || 0);
+            const innerQty = Math.max(0, Number(item.innerQty) || 0);
+            const { singular, plural } = getSubUnitTerms(item.name);
+
+            let remaining = qty;
+            const parts = [];
+            if (boxQty > 0 && remaining >= boxQty) {
+                const boxes = Math.floor(remaining / boxQty);
+                remaining %= boxQty;
+                parts.push(`${boxes} ${boxes === 1 ? 'Box' : 'Boxes'}`);
+            }
+            if (innerQty > 0 && remaining >= innerQty) {
+                const inners = Math.floor(remaining / innerQty);
+                remaining %= innerQty;
+                parts.push(`${inners} ${inners === 1 ? singular : plural}`);
+            }
+            const hasBreakdown = parts.length > 0;
+            if (remaining > 0) parts.push(`x${remaining}`);
+            return {
+                primary: parts.length > 0 ? parts.join(' + ') : `x${qty}`,
+                secondary: hasBreakdown ? `${qty} units total` : '',
+                hasBreakdown
+            };
+        }
+
+        function getMergedQueueEntries() {
+            const secLabelMap = new Map(STORE_SECTIONS.map(s => [s.id, s.label]));
+            const activeItems = catalog.filter(i => getItemTotalQty(i) > 0);
+            const mergedMap = new Map();
+
+            activeItems.forEach(item => {
+                const displayName = getWarehouseDisplayName(item);
+                const mergeKey = `${item.department || 'hardlines'}::${displayName.trim().toLowerCase()}`;
+                const zoneName = secLabelMap.get(item.sectionId) || item.sectionId;
+
+                if (!mergedMap.has(mergeKey)) {
+                    const sizeType = item.department === 'clothing' ? getItemSizeConfig(item).sizeType : undefined;
+                    mergedMap.set(mergeKey, {
+                        key: mergeKey,
+                        department: item.department || 'hardlines',
+                        name: displayName,
+                        aisle: item.aisle || '',
+                        sizeType,
+                        totalQty: 0,
+                        innerQty: Number(item.innerQty) || 0,
+                        boxQty: Number(item.boxQty) || 0,
+                        sourceItems: [],
+                        zoneParts: [],
+                        notes: [],
+                        sizes: sizeType ? createEmptySizesMap(sizeType) : undefined
+                    });
+                }
+
+                const entry = mergedMap.get(mergeKey);
+                entry.sourceItems.push(item);
+                if (item.note && !entry.notes.includes(item.note)) entry.notes.push(item.note);
+
+                if (item.department === 'clothing') {
+                    const { keys } = getItemSizeConfig(item);
+                    let sum = 0;
+                    keys.forEach(sz => {
+                        const q = Number((item.sizes && item.sizes[sz]) || 0);
+                        if (q > 0) {
+                            entry.sizes[sz] = (entry.sizes[sz] || 0) + q;
+                            sum += q;
+                        }
+                    });
+                    entry.totalQty += sum;
+                    entry.zoneParts.push({ zone: zoneName, qty: sum });
+                } else {
+                    const q = Number(item.qty) || 0;
+                    entry.totalQty += q;
+                    entry.zoneParts.push({ zone: zoneName, qty: q });
+                }
+            });
+
+            return Array.from(mergedMap.values());
+        }
+
+        async function sendPicklistToLiveScreen() {
+            const entries = getMergedQueueEntries();
+            if (entries.length === 0) {
+                showToast('Add quantities first before sending to screen!');
+                return;
+            }
+
+            const waveId = `${Date.now()}-${Math.random().toString(36).slice(2, 6)}`;
+            const sentAt = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            const itemsPayload = [];
+
+            entries.forEach(entry => {
+                const uniqueZones = [...new Set(entry.zoneParts.map(p => p.zone))];
+                const zoneStr = uniqueZones.length > 1
+                    ? entry.zoneParts.map(p => `${p.qty} ${p.zone}`).join(' + ')
+                    : (uniqueZones[0] || 'Shop Floor');
+                const firstSecId = (entry.sourceItems[0] && entry.sourceItems[0].sectionId) || 'diagon-alley';
+                const floorStr = getSectionFloor(firstSecId);
+
+                if (entry.department === 'clothing') {
+                    const { keys, labels } = SIZE_SETS[entry.sizeType] || SIZE_SETS.adult;
+                    keys.forEach(sz => {
+                        const q = Number(entry.sizes[sz] || 0);
+                        if (q > 0) {
+                            itemsPayload.push({
+                                uid: `${waveId}::${entry.key}::${sz}`,
+                                floor: floorStr,
+                                zoneLabel: zoneStr,
+                                name: `${(labels[sz] || sz.toUpperCase())} ${entry.name}`,
+                                qtyLabel: `x${q}`,
+                                dept: 'clothing',
+                                note: entry.notes.join('; ')
+                            });
+                        }
+                    });
+                } else {
+                    const formatted = formatAutomaticContainerQty({
+                        name: entry.name,
+                        qty: entry.totalQty,
+                        innerQty: entry.innerQty,
+                        boxQty: entry.boxQty
+                    });
+                    itemsPayload.push({
+                        uid: `${waveId}::${entry.key}`,
+                        floor: floorStr,
+                        zoneLabel: zoneStr,
+                        name: entry.name,
+                        qtyLabel: formatted.primary,
+                        secondaryQty: formatted.secondary,
+                        dept: 'hardlines',
+                        note: entry.notes.join('; ')
+                    });
+                }
+            });
+
+            const topic = `hp-stock-picker-${String(liveRoomCode || 'HP-STUDIO-01').trim().toLowerCase().replace(/[^a-z0-9_-]/g, '-')}`;
+            try {
+                const res = await fetch(`https://ntfy.sh/${encodeURIComponent(topic)}`, {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        waveId,
+                        sentAt,
+                        replaceBoard: liveReplaceBoardOnSend,
+                        items: itemsPayload
+                    })
+                });
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+                // Auto-clear shop-floor quantities once successfully pushed so the next wave starts fresh
+                catalog.forEach(item => {
+                    if (item.department === 'clothing') {
+                        item.sizes = createEmptySizesMap(getItemSizeConfig(item).sizeType);
+                    } else {
+                        item.qty = 0;
+                        item.note = '';
+                    }
+                });
+                appMode = 'setup';
+                saveState();
+                renderTabs();
+                updateHeaderAndBars();
+                renderMain();
+
+                showToast(`Sent ${itemsPayload.length} line${itemsPayload.length === 1 ? '' : 's'} to ${liveRoomCode} & cleared phone queue!`);
+            } catch (err) {
+                showToast('Could not reach warehouse screen — check connection');
+            }
+        }
+
+        function renderTabs() {
+            const tabsEl = document.getElementById('category-tabs');
+            if (!tabsEl) return;
+            const visibleSecs = getVisibleStoreSections();
+            const visibleSecIds = new Set(visibleSecs.map(s => s.id));
+            if (activeSection !== 'all' && !visibleSecIds.has(activeSection)) activeSection = 'all';
+
+            const deptCatalog = catalog.filter(i => (i.department || 'hardlines') === activeDepartment && visibleSecIds.has(i.sectionId));
+            const totalActive = deptCatalog.reduce((s, i) => s + getItemActiveLinesCount(i), 0);
+
+            let html = `
+                <button type="button" data-sec-tab="all" class="zone-tab-btn px-3 py-1.5 rounded-xl text-xs font-extrabold whitespace-nowrap transition-all border shrink-0 flex items-center gap-1.5 ${
+                    activeSection === 'all' ? 'bg-sky-500 text-slate-950 border-sky-400' : 'bg-slate-900 text-slate-300 border-slate-800'
+                }">
+                    <span>${activeFloor === 'all' ? 'All Zones' : `All ${activeFloor}`}</span>
+                    ${totalActive > 0 ? `<span class="px-1.5 rounded text-[10px] font-black bg-slate-950/20">${totalActive}</span>` : ''}
+                </button>
+            `;
+
+            visibleSecs.forEach(sec => {
+                const secActive = deptCatalog.filter(i => i.sectionId === sec.id).reduce((s, i) => s + getItemActiveLinesCount(i), 0);
+                const isActive = activeSection === sec.id;
+                html += `
+                    <button type="button" data-sec-tab="${sec.id}" class="zone-tab-btn px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all border shrink-0 flex items-center gap-1.5 ${
+                        isActive ? 'bg-sky-500 text-slate-950 border-sky-400' : 'bg-slate-900 text-slate-300 border-slate-800'
+                    }">
+                        <span>${escapeHtml(sec.label)}</span>
+                        ${secActive > 0 ? `<span class="px-1.5 rounded text-[10px] font-black ${isActive ? 'bg-slate-950/20 text-slate-950' : 'bg-slate-800 text-sky-300'}">${secActive}</span>` : ''}
+                    </button>
+                `;
+            });
+
+            tabsEl.innerHTML = html;
+            tabsEl.querySelectorAll('.zone-tab-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    activeSection = btn.dataset.secTab;
+                    if (activeSection !== 'all') expandedSections[activeSection] = true;
+                    renderTabs();
+                    renderMain();
+                });
+            });
+        }
+
+        function updateHeaderAndBars() {
+            document.getElementById('header-room-badge').textContent = liveRoomCode;
+            const totalLinesAllDepts = catalog.reduce((s, i) => s + getItemActiveLinesCount(i), 0);
+            const totalUnitsAllDepts = catalog.reduce((s, i) => s + getItemTotalQty(i), 0);
+            document.getElementById('picklist-mode-badge').textContent = totalLinesAllDepts;
+
+            document.querySelectorAll('.floor-filter-btn').forEach(btn => {
+                btn.className = btn.dataset.floorFilter === activeFloor
+                    ? 'floor-filter-btn px-2 py-1 rounded-lg text-xs font-extrabold transition-all bg-indigo-500 text-white shadow-sm'
+                    : 'floor-filter-btn px-2 py-1 rounded-lg text-xs font-extrabold transition-all text-slate-400 hover:text-white';
+            });
+
+            const hlBtn = document.getElementById('dept-hardlines-btn');
+            const clBtn = document.getElementById('dept-clothing-btn');
+            if (activeDepartment === 'hardlines') {
+                hlBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all bg-sky-500 text-slate-950 shadow-sm flex items-center gap-1';
+                clBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all text-slate-400 hover:text-white flex items-center gap-1';
+            } else {
+                hlBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all text-slate-400 hover:text-white flex items-center gap-1';
+                clBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-extrabold transition-all bg-purple-500 text-white shadow-sm flex items-center gap-1';
+            }
+
+            const setupBtn = document.getElementById('mode-setup-btn');
+            const pickBtn = document.getElementById('mode-picklist-btn');
+            const primaryText = document.getElementById('primary-action-text');
+            if (appMode === 'setup') {
+                setupBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-amber-500 text-slate-950 shadow-sm';
+                pickBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white flex items-center gap-1.5';
+                primaryText.textContent = 'Review Queue';
+            } else {
+                setupBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white';
+                pickBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-emerald-500 text-slate-950 shadow-sm flex items-center gap-1.5';
+                primaryText.textContent = 'Back to Edit';
+            }
+
+            document.getElementById('status-summary-text').textContent = `${totalLinesAllDepts} line${totalLinesAllDepts === 1 ? '' : 's'} (${totalUnitsAllDepts} units) ready to push`;
+            document.getElementById('status-percent-text').textContent = `Room: ${liveRoomCode}`;
+            document.getElementById('progress-bar').style.width = totalLinesAllDepts > 0 ? '100%' : '0%';
+            document.getElementById('bottom-bar-info').innerHTML = totalLinesAllDepts > 0
+                ? `<span class="text-sky-300 font-extrabold">${totalLinesAllDepts}</span> line${totalLinesAllDepts === 1 ? '' : 's'} queued for <span class="text-white font-bold">${escapeHtml(liveRoomCode)}</span>`
+                : `Add quantities or paste a list, then tap <span class="text-sky-300 font-bold">Send to Screen</span>`;
+        }
+
+        function getGroupBadgeStyle(groupName) {
+            const g = String(groupName || '').toLowerCase();
+            if (g.includes('gryffindor')) return 'bg-red-950/70 text-red-300 border-red-800/70';
+            if (g.includes('slytherin')) return 'bg-emerald-950/70 text-emerald-300 border-emerald-800/70';
+            if (g.includes('ravenclaw')) return 'bg-sky-950/70 text-sky-300 border-sky-800/70';
+            if (g.includes('hufflepuff')) return 'bg-amber-950/70 text-amber-300 border-amber-800/70';
+            return 'bg-slate-800 text-slate-300 border-slate-700';
+        }
+
+        function renderMain() {
+            const container = document.getElementById('checklist-container');
+            const emptyState = document.getElementById('empty-state');
+            const query = searchQuery.trim().toLowerCase();
+
+            if (appMode === 'picklist') {
+                const entries = getMergedQueueEntries();
+                if (entries.length === 0) {
+                    container.innerHTML = '';
+                    emptyState.classList.remove('hidden');
+                    return;
+                }
+                emptyState.classList.add('hidden');
+                container.innerHTML = `
+                    <section class="rounded-2xl bg-slate-900/90 border border-sky-500/40 overflow-hidden shadow-lg">
+                        <div class="px-4 py-3 bg-sky-500/10 border-b border-slate-800 flex items-center justify-between">
+                            <h2 class="text-sm font-extrabold uppercase tracking-wider text-sky-300">Ready to Push to ${escapeHtml(liveRoomCode)}</h2>
+                            <span class="text-xs font-bold text-slate-300">${entries.length} combined item${entries.length === 1 ? '' : 's'}</span>
+                        </div>
+                        <div class="p-3 space-y-2">
+                            ${entries.map(e => {
+                                const zonesText = e.zoneParts.map(p => `${p.qty} ${p.zone}`).join(' · ');
+                                const qtyBadge = e.department === 'clothing'
+                                    ? Object.entries(e.sizes || {}).filter(([, v]) => v > 0).map(([k, v]) => `x${v} ${k.toUpperCase()}`).join(', ')
+                                    : formatAutomaticContainerQty({ name: e.name, qty: e.totalQty, innerQty: e.innerQty, boxQty: e.boxQty }).primary;
+                                return `
+                                    <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between gap-3">
+                                        <div class="min-w-0">
+                                            <div class="text-xs sm:text-sm font-bold text-white truncate">${escapeHtml(e.name)}</div>
+                                            <div class="text-[11px] text-slate-400 mt-0.5">${escapeHtml(zonesText)}</div>
+                                        </div>
+                                        <span class="px-2.5 py-1 rounded-lg bg-sky-500/20 border border-sky-500/40 text-sky-300 text-xs font-black shrink-0">${escapeHtml(qtyBadge)}</span>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    </section>
+                `;
+                return;
+            }
+
+            const visibleSecs = getVisibleStoreSections();
+            const deptCatalog = catalog.filter(i => (i.department || 'hardlines') === activeDepartment);
+            let html = '';
+            let visibleCount = 0;
+
+            visibleSecs.forEach(sec => {
+                if (activeSection !== 'all' && activeSection !== sec.id) return;
+                let secItems = deptCatalog.filter(item => item.sectionId === sec.id);
+                if (secondaryFilterActive) secItems = secItems.filter(item => getItemTotalQty(item) > 0);
+                if (query.length > 0) {
+                    secItems = secItems.filter(item => `${item.name} ${item.group || ''} ${sec.label}`.toLowerCase().includes(query));
+                }
+                if (secItems.length === 0 && (query.length > 0 || secondaryFilterActive)) return;
+
+                visibleCount++;
+                secItems.sort((a, b) => (a.sortOrder ?? 999999) - (b.sortOrder ?? 999999));
+
+                const groupsMap = new Map();
+                secItems.forEach(item => {
+                    const grp = item.group || 'General';
+                    if (!groupsMap.has(grp)) groupsMap.set(grp, []);
+                    groupsMap.get(grp).push(item);
+                });
+
+                let groupsHtml = '';
+                const hasMultipleGroups = groupsMap.size > 1;
+                groupsMap.forEach((items, groupName) => {
+                    const groupKey = `${activeDepartment}::${sec.id}::${groupName}`;
+                    const isExpanded = query.length > 0 || !hasMultipleGroups || !!expandedGroups[groupKey];
+                    const rowsHtml = items.map(item => {
+                        if (item.department === 'clothing') {
+                            const { keys, labels } = getItemSizeConfig(item);
+                            const totalGarmentQty = getItemTotalQty(item);
+                            return `
+                                <div class="p-3 rounded-xl border ${totalGarmentQty > 0 ? 'bg-slate-900 border-purple-500/50' : 'bg-slate-900/60 border-slate-800/80'} space-y-2">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-xs sm:text-sm font-bold text-white">${escapeHtml(item.name)}</span>
+                                        ${totalGarmentQty > 0 ? `<span class="text-xs font-extrabold text-purple-300">${totalGarmentQty} total</span>` : ''}
+                                    </div>
+                                    <div class="grid grid-cols-3 sm:grid-cols-6 gap-1.5">
+                                        ${keys.map(sz => {
+                                            const val = Number((item.sizes && item.sizes[sz]) || 0);
+                                            return `
+                                                <div class="flex flex-col items-center p-1.5 rounded-xl border ${val > 0 ? 'bg-purple-950/40 border-purple-500/60' : 'bg-slate-950/80 border-slate-800/80'}">
+                                                    <span class="text-[10px] font-black uppercase text-slate-400">${labels[sz]}</span>
+                                                    <div class="flex items-center gap-1 mt-1">
+                                                        <button type="button" data-cloth-dec="${item.id}" data-size="${sz}" class="cloth-dec-btn w-6 h-6 rounded-lg bg-slate-800 text-slate-200 font-bold text-xs">-</button>
+                                                        <span class="w-6 text-center text-xs font-extrabold ${val > 0 ? 'text-white' : 'text-slate-500'}">${val}</span>
+                                                        <button type="button" data-cloth-inc="${item.id}" data-size="${sz}" class="cloth-inc-btn w-6 h-6 rounded-lg bg-slate-800 text-slate-200 font-bold text-xs">+</button>
+                                                    </div>
+                                                </div>
+                                            `;
+                                        }).join('')}
+                                    </div>
+                                </div>
+                            `;
+                        }
+                        const qty = Number(item.qty) || 0;
+                        const { singular } = getSubUnitTerms(item.name);
+                        return `
+                            <div class="flex items-center justify-between gap-2.5 p-2.5 sm:p-3 rounded-xl border ${qty > 0 ? 'bg-slate-900 border-sky-500/50' : 'bg-slate-900/60 border-slate-800/80'}">
+                                <div class="min-w-0 flex-1">
+                                    <div class="text-xs sm:text-sm font-bold text-white truncate">${escapeHtml(item.name)}</div>
+                                    <div class="flex flex-wrap items-center gap-1.5 mt-1">
+                                        ${item.innerQty > 0 ? `<button type="button" data-step-id="${item.id}" data-step="${item.innerQty}" class="quick-step-btn px-2 py-0.5 rounded-md bg-sky-950/80 border border-sky-700/70 text-sky-300 text-[10px] font-extrabold">+${singular} (${item.innerQty})</button>` : ''}
+                                        ${item.boxQty > 0 ? `<button type="button" data-step-id="${item.id}" data-step="${item.boxQty}" class="quick-step-btn px-2 py-0.5 rounded-md bg-indigo-950/80 border border-indigo-700/70 text-indigo-300 text-[10px] font-extrabold">+Box (${item.boxQty})</button>` : ''}
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-1.5 shrink-0">
+                                    <button type="button" data-dec-id="${item.id}" class="dec-qty-btn w-8 h-8 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-extrabold text-sm">-</button>
+                                    <input type="number" min="0" data-qty-input="${item.id}" value="${qty}" class="qty-number-input w-11 h-8 text-center rounded-xl bg-slate-950 border border-slate-800 text-xs sm:text-sm font-extrabold ${qty > 0 ? 'text-sky-300 border-sky-500/40' : 'text-slate-400'}">
+                                    <button type="button" data-inc-id="${item.id}" class="inc-qty-btn w-8 h-8 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-extrabold text-sm">+</button>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+
+                    groupsHtml += `
+                        <div class="rounded-xl bg-slate-950/70 border border-slate-800/90 overflow-hidden">
+                            <button type="button" data-toggle-group="${escapeHtml(groupKey)}" class="grp-toggle w-full px-3.5 py-2.5 bg-slate-900/70 flex items-center justify-between text-left">
+                                <span class="px-2 py-0.5 rounded-md border text-[11px] font-extrabold ${getGroupBadgeStyle(groupName)}">${escapeHtml(groupName)}</span>
+                                <span class="text-[11px] font-semibold text-slate-400">${items.length} items</span>
+                            </button>
+                            ${isExpanded ? `<div class="p-2.5 space-y-2">${rowsHtml}</div>` : ''}
+                        </div>
+                    `;
+                });
+
+                const isSectionExpanded = !!expandedSections[sec.id] || query.length > 0 || activeSection !== 'all';
+                const currentFloor = getSectionFloor(sec.id);
+                const selectedLines = secItems.reduce((s, i) => s + getItemActiveLinesCount(i), 0);
+
+                html += `
+                    <section class="rounded-2xl bg-slate-900/80 border border-slate-800 overflow-hidden shadow-sm">
+                        <div class="flex items-center justify-between gap-2 px-4 py-3.5 hover:bg-slate-800/40">
+                            <button type="button" data-toggle-sec="${sec.id}" class="sec-toggle flex items-center gap-2.5 min-w-0 flex-1 text-left">
+                                <h2 class="text-sm sm:text-base font-extrabold uppercase tracking-wider text-white truncate">${escapeHtml(sec.label)}</h2>
+                            </button>
+                            <div class="flex items-center gap-2 shrink-0">
+                                <span class="px-2 py-0.5 rounded-lg text-[10px] font-extrabold border ${currentFloor === 'RG' ? 'bg-indigo-950/80 text-indigo-300 border-indigo-700/70' : 'bg-teal-950/80 text-teal-300 border-teal-700/70'}">${escapeHtml(currentFloor)}</span>
+                                <span class="px-2.5 py-1 rounded-lg text-xs font-extrabold tabular-nums ${selectedLines > 0 ? 'bg-sky-500/20 text-sky-300 border border-sky-500/40' : 'bg-slate-950 text-slate-400 border border-slate-800'}">${selectedLines > 0 ? `${selectedLines} selected` : `${secItems.length} items`}</span>
+                            </div>
+                        </div>
+                        ${isSectionExpanded ? `<div class="px-3.5 pb-3.5 pt-1 space-y-3 border-t border-slate-800/70">${groupsHtml}</div>` : ''}
+                    </section>
+                `;
+            });
+
+            container.innerHTML = html;
+            emptyState.classList.toggle('hidden', visibleCount > 0);
+
+            container.querySelectorAll('.sec-toggle').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    expandedSections[btn.dataset.toggleSec] = !expandedSections[btn.dataset.toggleSec];
+                    renderMain();
+                });
+            });
+            container.querySelectorAll('.grp-toggle').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    expandedGroups[btn.dataset.toggleGroup] = !expandedGroups[btn.dataset.toggleGroup];
+                    renderMain();
+                });
+            });
+            container.querySelectorAll('.dec-qty-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = catalog.find(i => i.id === btn.dataset.decId);
+                    if (!item) return;
+                    item.qty = Math.max(0, (Number(item.qty) || 0) - 1);
+                    saveState(); renderTabs(); updateHeaderAndBars(); renderMain();
+                });
+            });
+            container.querySelectorAll('.inc-qty-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = catalog.find(i => i.id === btn.dataset.incId);
+                    if (!item) return;
+                    item.qty = (Number(item.qty) || 0) + 1;
+                    saveState(); renderTabs(); updateHeaderAndBars(); renderMain();
+                });
+            });
+            container.querySelectorAll('.quick-step-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = catalog.find(i => i.id === btn.dataset.stepId);
+                    if (!item) return;
+                    item.qty = (Number(item.qty) || 0) + (parseInt(btn.dataset.step, 10) || 0);
+                    saveState(); renderTabs(); updateHeaderAndBars(); renderMain();
+                });
+            });
+            container.querySelectorAll('.qty-number-input').forEach(inp => {
+                inp.addEventListener('change', () => {
+                    const item = catalog.find(i => i.id === inp.dataset.qtyInput);
+                    if (!item) return;
+                    item.qty = Math.max(0, parseInt(inp.value, 10) || 0);
+                    saveState(); renderTabs(); updateHeaderAndBars(); renderMain();
+                });
+            });
+            container.querySelectorAll('.cloth-dec-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = catalog.find(i => i.id === btn.dataset.clothDec);
+                    if (!item || !item.sizes) return;
+                    item.sizes[btn.dataset.size] = Math.max(0, (Number(item.sizes[btn.dataset.size]) || 0) - 1);
+                    saveState(); renderTabs(); updateHeaderAndBars(); renderMain();
+                });
+            });
+            container.querySelectorAll('.cloth-inc-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = catalog.find(i => i.id === btn.dataset.clothInc);
+                    if (!item || !item.sizes) return;
+                    item.sizes[btn.dataset.size] = (Number(item.sizes[btn.dataset.size]) || 0) + 1;
+                    saveState(); renderTabs(); updateHeaderAndBars(); renderMain();
+                });
+            });
+        }
+
+        function parseTeamList(rawText, clearExisting) {
+            if (clearExisting) {
+                catalog.forEach(item => {
+                    if (item.department === 'clothing') item.sizes = createEmptySizesMap(getItemSizeConfig(item).sizeType);
+                    else { item.qty = 0; item.note = ''; }
+                });
+            }
+            let currentSecId = 'qudditch';
+            let matched = 0;
+            const zoneMatchers = [
+                { regex: /quidditch|qudditch/i, id: 'qudditch' },
+                { regex: /diagon\s*alley/i, id: 'diagon-alley' },
+                { regex: /gringotts/i, id: 'gringotts' },
+                { regex: /ollivanders/i, id: 'ollivanders' },
+                { regex: /honeydukes/i, id: 'honeydukes' },
+                { regex: /minalima/i, id: 'minalima' },
+                { regex: /robes/i, id: 'robes' },
+                { regex: /toys/i, id: 'toys' }
+            ];
+
+            rawText.split(/\r?\n/).forEach(line => {
+                const clean = line.trim();
+                if (!clean) return;
+                const noColon = clean.replace(/:\s*$/, '').trim();
+                const zMatch = zoneMatchers.find(z => z.regex.test(noColon) && noColon.length < 24);
+                if (zMatch) { currentSecId = zMatch.id; return; }
+
+                const m = clean.match(/^x\s*(\d+)\s+(.+)$/i) || clean.match(/^(.+?)\s+x\s*(\d+)$/i);
+                if (!m) return;
+                const count = parseInt(isNaN(m[1]) ? m[2] : m[1], 10) || 0;
+                const name = (isNaN(m[1]) ? m[1] : m[2]).trim();
+                if (!count || !name) return;
+
+                let target = catalog.find(i => (i.department || 'hardlines') === 'hardlines' && i.name.toLowerCase().includes(name.toLowerCase()));
+                if (!target) {
+                    target = { id: `live-${Date.now()}-${matched}`, department: 'hardlines', sectionId: currentSecId, group: 'General', name, qty: 0, innerQty: 0, boxQty: 0 };
+                    catalog.push(target);
+                }
+                target.qty = (Number(target.qty) || 0) + count;
+                matched++;
+            });
+
+            saveState();
+            appMode = 'picklist';
+            renderTabs(); updateHeaderAndBars(); renderMain();
+            showToast(`Loaded ${matched} line${matched === 1 ? '' : 's'} into queue!`);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const hadSaved = loadState();
+            renderTabs(); updateHeaderAndBars(); renderMain();
+            if (!hadSaved) fetchGitCatalogIfAvailable(false);
+
+            document.querySelectorAll('.floor-filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    activeFloor = btn.dataset.floorFilter;
+                    activeSection = 'all';
+                    renderTabs(); updateHeaderAndBars(); renderMain();
+                });
+            });
+            document.getElementById('dept-hardlines-btn').addEventListener('click', () => {
+                activeDepartment = 'hardlines'; activeSection = 'all';
+                renderTabs(); updateHeaderAndBars(); renderMain();
+            });
+            document.getElementById('dept-clothing-btn').addEventListener('click', () => {
+                activeDepartment = 'clothing'; activeSection = 'all';
+                renderTabs(); updateHeaderAndBars(); renderMain();
+            });
+            document.getElementById('mode-setup-btn').addEventListener('click', () => {
+                appMode = 'setup'; renderTabs(); updateHeaderAndBars(); renderMain();
+            });
+            document.getElementById('mode-picklist-btn').addEventListener('click', () => {
+                appMode = 'picklist'; renderTabs(); updateHeaderAndBars(); renderMain();
+            });
+            document.getElementById('primary-action-btn').addEventListener('click', () => {
+                appMode = appMode === 'setup' ? 'picklist' : 'setup';
+                renderTabs(); updateHeaderAndBars(); renderMain();
+            });
+            document.getElementById('send-live-screen-btn').addEventListener('click', sendPicklistToLiveScreen);
+            document.getElementById('search-input').addEventListener('input', (e) => { searchQuery = e.target.value; renderMain(); });
+            document.getElementById('toggle-secondary-filter').addEventListener('click', () => {
+                secondaryFilterActive = !secondaryFilterActive;
+                document.getElementById('secondary-filter-label').textContent = secondaryFilterActive ? 'Showing Selected' : 'Selected Only';
+                renderMain();
+            });
+
+            // Reset modal
+            document.getElementById('clear-all-btn').addEventListener('click', () => document.getElementById('confirm-modal').classList.remove('hidden'));
+            document.getElementById('confirm-cancel-btn').addEventListener('click', () => document.getElementById('confirm-modal').classList.add('hidden'));
+            document.getElementById('confirm-ok-btn').addEventListener('click', () => {
+                catalog.forEach(i => {
+                    if (i.department === 'clothing') i.sizes = createEmptySizesMap(getItemSizeConfig(i).sizeType);
+                    else { i.qty = 0; i.note = ''; }
+                });
+                saveState(); renderTabs(); updateHeaderAndBars(); renderMain();
+                document.getElementById('confirm-modal').classList.add('hidden');
+                showToast('Quantities cleared');
+            });
+
+            // Paste modal
+            document.getElementById('open-whatsapp-modal-btn').addEventListener('click', () => document.getElementById('whatsapp-modal').classList.remove('hidden'));
+            document.getElementById('close-whatsapp-modal-btn').addEventListener('click', () => document.getElementById('whatsapp-modal').classList.add('hidden'));
+            document.getElementById('cancel-whatsapp-modal-btn').addEventListener('click', () => document.getElementById('whatsapp-modal').classList.add('hidden'));
+            document.getElementById('whatsapp-parse-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                parseTeamList(document.getElementById('whatsapp-paste-input').value, document.getElementById('whatsapp-clear-existing').checked);
+                document.getElementById('whatsapp-modal').classList.add('hidden');
+            });
+
+            // More menu & Room settings
+            const moreBtn = document.getElementById('open-more-menu-btn');
+            const moreMenu = document.getElementById('more-menu-dropdown');
+            const roomModal = document.getElementById('live-room-modal');
+            const openRoomModal = () => {
+                moreMenu.classList.add('hidden');
+                document.getElementById('live-room-code-input').value = liveRoomCode;
+                document.getElementById('live-room-replace-cb').checked = liveReplaceBoardOnSend;
+                roomModal.classList.remove('hidden');
+            };
+            moreBtn.addEventListener('click', (e) => { e.stopPropagation(); moreMenu.classList.toggle('hidden'); });
+            document.addEventListener('click', () => moreMenu.classList.add('hidden'));
+            document.getElementById('open-live-room-pill').addEventListener('click', openRoomModal);
+            document.getElementById('menu-live-room-btn').addEventListener('click', openRoomModal);
+            document.getElementById('menu-pull-git-btn').addEventListener('click', () => { moreMenu.classList.add('hidden'); fetchGitCatalogIfAvailable(true); });
+
+            // Temp Load / Paste JSON modal
+            const tempJsonModal = document.getElementById('temp-json-modal');
+            const openTempJsonModal = () => {
+                moreMenu.classList.add('hidden');
+                document.getElementById('temp-json-textarea').value = '';
+                tempJsonModal.classList.remove('hidden');
+            };
+            document.getElementById('open-temp-json-btn').addEventListener('click', openTempJsonModal);
+            document.getElementById('menu-temp-json-btn').addEventListener('click', openTempJsonModal);
+            document.getElementById('close-temp-json-btn').addEventListener('click', () => tempJsonModal.classList.add('hidden'));
+            document.getElementById('cancel-temp-json-btn').addEventListener('click', () => tempJsonModal.classList.add('hidden'));
+            document.getElementById('temp-json-file-input').addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    try {
+                        const parsed = JSON.parse(ev.target.result);
+                        applyImportedCatalog(parsed);
+                        tempJsonModal.classList.add('hidden');
+                        showToast(`Loaded ${catalog.length} items from JSON!`);
+                    } catch (err) {
+                        showToast('Invalid JSON file');
+                    }
+                };
+                reader.readAsText(file);
+                e.target.value = '';
+            });
+            document.getElementById('apply-temp-json-btn').addEventListener('click', () => {
+                const raw = document.getElementById('temp-json-textarea').value.trim();
+                if (!raw) return;
+                try {
+                    const parsed = JSON.parse(raw);
+                    applyImportedCatalog(parsed);
+                    tempJsonModal.classList.add('hidden');
+                    showToast(`Loaded ${catalog.length} items from JSON!`);
+                } catch (err) {
+                    showToast('Invalid JSON format');
+                }
+            });
+
+            document.getElementById('close-live-room-btn').addEventListener('click', () => roomModal.classList.add('hidden'));
+            document.getElementById('cancel-live-room-btn').addEventListener('click', () => roomModal.classList.add('hidden'));
+            document.getElementById('live-room-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const code = document.getElementById('live-room-code-input').value.trim().toUpperCase();
+                if (code) liveRoomCode = code;
+                liveReplaceBoardOnSend = document.getElementById('live-room-replace-cb').checked;
+                try {
+                    localStorage.setItem(LIVE_ROOM_STORAGE_KEY, JSON.stringify({ roomCode: liveRoomCode, replaceBoard: liveReplaceBoardOnSend }));
+                } catch (err) {}
+                updateHeaderAndBars();
+                roomModal.classList.add('hidden');
+                showToast(`Room set to ${liveRoomCode}`);
+            });
+        });
+    </script>
+</body>
+</html>
