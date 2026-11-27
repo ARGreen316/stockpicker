@@ -112,6 +112,12 @@
                             </svg>
                         </button>
                         <div id="more-menu-dropdown" class="hidden absolute right-0 mt-2 w-60 rounded-2xl bg-slate-900 border border-slate-700/90 shadow-2xl py-1.5 z-50">
+                            <button id="menu-pull-git-btn" type="button" class="w-full px-4 py-2.5 text-left text-xs font-bold text-emerald-300 hover:bg-slate-800 flex items-center gap-2.5">
+                                <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                                </svg>
+                                <span>Refresh catalog.json</span>
+                            </button>
                             <button id="open-sync-modal-btn" type="button" class="w-full px-4 py-2.5 text-left text-xs font-bold text-slate-200 hover:bg-slate-800 flex items-center gap-2.5">
                                 <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
@@ -981,6 +987,7 @@
                             sectionId: item.sectionId,
                             group: item.group || 'General',
                             aisle: item.aisle || '',
+                            sortOrder: item.sortOrder !== undefined ? Number(item.sortOrder) : undefined,
                             name: item.name
                         };
                     }
@@ -1810,6 +1817,7 @@
                         sectionId: normalizedSecId,
                         group: grp,
                         aisle: aisleVal,
+                        sortOrder: raw.sortOrder !== undefined ? Number(raw.sortOrder) : (prev && prev.sortOrder !== undefined ? Number(prev.sortOrder) : undefined),
                         name: cleanRedundantHouseName(raw.name || 'Unnamed Garment', grp),
                         sizes: prev && prev.sizes ? { ...createEmptySizesMap(sizeType), ...prev.sizes } : createEmptySizesMap(sizeType),
                         pickedSizes: prev && prev.pickedSizes ? { ...createEmptyPickedSizesMap(sizeType), ...prev.pickedSizes } : createEmptyPickedSizesMap(sizeType)
@@ -3509,6 +3517,10 @@
             });
 
             // Catalog Export / Import Modal
+            document.getElementById('menu-pull-git-btn').addEventListener('click', () => {
+                moreMenuDropdown.classList.add('hidden');
+                fetchGitCatalogIfAvailable(true);
+            });
             document.getElementById('open-sync-modal-btn').addEventListener('click', () => {
                 moreMenuDropdown.classList.add('hidden');
                 document.getElementById('import-catalog-textarea').value = '';

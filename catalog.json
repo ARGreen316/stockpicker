@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-11-22T21:01:48.006Z",
+  "updatedAt": "2026-11-26T22:34:10.684Z",
   "shelfPhotos": {},
   "sectionFloors": {
     "qudditch": "RG",
@@ -11,7 +11,6 @@
     "Plush",
     "Toys",
     "Bags",
-    "Consumables",
     "Collectables",
     "Ornaments",
     "Accessories",
@@ -27,82 +26,91 @@
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Weasley",
       "aisle": "",
-      "name": "Diagon Alley Christmas Hoodie"
+      "name": "Diagon Alley Christmas Hoodie",
+      "sortOrder": 61
     },
     {
       "id": "cloth-2",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Diagon Alley",
       "aisle": "",
-      "name": "Diagon Alley Christmas Knitted Jumper"
+      "name": "Diagon Alley Christmas Knitted Jumper",
+      "sortOrder": 71
     },
     {
       "id": "cloth-3",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Weasley",
       "aisle": "",
-      "name": "Diagon Alley Christmas Pyjama Set"
+      "name": "Diagon Alley Christmas Pyjama Set",
+      "sortOrder": 66
     },
     {
       "id": "cloth-4",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Diagon Alley",
       "aisle": "",
-      "name": "Diagon Alley in the Snow Spirit Jersey"
+      "name": "Diagon Alley in the Snow Spirit Jersey",
+      "sortOrder": 52
     },
     {
       "id": "cloth-5",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Dobby",
       "aisle": "",
-      "name": "Dobby Loungewear Set"
+      "name": "Dobby Loungewear Set",
+      "sortOrder": 29
     },
     {
       "id": "cloth-6",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Dobby",
       "aisle": "",
-      "name": "Dobby Oversized Cosy Hoodie"
+      "name": "Dobby Oversized Cosy Hoodie",
+      "sortOrder": 33
     },
     {
       "id": "item-7",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Pop",
+      "group": "Collectables",
       "aisle": "Toys",
       "name": "Funko POP! Luna in Dress Vinyl Figure",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 7
     },
     {
       "id": "cloth-8",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "",
-      "name": "Embroidery Print T-Shirt"
+      "name": "Embroidery Print T-Shirt",
+      "sortOrder": 300
     },
     {
       "id": "cloth-9",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "",
-      "name": "Sherpa Hoodie"
+      "name": "Sherpa Hoodie",
+      "sortOrder": 301
     },
     {
       "id": "cloth-10",
@@ -111,79 +119,88 @@
       "sectionId": "qudditch",
       "group": "Gryffindor",
       "aisle": "",
-      "name": "House Spirit Jersey"
+      "name": "House Spirit Jersey",
+      "sortOrder": 102
     },
     {
       "id": "cloth-11",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "robes",
-      "group": "Gryffindor",
+      "group": "House Robes",
       "aisle": "",
-      "name": "Knitted School Cardigan"
+      "name": "Knitted School Cardigan",
+      "sortOrder": 48
     },
     {
       "id": "cloth-12",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "",
-      "name": "Quidditch Jumper"
+      "name": "Quidditch Jumper",
+      "sortOrder": 303
     },
     {
       "id": "cloth-13",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "robes",
-      "group": "General",
+      "group": "Hagrid's Hut",
       "aisle": "",
-      "name": "Hagrid's Hut Pyjama Set"
+      "name": "Hagrid's Hut Pyjama Set",
+      "sortOrder": 24
     },
     {
       "id": "cloth-14",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "knight-bus",
-      "group": "General",
+      "group": "HBDH",
       "aisle": "",
-      "name": "HBDH Zip Hoodie"
+      "name": "HBDH Zip Hoodie",
+      "sortOrder": 0
     },
     {
       "id": "cloth-15",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "robes",
-      "group": "General",
+      "group": "H and R",
       "aisle": "",
-      "name": "Harry Potter 'H' Pyjama Set"
+      "name": "Harry Potter 'H' Pyjama Set",
+      "sortOrder": 36
     },
     {
       "id": "cloth-16",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "robes",
-      "group": "General",
+      "group": "H and R",
       "aisle": "",
-      "name": "Harry Potter 'H' Replica Jumper"
+      "name": "Harry Potter 'H' Replica Jumper",
+      "sortOrder": 31
     },
     {
       "id": "cloth-17",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Hedwig",
       "aisle": "",
-      "name": "Hedwig Cosy Loungewear Set"
+      "name": "Hedwig Cosy Loungewear Set",
+      "sortOrder": 19
     },
     {
       "id": "cloth-18",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Hogwarts",
       "aisle": "",
-      "name": "Hogwarts Christmas Knitted Jumper"
+      "name": "Hogwarts Christmas Knitted Jumper",
+      "sortOrder": 44
     },
     {
       "id": "cloth-19",
@@ -199,18 +216,20 @@
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Hogwarts",
       "aisle": "",
-      "name": "Hogwarts Christmas Sequin Knitted Jumper"
+      "name": "Hogwarts Christmas Sequin Knitted Jumper",
+      "sortOrder": 49
     },
     {
       "id": "cloth-21",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "knight-bus",
-      "group": "General",
+      "group": "Hogwarts",
       "aisle": "",
-      "name": "Hogwarts Crest Rugby Top"
+      "name": "Hogwarts Crest Rugby Top",
+      "sortOrder": 8
     },
     {
       "id": "cloth-22",
@@ -219,7 +238,8 @@
       "sectionId": "qudditch",
       "group": "Hufflepuff",
       "aisle": "",
-      "name": "Embroidery Print T-Shirt"
+      "name": "Embroidery Print T-Shirt",
+      "sortOrder": 0
     },
     {
       "id": "cloth-23",
@@ -228,7 +248,8 @@
       "sectionId": "qudditch",
       "group": "Hufflepuff",
       "aisle": "",
-      "name": "Sherpa Hoodie"
+      "name": "Sherpa Hoodie",
+      "sortOrder": 1
     },
     {
       "id": "cloth-24",
@@ -237,7 +258,8 @@
       "sectionId": "qudditch",
       "group": "Hufflepuff",
       "aisle": "",
-      "name": "House Spirit Jersey"
+      "name": "House Spirit Jersey",
+      "sortOrder": 2
     },
     {
       "id": "cloth-25",
@@ -255,44 +277,49 @@
       "sectionId": "qudditch",
       "group": "Hufflepuff",
       "aisle": "",
-      "name": "Quidditch Jumper"
+      "name": "Quidditch Jumper",
+      "sortOrder": 3
     },
     {
       "id": "item-31",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Ornaments",
+      "group": "Diagon Alley",
       "aisle": "Ornaments",
       "name": "Madam Malkin's Robes Glass Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 53
     },
     {
       "id": "cloth-32",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "",
-      "name": "MM25 Hoodie"
+      "name": "MM25 Hoodie",
+      "sortOrder": 304
     },
     {
       "id": "cloth-33",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "",
-      "name": "MM25 Spirit Jersey"
+      "name": "MM25 Spirit Jersey",
+      "sortOrder": 305
     },
     {
       "id": "cloth-34",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "",
-      "name": "MM25 T-Shirt"
+      "name": "MM25 T-Shirt",
+      "sortOrder": 306
     },
     {
       "id": "cloth-35",
@@ -301,7 +328,8 @@
       "sectionId": "qudditch",
       "group": "Hufflepuff",
       "aisle": "",
-      "name": "MM25 Hoodie"
+      "name": "MM25 Hoodie",
+      "sortOrder": 4
     },
     {
       "id": "cloth-36",
@@ -310,7 +338,8 @@
       "sectionId": "qudditch",
       "group": "Hufflepuff",
       "aisle": "",
-      "name": "MM25 Spirit Jersey"
+      "name": "MM25 Spirit Jersey",
+      "sortOrder": 5
     },
     {
       "id": "cloth-37",
@@ -319,7 +348,8 @@
       "sectionId": "qudditch",
       "group": "Hufflepuff",
       "aisle": "",
-      "name": "MM25 T-Shirt"
+      "name": "MM25 T-Shirt",
+      "sortOrder": 6
     },
     {
       "id": "cloth-38",
@@ -355,7 +385,8 @@
       "sectionId": "qudditch",
       "group": "Slytherin",
       "aisle": "",
-      "name": "MM25 Hoodie"
+      "name": "MM25 Hoodie",
+      "sortOrder": 204
     },
     {
       "id": "cloth-42",
@@ -364,7 +395,8 @@
       "sectionId": "qudditch",
       "group": "Slytherin",
       "aisle": "",
-      "name": "MM25 Spirit Jersey"
+      "name": "MM25 Spirit Jersey",
+      "sortOrder": 205
     },
     {
       "id": "cloth-43",
@@ -373,25 +405,28 @@
       "sectionId": "qudditch",
       "group": "Slytherin",
       "aisle": "",
-      "name": "MM25 T-Shirt"
+      "name": "MM25 T-Shirt",
+      "sortOrder": 206
     },
     {
       "id": "cloth-44",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Niffler",
       "aisle": "",
-      "name": "Niffler Oversized Hoodie"
+      "name": "Niffler Oversized Hoodie",
+      "sortOrder": 16
     },
     {
       "id": "cloth-45",
       "department": "clothing",
       "sizeType": "robes",
       "sectionId": "robes",
-      "group": "Gryffindor",
+      "group": "House Robes",
       "aisle": "",
-      "name": "Robe"
+      "name": "Robe",
+      "sortOrder": 47
     },
     {
       "id": "cloth-46",
@@ -472,7 +507,8 @@
       "sectionId": "qudditch",
       "group": "Ravenclaw",
       "aisle": "",
-      "name": "House Spirit Jersey"
+      "name": "House Spirit Jersey",
+      "sortOrder": 302
     },
     {
       "id": "cloth-55",
@@ -497,18 +533,20 @@
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "robes",
-      "group": "General",
+      "group": "H and R",
       "aisle": "",
-      "name": "Ron Weasley 'R' Pyjama Set"
+      "name": "Ron Weasley 'R' Pyjama Set",
+      "sortOrder": 40
     },
     {
       "id": "cloth-58",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "robes",
-      "group": "General",
+      "group": "H and R",
       "aisle": "",
-      "name": "Ron Weasley 'R' Replica Jumper"
+      "name": "Ron Weasley 'R' Replica Jumper",
+      "sortOrder": 35
     },
     {
       "id": "cloth-59",
@@ -517,7 +555,8 @@
       "sectionId": "qudditch",
       "group": "Slytherin",
       "aisle": "",
-      "name": "Embroidery Print T-Shirt"
+      "name": "Embroidery Print T-Shirt",
+      "sortOrder": 200
     },
     {
       "id": "cloth-60",
@@ -526,7 +565,8 @@
       "sectionId": "qudditch",
       "group": "Slytherin",
       "aisle": "",
-      "name": "Sherpa Hoodie"
+      "name": "Sherpa Hoodie",
+      "sortOrder": 201
     },
     {
       "id": "cloth-61",
@@ -535,7 +575,8 @@
       "sectionId": "qudditch",
       "group": "Slytherin",
       "aisle": "",
-      "name": "House Spirit Jersey"
+      "name": "House Spirit Jersey",
+      "sortOrder": 202
     },
     {
       "id": "cloth-62",
@@ -553,7 +594,8 @@
       "sectionId": "qudditch",
       "group": "Slytherin",
       "aisle": "",
-      "name": "Quidditch Jumper"
+      "name": "Quidditch Jumper",
+      "sortOrder": 203
     },
     {
       "id": "item-64",
@@ -573,7 +615,8 @@
       "aisle": "Bags",
       "name": "Acceptance Letter Crossbody Bag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 43
     },
     {
       "id": "item-66",
@@ -592,18 +635,19 @@
       "group": "General",
       "aisle": "Drinkware",
       "name": "Acceptance Letter Mug & Plush Gift Set",
-      "innerQty": 0,
-      "boxQty": 0
+      "innerQty": 6,
+      "boxQty": 24
     },
     {
       "id": "item-68",
       "department": "hardlines",
       "sectionId": "gringotts",
-      "group": "Ornaments",
+      "group": "415",
       "aisle": "Ornaments",
       "name": "Acceptance Letter Snow Globe",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 59
     },
     {
       "id": "item-69",
@@ -643,27 +687,29 @@
       "aisle": "Wands",
       "name": "Albus Dumbledore's Wand - Fantastic Beasts",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-73",
       "department": "hardlines",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "Knitwear",
       "name": "Authentic Scarf",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 307
     },
     {
       "id": "item-74",
       "department": "hardlines",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "Accessories",
       "name": "Authentic Tie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 35
     },
     {
       "id": "item-75",
@@ -673,7 +719,8 @@
       "aisle": "Knitwear",
       "name": "Authentic Scarf",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 7
     },
     {
       "id": "item-76",
@@ -683,7 +730,8 @@
       "aisle": "Knitwear",
       "name": "Authentic Scarf",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 207
     },
     {
       "id": "item-77",
@@ -693,7 +741,8 @@
       "aisle": "Plush",
       "name": "Baby Niffler Ginger Plush",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 57
     },
     {
       "id": "item-78",
@@ -703,7 +752,8 @@
       "aisle": "Plush",
       "name": "Baby Niffler Plush",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 61
     },
     {
       "id": "item-79",
@@ -723,7 +773,7 @@
       "aisle": "Wands",
       "name": "Bellatrix Lestrange's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-81",
@@ -733,7 +783,8 @@
       "aisle": "Confectionary",
       "name": "Bertie Bott's Every Flavour Beans",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 38
     },
     {
       "id": "item-82",
@@ -743,7 +794,8 @@
       "aisle": "Plush",
       "name": "Bertie Bott’s Every Flavour Beans Mini Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 28
     },
     {
       "id": "item-83",
@@ -753,7 +805,8 @@
       "aisle": "Confectionary",
       "name": "Bertie Botts Beans Souvenir Tin",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 10
     },
     {
       "id": "item-84",
@@ -773,7 +826,8 @@
       "aisle": "Confectionary",
       "name": "Bottled Butterbeer",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 1
     },
     {
       "id": "item-86",
@@ -783,17 +837,19 @@
       "aisle": "Confectionary",
       "name": "Bottled Butterbeer 4-Pack",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 7
     },
     {
       "id": "item-87",
       "department": "hardlines",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "Accessories",
       "name": "Bow Clip",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 308
     },
     {
       "id": "item-88",
@@ -803,7 +859,8 @@
       "aisle": "Accessories",
       "name": "Bow Clip",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 8
     },
     {
       "id": "item-89",
@@ -823,7 +880,8 @@
       "aisle": "Accessories",
       "name": "Bow Clip",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 208
     },
     {
       "id": "item-91",
@@ -833,7 +891,7 @@
       "aisle": "Wands",
       "name": "Bowtruckle Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-92",
@@ -843,7 +901,8 @@
       "aisle": "Plush",
       "name": "Buckbeak Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 63
     },
     {
       "id": "item-93",
@@ -853,7 +912,8 @@
       "aisle": "Confectionary",
       "name": "Butterbeer Biscuits",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 8
     },
     {
       "id": "item-94",
@@ -873,7 +933,8 @@
       "aisle": "Confectionary",
       "name": "Butterbeer Chocolate Bar",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 2
     },
     {
       "id": "item-96",
@@ -883,7 +944,8 @@
       "aisle": "Confectionary",
       "name": "Butterbeer Fudge Barrel",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 5
     },
     {
       "id": "item-97",
@@ -893,7 +955,8 @@
       "aisle": "Drinkware",
       "name": "Butterbeer Glass",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 3
     },
     {
       "id": "item-98",
@@ -903,7 +966,8 @@
       "aisle": "Keyrings/Pin Badges",
       "name": "Butterbeer Logo Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 0
     },
     {
       "id": "item-99",
@@ -963,7 +1027,8 @@
       "aisle": "Plush",
       "name": "Butterbeer Stein Mini Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 41
     },
     {
       "id": "item-105",
@@ -983,7 +1048,8 @@
       "aisle": "Ornaments",
       "name": "Butterbeer Tankard Metal Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 4
     },
     {
       "id": "item-107",
@@ -1003,7 +1069,7 @@
       "aisle": "Wands",
       "name": "Cedric Diggory's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-109",
@@ -1013,7 +1079,8 @@
       "aisle": "Stationary/MinaLima",
       "name": "Chamber of Secrets - MinaLima Edition",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 1
     },
     {
       "id": "item-110",
@@ -1023,7 +1090,8 @@
       "aisle": "Confectionary",
       "name": "Chocolate Frog - with authentic film packaging",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 30
     },
     {
       "id": "item-111",
@@ -1033,7 +1101,8 @@
       "aisle": "Plush",
       "name": "Chocolate Frog Mini Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 33
     },
     {
       "id": "item-112",
@@ -1043,17 +1112,19 @@
       "aisle": "Confectionary",
       "name": "Chocolate Frog Souvenir Tin",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 9
     },
     {
       "id": "item-113",
       "department": "hardlines",
       "sectionId": "robes",
-      "group": "General",
+      "group": "Hagrid's Hut",
       "aisle": "Drinkware",
       "name": "Crookshanks Cosy Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 19
     },
     {
       "id": "item-114",
@@ -1073,7 +1144,8 @@
       "aisle": "Stationary/MinaLima",
       "name": "Dark Arts Defence Journal",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 7
     },
     {
       "id": "item-116",
@@ -1083,7 +1155,7 @@
       "aisle": "Wands",
       "name": "Dark Arts Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-117",
@@ -1093,7 +1165,8 @@
       "aisle": "Confectionary",
       "name": "Dark Chocolate Frog - with authentic film packaging",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 13
     },
     {
       "id": "item-118",
@@ -1103,7 +1176,7 @@
       "aisle": "Wands",
       "name": "Death Eater's Wand - Skull",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-119",
@@ -1113,7 +1186,7 @@
       "aisle": "Wands",
       "name": "Death Eater's Wand - Swirl",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-120",
@@ -1129,61 +1202,67 @@
       "id": "item-121-SM",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Middle Trolley",
       "aisle": "Accessories",
       "name": "Diagon Alley Christmas 3-Pack Socks S/M",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 96
     },
     {
       "id": "item-121-ML",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Middle Trolley",
       "aisle": "Accessories",
       "name": "Diagon Alley Christmas 3-Pack Socks M/L",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 95
     },
     {
       "id": "item-122",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Middle Trolley",
       "aisle": "Plush",
       "name": "Diagon Alley Christmas Bear",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 89
     },
     {
       "id": "item-123",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Ornaments",
+      "group": "Middle Trolley",
       "aisle": "Ornaments",
       "name": "Diagon Alley Christmas Bear Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 88
     },
     {
       "id": "item-124",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Diagon Alley",
       "aisle": "Bags",
       "name": "Diagon Alley Christmas Blanket",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 78
     },
     {
       "id": "item-125",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Middle Trolley",
       "aisle": "Drinkware",
       "name": "Diagon Alley Christmas Blue Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 86
     },
     {
       "id": "item-126",
@@ -1199,51 +1278,56 @@
       "id": "item-127",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Ornaments",
+      "group": "Middle Trolley",
       "aisle": "Ornaments",
       "name": "Diagon Alley Christmas Candle Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 90
     },
     {
       "id": "item-128",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Ornaments",
+      "group": "Middle Trolley",
       "aisle": "Ornaments",
       "name": "Diagon Alley Christmas Globe Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 101
     },
     {
       "id": "item-129",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Diagon Alley",
       "aisle": "Keyrings/Pin Badges",
       "name": "Diagon Alley Christmas Magnet Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 68
     },
     {
       "id": "item-130",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Middle Trolley",
       "aisle": "Keyrings/Pin Badges",
       "name": "Diagon Alley Christmas Pin Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 92
     },
     {
       "id": "item-131",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Middle Trolley",
       "aisle": "Drinkware",
       "name": "Diagon Alley Christmas Pink Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 94
     },
     {
       "id": "item-132",
@@ -1259,21 +1343,23 @@
       "id": "item-133",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Ornaments",
+      "group": "Middle Trolley",
       "aisle": "Ornaments",
       "name": "Diagon Alley Christmas Snow Globe",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 99
     },
     {
       "id": "item-134",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Middle Trolley",
       "aisle": "Stationary/MinaLima",
       "name": "Diagon Alley Christmas Snow Globe Pen",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 93
     },
     {
       "id": "item-135",
@@ -1299,11 +1385,12 @@
       "id": "item-137",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Ornaments",
+      "group": "Dobby",
       "aisle": "Ornaments",
       "name": "Dobby Christmas Bauble",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 28
     },
     {
       "id": "item-138-SM",
@@ -1329,21 +1416,23 @@
       "id": "item-139",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Dobby",
       "aisle": "Drinkware",
       "name": "Dobby Mug & Plush Gift Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 30
     },
     {
       "id": "item-140",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Dobby",
       "aisle": "Accessories",
       "name": "Dobby Sleep Mask",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 34
     },
     {
       "id": "item-141",
@@ -1353,7 +1442,8 @@
       "aisle": "Plush",
       "name": "Dobby Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 66
     },
     {
       "id": "item-142",
@@ -1379,11 +1469,12 @@
       "id": "item-144",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Plush",
+      "group": "Collectables",
       "aisle": "Plush",
       "name": "Dobby TY Bouncer",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 12
     },
     {
       "id": "item-145",
@@ -1393,7 +1484,8 @@
       "aisle": "Bags",
       "name": "Draco Malfoy Charms Handbag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 52
     },
     {
       "id": "item-146",
@@ -1403,7 +1495,7 @@
       "aisle": "Wands",
       "name": "Draco Malfoy's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-147",
@@ -1433,7 +1525,8 @@
       "aisle": "Confectionary",
       "name": "Exploding Bon Bons",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 15
     },
     {
       "id": "item-150",
@@ -1443,7 +1536,8 @@
       "aisle": "Plush",
       "name": "Fang Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 72
     },
     {
       "id": "item-151",
@@ -1453,7 +1547,8 @@
       "aisle": "Stationary/MinaLima",
       "name": "Fantastic Beasts & Where to Find Them Journal",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 4
     },
     {
       "id": "item-152",
@@ -1463,7 +1558,8 @@
       "aisle": "Plush",
       "name": "Fawkes Phoenix Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 69
     },
     {
       "id": "item-153",
@@ -1473,17 +1569,19 @@
       "aisle": "Confectionary",
       "name": "Fizzing Whizzbees Chocolate",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 16
     },
     {
       "id": "item-154",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Ornaments",
+      "group": "Diagon Alley",
       "aisle": "Ornaments",
       "name": "Flourish & Blotts Glass Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 54
     },
     {
       "id": "item-155",
@@ -1503,7 +1601,8 @@
       "aisle": "Toys",
       "name": "Forbidden Forest - Expecto Patronum LEGO®",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 19
     },
     {
       "id": "item-157",
@@ -1513,37 +1612,41 @@
       "aisle": "Confectionary",
       "name": "Fudge Flies",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 35
     },
     {
       "id": "item-158",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Pop",
+      "group": "Collectables",
       "aisle": "Toys",
       "name": "Funko POP! Hagrid Vinyl Figure - Large",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 14
     },
     {
       "id": "item-159",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Pop",
+      "group": "Collectables",
       "aisle": "Toys",
       "name": "Funko POP! Harry Potter Vinyl Figure",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 6
     },
     {
       "id": "item-160",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Pop",
+      "group": "Collectables",
       "aisle": "Toys",
       "name": "Funko POP! Hedwig Vinyl Figure",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 2
     },
     {
       "id": "item-161",
@@ -1563,7 +1666,7 @@
       "aisle": "Wands",
       "name": "Gellert Grindelwald's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-163",
@@ -1573,7 +1676,7 @@
       "aisle": "Wands",
       "name": "Ginny Weasley's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-164",
@@ -1583,7 +1686,7 @@
       "aisle": "Wands",
       "name": "Goblet of Fire Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-165",
@@ -1609,21 +1712,23 @@
       "id": "item-167",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Toys",
+      "group": "MIddle Bay",
       "aisle": "Toys",
       "name": "Golden Snitch Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 26
     },
     {
       "id": "item-168",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Plush",
+      "group": "Collectables",
       "aisle": "Plush",
       "name": "Golden Snitch TY Bouncer",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 13
     },
     {
       "id": "item-169",
@@ -1633,7 +1738,7 @@
       "aisle": "Wands",
       "name": "Golden Snitch Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-170",
@@ -1643,27 +1748,29 @@
       "aisle": "Wands",
       "name": "Griffin Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-171-SM",
       "department": "hardlines",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "Accessories",
       "name": "3-Pack Socks S/M",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 309
     },
     {
       "id": "item-171-ML",
       "department": "hardlines",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "Accessories",
       "name": "3-Pack Socks M/L",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 310
     },
     {
       "id": "item-172",
@@ -1683,7 +1790,8 @@
       "aisle": "Plush",
       "name": "Bear Plush",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 111
     },
     {
       "id": "item-174",
@@ -1693,17 +1801,19 @@
       "aisle": "Accessories",
       "name": "Compact Mirror",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 112
     },
     {
       "id": "item-175",
       "department": "hardlines",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "Accessories",
       "name": "Cosmetics Bag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 313
     },
     {
       "id": "item-176",
@@ -1729,11 +1839,12 @@
       "id": "item-178",
       "department": "hardlines",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "Accessories",
       "name": "House Baseball Cap",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 314
     },
     {
       "id": "item-179",
@@ -1753,37 +1864,41 @@
       "aisle": "Accessories",
       "name": "House Tie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 115
     },
     {
       "id": "item-181",
       "department": "hardlines",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "Knitwear",
       "name": "Knitted Crest Scarf",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 316
     },
     {
       "id": "item-182",
       "department": "hardlines",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "Knitwear",
       "name": "Knitted Hat",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 317
     },
     {
       "id": "item-183",
       "department": "hardlines",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "Knitwear",
       "name": "Knitted Mitten Capped Gloves",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 318
     },
     {
       "id": "item-184",
@@ -1793,7 +1908,7 @@
       "aisle": "Wands",
       "name": "Mascot & Traits Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-185",
@@ -1819,21 +1934,23 @@
       "id": "item-187",
       "department": "hardlines",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "Accessories",
       "name": "Nail File Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 320
     },
     {
       "id": "item-188",
       "department": "hardlines",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "Bags",
       "name": "Patch Backpack",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 321
     },
     {
       "id": "item-189",
@@ -1849,11 +1966,12 @@
       "id": "item-190",
       "department": "hardlines",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "Drinkware",
       "name": "PS Mug",
-      "innerQty": 0,
-      "boxQty": 0
+      "innerQty": 6,
+      "boxQty": 24,
+      "sortOrder": 322
     },
     {
       "id": "item-191",
@@ -1889,21 +2007,23 @@
       "id": "item-194",
       "department": "hardlines",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "Accessories",
       "name": "Scrunchie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 323
     },
     {
       "id": "item-195",
       "department": "hardlines",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "Accessories",
       "name": "Striped Headband",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 324
     },
     {
       "id": "item-196",
@@ -1949,31 +2069,34 @@
       "id": "item-200",
       "department": "hardlines",
       "sectionId": "robes",
-      "group": "General",
+      "group": "Hagrid's Hut",
       "aisle": "Drinkware",
       "name": "Hagrid's Hut Cup & Straw",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 20
     },
     {
       "id": "item-201",
       "department": "hardlines",
       "sectionId": "robes",
-      "group": "General",
+      "group": "Hagrid's Hut",
       "aisle": "Bags",
       "name": "Hagrid's Hut Cushion",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 23
     },
     {
       "id": "item-202",
       "department": "hardlines",
       "sectionId": "robes",
-      "group": "Ornaments",
+      "group": "Hagrid's Hut",
       "aisle": "Ornaments",
       "name": "Hagrid's Hut Glass Candle",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 22
     },
     {
       "id": "item-203",
@@ -1983,67 +2106,74 @@
       "aisle": "Plush",
       "name": "Happee Birthdae Cake Mini Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 63
     },
     {
       "id": "item-205",
       "department": "hardlines",
       "sectionId": "knight-bus",
-      "group": "General",
+      "group": "HBDH",
       "aisle": "Drinkware",
       "name": "HBDH Cup & Straw",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 3
     },
     {
       "id": "item-206",
       "department": "hardlines",
       "sectionId": "knight-bus",
-      "group": "General",
+      "group": "HBDH",
       "aisle": "Drinkware",
       "name": "HBDH Glass",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 5
     },
     {
       "id": "item-207",
       "department": "hardlines",
       "sectionId": "knight-bus",
-      "group": "General",
+      "group": "HBDH",
       "aisle": "Accessories",
       "name": "HBDH Hair Clip",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 1
     },
     {
       "id": "item-208",
       "department": "hardlines",
       "sectionId": "knight-bus",
-      "group": "General",
+      "group": "HBDH",
       "aisle": "Accessories",
       "name": "HBDH Scrunchie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 2
     },
     {
       "id": "item-209",
       "department": "hardlines",
       "sectionId": "scrib",
-      "group": "General",
+      "group": "Books",
       "aisle": "Keyrings/Pin Badges",
       "name": "Harry Potter and the Half-Blood Prince Illustrated Edition",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 35
     },
     {
       "id": "item-210",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Ornaments",
+      "group": "Middle Trolley",
       "aisle": "Ornaments",
       "name": "Harry Potter Book Cover Glass Ornament",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 97
     },
     {
       "id": "item-211",
@@ -2053,17 +2183,19 @@
       "aisle": "Bags",
       "name": "Harry Potter Charms Handbag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 50
     },
     {
       "id": "item-212",
       "department": "hardlines",
       "sectionId": "scrib",
-      "group": "General",
+      "group": "Books",
       "aisle": "Keyrings/Pin Badges",
       "name": "Harry Potter Film Wizardry Book",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 36
     },
     {
       "id": "item-213",
@@ -2079,31 +2211,34 @@
       "id": "item-214",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Games",
+      "group": "MIddle Bay",
       "aisle": "Toys",
       "name": "Harry Potter Monopoly Boardgame",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 42
     },
     {
       "id": "item-215",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Games",
+      "group": "MIddle Bay",
       "aisle": "Toys",
       "name": "Harry Potter Monopoly Deal",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 31
     },
     {
       "id": "item-216",
       "department": "hardlines",
       "sectionId": "scrib",
-      "group": "General",
+      "group": "Books",
       "aisle": "Keyrings/Pin Badges",
       "name": "Harry Potter Paperback Boxset Collection",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 30
     },
     {
       "id": "item-217",
@@ -2119,11 +2254,12 @@
       "id": "item-218",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Plush",
+      "group": "Collectables",
       "aisle": "Toys",
       "name": "Harry Potter TY Bouncer",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 8
     },
     {
       "id": "item-219",
@@ -2153,7 +2289,7 @@
       "aisle": "Wands",
       "name": "Harry Potter's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-222",
@@ -2163,7 +2299,7 @@
       "aisle": "Wands",
       "name": "HBO Series Draco Malfoy Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-223",
@@ -2173,7 +2309,7 @@
       "aisle": "Wands",
       "name": "HBO Series Harry Potter Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-224",
@@ -2183,7 +2319,7 @@
       "aisle": "Wands",
       "name": "HBO Series Hermione Granger Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-225",
@@ -2193,7 +2329,7 @@
       "aisle": "Wands",
       "name": "HBO Series Ron Weasley Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-226",
@@ -2203,16 +2339,18 @@
       "aisle": "Toys",
       "name": "Hedwig at 4 Privet Drive LEGO®",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 22
     },
     {
       "id": "item-227",
       "department": "clothing",
       "sizeType": "baby",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Hedwig",
       "aisle": "",
-      "name": "Hedwig Christmas Pramsuit"
+      "name": "Hedwig Christmas Pramsuit",
+      "sortOrder": 27
     },
     {
       "id": "item-228",
@@ -2228,41 +2366,45 @@
       "id": "item-229-SM",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Hedwig",
       "aisle": "Accessories",
       "name": "Hedwig Cosy Socks S/M",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 23
     },
     {
       "id": "item-229-ML",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Hedwig",
       "aisle": "Accessories",
       "name": "Hedwig Cosy Socks M/L",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 24
     },
     {
       "id": "item-230",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Ornaments",
+      "group": "Hedwig",
       "aisle": "Ornaments",
       "name": "Hedwig Glass Ornament",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 18
     },
     {
       "id": "item-231",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Hedwig",
       "aisle": "Stationary/MinaLima",
       "name": "Hedwig List Notepad",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 20
     },
     {
       "id": "item-232",
@@ -2272,7 +2414,8 @@
       "aisle": "Plush",
       "name": "Hedwig Soft Toy - Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 58
     },
     {
       "id": "item-233",
@@ -2282,7 +2425,8 @@
       "aisle": "Plush",
       "name": "Hedwig Soft Toy - Large",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 73
     },
     {
       "id": "item-234",
@@ -2292,7 +2436,8 @@
       "aisle": "Plush",
       "name": "Hedwig Soft Toy - Medium",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 65
     },
     {
       "id": "item-235",
@@ -2302,17 +2447,19 @@
       "aisle": "Plush",
       "name": "Hedwig Soft Toy - Small",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 75
     },
     {
       "id": "item-236",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Plush",
+      "group": "Collectables",
       "aisle": "Toys",
       "name": "Hedwig TY Bouncer",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 9
     },
     {
       "id": "item-237",
@@ -2332,17 +2479,18 @@
       "aisle": "Wands",
       "name": "Hedwig Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-239",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Hedwig",
       "aisle": "Stationary/MinaLima",
       "name": "Hedwig Weekly Desk Planner",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 22
     },
     {
       "id": "item-240",
@@ -2352,7 +2500,8 @@
       "aisle": "Bags",
       "name": "Hermione Granger Charms Handbag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 45
     },
     {
       "id": "item-241",
@@ -2382,27 +2531,29 @@
       "aisle": "Wands",
       "name": "Hermione Granger's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-244",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Hogwarts",
       "aisle": "Collectables",
       "name": "History Of Magic Jewellery Box",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 47
     },
     {
       "id": "item-245",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Ornaments",
+      "group": "Hogwarts",
       "aisle": "Ornaments",
       "name": "Hogsmeade Christmas Mini Snow Globe",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 48
     },
     {
       "id": "item-246",
@@ -2428,31 +2579,34 @@
       "id": "item-248",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Hogwarts",
       "aisle": "Drinkware",
       "name": "Hogwarts Castle Christmas Mug & Socks Gift Set",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 37
     },
     {
       "id": "item-249",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Ornaments",
+      "group": "Hogwarts",
       "aisle": "Ornaments",
       "name": "Hogwarts Castle Gold Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 35
     },
     {
       "id": "item-250",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Ornaments",
+      "group": "Hogwarts",
       "aisle": "Ornaments",
       "name": "Hogwarts Christmas Gold Snow Globe",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 39
     },
     {
       "id": "item-251",
@@ -2478,21 +2632,23 @@
       "id": "item-253-SM",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Hogwarts",
       "aisle": "Accessories",
       "name": "Hogwarts Christmas Slipper Socks S/M",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 41
     },
     {
       "id": "item-253-ML",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Hogwarts",
       "aisle": "Accessories",
       "name": "Hogwarts Christmas Slipper Socks M/L",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 40
     },
     {
       "id": "item-254",
@@ -2508,11 +2664,12 @@
       "id": "item-255",
       "department": "hardlines",
       "sectionId": "knight-bus",
-      "group": "General",
+      "group": "Hogwarts",
       "aisle": "Drinkware",
       "name": "Hogwarts Crest Cup & Straw",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 15
     },
     {
       "id": "item-256",
@@ -2538,31 +2695,34 @@
       "id": "item-258",
       "department": "hardlines",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "415",
       "aisle": "Bags",
       "name": "Acceptance Letter Cushion",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 65
     },
     {
       "id": "item-259",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Ornaments",
+      "group": "Hogwarts",
       "aisle": "Ornaments",
       "name": "Hogwarts Express Gold Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 43
     },
     {
       "id": "item-260",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Hogwarts",
       "aisle": "Drinkware",
       "name": "Hogwarts Express Mug & Socks Gift Set",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 42
     },
     {
       "id": "item-262",
@@ -2602,7 +2762,8 @@
       "aisle": "Toys",
       "name": "Hogwarts House Crest LEGO®",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 18
     },
     {
       "id": "item-266",
@@ -2618,21 +2779,23 @@
       "id": "item-267",
       "department": "hardlines",
       "sectionId": "knight-bus",
-      "group": "General",
+      "group": "Hogwarts",
       "aisle": "Stationary/MinaLima",
       "name": "Hogwarts Quill - Black",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 11
     },
     {
       "id": "item-268",
       "department": "hardlines",
       "sectionId": "knight-bus",
-      "group": "General",
+      "group": "Hogwarts",
       "aisle": "Stationary/MinaLima",
       "name": "Hogwarts Quill - White",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 10
     },
     {
       "id": "item-269",
@@ -2658,31 +2821,34 @@
       "id": "item-271",
       "department": "hardlines",
       "sectionId": "robes",
-      "group": "General",
+      "group": "H and R",
       "aisle": "Knitwear",
       "name": "Hogwarts School Crest Knitted Gloves",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 33
     },
     {
       "id": "item-272",
       "department": "hardlines",
       "sectionId": "robes",
-      "group": "General",
+      "group": "H and R",
       "aisle": "Knitwear",
       "name": "Hogwarts School Crest Knitted Hat",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 32
     },
     {
       "id": "item-273",
       "department": "hardlines",
       "sectionId": "robes",
-      "group": "General",
+      "group": "H and R",
       "aisle": "Knitwear",
       "name": "Hogwarts School Crest Knitted Scarf",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 34
     },
     {
       "id": "item-274",
@@ -2722,7 +2888,8 @@
       "aisle": "Confectionary",
       "name": "Honeydukes Caramel Sea Salt Fudge",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 54
     },
     {
       "id": "item-278",
@@ -2732,7 +2899,8 @@
       "aisle": "Confectionary",
       "name": "Honeydukes Chocolate Coin",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 62
     },
     {
       "id": "item-279",
@@ -2752,7 +2920,8 @@
       "aisle": "Accessories",
       "name": "Honeydukes Christmas Cosy Socks S/M",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 60
     },
     {
       "id": "item-280-ML",
@@ -2762,7 +2931,8 @@
       "aisle": "Accessories",
       "name": "Honeydukes Christmas Cosy Socks M/L",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 59
     },
     {
       "id": "item-281",
@@ -2782,7 +2952,8 @@
       "aisle": "Keyrings/Pin Badges",
       "name": "Honeydukes Christmas Keychain",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 61
     },
     {
       "id": "item-283",
@@ -2792,7 +2963,8 @@
       "aisle": "Ornaments",
       "name": "Honeydukes Christmas Mini Snow Globe",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 57
     },
     {
       "id": "item-284",
@@ -2802,7 +2974,8 @@
       "aisle": "Drinkware",
       "name": "Honeydukes Christmas Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 55
     },
     {
       "id": "item-285",
@@ -2812,7 +2985,8 @@
       "aisle": "Drinkware",
       "name": "Honeydukes Christmas Plate",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 56
     },
     {
       "id": "item-286",
@@ -2822,7 +2996,8 @@
       "aisle": "Ornaments",
       "name": "Honeydukes Glass Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 58
     },
     {
       "id": "item-287",
@@ -2832,7 +3007,8 @@
       "aisle": "Confectionary",
       "name": "Honeydukes Milk Chocolate Honeycomb",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 53
     },
     {
       "id": "item-288-SM",
@@ -2842,7 +3018,8 @@
       "aisle": "Accessories",
       "name": "3-Pack Socks S/M",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 9
     },
     {
       "id": "item-288-ML",
@@ -2852,7 +3029,8 @@
       "aisle": "Accessories",
       "name": "3-Pack Socks M/L",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 10
     },
     {
       "id": "item-289",
@@ -2872,7 +3050,8 @@
       "aisle": "Plush",
       "name": "Bear Plush",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 11
     },
     {
       "id": "item-291",
@@ -2882,7 +3061,8 @@
       "aisle": "Accessories",
       "name": "Compact Mirror",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 12
     },
     {
       "id": "item-292",
@@ -2892,7 +3072,8 @@
       "aisle": "Accessories",
       "name": "Cosmetics Bag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 13
     },
     {
       "id": "item-293",
@@ -2922,7 +3103,8 @@
       "aisle": "Accessories",
       "name": "House Baseball Cap",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 14
     },
     {
       "id": "item-296",
@@ -2952,7 +3134,8 @@
       "aisle": "Accessories",
       "name": "House Tie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 15
     },
     {
       "id": "item-299",
@@ -2972,7 +3155,8 @@
       "aisle": "Knitwear",
       "name": "Knitted Crest Scarf",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 16
     },
     {
       "id": "item-301",
@@ -2982,7 +3166,8 @@
       "aisle": "Knitwear",
       "name": "Knitted Hat",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 17
     },
     {
       "id": "item-302",
@@ -2992,7 +3177,8 @@
       "aisle": "Knitwear",
       "name": "Knitted Mitten Capped Gloves",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 18
     },
     {
       "id": "item-303",
@@ -3002,7 +3188,7 @@
       "aisle": "Wands",
       "name": "Mascot & Traits Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-304",
@@ -3012,7 +3198,8 @@
       "aisle": "Plush",
       "name": "Mascot Badger Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 19
     },
     {
       "id": "item-305",
@@ -3032,7 +3219,8 @@
       "aisle": "Accessories",
       "name": "Nail File Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 20
     },
     {
       "id": "item-307",
@@ -3042,7 +3230,8 @@
       "aisle": "Bags",
       "name": "Patch Backpack",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 21
     },
     {
       "id": "item-308",
@@ -3061,8 +3250,9 @@
       "group": "Hufflepuff",
       "aisle": "Drinkware",
       "name": "PS Mug",
-      "innerQty": 0,
-      "boxQty": 0
+      "innerQty": 6,
+      "boxQty": 24,
+      "sortOrder": 22
     },
     {
       "id": "item-310",
@@ -3102,7 +3292,8 @@
       "aisle": "Accessories",
       "name": "Scrunchie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 23
     },
     {
       "id": "item-314",
@@ -3112,7 +3303,8 @@
       "aisle": "Accessories",
       "name": "Striped Headband",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 24
     },
     {
       "id": "item-315",
@@ -3138,11 +3330,12 @@
       "id": "item-317",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Toys",
+      "group": "MIddle Bay",
       "aisle": "Toys",
       "name": "L.O.L. Surprise! Harry Potter Doll Assortment",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 36
     },
     {
       "id": "item-318",
@@ -3162,7 +3355,7 @@
       "aisle": "Wands",
       "name": "Leta Lestrange's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-320",
@@ -3172,17 +3365,18 @@
       "aisle": "Wands",
       "name": "Lord Voldemort's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-321",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Hedwig",
       "aisle": "Bags",
       "name": "Loungefly Stained Glass Mermaid Backpack",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 26
     },
     {
       "id": "item-322",
@@ -3212,7 +3406,8 @@
       "aisle": "Bags",
       "name": "Luna Lovegood Charms Handbag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 53
     },
     {
       "id": "item-325",
@@ -3228,11 +3423,12 @@
       "id": "item-326",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Toys",
+      "group": "MIddle Bay",
       "aisle": "Accessories",
       "name": "Luna Lovegood Spectrespecs",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 35
     },
     {
       "id": "item-327",
@@ -3242,7 +3438,7 @@
       "aisle": "Wands",
       "name": "Luna Lovegood's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-328",
@@ -3268,21 +3464,23 @@
       "id": "item-330",
       "department": "hardlines",
       "sectionId": "knight-bus",
-      "group": "General",
+      "group": "Hogwarts",
       "aisle": "Accessories",
       "name": "Magical Hogwarts Scrunchies 2-Pack",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 14
     },
     {
       "id": "item-331",
       "department": "hardlines",
       "sectionId": "robes",
-      "group": "General",
+      "group": "Map",
       "aisle": "Stationary/MinaLima",
       "name": "Marauder's Map Replica",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 12
     },
     {
       "id": "item-332",
@@ -3308,21 +3506,23 @@
       "id": "item-334-SM",
       "department": "hardlines",
       "sectionId": "robes",
-      "group": "General",
+      "group": "Map",
       "aisle": "Accessories",
       "name": "Marauder's Map Socks S/M",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 16
     },
     {
       "id": "item-334-ML",
       "department": "hardlines",
       "sectionId": "robes",
-      "group": "General",
+      "group": "Map",
       "aisle": "Accessories",
       "name": "Marauder's Map Socks M/L",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 15
     },
     {
       "id": "item-335",
@@ -3332,7 +3532,7 @@
       "aisle": "Wands",
       "name": "Marauder's Map Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-336",
@@ -3342,7 +3542,8 @@
       "aisle": "Stationary/MinaLima",
       "name": "MinaLima Chocolate Frog Notecard",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 10
     },
     {
       "id": "item-337",
@@ -3352,7 +3553,8 @@
       "aisle": "Stationary/MinaLima",
       "name": "MinaLima Christmas Hanging Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 9
     },
     {
       "id": "item-338",
@@ -3362,7 +3564,8 @@
       "aisle": "Stationary/MinaLima",
       "name": "MinaLima Defenders of Hogwarts Board Game",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 3
     },
     {
       "id": "item-339",
@@ -3372,7 +3575,8 @@
       "aisle": "Stationary/MinaLima",
       "name": "MinaLima Honeydukes Hanging Garland",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 8
     },
     {
       "id": "item-340",
@@ -3392,7 +3596,8 @@
       "aisle": "Stationary/MinaLima",
       "name": "Minalima Wizarding Christmas 3D Notecard",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 11
     },
     {
       "id": "item-342",
@@ -3408,111 +3613,122 @@
       "id": "item-343",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Toys",
+      "group": "MIddle Bay",
       "aisle": "Toys",
       "name": "Miniverse Harry Potter Honeydukes Playset",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 40
     },
     {
       "id": "item-344",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Toys",
+      "group": "MIddle Bay",
       "aisle": "Toys",
       "name": "Miniverse Harry Potter Make It Mini - Hogwarts",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 41
     },
     {
       "id": "item-345",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Toys",
+      "group": "MIddle Bay",
       "aisle": "Toys",
       "name": "Miniverse Harry Potter Make It Mini - Honeydukes",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 37
     },
     {
       "id": "item-346",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Toys",
+      "group": "MIddle Bay",
       "aisle": "Toys",
       "name": "Miniverse Harry Potter Make It Mini - Potions",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 28
     },
     {
       "id": "item-347",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Toys",
+      "group": "MIddle Bay",
       "aisle": "Toys",
       "name": "Miniverse Harry Potter Potions Class Playset",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 27
     },
     {
       "id": "item-348",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Toys",
+      "group": "MIddle Bay",
       "aisle": "Toys",
       "name": "Miniverse Make It Mini - Harry Potter's Birthday Cake",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 39
     },
     {
       "id": "item-349",
       "department": "hardlines",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "Drinkware",
       "name": "MM25 Glass Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 325
     },
     {
       "id": "item-350",
       "department": "hardlines",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "Keyrings/Pin Badges",
       "name": "MM25 Magnet",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 326
     },
     {
       "id": "item-351-SM",
       "department": "hardlines",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "Accessories",
       "name": "MM25 Socks S/M",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 327
     },
     {
       "id": "item-351-ML",
       "department": "hardlines",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "Accessories",
       "name": "MM25 Socks M/L",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 328
     },
     {
       "id": "item-352",
       "department": "hardlines",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "Drinkware",
       "name": "MM25 Tumbler",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 329
     },
     {
       "id": "item-353",
@@ -3522,7 +3738,8 @@
       "aisle": "Drinkware",
       "name": "MM25 Glass Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 25
     },
     {
       "id": "item-354",
@@ -3532,7 +3749,8 @@
       "aisle": "Keyrings/Pin Badges",
       "name": "MM25 Magnet",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 26
     },
     {
       "id": "item-355-SM",
@@ -3542,7 +3760,8 @@
       "aisle": "Accessories",
       "name": "MM25 Socks S/M",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 27
     },
     {
       "id": "item-355-ML",
@@ -3552,7 +3771,8 @@
       "aisle": "Accessories",
       "name": "MM25 Socks M/L",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 28
     },
     {
       "id": "item-356",
@@ -3562,7 +3782,8 @@
       "aisle": "Drinkware",
       "name": "MM25 Tumbler",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 29
     },
     {
       "id": "item-357",
@@ -3622,7 +3843,8 @@
       "aisle": "Drinkware",
       "name": "MM25 Glass Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 225
     },
     {
       "id": "item-362",
@@ -3632,7 +3854,8 @@
       "aisle": "Keyrings/Pin Badges",
       "name": "MM25 Magnet",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 226
     },
     {
       "id": "item-363-SM",
@@ -3642,7 +3865,8 @@
       "aisle": "Accessories",
       "name": "MM25 Socks S/M",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 227
     },
     {
       "id": "item-363-ML",
@@ -3652,7 +3876,8 @@
       "aisle": "Accessories",
       "name": "MM25 Socks M/L",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 228
     },
     {
       "id": "item-364",
@@ -3662,7 +3887,8 @@
       "aisle": "Drinkware",
       "name": "MM25 Tumbler",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 229
     },
     {
       "id": "item-365",
@@ -3672,7 +3898,7 @@
       "aisle": "Wands",
       "name": "Narcissa Malfoy's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-366",
@@ -3682,77 +3908,84 @@
       "aisle": "Wands",
       "name": "Neville Longbottom's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-367",
       "department": "hardlines",
       "sectionId": "scrib",
-      "group": "General",
+      "group": "Books",
       "aisle": "Keyrings/Pin Badges",
       "name": "New Edition Harry Potter and the Chamber of Secrets (Paperback)",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 18
     },
     {
       "id": "item-368",
       "department": "hardlines",
       "sectionId": "scrib",
-      "group": "General",
+      "group": "Books",
       "aisle": "Keyrings/Pin Badges",
       "name": "New Edition Harry Potter and the Deathly Hallows (Paperback)",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 25
     },
     {
       "id": "item-369",
       "department": "hardlines",
       "sectionId": "scrib",
-      "group": "General",
+      "group": "Books",
       "aisle": "Keyrings/Pin Badges",
       "name": "New Edition Harry Potter and the Goblet of Fire (Paperback)",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 20
     },
     {
       "id": "item-370",
       "department": "hardlines",
       "sectionId": "scrib",
-      "group": "General",
+      "group": "Books",
       "aisle": "Keyrings/Pin Badges",
       "name": "New Edition Harry Potter and the Half-Blood Prince (Paperback)",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 22
     },
     {
       "id": "item-371",
       "department": "hardlines",
       "sectionId": "scrib",
-      "group": "General",
+      "group": "Books",
       "aisle": "Keyrings/Pin Badges",
       "name": "New Edition Harry Potter and the Order of the Phoenix (Paperback)",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 21
     },
     {
       "id": "item-372",
       "department": "hardlines",
       "sectionId": "scrib",
-      "group": "General",
+      "group": "Books",
       "aisle": "Keyrings/Pin Badges",
       "name": "New Edition Harry Potter and the Philosopher's Stone (Paperback)",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 17
     },
     {
       "id": "item-373",
       "department": "hardlines",
       "sectionId": "scrib",
-      "group": "General",
+      "group": "Books",
       "aisle": "Keyrings/Pin Badges",
       "name": "New Edition Harry Potter and the Prisoner of Azkaban (Paperback)",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 19
     },
     {
       "id": "item-374",
@@ -3762,57 +3995,62 @@
       "aisle": "Wands",
       "name": "Newt Scamander's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-375",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Ornaments",
+      "group": "Niffler",
       "aisle": "Ornaments",
       "name": "Niffler Christmas Bauble",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 13
     },
     {
       "id": "item-376",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Niffler",
       "aisle": "Drinkware",
       "name": "Niffler Cosy Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 15
     },
     {
       "id": "item-377",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Niffler",
       "aisle": "Drinkware",
       "name": "Niffler Cosy Mug & Plush Gift Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 10
     },
     {
       "id": "item-378-SM",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Niffler",
       "aisle": "Accessories",
       "name": "Niffler Cosy Socks S/M",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 12
     },
     {
       "id": "item-378-ML",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Niffler",
       "aisle": "Accessories",
       "name": "Niffler Cosy Socks M/L",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 11
     },
     {
       "id": "item-379",
@@ -3832,27 +4070,30 @@
       "aisle": "Toys",
       "name": "Norbert - Hagrid's Baby Dragon LEGO®",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 21
     },
     {
       "id": "item-381",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Ornaments",
+      "group": "Diagon Alley",
       "aisle": "Ornaments",
       "name": "Ollivanders Glass Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 72
     },
     {
       "id": "item-382",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Ornaments",
+      "group": "Diagon Alley",
       "aisle": "Ornaments",
       "name": "Ollivanders Mini Snow Globe",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 75
     },
     {
       "id": "item-383",
@@ -3872,7 +4113,8 @@
       "aisle": "Confectionary",
       "name": "Peppermint Toads",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 36
     },
     {
       "id": "item-385",
@@ -3892,7 +4134,8 @@
       "aisle": "Stationary/MinaLima",
       "name": "Philosopher's Stone - MinaLima Edition",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 0
     },
     {
       "id": "item-387",
@@ -3902,7 +4145,7 @@
       "aisle": "Wands",
       "name": "Philosopher's Stone Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-388",
@@ -3912,7 +4155,7 @@
       "aisle": "Wands",
       "name": "Phoenix Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-389",
@@ -3922,7 +4165,8 @@
       "aisle": "Plush",
       "name": "Pickett Soft Toy",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 70
     },
     {
       "id": "item-390",
@@ -3938,81 +4182,89 @@
       "id": "item-391",
       "department": "hardlines",
       "sectionId": "scrib",
-      "group": "General",
+      "group": "Books",
       "aisle": "Accessories",
       "name": "Pocket Potters - Dobby",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 27
     },
     {
       "id": "item-392",
       "department": "hardlines",
       "sectionId": "scrib",
-      "group": "General",
+      "group": "Books",
       "aisle": "Accessories",
       "name": "Pocket Potters - Hagrid",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 32
     },
     {
       "id": "item-393",
       "department": "hardlines",
       "sectionId": "scrib",
-      "group": "General",
+      "group": "Books",
       "aisle": "Accessories",
       "name": "Pocket Potters - Harry Potter",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 24
     },
     {
       "id": "item-394",
       "department": "hardlines",
       "sectionId": "scrib",
-      "group": "General",
+      "group": "Books",
       "aisle": "Accessories",
       "name": "Pocket Potters - Hermione Granger",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 26
     },
     {
       "id": "item-395",
       "department": "hardlines",
       "sectionId": "scrib",
-      "group": "General",
+      "group": "Books",
       "aisle": "Accessories",
       "name": "Pocket Potters - Luna Lovegood",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 29
     },
     {
       "id": "item-396",
       "department": "hardlines",
       "sectionId": "scrib",
-      "group": "General",
+      "group": "Books",
       "aisle": "Accessories",
       "name": "Pocket Potters - Professor Dumbledore",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 28
     },
     {
       "id": "item-397",
       "department": "hardlines",
       "sectionId": "scrib",
-      "group": "General",
+      "group": "Books",
       "aisle": "Accessories",
       "name": "Pocket Potters - Ron Weasley",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 31
     },
     {
       "id": "item-398",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Pop",
+      "group": "Collectables",
       "aisle": "Toys",
       "name": "POP! Deluxe: Chocolate Frog",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 15
     },
     {
       "id": "item-399",
@@ -4038,31 +4290,34 @@
       "id": "item-401",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Pop",
+      "group": "Collectables",
       "aisle": "Toys",
       "name": "POP! Movies: Hermione Granger",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 11
     },
     {
       "id": "item-402",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Pop",
+      "group": "Collectables",
       "aisle": "Toys",
       "name": "POP! Movies: Ron Weasley",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 16
     },
     {
       "id": "item-403",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Pop",
+      "group": "Collectables",
       "aisle": "Toys",
       "name": "POP! Ride Super Deluxe: Knight Bus",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 17
     },
     {
       "id": "item-404",
@@ -4072,17 +4327,18 @@
       "aisle": "Wands",
       "name": "Porpentina Goldstein Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-405",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Hogwarts",
       "aisle": "Collectables",
       "name": "Potions Jewellery Box",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 38
     },
     {
       "id": "item-406",
@@ -4092,7 +4348,7 @@
       "aisle": "Wands",
       "name": "Professor Dumbledore's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-407",
@@ -4102,7 +4358,7 @@
       "aisle": "Wands",
       "name": "Professor Lupin's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-408",
@@ -4112,7 +4368,7 @@
       "aisle": "Wands",
       "name": "Professor McGonagall's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-409",
@@ -4122,7 +4378,7 @@
       "aisle": "Wands",
       "name": "Professor Snape's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-410",
@@ -4142,7 +4398,7 @@
       "aisle": "Wands",
       "name": "Queenie Goldstein's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-412-SM",
@@ -4172,7 +4428,8 @@
       "aisle": "Plush",
       "name": "Bear Plush",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 311
     },
     {
       "id": "item-414",
@@ -4182,7 +4439,8 @@
       "aisle": "Accessories",
       "name": "Compact Mirror",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 312
     },
     {
       "id": "item-415",
@@ -4252,7 +4510,8 @@
       "aisle": "Accessories",
       "name": "House Tie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 315
     },
     {
       "id": "item-422",
@@ -4292,7 +4551,7 @@
       "aisle": "Wands",
       "name": "Mascot & Traits Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-426",
@@ -4341,8 +4600,8 @@
       "group": "Ravenclaw",
       "aisle": "Drinkware",
       "name": "PS Mug",
-      "innerQty": 0,
-      "boxQty": 0
+      "innerQty": 6,
+      "boxQty": 24
     },
     {
       "id": "item-431",
@@ -4422,7 +4681,7 @@
       "aisle": "Wands",
       "name": "Ron Weasley's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-439",
@@ -4432,7 +4691,8 @@
       "aisle": "Plush",
       "name": "Scabbers Plush",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 60
     },
     {
       "id": "item-440",
@@ -4442,7 +4702,7 @@
       "aisle": "Wands",
       "name": "Seraphina Picquery's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-441",
@@ -4452,7 +4712,7 @@
       "aisle": "Wands",
       "name": "Sirius Black's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-442",
@@ -4468,11 +4728,12 @@
       "id": "item-443",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Toys",
+      "group": "MIddle Bay",
       "aisle": "Toys",
       "name": "Slime Life Harry Potter Amortentia Inspired Slime",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 30
     },
     {
       "id": "item-444",
@@ -4488,11 +4749,12 @@
       "id": "item-445",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Toys",
+      "group": "MIddle Bay",
       "aisle": "Toys",
       "name": "Slime Life Harry Potter Polyjuice Potion Inspired Slime",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 32
     },
     {
       "id": "item-446",
@@ -4512,7 +4774,8 @@
       "aisle": "Accessories",
       "name": "3-Pack Socks S/M",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 209
     },
     {
       "id": "item-447-ML",
@@ -4522,7 +4785,8 @@
       "aisle": "Accessories",
       "name": "3-Pack Socks M/L",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 210
     },
     {
       "id": "item-448",
@@ -4542,7 +4806,8 @@
       "aisle": "Plush",
       "name": "Bear Plush",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 211
     },
     {
       "id": "item-450",
@@ -4552,7 +4817,8 @@
       "aisle": "Accessories",
       "name": "Compact Mirror",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 212
     },
     {
       "id": "item-451",
@@ -4562,7 +4828,8 @@
       "aisle": "Accessories",
       "name": "Cosmetics Bag",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 213
     },
     {
       "id": "item-452",
@@ -4602,7 +4869,8 @@
       "aisle": "Accessories",
       "name": "House Baseball Cap",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 214
     },
     {
       "id": "item-456",
@@ -4622,7 +4890,8 @@
       "aisle": "Accessories",
       "name": "House Tie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 215
     },
     {
       "id": "item-458",
@@ -4632,7 +4901,8 @@
       "aisle": "Knitwear",
       "name": "Knitted Crest Scarf",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 216
     },
     {
       "id": "item-459",
@@ -4642,7 +4912,8 @@
       "aisle": "Knitwear",
       "name": "Knitted Hat",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 217
     },
     {
       "id": "item-460",
@@ -4652,7 +4923,8 @@
       "aisle": "Knitwear",
       "name": "Knitted Mitten Capped Gloves",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 218
     },
     {
       "id": "item-461",
@@ -4662,7 +4934,7 @@
       "aisle": "Wands",
       "name": "Mascot & Traits Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-462",
@@ -4692,7 +4964,8 @@
       "aisle": "Accessories",
       "name": "Nail File Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 220
     },
     {
       "id": "item-465",
@@ -4702,7 +4975,8 @@
       "aisle": "Drinkware",
       "name": "Patch Backpack",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 221
     },
     {
       "id": "item-466",
@@ -4721,8 +4995,9 @@
       "group": "Slytherin",
       "aisle": "Drinkware",
       "name": "PS Mug",
-      "innerQty": 0,
-      "boxQty": 0
+      "innerQty": 6,
+      "boxQty": 24,
+      "sortOrder": 222
     },
     {
       "id": "item-468",
@@ -4762,7 +5037,8 @@
       "aisle": "Accessories",
       "name": "Scrunchie",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 223
     },
     {
       "id": "item-472",
@@ -4772,7 +5048,8 @@
       "aisle": "Accessories",
       "name": "Striped Headband",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 224
     },
     {
       "id": "item-473",
@@ -4812,7 +5089,8 @@
       "aisle": "Plush",
       "name": "Steiff Dobby Plush",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 64
     },
     {
       "id": "item-477",
@@ -4832,7 +5110,7 @@
       "aisle": "Wands",
       "name": "The Cup of Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-479",
@@ -4842,7 +5120,7 @@
       "aisle": "Wands",
       "name": "The Diadem of Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-480",
@@ -4862,7 +5140,7 @@
       "aisle": "Wands",
       "name": "The Locket Of Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-482",
@@ -4872,7 +5150,8 @@
       "aisle": "Stationary/MinaLima",
       "name": "The Prisoner Of Azkaban - Minalima Edition",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 2
     },
     {
       "id": "item-483",
@@ -4882,7 +5161,7 @@
       "aisle": "Wands",
       "name": "The Sword of Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-484",
@@ -4892,7 +5171,8 @@
       "aisle": "Stationary/MinaLima",
       "name": "The Tales of Beedle the Bard Journal",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 5
     },
     {
       "id": "item-485",
@@ -4902,17 +5182,18 @@
       "aisle": "Wands",
       "name": "Thestral Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-486",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Ornaments",
+      "group": "Middle Trolley",
       "aisle": "Ornaments",
       "name": "Three Broomsticks Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 98
     },
     {
       "id": "item-487",
@@ -4932,7 +5213,7 @@
       "aisle": "Wands",
       "name": "Time Turner Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-489",
@@ -4972,7 +5253,7 @@
       "aisle": "Wands",
       "name": "Ukrainian Ironbelly's Wand",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 24
     },
     {
       "id": "item-494",
@@ -4988,41 +5269,45 @@
       "id": "item-495",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Ornaments",
+      "group": "Weasley",
       "aisle": "Ornaments",
       "name": "Weasleys' Wizard Wheezes Glass Decoration",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 62
     },
     {
       "id": "item-496",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "General",
+      "group": "Weasley",
       "aisle": "Keyrings/Pin Badges",
       "name": "Weasleys' Wizard Wheezes Magnet",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 60
     },
     {
       "id": "item-497",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Ornaments",
+      "group": "Middle Trolley",
       "aisle": "Ornaments",
       "name": "Weasleys' Wizard Wheezes Mini Snow Globe",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 85
     },
     {
       "id": "item-498",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Ornaments",
+      "group": "Middle Trolley",
       "aisle": "Ornaments",
       "name": "Weasleys' Wizard Wheezes Tealight",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 100
     },
     {
       "id": "item-499",
@@ -5032,17 +5317,19 @@
       "aisle": "Confectionary",
       "name": "White Chocolate Frog - with authentic film packaging",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 34
     },
     {
       "id": "item-500",
       "department": "hardlines",
       "sectionId": "toys",
-      "group": "Games",
+      "group": "MIddle Bay",
       "aisle": "Toys",
       "name": "Wizard Chess Set",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 38
     },
     {
       "id": "item-1795215564898-0",
@@ -5249,197 +5536,218 @@
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "Window",
       "aisle": "",
-      "name": "Stone Hoodie"
+      "name": "Stone Hoodie",
+      "sortOrder": 19
     },
     {
       "id": "cloth-1795215704169-1",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "413",
       "aisle": "",
-      "name": "Stone T-Shirt"
+      "name": "Stone T-Shirt",
+      "sortOrder": 41
     },
     {
       "id": "cloth-1795215704169-2",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "411",
       "aisle": "",
-      "name": "Black Sweater"
+      "name": "Black Sweater",
+      "sortOrder": 28
     },
     {
       "id": "cloth-1795215704169-3",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "414",
       "aisle": "",
-      "name": "Black T-Shirt"
+      "name": "Black T-Shirt",
+      "sortOrder": 58
     },
     {
       "id": "cloth-1795215704169-4",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "412",
       "aisle": "",
-      "name": "Gilet"
+      "name": "Gilet",
+      "sortOrder": 36
     },
     {
       "id": "cloth-1795215704169-5",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "Window",
       "aisle": "",
-      "name": "Teddy Fleece"
+      "name": "Teddy Fleece",
+      "sortOrder": 26
     },
     {
       "id": "cloth-1795215704169-6",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "413",
       "aisle": "",
-      "name": "Khaki Hoodie"
+      "name": "Khaki Hoodie",
+      "sortOrder": 47
     },
     {
       "id": "cloth-1795215704169-7",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "414",
       "aisle": "",
-      "name": "Stone Spirit Jersey"
+      "name": "Stone Spirit Jersey",
+      "sortOrder": 52
     },
     {
       "id": "cloth-1795215704169-8",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "413",
       "aisle": "",
-      "name": "Black Spirit Jersey"
+      "name": "Black Spirit Jersey",
+      "sortOrder": 50
     },
     {
       "id": "cloth-1795215704169-9",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "412",
       "aisle": "",
-      "name": "White T-Shirt"
+      "name": "White T-Shirt",
+      "sortOrder": 33
     },
     {
       "id": "cloth-1795215704169-10",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "414",
       "aisle": "",
-      "name": "Varsity Jacket"
+      "name": "Varsity Jacket",
+      "sortOrder": 57
     },
     {
       "id": "item-1795215793349-0",
       "department": "hardlines",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "413",
       "aisle": "Drinkware",
       "name": "Stone Mug",
-      "innerQty": 0,
-      "boxQty": 0
+      "innerQty": 6,
+      "boxQty": 24,
+      "sortOrder": 40
     },
     {
       "id": "item-1795215793349-1",
       "department": "hardlines",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "412",
       "aisle": "Drinkware",
       "name": "Stone Water Bottle",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 31
     },
     {
       "id": "item-1795215793349-2",
       "department": "hardlines",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "413",
       "aisle": "Drinkware",
       "name": "Stone Cup and Straw",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 48
     },
     {
       "id": "item-1795215793349-3",
       "department": "hardlines",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "414",
       "aisle": "Drinkware",
       "name": "Ridged Mug",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 55
     },
     {
       "id": "item-1795215793349-4",
       "department": "hardlines",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "412",
       "aisle": "Drinkware",
       "name": "Ridged Bottle",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 29
     },
     {
       "id": "item-1795215793349-5",
       "department": "hardlines",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "414",
       "aisle": "Accessories",
       "name": "Black Cap",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 54
     },
     {
       "id": "item-1795215793349-6",
       "department": "hardlines",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "414",
       "aisle": "Accessories",
       "name": "Stone Cap",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 51
     },
     {
       "id": "item-1795215793349-7",
       "department": "hardlines",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "411",
       "aisle": "Toys",
       "name": "LDN Funko",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 27
     },
     {
       "id": "cloth-1795257180007-0",
       "department": "clothing",
       "sizeType": "kids",
       "sectionId": "gringotts",
-      "group": "General",
+      "group": "412",
       "aisle": "",
-      "name": "Kids White T-Shirt"
+      "name": "Kids White T-Shirt",
+      "sortOrder": 37
     },
     {
       "id": "cloth-1795257442463-0",
       "department": "clothing",
       "sizeType": "adult",
       "sectionId": "qudditch",
-      "group": "Gryffindor",
+      "group": "Ravenclaw",
       "aisle": "",
-      "name": "Rugby Top"
+      "name": "Rugby Top",
+      "sortOrder": 330
     },
     {
       "id": "cloth-1795257449961-0",
@@ -5448,7 +5756,8 @@
       "sectionId": "qudditch",
       "group": "Slytherin",
       "aisle": "",
-      "name": "Rugby Top"
+      "name": "Rugby Top",
+      "sortOrder": 230
     },
     {
       "id": "cloth-1795257455742-0",
@@ -5457,7 +5766,8 @@
       "sectionId": "qudditch",
       "group": "Hufflepuff",
       "aisle": "",
-      "name": "Rugby Top"
+      "name": "Rugby Top",
+      "sortOrder": 30
     },
     {
       "id": "cloth-1795257461831-0",
@@ -5472,31 +5782,34 @@
       "id": "item-wa-1795274154485-khhm",
       "department": "hardlines",
       "sectionId": "knight-bus",
-      "group": "General",
+      "group": "HBDH",
       "aisle": "Accessories",
       "name": "HBDH Cosy Socks S/M",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 7
     },
     {
       "id": "item-wa-1795274154486-ozbi",
       "department": "hardlines",
       "sectionId": "knight-bus",
-      "group": "General",
+      "group": "Hogwarts",
       "aisle": "Stationary/MinaLima",
       "name": "Hogwarts purple crest journal",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 9
     },
     {
       "id": "item-wa-1795274154486-ide1",
       "department": "hardlines",
       "sectionId": "knight-bus",
-      "group": "General",
+      "group": "HBDH",
       "aisle": "Accessories",
       "name": "HBDH Cosy Socks M/L",
       "innerQty": 3,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 4
     },
     {
       "id": "item-wa-1795274154486-3ptc",
@@ -5689,11 +6002,12 @@
       "id": "item-1795351235790-diagon-alley-0",
       "department": "hardlines",
       "sectionId": "diagon-alley",
-      "group": "Plush",
+      "group": "Hedwig",
       "aisle": "Plush",
       "name": "Hedwig Soft Toy - Keyring",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 25
     },
     {
       "id": "item-1795351370259-scrib-0",
@@ -5753,7 +6067,8 @@
       "aisle": "",
       "name": "2025 Cosmos Trading Card",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 0
     },
     {
       "id": "item-1795370335334-toys-5",
@@ -5763,7 +6078,8 @@
       "aisle": "",
       "name": "LetoGoods Sorcerer's Stone Trading Cards",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 4
     },
     {
       "id": "item-1795370335334-toys-6",
@@ -5773,7 +6089,8 @@
       "aisle": "",
       "name": "2026 Kakawow Aura Trading Cards",
       "innerQty": 0,
-      "boxQty": 0
+      "boxQty": 0,
+      "sortOrder": 3
     },
     {
       "id": "item-1795370335334-toys-7",
@@ -5812,6 +6129,2313 @@
       "group": "Plush",
       "aisle": "",
       "name": "Steif Stag Patronus",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 67
+    },
+    {
+      "id": "cloth-custom-1795716470251-0",
+      "department": "clothing",
+      "sizeType": "adult",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "aisle": "",
+      "name": "HBDH Pyjamas"
+    },
+    {
+      "id": "item-custom-1795716608248-0",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "aisle": "",
+      "name": "Hogwarts Wax Seal",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "cloth-custom-1795716650288-0",
+      "department": "clothing",
+      "sizeType": "adult",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "aisle": "",
+      "name": "Hogwarts Crest Blue T-Shirt"
+    },
+    {
+      "id": "item-custom-1795716772340-0",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "Butterbeer",
+      "aisle": "",
+      "name": "OS Butterbeer Single",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 21
+    },
+    {
+      "id": "item-custom-1795716772340-1",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "Butterbeer",
+      "aisle": "",
+      "name": "OS Butterbeer Glass Mug",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 22
+    },
+    {
+      "id": "item-custom-1795716772340-2",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "Butterbeer",
+      "aisle": "",
+      "name": "OS Butterbeer Keychain",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 20
+    },
+    {
+      "id": "item-custom-1795716772340-3",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "Butterbeer",
+      "aisle": "",
+      "name": "OS Butterbeer Bottle Opener",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 19
+    },
+    {
+      "id": "item-custom-1795716772340-4",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "Butterbeer",
+      "aisle": "",
+      "name": "OS Butterbeer Tote",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 23
+    },
+    {
+      "id": "cloth-custom-1795716809149-0",
+      "department": "clothing",
+      "sizeType": "adult",
+      "sectionId": "knight-bus",
+      "group": "Butterbeer",
+      "aisle": "",
+      "name": "OS Butterbeer T-Shirt",
+      "sortOrder": 18
+    },
+    {
+      "id": "item-custom-1795716948734-0",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Niffler",
+      "aisle": "",
+      "name": "Niffler Loungefly Backpack",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 8
+    },
+    {
+      "id": "cloth-custom-1795716968523-0",
+      "department": "clothing",
+      "sizeType": "kids",
+      "sectionId": "diagon-alley",
+      "group": "Niffler",
+      "aisle": "",
+      "name": "Niffler Pocket T",
+      "sortOrder": 9
+    },
+    {
+      "id": "item-custom-1795717080304-0",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Hedwig",
+      "aisle": "",
+      "name": "Golden Snitch Metal Ornament",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 17
+    },
+    {
+      "id": "item-custom-1795717155716-0",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Dobby",
+      "aisle": "",
+      "name": "Dobby 3 Pack Socks M/L",
+      "innerQty": 3,
+      "boxQty": 0,
+      "sortOrder": 31
+    },
+    {
+      "id": "item-custom-1795717155716-1",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Dobby",
+      "aisle": "",
+      "name": "Dobby 3 Pack Socks S/M",
+      "innerQty": 3,
+      "boxQty": 0,
+      "sortOrder": 32
+    },
+    {
+      "id": "item-custom-1795717350408-0",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Hogwarts",
+      "aisle": "",
+      "name": "Platform 9 3/4 Snow Globe",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 46
+    },
+    {
+      "id": "item-custom-1795717409859-0",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Hogwarts",
+      "aisle": "",
+      "name": "Sequin Christmas Stocking",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 50
+    },
+    {
+      "id": "item-custom-1795717509029-0",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Diagon Alley",
+      "aisle": "",
+      "name": "QQS Glass Decoration",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 55
+    },
+    {
+      "id": "item-custom-1795717524331-0",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Diagon Alley",
+      "aisle": "",
+      "name": "Diagon Alley Gifting Sack",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 59
+    },
+    {
+      "id": "item-custom-1795717612331-0",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Weasley",
+      "aisle": "",
+      "name": "Weasley Wizard Wheezes Socks M/L",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 65
+    },
+    {
+      "id": "item-custom-1795717612331-1",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Weasley",
+      "aisle": "",
+      "name": "Weasley Wizard Wheezes Socks S/M",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 67
+    },
+    {
+      "id": "item-custom-1795725555873-0",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Entrance Trolley",
+      "aisle": "Confectionary",
+      "name": "Chocolate Wand",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 102
+    },
+    {
+      "id": "item-custom-1795725673515-0",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Entrance Trolley",
+      "aisle": "Confectionary",
+      "name": "Sugar Quill",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 108
+    },
+    {
+      "id": "item-custom-1795725832830-0",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "aisle": "",
+      "name": "House Bear",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 5
+    },
+    {
+      "id": "item-custom-1795725845967-0",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "aisle": "",
+      "name": "Umbrella",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 7
+    },
+    {
+      "id": "item-custom-1795725933218-0",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "aisle": "",
+      "name": "Head Girl Pin",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 11
+    },
+    {
+      "id": "item-custom-1795725933218-1",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "aisle": "",
+      "name": "Head Boy Pin",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 9
+    },
+    {
+      "id": "item-custom-1795725933218-2",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "aisle": "",
+      "name": "Prefect Pin",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 10
+    },
+    {
+      "id": "item-custom-1795726059740-0",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "aisle": "",
+      "name": "Striped Pyjamas",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "cloth-custom-1795726088961-0",
+      "department": "clothing",
+      "sizeType": "adult",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "aisle": "",
+      "name": "Striped Pyjamas",
+      "sortOrder": 25
+    },
+    {
+      "id": "item-custom-1795727872545-0",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "General",
+      "aisle": "Drinkware",
+      "name": "Quidditch Mug",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 36
+    },
+    {
+      "id": "item-custom-1795727957824-0",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "413",
+      "aisle": "",
+      "name": "OS Keychain",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 46
+    },
+    {
+      "id": "item-custom-1795727957824-1",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "413",
+      "aisle": "",
+      "name": "OS Pin Pack",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 45
+    },
+    {
+      "id": "item-custom-1795727983606-0",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "416",
+      "aisle": "",
+      "name": "OS Foldaway Bag",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 5
+    },
+    {
+      "id": "item-custom-1795728000668-0",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "412",
+      "aisle": "",
+      "name": "Tea Cup",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 35
+    },
+    {
+      "id": "item-custom-1795728019966-0",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "416",
+      "aisle": "",
+      "name": "Small OS RPET",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 9
+    },
+    {
+      "id": "item-custom-1795728262557-0",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "412",
+      "aisle": "",
+      "name": "OS Bear Ornament",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 34
+    },
+    {
+      "id": "item-custom-1795728324530-0",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "aisle": "",
+      "name": "B&G Socks M/L",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-custom-1795728324530-1",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "aisle": "",
+      "name": "B&G Socks S/M",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-custom-1795728379642-0",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "aisle": "",
+      "name": "B&G Bear",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-custom-1795728464661-0",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "414",
+      "aisle": "Drinkware",
+      "name": "B&G Sparkle Cup",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 53
+    },
+    {
+      "id": "item-custom-1795728493213-0",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "414",
+      "aisle": "",
+      "name": "B&G Pen",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 56
+    },
+    {
+      "id": "item-custom-1795728695074-0",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "Collectables",
+      "aisle": "",
+      "name": "Funko Pop Dobby",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 5
+    },
+    {
+      "id": "item-custom-1795728695074-1",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "Collectables",
+      "aisle": "",
+      "name": "Funko Pop Dumbledore",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 10
+    },
+    {
+      "id": "item-custom-1795728860134-0",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "Lego",
+      "aisle": "",
+      "name": "Hogwarts Hospital Wing Lego",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 24
+    },
+    {
+      "id": "item-custom-1795728860134-1",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "Lego",
+      "aisle": "",
+      "name": "Mini Hogwarts Castle Lego",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 25
+    },
+    {
+      "id": "item-custom-1795728860134-2",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "Lego",
+      "aisle": "",
+      "name": "Knight Bus Lego",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 23
+    },
+    {
+      "id": "item-custom-1795728860134-3",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "Lego",
+      "aisle": "",
+      "name": "Luna Lovegood's House Lego",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 20
+    },
+    {
+      "id": "item-custom-1795728950685-0",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "MIddle Bay",
+      "aisle": "",
+      "name": "Top Trumps Quiz",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 33
+    },
+    {
+      "id": "item-custom-1795728950685-1",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "MIddle Bay",
+      "aisle": "",
+      "name": "Top Trumps Gold Pack",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 29
+    },
+    {
+      "id": "item-custom-1795729069246-0",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "MIddle Bay",
+      "aisle": "",
+      "name": "Triwizard Cup",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 34
+    },
+    {
+      "id": "item-custom-1795729216227-0",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "aisle": "",
+      "name": "Lightning Necklace",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-custom-1795729216227-1",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "aisle": "",
+      "name": "Lightning Earrings",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-custom-1795729357161-0",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Map",
+      "aisle": "",
+      "name": "Marauder's Map Mug",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 0
+    },
+    {
+      "id": "item-custom-1795729357161-1",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Map",
+      "aisle": "",
+      "name": "Marauder's Map Bottle",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 1
+    },
+    {
+      "id": "item-custom-1795729357161-2",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Map",
+      "aisle": "",
+      "name": "Marauder's Map Bookmark",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 3
+    },
+    {
+      "id": "item-custom-1795729357161-3",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Map",
+      "aisle": "",
+      "name": "Marauder's Map Pen",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 2
+    },
+    {
+      "id": "item-custom-1795729357161-4",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Map",
+      "aisle": "",
+      "name": "Marauder's Map Foldaway Bag",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 13
+    },
+    {
+      "id": "item-custom-1795729357161-5",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Map",
+      "aisle": "",
+      "name": "Marauder's Map Keyring",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 9
+    },
+    {
+      "id": "item-custom-1795729357161-6",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Map",
+      "aisle": "",
+      "name": "Marauder's Map Magnet",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 7
+    },
+    {
+      "id": "item-custom-1795729357161-7",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Map",
+      "aisle": "",
+      "name": "Marauder's Map Pin Badge",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 10
+    },
+    {
+      "id": "item-custom-1795729357161-8",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Map",
+      "aisle": "",
+      "name": "Marauder's Map Journal",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 4
+    },
+    {
+      "id": "item-custom-1795729357161-9",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Map",
+      "aisle": "",
+      "name": "Marauder's Map Bow",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 6
+    },
+    {
+      "id": "item-custom-1795729357161-10",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Map",
+      "aisle": "",
+      "name": "Marauder's Map Scrunchie",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 8
+    },
+    {
+      "id": "cloth-custom-1795729440342-0",
+      "department": "clothing",
+      "sizeType": "adult",
+      "sectionId": "robes",
+      "group": "Map",
+      "aisle": "",
+      "name": "Marauder's Map Sweater",
+      "sortOrder": 5
+    },
+    {
+      "id": "cloth-custom-1795729440342-1",
+      "department": "clothing",
+      "sizeType": "adult",
+      "sectionId": "robes",
+      "group": "Map",
+      "aisle": "",
+      "name": "Marauder's Map Hoodie",
+      "sortOrder": 11
+    },
+    {
+      "id": "cloth-custom-1795729440342-2",
+      "department": "clothing",
+      "sizeType": "adult",
+      "sectionId": "robes",
+      "group": "Map",
+      "aisle": "",
+      "name": "Marauder's Map T-Shirt",
+      "sortOrder": 14
+    },
+    {
+      "id": "cloth-custom-1795729503472-0",
+      "department": "clothing",
+      "sizeType": "adult",
+      "sectionId": "robes",
+      "group": "Hagrid's Hut",
+      "aisle": "",
+      "name": "Hagrid's Hut T-Shirt",
+      "sortOrder": 18
+    },
+    {
+      "id": "item-custom-1795729536922-0",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Hagrid's Hut",
+      "aisle": "",
+      "name": "Beaded Buckbeak",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 21
+    },
+    {
+      "id": "item-custom-1795729689604-0",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "H and R",
+      "aisle": "",
+      "name": "Hedwig Ankle Socks M/L",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 37
+    },
+    {
+      "id": "item-custom-1795729689604-1",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "H and R",
+      "aisle": "",
+      "name": "Hedwig Ankle Socks S/M",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 38
+    },
+    {
+      "id": "item-custom-1795730154967-0",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "Plush",
+      "aisle": "",
+      "name": "Raven Mascot",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 76
+    },
+    {
+      "id": "item-custom-1795730154967-1",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "Plush",
+      "aisle": "",
+      "name": "Gryff Mascot",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 71
+    },
+    {
+      "id": "item-custom-1795730154967-2",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "Plush",
+      "aisle": "",
+      "name": "Sly Mascot",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 74
+    },
+    {
+      "id": "item-custom-1795730154967-3",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "Plush",
+      "aisle": "",
+      "name": "Muff Mascot",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-custom-1795730185436-0",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "Plush",
+      "aisle": "",
+      "name": "Huff Mascot",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 68
+    },
+    {
+      "id": "item-custom-1795730626684-0",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Gryff Metal Crest Journal",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 6
+    },
+    {
+      "id": "item-custom-1795730626684-1",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Huff Metal Crest Journal",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 47
+    },
+    {
+      "id": "item-custom-1795730626684-2",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Sly Metal Crest Journal",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 39
+    },
+    {
+      "id": "item-custom-1795730626684-3",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Rave Metal Crest Journal",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 9
+    },
+    {
+      "id": "item-custom-1795730626684-4",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Gryf Embossed Journal",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 1
+    },
+    {
+      "id": "item-custom-1795730626684-5",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Huff Embossed Journal",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 46
+    },
+    {
+      "id": "item-custom-1795730626684-6",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Sly Embossed Journal",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 38
+    },
+    {
+      "id": "item-custom-1795730626684-7",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Rave Embossed Journal",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 8
+    },
+    {
+      "id": "item-custom-1795730626684-8",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Gryf Metal Pen",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 2
+    },
+    {
+      "id": "item-custom-1795730626684-9",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Huff Metal Pen",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 48
+    },
+    {
+      "id": "item-custom-1795730626684-10",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Sly Metal Pen",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 40
+    },
+    {
+      "id": "item-custom-1795730626684-11",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Rave Metal Pen",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 10
+    },
+    {
+      "id": "item-custom-1795730626684-12",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Gryf Quill",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 4
+    },
+    {
+      "id": "item-custom-1795730626684-13",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Huff Quill",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 50
+    },
+    {
+      "id": "item-custom-1795730626684-14",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Sly Quill",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 42
+    },
+    {
+      "id": "item-custom-1795730626684-15",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Rave Quill",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 12
+    },
+    {
+      "id": "item-custom-1795730626684-16",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Gryf Wax Seal",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 0
+    },
+    {
+      "id": "item-custom-1795730626684-17",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Huff Wax Seal",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 52
+    },
+    {
+      "id": "item-custom-1795730626684-18",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Sly Wax Seal",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 44
+    },
+    {
+      "id": "item-custom-1795730626684-19",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Rave Wax Seal",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 3
+    },
+    {
+      "id": "item-custom-1795730626684-20",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Gryf Noble Journal",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 13
+    },
+    {
+      "id": "item-custom-1795730626684-21",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Huff Noble Journal",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 49
+    },
+    {
+      "id": "item-custom-1795730626684-22",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Sly Noble Journal",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 41
+    },
+    {
+      "id": "item-custom-1795730626684-23",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Rave Noble Journal",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 15
+    },
+    {
+      "id": "item-custom-1795730626684-24",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Gryf Scarf Bookmark",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 5
+    },
+    {
+      "id": "item-custom-1795730626684-25",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Huff Scarf Bookmark",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 51
+    },
+    {
+      "id": "item-custom-1795730626684-26",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Sly Scarf Bookmark",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 43
+    },
+    {
+      "id": "item-custom-1795730626684-27",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Rave Scarf Bookmark",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 7
+    },
+    {
+      "id": "item-custom-1795730793534-0",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Gryf Crest Bookmark",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 14
+    },
+    {
+      "id": "item-custom-1795730793534-1",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Rave Crest Bookmark",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 16
+    },
+    {
+      "id": "item-custom-1795730793534-2",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Sly Crest Bookmark",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 37
+    },
+    {
+      "id": "item-custom-1795730793534-3",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "",
+      "name": "Huff Crest Bookmark",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 45
+    },
+    {
+      "id": "item-custom-1795730918095-0",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "aisle": "",
+      "name": "HBO Philosophers Stone Book",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-custom-1795730986876-0",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "aisle": "",
+      "name": "Tales of Beedle The Bard Book",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-custom-1795730986876-1",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "General",
+      "aisle": "",
+      "name": "Quidditch Through The Ages Book",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-custom-1795731519981-0",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "aisle": "",
+      "name": "Chocolate Frog Mystery Pin",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 32
+    },
+    {
+      "id": "item-custom-1795731558183-0",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "aisle": "",
+      "name": "Chocolate Frog Mug and Saucer",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 31
+    },
+    {
+      "id": "item-custom-1795731668985-0",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "aisle": "",
+      "name": "Sour Apple Lollipop",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 17
+    },
+    {
+      "id": "item-custom-1795731668985-1",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "aisle": "",
+      "name": "Apple and Blackberry  Lollipop",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 18
+    },
+    {
+      "id": "item-custom-1795731668985-2",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "aisle": "",
+      "name": "Strawberry Lollipop",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 19
+    },
+    {
+      "id": "item-custom-1795731668985-3",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "aisle": "",
+      "name": "Apple Lollipop",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 21
+    },
+    {
+      "id": "item-custom-1795731668985-4",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "aisle": "",
+      "name": "Raspberry Lollipop",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 20
+    },
+    {
+      "id": "item-custom-1795731668985-5",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "aisle": "",
+      "name": "Cherry Cola Lollipop",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 23
+    },
+    {
+      "id": "item-custom-1795731668985-6",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "aisle": "",
+      "name": "Sour Cherry Lollipop",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 22
+    },
+    {
+      "id": "item-custom-1795731668985-7",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "aisle": "",
+      "name": "Peach Lollipop",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 26
+    },
+    {
+      "id": "item-custom-1795731668985-8",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "aisle": "",
+      "name": "Cola Lollipop",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 24
+    },
+    {
+      "id": "item-custom-1795731668985-9",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "aisle": "",
+      "name": "Black Cherry Lollipop",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 25
+    },
+    {
+      "id": "item-custom-1795731737456-0",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "aisle": "",
+      "name": "Bertie Bott's Mug",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 29
+    },
+    {
+      "id": "item-custom-1795731850077-0",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "General",
+      "aisle": "",
+      "name": "Butterbeer Soft Toy",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 40
+    },
+    {
+      "id": "item-custom-1795731944426-0",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "Hot Drinks",
+      "aisle": "",
+      "name": "4-Pack Tea",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 42
+    },
+    {
+      "id": "item-custom-1795731944426-1",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "Hot Drinks",
+      "aisle": "",
+      "name": "Rave Tea",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 43
+    },
+    {
+      "id": "item-custom-1795731944426-2",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "Hot Drinks",
+      "aisle": "",
+      "name": "Huff Tea",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 44
+    },
+    {
+      "id": "item-custom-1795731944426-3",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "Hot Drinks",
+      "aisle": "",
+      "name": "Gryf Tea",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 45
+    },
+    {
+      "id": "item-custom-1795731944426-4",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "Hot Drinks",
+      "aisle": "",
+      "name": "Sly Tea",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 46
+    },
+    {
+      "id": "item-custom-1795731944426-5",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "Hot Drinks",
+      "aisle": "",
+      "name": "Hot Chocolate",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 47
+    },
+    {
+      "id": "item-custom-1795731944426-6",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "Hot Drinks",
+      "aisle": "",
+      "name": "Hogwarts Tea",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 48
+    },
+    {
+      "id": "item-custom-1795731944426-7",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "Hot Drinks",
+      "aisle": "",
+      "name": "Gryff Choc",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 49
+    },
+    {
+      "id": "item-custom-1795731944427-8",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "Hot Drinks",
+      "aisle": "",
+      "name": "Huff Choc",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 50
+    },
+    {
+      "id": "item-custom-1795731944427-9",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "Hot Drinks",
+      "aisle": "",
+      "name": "Rave Choc",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 51
+    },
+    {
+      "id": "item-custom-1795731944427-10",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "Hot Drinks",
+      "aisle": "",
+      "name": "Sly Choc",
+      "innerQty": 0,
+      "boxQty": 0,
+      "sortOrder": 52
+    },
+    {
+      "id": "cloth-1795731944428",
+      "department": "clothing",
+      "sizeType": "adult",
+      "sectionId": "knight-bus",
+      "group": "HBDH",
+      "aisle": "",
+      "sortOrder": 6,
+      "name": "HBDH Pyjamas"
+    },
+    {
+      "id": "item-1795731944429",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "Hogwarts",
+      "aisle": "",
+      "sortOrder": 12,
+      "name": "Hogwarts Wax Seal",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944430",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "Hogwarts",
+      "aisle": "Stationary/MinaLima",
+      "sortOrder": 13,
+      "name": "Hogwarts Crest Embossed Journal",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944431",
+      "department": "hardlines",
+      "sectionId": "knight-bus",
+      "group": "Hogwarts",
+      "aisle": "Knitwear",
+      "sortOrder": 16,
+      "name": "Hogwarts School Crest Knitted Scarf",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "cloth-1795731944432",
+      "department": "clothing",
+      "sizeType": "adult",
+      "sectionId": "knight-bus",
+      "group": "Hogwarts",
+      "aisle": "",
+      "sortOrder": 17,
+      "name": "Hogwarts Crest Blue T-Shirt"
+    },
+    {
+      "id": "item-1795731944433",
+      "department": "hardlines",
+      "sectionId": "honeydukes",
+      "group": "Butterbeer",
+      "aisle": "",
+      "sortOrder": 6,
+      "name": "OS Butterbeer Single",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944434",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "413",
+      "aisle": "",
+      "sortOrder": 43,
+      "name": "B&G Socks S/M",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944435",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "413",
+      "aisle": "",
+      "sortOrder": 44,
+      "name": "B&G Socks M/L",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944436",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "413",
+      "aisle": "",
+      "sortOrder": 49,
+      "name": "B&G Bear",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "cloth-1795731944437",
+      "department": "clothing",
+      "sizeType": "adult",
+      "sectionId": "gringotts",
+      "group": "415",
+      "aisle": "",
+      "sortOrder": 60,
+      "name": "Hogwarts Christmas Sequin Knitted Jumper"
+    },
+    {
+      "id": "item-1795731944438",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "415",
+      "aisle": "Ornaments",
+      "sortOrder": 61,
+      "name": "Sorting Hat Gold Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944439",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "415",
+      "aisle": "Bags",
+      "sortOrder": 62,
+      "name": "Acceptance Letter Card Holder",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944440",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "415",
+      "aisle": "Ornaments",
+      "sortOrder": 63,
+      "name": "Hogwarts Christmas Photo Frame",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944441",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "415",
+      "aisle": "Drinkware",
+      "sortOrder": 64,
+      "name": "Acceptance Letter Mug & Plush Gift Set",
+      "innerQty": 6,
+      "boxQty": 24
+    },
+    {
+      "id": "item-1795731944442",
+      "department": "hardlines",
+      "sectionId": "gringotts",
+      "group": "415",
+      "aisle": "Ornaments",
+      "sortOrder": 66,
+      "name": "Hogwarts Christmas Velvet Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944443",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Honeydukes",
+      "aisle": "Drinkware",
+      "sortOrder": 0,
+      "name": "Honeydukes Christmas Mug",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944444",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Honeydukes",
+      "aisle": "Ornaments",
+      "sortOrder": 1,
+      "name": "Honeydukes Glass Decoration",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944445",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Honeydukes",
+      "aisle": "Drinkware",
+      "sortOrder": 2,
+      "name": "Honeydukes Christmas Plate",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944446",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Honeydukes",
+      "aisle": "Keyrings/Pin Badges",
+      "sortOrder": 3,
+      "name": "Honeydukes Christmas Keychain",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944447",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Honeydukes",
+      "aisle": "Accessories",
+      "sortOrder": 4,
+      "name": "Honeydukes Christmas Cosy Socks S/M",
+      "innerQty": 3,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944448",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Honeydukes",
+      "aisle": "Accessories",
+      "sortOrder": 5,
+      "name": "Honeydukes Christmas Cosy Socks M/L",
+      "innerQty": 3,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944449",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Honeydukes",
+      "aisle": "Bags",
+      "sortOrder": 6,
+      "name": "Honeydukes Christmas Blanket",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944450",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Honeydukes",
+      "aisle": "Bags",
+      "sortOrder": 7,
+      "name": "Honeydukes Christmas Cushion",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944451",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Niffler",
+      "aisle": "Plush",
+      "sortOrder": 14,
+      "name": "Interactive Baby Niffler Plush Pet",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944452",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Hedwig",
+      "aisle": "Ornaments",
+      "sortOrder": 21,
+      "name": "Acceptance Letter Snow Globe",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944453",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Hogwarts",
+      "aisle": "Keyrings/Pin Badges",
+      "sortOrder": 45,
+      "name": "Time-Turner Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944454",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Entrance Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 103,
+      "name": "Bag of Gringotts Galleons Chocolate Coins",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944455",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Entrance Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 104,
+      "name": "Fudge Flies",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944456",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Entrance Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 105,
+      "name": "Peppermint Toads",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944457",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Entrance Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 106,
+      "name": "Bertie Botts Beans Souvenir Tin",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944458",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Entrance Trolley",
+      "aisle": "",
+      "sortOrder": 107,
+      "name": "OS Butterbeer Single",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944459",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Entrance Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 109,
+      "name": "Fizzing Whizzbees Chocolate",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944460",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Entrance Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 110,
+      "name": "Exploding Bon Bons",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944461",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Entrance Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 111,
+      "name": "Chocolate Frog - with authentic film packaging",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944462",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Entrance Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 112,
+      "name": "Butterbeer Biscuits",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944463",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Entrance Trolley",
+      "aisle": "Toys",
+      "sortOrder": 113,
+      "name": "Butterbeer Lollipop",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944464",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Entrance Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 114,
+      "name": "Honeydukes Milk Chocolate Honeycomb",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944465",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Entrance Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 115,
+      "name": "Honeydukes Caramel Sea Salt Fudge",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944466",
+      "department": "hardlines",
+      "sectionId": "diagon-alley",
+      "group": "Entrance Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 116,
+      "name": "Chocolate Frog Souvenir Tin",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944467",
+      "department": "hardlines",
+      "sectionId": "minalima",
+      "group": "General",
+      "aisle": "Collectables",
+      "sortOrder": 6,
+      "name": "Advanced Potion Making Journal",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944468",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "General",
+      "aisle": "Stationary/MinaLima",
+      "sortOrder": 11,
+      "name": "Hogwarts Pen & Ink Quill Set",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944469",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "Books",
+      "aisle": "",
+      "sortOrder": 23,
+      "name": "HBO Philosophers Stone Book",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944470",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "Books",
+      "aisle": "",
+      "sortOrder": 33,
+      "name": "Tales of Beedle The Bard Book",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944471",
+      "department": "hardlines",
+      "sectionId": "scrib",
+      "group": "Books",
+      "aisle": "",
+      "sortOrder": 34,
+      "name": "Quidditch Through The Ages Book",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944472",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Hagrid's Hut",
+      "aisle": "Toys",
+      "sortOrder": 17,
+      "name": "Funko POP! Hagrid Vinyl Figure - Large",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "cloth-1795731944473",
+      "department": "clothing",
+      "sizeType": "adult",
+      "sectionId": "robes",
+      "group": "Butterbeer",
+      "aisle": "",
+      "sortOrder": 25,
+      "name": "OS Butterbeer T-Shirt"
+    },
+    {
+      "id": "item-1795731944474",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Butterbeer",
+      "aisle": "",
+      "sortOrder": 26,
+      "name": "OS Butterbeer Bottle Opener",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944475",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Butterbeer",
+      "aisle": "",
+      "sortOrder": 27,
+      "name": "OS Butterbeer Keychain",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944476",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Butterbeer",
+      "aisle": "",
+      "sortOrder": 28,
+      "name": "OS Butterbeer Glass Mug",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944477",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "First Floor Trolley",
+      "aisle": "",
+      "sortOrder": 53,
+      "name": "OS Butterbeer Single",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944478",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "Butterbeer",
+      "aisle": "",
+      "sortOrder": 30,
+      "name": "OS Butterbeer Tote",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944479",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "House Robes",
+      "aisle": "Bags",
+      "sortOrder": 41,
+      "name": "Mini Hogwarts School Trunk Replica",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944480",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "House Robes",
+      "aisle": "Accessories",
+      "sortOrder": 42,
+      "name": "Authentic Tie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944481",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "House Robes",
+      "aisle": "Drinkware",
+      "sortOrder": 43,
+      "name": "MM25 Glass Mug",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944482",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "House Robes",
+      "aisle": "Knitwear",
+      "sortOrder": 44,
+      "name": "Authentic Scarf",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944483",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "House Robes",
+      "aisle": "Accessories",
+      "sortOrder": 45,
+      "name": "Bow Clip",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944484",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "House Robes",
+      "aisle": "Accessories",
+      "sortOrder": 46,
+      "name": "Striped Headband",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944485",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "House Robes",
+      "aisle": "Accessories",
+      "sortOrder": 49,
+      "name": "Scrunchie",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944486",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "First Floor Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 50,
+      "name": "Exploding Bon Bons",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944487",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "First Floor Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 51,
+      "name": "Chocolate Frog - with authentic film packaging",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944488",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "First Floor Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 52,
+      "name": "Chocolate Frog Souvenir Tin",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944489",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "First Floor Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 54,
+      "name": "Bertie Botts Beans Souvenir Tin",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944490",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "First Floor Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 55,
+      "name": "Bag of Gringotts Galleons Chocolate Coins",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944491",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "First Floor Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 56,
+      "name": "Chocolate Wand",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944492",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "First Floor Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 57,
+      "name": "White Chocolate Frog - with authentic film packaging",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944493",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "First Floor Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 58,
+      "name": "Honeydukes Chocolate Coin",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944494",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "First Floor Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 59,
+      "name": "Bottled Butterbeer",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944495",
+      "department": "hardlines",
+      "sectionId": "robes",
+      "group": "First Floor Trolley",
+      "aisle": "Confectionary",
+      "sortOrder": 60,
+      "name": "Fizzing Whizzbees Chocolate",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944496",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "aisle": "Keyrings/Pin Badges",
+      "sortOrder": 4,
+      "name": "Crest Medallion Keyring",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944497",
+      "department": "hardlines",
+      "sectionId": "qudditch",
+      "group": "Ravenclaw",
+      "aisle": "Plush",
+      "sortOrder": 29,
+      "name": "Mascot",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944498",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "Collectables",
+      "aisle": "Toys",
+      "sortOrder": 1,
+      "name": "LDN Funko",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944499",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "Bags",
+      "aisle": "Collectables",
+      "sortOrder": 44,
+      "name": "Time Turner Necklace",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944500",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "Bags",
+      "aisle": "Collectables",
+      "sortOrder": 46,
+      "name": "Time-Turner Pendant Necklace",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944501",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "Bags",
+      "aisle": "Collectables",
+      "sortOrder": 47,
+      "name": "Time-Turner Earrings",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944502",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "Bags",
+      "aisle": "",
+      "sortOrder": 48,
+      "name": "Lightning Earrings",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944503",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "Bags",
+      "aisle": "",
+      "sortOrder": 49,
+      "name": "Lightning Necklace",
+      "innerQty": 0,
+      "boxQty": 0
+    },
+    {
+      "id": "item-1795731944504",
+      "department": "hardlines",
+      "sectionId": "toys",
+      "group": "Bags",
+      "aisle": "Collectables",
+      "sortOrder": 51,
+      "name": "Golden Snitch Necklace",
       "innerQty": 0,
       "boxQty": 0
     }
